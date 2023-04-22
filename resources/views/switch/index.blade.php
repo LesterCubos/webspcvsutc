@@ -26,25 +26,52 @@
         </div>
     </div>
 
-    {{-- @if(session('notif.success'))
-        <div class="alert alert-success">
-            {{ session('notif.success') }}
+    <div class="card">
+        <div class="card-body">
+            <br>
+            {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <div id="testing">Hello</div> --}}
+            <button id="show" class="btn btn-primary rounded pill">Show</button>
+
+
+            <button id="hide" class="btn btn-secondary rounded pill">Hide</button>
+            <button id="check" class="btn btn-success rounded pill">Check</button><br>
+            Check Result: <strong><span id="result"></span></strong>
         </div>
-    @endif --}}
-
-    <form method="post" action="{{ route('switch.update','switch') }}">
-        @csrf
-        @foreach($switch as $swtch)
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="{{ $swtch->name }}" id="{{ $swtch->name }}" {{ $swtch->status ? 'checked' : '' }}>
-                <label class="form-check-label" for="{{ $swtch->name }}">
-                    {{ $swtch->name }}
-                </label>
-            </div>
-        @endforeach
-        <button type="submit" class="btn btn-primary">Save</button>
-    </form>
+    </div>
 
 
+
+
+    <script>
+        $("#check").click(function() {
+      // Use ":hidden" to check if something is hidden instead of visible
+      if ($("#testing").is(":visible")) {
+        $("#result").text("Visible");
+      } else {
+        $("#result").text("Hidden");
+      }
+    });
+
+    $("#hide").click(function() {
+      $("#testing").hide();
+      var value = 'hide';
+    $.post('/switch', { value: value }, function(response) {
+    console.log(response);
+    });
+
+    });
+
+    $("#show").click(function() {
+      $("#testing").show();
+      var value = 'show';
+    $.post('/switch', { value: value }, function(response) {
+    console.log(response);
+    });
+
+    });
+    </script>
 
 @endsection
+
+

@@ -13,6 +13,10 @@ use App\Models\Admission;
 use App\Models\News;
 use App\Models\Announcement;
 use App\Models\Event;
+use App\Models\CampusHistory;
+
+
+
 
 use Illuminate\Support\Facades\DB;
 
@@ -44,11 +48,4 @@ class HomeController extends Controller
                     'announcements',
                     'events'));
     }
-
-    public function toggleSection(Request $request)
-{
-    // DB::table('section_switch')->update(['show_section' => $request->input('show_section')]);
-    // return response()->json(['success' => true]);
-}
-
 }

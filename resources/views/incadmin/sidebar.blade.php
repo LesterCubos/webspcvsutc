@@ -75,27 +75,32 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="">
+            <a href="{{ route('campus_history.index') }}">
               <i class="bi bi-circle"></i><span>Campus History</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{ route('mvgs.index') }}">
               <i class="bi bi-circle"></i><span>Vision, Mission, and Goals</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{ route('uni_seals.index') }}">
               <i class="bi bi-circle"></i><span>University Seals</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{ route('uni_officials.index') }}">
+              <i class="bi bi-circle"></i><span>University Officials</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('campus_officials.index') }}">
               <i class="bi bi-circle"></i><span>Campus Officials</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{ route('contact_infos.index') }}">
               <i class="bi bi-circle"></i><span>Contact Information</span>
             </a>
           </li>
@@ -150,11 +155,37 @@
               <i class="bi bi-circle"></i><span>Office of the Student Affairs Services</span>
             </a>
           </li>
+
+          <li>
+            <a href="">
+              <i class="bi bi-circle"></i><span>Department of Information Technlogy</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <i class="bi bi-circle"></i><span>Teacher Education Department</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <i class="bi bi-circle"></i><span>Department of Arts and Sciences</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <i class="bi bi-circle"></i><span>Department of Management</span>
+            </a>
+          </li>
+
           <li>
             <a href="">
               <i class="bi bi-circle"></i><span>QAAC</span>
             </a>
           </li>
+
           <li>
             <a href="">
               <i class="bi bi-circle"></i><span>Research and Extension</span>
@@ -170,7 +201,7 @@
         </ul>
       </li><!-- End Administration Nav -->
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#instruction-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-border-all"></i><span>Instruction</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -198,7 +229,7 @@
 
 
         </ul>
-      </li><!-- End Instruction Nav -->
+      </li><!-- End Instruction Nav --> --}}
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#services-nav" data-bs-toggle="collapse" href="#">

@@ -47,17 +47,17 @@
           <li><a href="/">Home</a></li>
           <li class="dropdown"><a href="#">About</a>
             <ul>
-              <li><a href="/CampusHistory">Campus History</a></li>
-              <li><a href="/MVG">Vision, Mission, and Goals</a></li>
-              <li><a href="/UniSeal">University Seals</a></li>
-              <li><a href="/UniOfficials">University Officials</a></li>
-              <li><a href="/CampusOfficials">Campus Officials</a></li>
-              <li><a href="/Contact">Contact Information</a></li>
+              <li><a href="about_campus_history">Campus History</a></li>
+              <li><a href="about_mvg">Vision, Mission, and Goals</a></li>
+              <li><a href="about_uni_seal">University Seals</a></li>
+              <li><a href="about_uni_officials">University Officials</a></li>
+              <li><a href="about_campus_officials">Campus Officials</a></li>
+              <li><a href="about_contact_info">Contact Information</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#">Admission</a>
             <ul>
-              <li><a href="/AdmissionRandP">Admission Requirements and Procedure</a></li>
+              <li><a href="/admissionrequirements">Admission Requirements and Procedure</a></li>
               <li><a href="/ProgramsOffered">Program Offerings</a></li>
               <li><a href="/AdmissionResult">Admission Result</a></li>
             </ul>
@@ -68,6 +68,10 @@
               <li><a href="/Clinic">Clinic</a></li>
               <li><a href="/Cashier">Cashier</a></li>
               <li><a href="/Osas">Office of the Student Affairs Services</a></li>
+              <li><a href="/DeptInfoTech">Department of Information Technlogy</a></li>
+              <li><a href="#">Teacher Education Department</a></li>
+              <li><a href="#">Department of Arts and Sciences</a></li>
+              <li><a href="#">Department of Management</a></li>
               <li><a href="/Hr">Human Resource Management</a></li>
               <li><a href="/Mis">Management Information S</a></li>
               <li><a href="/Qaac">QAAC</a></li>
@@ -75,14 +79,14 @@
               <li><a href="/Library">Library</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#">Instruction</a>
+          {{-- <li class="dropdown"><a href="#">Instruction</a>
             <ul>
               <li><a href="/DeptInfoTech">Department of Information Technlogy</a></li>
               <li><a href="#">Teacher Education Department</a></li>
               <li><a href="#">Department of Arts and Sciences</a></li>
               <li><a href="#">Department of Management</a></li>
             </ul>
-          </li>
+          </li> --}}
           <li class="dropdown"><a href="#">Services</a>
             <ul>
               <li class="dropdown"><a href="#">Student Affairs</a>

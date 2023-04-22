@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'CvSU-TC Admin') }}</title>
+    <title>CvSU-TC Admin</title>
 
     <!-- Icon -->
     <link rel="icon" href="{{ asset('img/Cavite_State_University_(CvSU).png') }}">
@@ -60,6 +60,9 @@
     <script src="{{ asset('vendor/simple-datatables/simple-datatables.js') }}"></script>
     <script src="{{ asset('vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
+
+
+
 
     <!-- Template Main JS File -->
     <script src="{{ asset('js/adminmain.js') }}"></script>

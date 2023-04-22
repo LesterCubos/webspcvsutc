@@ -728,6 +728,10 @@ select {
   border-width: 0;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .collapse {
   visibility: collapse;
 }
@@ -793,6 +797,11 @@ select {
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .-ml-px {
@@ -1159,6 +1168,10 @@ select {
   overflow-y: hidden;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1461,6 +1474,11 @@ select {
 
 .pr-4 {
   padding-right: 1rem;
+}
+
+.ps-0 {
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
 }
 
 .ps-2 {

@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('switch', function (Blueprint $table) {
+        Schema::create('university_seals', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->boolean('status')->default(false);
+            $table->text('content');
+            $table->text('image');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('switch');
+        Schema::dropIfExists('university_seals');
     }
 };

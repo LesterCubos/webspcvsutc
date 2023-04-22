@@ -1,0 +1,25 @@
+@extends('layouts.show')
+<head>
+    <!-- Main CSS File -->
+    <link href="{{ asset('css/history.css') }}" rel="stylesheet">
+
+  </head>
+@section('content')
+
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    @include('incshow.bread')
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
+          <li>About</li>
+          <li></li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Breadcrumbs -->
+
+
+
+@endsection
