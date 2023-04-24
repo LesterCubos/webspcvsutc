@@ -23,7 +23,7 @@
     <div class="card">
         <div class="card-body">
 
-            <form method="post" action="{{ route('switch.update', ['switch' => 1]) }}" enctype="multipart/form-data">
+            <form method="post" action="{{ isset($program) ? route('programs.update', $program->id) : route('programs.store') }}" enctype="multipart/form-data">
                 @csrf
                 {{-- add @method('put') for edit mode --}}
                 @isset($program)
