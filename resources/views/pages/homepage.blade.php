@@ -313,7 +313,7 @@
             </section>
             <!-- End Program  Section -->
 
-            @if(session('show_section', false))
+            {{-- @if(session('show_section', false)) --}}
             <!-- ======= Admission Section ======= -->
             <section id="admissions" class="admissions">
                 <div class="container" data-aos="zoom-in">
@@ -344,7 +344,7 @@
                 </div>
             </section>
             <!-- End Admission Section -->
-            @endif
+            {{-- @endif --}}
 
 
             <!-- ======= News and updates Section ======= -->
@@ -375,7 +375,7 @@
                                 @endphp --}}
                             <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                             <p>
-                                {{ $new->news_headline }}
+                                {{ $new->news_content }}
 
                             </p>
                             </div>
@@ -385,7 +385,7 @@
                             <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                             <p>
-                                {{ $new->news_headline }}
+                                {{ $new->news_content }}
                             </p>
                             </div>
                         </li>
@@ -394,7 +394,7 @@
                             <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                             <p>
-                                {{ $new->news_headline }}
+                                {{ $new->news_content }}
                             </p>
                             </div>
                         </li>
@@ -402,14 +402,14 @@
                         <li>
                             <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4" class="collapsed"><span>04</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-4" class="collapse" data-bs-parent=".accordion-list">
-                            <p>{{ $new->news_headline }}</p>
+                            <p>{{ $new->news_content }}</p>
                             </div>
                         </li>
                         @elseif ($loop->iteration == 5)
                         <li>
                             <a data-bs-toggle="collapse" data-bs-target="#accordion-list-5" class="collapsed"><span>05</span> {{ $new->news_title }} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-5" class="collapse" data-bs-parent=".accordion-list">
-                            <p>{{ $new->news_headline }} </p>
+                            <p>{{ $new->news_content }} </p>
                             </div>
                         </li>
                         @endif
@@ -559,63 +559,62 @@
 
                 <div class="container" data-aos="fade-up">
 
-                <div class="row">
-                    <div class="col-lg-4 d-flex align-items-stretch">
-                    <div class="content">
-                        <h3>View Full Calendar?</h3>
-                        <div class="img-calendar">
-                        <img src="{{ asset('img/calendar.webp') }}" alt="" width="300" height="150">
-                        </div>
-                        <div class="text-center">
-                        <a href="" class="more-btn">View Calendar <i class="bx bx-chevron-right"></i></a>
-                        </div>
-                    </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        @foreach ( $events as $event )
-                        <div class="event d-flex align-items-start event1" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="event-info">
-                            <h4>{{ $event->date }}</h4>
-                            <span>{{ $event->event_title }}</span>
-                            <p>{{ $event->desc }}</p>
+                    <div class="row">
+                        <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="content">
+                            <h3>View Full Calendar?</h3>
+                            <div class="img-calendar">
+                            <img src="{{ asset('img/calendar.webp') }}" alt="" width="300" height="150">
+                            </div>
+                            <div class="text-center">
+                            <a href="" class="more-btn">View Calendar <i class="bx bx-chevron-right"></i></a>
                             </div>
                         </div>
-                        @endforeach
+                        </div>
 
-
-                    {{-- <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="event-info">
-                        <h4>January 01, 2022</h4>
-                        <span>New Year</span>
-                        <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+                        <div class="col-lg-4">
+                            @foreach ( $events as $event )
+                                @if ($loop->iteration == 1 )
+                                    <div class="event d-flex align-items-start event1" data-aos="zoom-in" data-aos-delay="100">
+                                        <div class="event-info">
+                                            <h4>{{ $event->date }}</h4>
+                                            <span>{{ $event->event_title }}</span>
+                                            <p>{{ $event->desc }}</p>
+                                        </div>
+                                    </div>
+                                @elseif ($loop->iteration == 2 )
+                                    <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+                                        <div class="event-info">
+                                            <h4>{{ $event->date }}</h4>
+                                            <span>{{ $event->event_title }}</span>
+                                            <p>{{ $event->desc }}</p>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="col-lg-4 mt-4 mt-lg-0">
+                            @foreach ( $events as $event )
+                                @if ($loop->iteration == 3 )
+                                    <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+                                        <div class="event-info">
+                                            <h4>{{ $event->date }}</h4>
+                                            <span>{{ $event->event_title }}</span>
+                                            <p>{{ $event->desc }}</p>
+                                        </div>
+                                    </div>
+                                @elseif ($loop->iteration == 4 )
+                                    <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
+                                        <div class="event-info">
+                                            <h4>{{ $event->date }}</h4>
+                                            <span>{{ $event->event_title }}</span>
+                                            <p>{{ $event->desc }}</p>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
-
-                    </div>
-
-                    <div class="col-lg-4 mt-4 mt-lg-0">
-                    <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="event-info">
-                        <h4>December 31, 2022</h4>
-                        <span>New Year's Eve</span>
-                        <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                        </div>
-                    </div>
-
-
-                    <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="event-info">
-                        <h4>January 01, 2022</h4>
-                        <span>New Year</span>
-                        <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                        </div>
-                    </div>
-
-                    </div> --}}
-
-                </div>
-
                 </div>
             </section>
             <!-- End Events Section -->
