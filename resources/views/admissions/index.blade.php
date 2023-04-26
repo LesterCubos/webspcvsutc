@@ -55,7 +55,7 @@
                 <th scope="row">{{ $admission->id }}</th>
                 <td>{{ $admission->title }}</td>
                 {{-- <td><img style="width:250px" src="{{ Storage::url($admission->bg_pic) }}" alt="{{ $admission->title }}" srcset=""></td> --}}
-                <td>{{ $admission->descrip }}</td>
+                <td>{!! $admission->descrip !!}</td>
                 <td>{{ $admission->created_at }}</td>
                 <td>{{ $admission->updated_at }}</td>
                 <td>

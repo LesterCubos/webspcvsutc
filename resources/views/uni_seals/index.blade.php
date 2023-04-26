@@ -54,7 +54,7 @@
             @foreach ($uni_seals as $uni_seal)
             <tr>
                 <th scope="row">{{ $uni_seal->id }}</th>
-                <td >{{ $uni_seal->content }}</td>
+                <td >{!! $uni_seal->content !!}</td>
                 <td><img style="width:250px" src="{{ Storage::url($uni_seal->image) }}" alt="{{ $uni_seal->content }}" srcset=""></td>
                 <td>{{ $uni_seal->created_at }}</td>
                 <td>{{ $uni_seal->updated_at }}</td>

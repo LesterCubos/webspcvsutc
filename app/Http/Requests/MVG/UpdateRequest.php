@@ -22,9 +22,9 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title1' => 'required|string|min:3|max:250',
-            'title2' => 'required|string|min:3|max:250',
-            'content' => 'required|string|min:3|max:6000',
+            'title1' => 'nullable|string|min:3|max:250',
+            'title2' => 'nullable|string|min:3|max:250',
+            'content' => 'nullable|string|min:3|max:6000',
 
         ];
     }

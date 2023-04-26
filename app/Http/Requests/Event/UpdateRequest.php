@@ -22,9 +22,9 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'date' => 'required|string|min:3|max:250',
-            'event_title' => 'required|string|min:3|max:250',
-            'desc' => 'required|string|min:3|max:6000',
+            'date' => 'nullable|string|min:3|max:250',
+            'event_title' => 'nullable|string|min:3|max:250',
+            'desc' => 'nullable|string|min:3|max:6000',
             // 'interactive_img' => 'nullable|image|max:1024|mimes:jpg,jpeg,png',
         ];
     }

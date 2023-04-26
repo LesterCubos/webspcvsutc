@@ -153,7 +153,7 @@
                             <div class="col col-lg-4 col-md-6 service-item d-flex">
                             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <h4 class="title"><a href="">{{ $featured_service->title }}</a></h4>
-                                <p class="description">{{ $featured_service->content }}</p>
+                                <p class="description">{!! $featured_service->content !!}</p>
                             </div>
                             </div>
                         @endforeach
@@ -331,7 +331,7 @@
                                         <i class='bx bxs-edit'></i>
                                     </div>
                                     <h4>{{ $admission->title }}</h4>
-                                    <p>{{ $admission->descrip }}</p>
+                                    <p>{!! $admission->descrip !!}</p>
                                     <div class="btn-wrap">
                                         <a href="#" class="btn-apply">Apply Now <i class="bi bi-arrow-right-circle"></i></a>
                                     </div>
@@ -507,7 +507,7 @@
                     <div class="col-md-7">
                     <h3>{{ $announcement->title }}</h3>
                     <p class="fst-italic">
-                        {{ $announcement->content }}
+                        {!! $announcement->content !!}
                     </p>
                     {{-- <p>
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aut cupiditate aliquam maiores molestias eaque a commodi exercitationem expedita reprehenderit minima soluta iusto voluptas, culpa ipsa. Soluta laborum facere voluptas.
@@ -522,7 +522,7 @@
                     <div class="col-md-7 order-2 order-md-1">
                     <h3> {{ $announcement->title }}</h3>
                     <p class="fst-italic">
-                        {{ $announcement->content }}
+                        {!! $announcement->content !!}
                     </p>
                     {{-- <p>
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aut cupiditate aliquam maiores molestias eaque a commodi exercitationem expedita reprehenderit minima soluta iusto voluptas, culpa ipsa. Soluta laborum facere voluptas.
@@ -537,7 +537,7 @@
                     <div class="col-md-7">
                     <h3> {{ $announcement->title }}</h3>
                     <p class="fst-italic">
-                        {{ $announcement->content }}
+                        {!! $announcement->content !!}
                     </p>
                     {{-- <p>
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aut cupiditate aliquam maiores molestias eaque a commodi exercitationem expedita reprehenderit minima soluta iusto voluptas, culpa ipsa. Soluta laborum facere voluptas.
@@ -579,7 +579,7 @@
                                         <div class="event-info">
                                             <h4>{{ $event->date }}</h4>
                                             <span>{{ $event->event_title }}</span>
-                                            <p>{{ $event->desc }}</p>
+                                            <p>{!! $event->desc !!}</p>
                                         </div>
                                     </div>
                                 @elseif ($loop->iteration == 2 )
@@ -587,7 +587,7 @@
                                         <div class="event-info">
                                             <h4>{{ $event->date }}</h4>
                                             <span>{{ $event->event_title }}</span>
-                                            <p>{{ $event->desc }}</p>
+                                            <p>{!! $event->desc !!}</p>
                                         </div>
                                     </div>
                                 @endif
@@ -600,7 +600,7 @@
                                         <div class="event-info">
                                             <h4>{{ $event->date }}</h4>
                                             <span>{{ $event->event_title }}</span>
-                                            <p>{{ $event->desc }}</p>
+                                            <p>{!! $event->desc !!}</p>
                                         </div>
                                     </div>
                                 @elseif ($loop->iteration == 4 )
@@ -608,7 +608,7 @@
                                         <div class="event-info">
                                             <h4>{{ $event->date }}</h4>
                                             <span>{{ $event->event_title }}</span>
-                                            <p>{{ $event->desc }}</p>
+                                            <p>{!! $event->desc !!}</p>
                                         </div>
                                     </div>
                                 @endif

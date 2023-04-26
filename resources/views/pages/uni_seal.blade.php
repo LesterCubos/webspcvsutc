@@ -37,7 +37,7 @@
         <div class="seal-info">
             <div class="col col-lg-7  info-center">
             <div class="box" data-aos="fade-up" data-aos-delay="100">
-                <p>{{ $uni_seal->content }}</p>
+                <p>{!! $uni_seal->content !!}</p>
             </div>
             </div>
         </div>

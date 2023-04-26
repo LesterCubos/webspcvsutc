@@ -6,7 +6,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
         <li class="breadcrumb-item">Dashboard</li>
-        <li class="breadcrumb-item">Discover Tanza Section</li>
+        <li class="breadcrumb-item"><a href="{{ route('discover_tanza_infos.index') }}">Discover Tanza Section</a></li>
         <li class="breadcrumb-item active">Add</li>
     </ol>
     </nav>
@@ -49,7 +49,7 @@
 
                 <div>
                     <label for="content" class="form-label">Content</label>
-                    <textarea style="height: 250px" id="content" name="content" class="form-control" required autofocus>{{ $discover_tanza_info->content ?? old('content') }}</textarea>
+                    <textarea style="height: 250px" id="content" name="content" class="form-control tinymce-editor" required autofocus>{{ $discover_tanza_info->content ?? old('content') }}</textarea>
                 </div>
 
                 {{-- <div>

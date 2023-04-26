@@ -49,7 +49,7 @@
 
                 <div>
                     <label for="desc" class="form-label">Description</label>
-                    <textarea style="height: 250px" id="desc" name="desc" class="form-control" required autofocus>{{ $event->desc ?? old('desc') }}</textarea>
+                    <textarea style="height: 250px" id="desc" name="desc" class="form-control tinymce-editor" required autofocus>{{ $event->desc ?? old('desc') }}</textarea>
                 </div>
 
                 {{-- <div>

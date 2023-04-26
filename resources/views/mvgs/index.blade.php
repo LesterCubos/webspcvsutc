@@ -54,7 +54,7 @@
                 <th scope="row">{{ $mvg->id }}</th>
                 <td>{{ $mvg->title1 }}</td>
                 <td>{{ $mvg->title2 }}</td>
-                <td style="width:500px">{{ $mvg->content }}</td>
+                <td style="width:500px">{!!$mvg->content !!}</td>
                 <td>{{ $mvg->created_at }}</td>
                 <td>{{ $mvg->updated_at }}</td>
                 <td>

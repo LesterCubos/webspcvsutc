@@ -22,8 +22,8 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'content' => 'required|string|min:3|max:6000',
-            'image' => 'required|image|max:1024|mimes:jpg,jpeg,png',
+            'content' => 'nullable|string|min:3|max:6000',
+            'image' => 'nullable|image|max:1024|mimes:jpg,jpeg,png',
         ];
     }
 }

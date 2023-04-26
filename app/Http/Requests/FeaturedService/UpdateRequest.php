@@ -23,8 +23,8 @@ class UpdateRequest extends FormRequest
     {
         return [
             //
-            'title' => 'required|string|min:3|max:250',
-            'content' => 'required|string|min:3|max:6000'
+            'title' => 'nullable|string|min:3|max:250',
+            'content' => 'nullable|string|min:3|max:6000'
         ];
     }
 }

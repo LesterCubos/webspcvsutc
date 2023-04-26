@@ -55,7 +55,7 @@
             <tr>
                 <th scope="row">{{ $featured_service->id }}</th>
                 <td>{{ $featured_service->title }}</td>
-                <td style="width:500px">{{ $featured_service->content }}</td>
+                <td style="width:500px">{!! $featured_service->content !!}</td>
                 <td>{{ $featured_service->created_at }}</td>
                 <td>{{ $featured_service->updated_at }}</td>
                 <td>

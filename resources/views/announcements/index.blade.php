@@ -52,7 +52,7 @@
             <tr>
                 <th scope="row">{{ $announcement->id }}</th>
                 <td>{{ $announcement->title }}</td>
-                <td>{{ $announcement->content }}</td>
+                <td>{!! $announcement->content !!}</td>
                 <td><img style="width:250px" src="{{ Storage::url($announcement->poster) }}" alt="{{ $announcement->title }}" srcset=""></td>
                 <td>{{ $announcement->created_at }}</td>
                 <td>{{ $announcement->updated_at }}</td>

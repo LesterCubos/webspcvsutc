@@ -17,11 +17,11 @@ class UpdateRequest extends FormRequest
 
     public function rules(): array
     {
-        // make all of the fields required, set featured image to accept only images
+        // make all of the fields nullable, set featured image to accept only images
         return [
-            'title' => 'required|string|min:3|max:250',
-            'content' => 'required|string|min:3|max:6000',
-            'program_image' => 'required|image|max:1024|mimes:jpg,jpeg,png',
+            'title' => 'nullable|string|min:3|max:250',
+            'content' => 'nullable|string|min:3|max:6000',
+            'program_image' => 'nullable|image|max:1024|mimes:jpg,jpeg,png',
         ];
     }
 }

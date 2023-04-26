@@ -57,7 +57,7 @@
                 <th scope="row">{{ $event->id }}</th>
                 <td>{{ $event->date }}</td>
                 <td>{{ $event->event_title }}</td>
-                <td >{{ $event->desc }}</td>
+                <td >{!! $event->desc !!}</td>
                 {{-- <td><img style="width:250px" src="{{ Storage::url($event->image) }}" alt="{{ $event->headline }}" srcset=""></td> --}}
                 <td>{{ $event->created_at }}</td>
                 <td>{{ $event->updated_at }}</td>
