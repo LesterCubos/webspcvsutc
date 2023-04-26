@@ -32,13 +32,13 @@
     <link href="{{ asset('css/adminstyle.css') }}" rel="stylesheet">
 
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    
+
       <!-- include summernote css/js -->
     {{-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script> --}}
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    <!-- include summernote css/js-->
+    <!-- include summernote css/js--> --}}
      {{-- <link href="{{ asset('css/summernote-bs4.css')}}" rel="stylesheet"> --}}
     {{-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script> --}}
@@ -72,7 +72,7 @@
     <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
 
 
-    <script src="{{ asset('js/summernote-bs4.js')}}"></script>
+    {{-- <script src="{{ asset('js/summernote-bs4.js')}}"></script> --}}
 
     <!-- Template Main JS File -->
     <script src="{{ asset('js/adminmain.js') }}"></script>

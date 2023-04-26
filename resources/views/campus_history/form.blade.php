@@ -35,14 +35,14 @@
                     <input type="text" class="form-control" id="title" name="title" value="{{ $campushistory->title ?? old('title') }}" required autofocus>
                 </div>
                 <br>
-                
+
 
                 <div>
                     <label for="body" class="form-label">Body</label>
-                    <textarea style="height: 500px" id="body" name="body" class="form-control" required autofocus>{{ $campushistory->body ?? old('body') }}</textarea>
+                    <textarea style="height: 500px" id="body" name="body" class="form-control tinymce-editor" required autofocus>{{ $campushistory->body ?? old('body') }}</textarea>
                 </div>
 
-                <textarea name="desc" id="summernote" cols="30" rows="10"></textarea>
+                {{-- <textarea name="desc" id="summernote" cols="30" rows="10"></textarea> --}}
                 <br>
                 <div>
                     <label for="image" class="form-label">Image</label>
@@ -79,13 +79,13 @@
     }
 </script>
 
-<script>
+{{-- <script>
     $('#summernote').summernote({
       placeholder: 'Descrption',
       tabsize: 2,
       height: 500
     });
-</script>
+</script> --}}
 
 
 @endsection
