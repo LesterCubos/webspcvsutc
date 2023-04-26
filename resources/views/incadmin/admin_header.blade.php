@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="/dashboard" class="logo d-flex align-items-center">
         <img src="{{ asset('img/Cavite_State_University_(CvSU).png') }}" alt="cvsu" class="rounded-circle">
-        <span class="d-none d-lg-block">CvSU Admin Panel</span>
+        <span class="d-none d-lg-block">CvSU-TC Admin Panel</span>
 
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
