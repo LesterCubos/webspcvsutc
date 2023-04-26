@@ -46,7 +46,7 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ducimus soluta dolore aliquam ipsum quidem numquam. Impedit eos atque ipsam aliquam numquam sequi cumque a animi quod itaque, commodi quaerat?
                     </p> --}}
                     <p>
-                        {{ $campushistory->body }}
+                      {!!$campushistory->body!!}
                     </p>
 
                     {{-- <div class="position-relative mt-4">
