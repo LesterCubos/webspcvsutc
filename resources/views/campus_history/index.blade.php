@@ -51,7 +51,7 @@
             <tr>
                 <th scope="row">{{ $campushistory->id }}</th>
                 <td>{{ $campushistory->title }}</td>
-                <td>{{ $campushistory->body }}</td>
+                <td>{!!$campushistory->body!!}</td>
                 <td><img style="width:250px" src="{{ Storage::url($campushistory->image) }}" alt="{{ $campushistory->title }}" srcset=""></td>
                 <td>{{ $campushistory->created_at }}</td>
                 <td>{{ $campushistory->updated_at }}</td>

@@ -35,23 +35,14 @@
                     <input type="text" class="form-control" id="title" name="title" value="{{ $campushistory->title ?? old('title') }}" required autofocus>
                 </div>
                 <br>
-                {{-- <div>
-                    <x-input-label for="title" value="Title" />
-                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="$campushistory->title ?? old('title')" required autofocus />
-                    <x-input-error class="mt-2" :messages="$errors->get('title')" />
-                </div> --}}
+                
 
                 <div>
                     <label for="body" class="form-label">Body</label>
                     <textarea style="height: 500px" id="body" name="body" class="form-control" required autofocus>{{ $campushistory->body ?? old('body') }}</textarea>
                 </div>
 
-                {{-- <div>
-                    <x-input-label for="body" value="body" /> --}}
-                    {{-- use textarea-input component that we will create after this --}}
-                    {{-- <x-textarea-input id="body" name="body" class="mt-1 block w-full" required autofocus>{{ $campushistory->body ?? old('body') }}</x-textarea-input>
-                    <x-input-error class="mt-2" :messages="$errors->get('body')" />
-                </div> --}}
+                <textarea name="desc" id="summernote" cols="30" rows="10"></textarea>
                 <br>
                 <div>
                     <label for="image" class="form-label">Image</label>
@@ -87,4 +78,14 @@
         }
     }
 </script>
+
+<script>
+    $('#summernote').summernote({
+      placeholder: 'Descrption',
+      tabsize: 2,
+      height: 500
+    });
+</script>
+
+
 @endsection
