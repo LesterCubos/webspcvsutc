@@ -31,17 +31,10 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/adminstyle.css') }}" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
-      <!-- include summernote css/js -->
-    {{-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script> --}}
-    {{-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-    <!-- include summernote css/js--> --}}
-     {{-- <link href="{{ asset('css/summernote-bs4.css')}}" rel="stylesheet"> --}}
-    {{-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script> --}}
 
 </head>
 <body>

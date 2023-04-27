@@ -19,13 +19,23 @@ class AdmissionController extends Controller
      * Display a listing of the resource.
      */
 
-     public function toggleSection(Request $request)
-    {
-        $showSection = ! $request->session()->get('show_section', false);
-        $request->session()->put('show_section', $showSection);
+    //  public function toggleSection(Request $request)
+    // {
+    //     $showSection = ! $request->session()->get('show_section', false);
+    //     $request->session()->put('show_section', $showSection);
 
-        return redirect()->back();
+    //     return redirect()->back();
+    // }
+
+    public function show(string $id): Response
+    {
+        return response()->view('admissions.show', [
+            'admission' => Admission::findOrFail($id),
+        ]);
     }
+
+
+
 
     public function index(): Response
     {
@@ -70,12 +80,7 @@ class AdmissionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id): Response
-    {
-        return response()->view('admissions.show', [
-            'admission' => Admission::findOrFail($id),
-        ]);
-    }
+
 
     /**
      * Show the form for editing the specified resource.

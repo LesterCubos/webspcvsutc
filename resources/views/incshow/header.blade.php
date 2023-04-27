@@ -64,7 +64,7 @@
           </li>
           <li class="dropdown"><a href="#">Administration</a>
             <ul>
-              <li><a href="/Ofcr">Office of the Campus Registrar</a></li>
+              <li><a href="admin_office_registrar">Office of the Campus Registrar</a></li>
               <li><a href="/Clinic">Clinic</a></li>
               <li><a href="/Cashier">Cashier</a></li>
               <li><a href="/Osas">Office of the Student Affairs Services</a></li>

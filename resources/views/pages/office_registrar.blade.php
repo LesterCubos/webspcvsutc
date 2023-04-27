@@ -1,3 +1,24 @@
+@extends('layouts.show')
+<head>
+    <!-- Main CSS File -->
+    <link href="{{ asset('css/ocr.css') }}" rel="stylesheet">
+  </head>
+@section('content')
+
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    @include('incshow.bread')
+    <nav>
+      <div class="container">
+        <ol>
+          <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
+          <li>About</li>
+          <li>Office of the Campus Registrar</li>
+        </ol>
+      </div>
+    </nav>
+  </div><!-- End Breadcrumbs -->
+
 <!-- ======= Ocr Section ======= -->
 <section id="ocr" class="ocr">
     <div class="container" data-aos="fade-up">
@@ -53,4 +74,7 @@
       </div>
 
     </div>
-  </section><!-- End Ocr Section -->
+</section><!-- End Ocr Section -->
+
+@endsection
+

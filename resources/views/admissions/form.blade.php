@@ -6,7 +6,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
         <li class="breadcrumb-item">Dashboard</li>
-        <li class="breadcrumb-item">Admission Section</li>
+        <li class="breadcrumb-item"><a href="{{ route('admissions.index') }}">Admission Section</a></li>
         <li class="breadcrumb-item active">Add Image</li>
     </ol>
     </nav>
