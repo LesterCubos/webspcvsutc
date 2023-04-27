@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 
 use App\Http\Controllers\Webpage\HomeController;
 use App\Http\Controllers\Webpage\AboutController;
+use App\Http\Controllers\Webpage\AdministrationController;
 
+//Homepage Controllers
 use App\Http\Controllers\Webpage\CarouselController;
 use App\Http\Controllers\Webpage\FeaturedServicesController;
 use App\Http\Controllers\Webpage\DiscoverTanzaInfosController;
@@ -17,13 +19,16 @@ use App\Http\Controllers\Webpage\EventController;
 
 use App\Http\Controllers\Webpage\SwitchController;
 
-
+//About Controllers
 use App\Http\Controllers\Webpage\CampusHistoryController;
 use App\Http\Controllers\Webpage\MVGController;
 use App\Http\Controllers\Webpage\UniversitySealsController;
 use App\Http\Controllers\Webpage\UniversityOfficialsController;
 use App\Http\Controllers\Webpage\CampusOfficialsController;
 use App\Http\Controllers\Webpage\ContactInfoController;
+
+//Administration Controllers
+use App\Http\Controllers\Webpage\OfficeRegistrarController;
 
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +43,10 @@ Route::get('about_uni_seal', [AboutController::class, 'uni_seals'])->name('pages
 Route::get('about_uni_officials', [AboutController::class, 'uni_officials'])->name('pages.uni_officials');
 Route::get('about_campus_officials', [AboutController::class, 'campus_officials'])->name('pages.campus_officials');
 Route::get('about_contact_info', [AboutController::class, 'contact_infos'])->name('pages.contact_info');
+
+//Administration
+Route::get('admin_office_registrar', [AdministrationController::class, 'office_registrars'])->name('pages.office_registrar');
+
 
 
 // Route::post('/switches', 'HomeController@update')->name('switches.update');
@@ -88,6 +97,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('uni_officials', UniversityOfficialsController::class);
     Route::resource('campus_officials',CampusOfficialsController::class);
     Route::resource('contact_infos',ContactInfoController::class);
+
+    //Administration
+    Route::resource('office_registrars',OfficeRegistrarController::class);
 
 });
 

@@ -20,7 +20,14 @@
             <br>
             <h2>Admission Section</h2>
 
-            <a href="{{ route('admissions.create') }}" class="btn btn-success">Add</a>
+            <div class="d-flex align-center">
+                <a href="{{ route('admissions.create') }}" class="btn btn-success">Add</a>
+
+                    <a href="" class="btn btn-primary" id="switch">Show/Hide</a>
+
+
+
+            </div>
 
 
 
@@ -76,7 +83,28 @@
         </tbody>
     </table>
 
+<script>
+    var switchController = $('#switch').val();
+    if (switchController === 'show') {
+    $('#admissions').show();
+    } else {
+    $('#admissions').hide();
+    }
+</script>
+<script>
+    $.ajax({
+    type: "POST",
+    url: "/AdmissionController/sectionSwitch",
+    data: { switchController: switchController },
+    success: function(data){
+        // Handle success response from the controller
+    },
+    error: function(xhr, textStatus, errorThrown){
+        // Handle error response from the controller
+    }
+    });
 
+</script>
 @endsection
 
 

@@ -35,7 +35,9 @@
         {{-- Main CSS File --}}
         <link rel="stylesheet" href="{{ asset('css/mainshow.css') }}">
 
-        {{-- @livewireStyles --}}
+
+        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        @livewireStyles --}}
     </head>
     <body class="antialiased">
         @include('incshow.header')
@@ -313,36 +315,38 @@
             </section>
             <!-- End Program  Section -->
 
-            {{-- @if(session('show_section', false)) --}}
+
             <!-- ======= Admission Section ======= -->
-            <section id="admissions" class="admissions">
-                <div class="container" data-aos="zoom-in">
+            {{-- <div id="admis" @if ($show) style="display: block;" @else style="display: none;" @endif> --}}
+                <section id="admissions" class="admissions" @if ($show) style="display: block;" @else style="display: none;" @endif>
+                    <div class="container" data-aos="zoom-in">
 
-                    <div class="section-title">
-                        <h3><span>Admissions</span> On Going</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
-                    </div>
+                        <div class="section-title">
+                            <h3><span>Admissions</span> On Going</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
+                        </div>
 
-                    <div class="row">
-                        @foreach($admissions as $admission)
-                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                                <div class="icon-box">
-                                    <div class="icon">
-                                        <i class='bx bxs-edit'></i>
-                                    </div>
-                                    <h4>{{ $admission->title }}</h4>
-                                    <p>{!! $admission->descrip !!}</p>
-                                    <div class="btn-wrap">
-                                        <a href="#" class="btn-apply">Apply Now <i class="bi bi-arrow-right-circle"></i></a>
+                        <div class="row">
+                            @foreach($admissions as $admission)
+                                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                    <div class="icon-box">
+                                        <div class="icon">
+                                            <i class='bx bxs-edit'></i>
+                                        </div>
+                                        <h4>{{ $admission->title }}</h4>
+                                        <p>{!! $admission->descrip !!}</p>
+                                        <div class="btn-wrap">
+                                            <a href="#" class="btn-apply">Apply Now <i class="bi bi-arrow-right-circle"></i></a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+
+                        </div>
 
                     </div>
-
-                </div>
-            </section>
+                </section>
+            {{-- </div> --}}
             <!-- End Admission Section -->
             {{-- @endif --}}
 
