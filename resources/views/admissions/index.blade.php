@@ -23,9 +23,7 @@
             <div class="d-flex align-center">
                 <a href="{{ route('admissions.create') }}" class="btn btn-success">Add</a>
 
-                    <a href="" class="btn btn-primary" id="switch">Show/Hide</a>
-
-
+                    {{-- <a href="" class="btn btn-primary" id="switch">Show/Hide</a> --}}
 
             </div>
 

@@ -7,7 +7,7 @@
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
         <li class="breadcrumb-item">Dashboard</li>
         <li class="breadcrumb-item"><a href="{{ route('admissions.index') }}">Admission Section</a></li>
-        <li class="breadcrumb-item active">Add Image</li>
+        <li class="breadcrumb-item active">Add</li>
     </ol>
     </nav>
 </div><!-- End Page Title -->
@@ -53,7 +53,7 @@
                     <x-input-error class="mt-2" :messages="$errors->get('descrip')" />
                 </div> --}}
                 <br>
-                <div class="mb-6">
+                {{-- <div class="mb-6">
                     <label class="block">
                         <span class="">Status</span>
                         <input type="checkbox" name="status" {{ $admission->status==1?'checked':'' }}/>
@@ -63,7 +63,7 @@
                         {{ $message }}
                     </div>
                     @enderror
-                </div>
+                </div> --}}
                 {{-- <div>
                     <label for="bg_pic" class="form-label">Background Image</label>
                     <br>
@@ -88,7 +88,7 @@
 </section>
 
 
-<script>
+{{-- <script>
     // create onchange event listener for bg_pic input
     document.getElementById('bg_pic').onchange = function(evt) {
         const [file] = this.files
@@ -97,5 +97,5 @@
             document.getElementById('bg_pic_preview').src = URL.createObjectURL(file)
         }
     }
-</script>
+</script> --}}
 @endsection

@@ -10,6 +10,5 @@ class Admission extends Model
     protected $fillable = [
         'title',
         'descrip',
-        'status'
     ];
 }
