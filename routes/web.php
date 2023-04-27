@@ -67,7 +67,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('discover_tanza_infos',DiscoverTanzaInfosController::class);
     Route::resource('counts',CountsController::class);
     Route::resource('programs',ProgramsController::class);
-    Route::resource('admissions',AdmissionController::class);
+    // Route::resource('admissions',AdmissionController::class);
+    Route::resource('admissions', AdmissionController::class);
     Route::resource('news',NewsController::class);
     Route::resource('announcements',AnnouncementController::class);
     Route::resource('events',EventController::class);

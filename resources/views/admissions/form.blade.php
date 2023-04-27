@@ -53,6 +53,17 @@
                     <x-input-error class="mt-2" :messages="$errors->get('descrip')" />
                 </div> --}}
                 <br>
+                <div class="mb-6">
+                    <label class="block">
+                        <span class="">Status</span>
+                        <input type="checkbox" name="status" {{ $admission->status==1?'checked':'' }}/>
+                    </label>
+                    @error('status')
+                    <div class="flex items-center text-sm text-red-600">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
                 {{-- <div>
                     <label for="bg_pic" class="form-label">Background Image</label>
                     <br>

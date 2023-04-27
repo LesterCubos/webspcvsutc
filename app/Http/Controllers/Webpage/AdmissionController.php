@@ -19,116 +19,214 @@ class AdmissionController extends Controller
      * Display a listing of the resource.
      */
 
-     public function toggleSection(Request $request)
-    {
-        $showSection = ! $request->session()->get('show_section', false);
-        $request->session()->put('show_section', $showSection);
+    //  public function toggleSection(Request $request)
+    // {
+    //     $showSection = ! $request->session()->get('show_section', false);
+    //     $request->session()->put('show_section', $showSection);
 
-        return redirect()->back();
-    }
+    //     return redirect()->back();
+    // }
 
-    public function index(): Response
+    // public function index(): Response
+    // {
+    //     return response()->view('admissions.index', [
+    //         'admissions' => Admission::orderBy('updated_at', 'desc')->get(),
+    //     ]);
+    // }
+
+    // /**
+    //  * Show the form for creating a new resource.
+    //  */
+    // public function create(): Response
+    // {
+    //     return response()->view('admissions.form');
+    // }
+
+    // /**
+    //  * Store a newly created resource in storage.
+    //  */
+    // public function store(StoreRequest $request): RedirectResponse
+    // {
+    //     $validated = $request->validated();
+
+    //     // if ($request->hasFile('bg_pic')) {
+    //     //      // put image in the public storage
+    //     //     $filePath = Storage::disk('public')->put('admi_pic/admissions/bg_pics', request()->file('bg_pic'));
+    //     //     $validated['bg_pic'] = $filePath;
+    //     // }
+
+    //     // insert only requests that already validated in the StoreRequest
+    //     $create = Admission::create($validated);
+
+    //     if($create) {
+    //         // add flash for the success notification
+    //         session()->flash('notif.success', 'Admission created successfully!');
+    //         return redirect()->route('admissions.index');
+    //     }
+
+    //     return abort(500);
+    // }
+
+    // /**
+    //  * Display the specified resource.
+    //  */
+    // public function show(string $id): Response
+    // {
+    //     return response()->view('admissions.show', [
+    //         'admission' => Admission::findOrFail($id),
+    //     ]);
+    // }
+
+    // /**
+    //  * Show the form for editing the specified resource.
+    //  */
+    // public function edit(string $id): Response
+    // {
+    //     return response()->view('admissions.form', [
+    //         'admission' => Admission::findOrFail($id),
+    //     ]);
+    // }
+
+    // /**
+    //  * Update the specified resource in storage.
+    //  */
+    // public function update(UpdateRequest $request, string $id): RedirectResponse
+    // {
+    //     $admissions = Admission::findOrFail($id);
+    //     $validated = $request->validated();
+
+    //     // if ($request->hasFile('bg_pic')) {
+    //     //     // delete image
+    //     //     Storage::disk('public')->delete($admissions->bg_pic);
+
+    //     //     $filePath = Storage::disk('public')->put('admi_pic/admissions/bg_pics', request()->file('bg_pic'), 'public');
+    //     //     $validated['bg_pic'] = $filePath;
+    //     // }
+
+    //     $update = $admissions->update($validated);
+
+    //     if($update) {
+    //         session()->flash('notif.success', 'Admission updated successfully!');
+    //         return redirect()->route('admissions.index');
+    //     }
+
+    //     return abort(500);
+    // }
+
+    // /**
+    //  * Remove the specified resource from storage.
+    //  */
+    // public function destroy(string $id): RedirectResponse
+    // {
+    //     $admission = Admission::findOrFail($id);
+
+    //     // Storage::disk('public')->delete($admission->bg_pic);
+
+    //     $delete = $admission->delete($id);
+
+    //     if($delete) {
+    //         session()->flash('notif.success', 'Admission deleted successfully!');
+    //         return redirect()->route('admissions.index');
+    //     }
+
+    //     return abort(500);
+    // }
+
+    public function index()
     {
-        return response()->view('admissions.index', [
-            'admissions' => Admission::orderBy('updated_at', 'desc')->get(),
-        ]);
+        $admissions = Admission::all();
+
+        return view('admissions.index', compact('admissions'));
     }
 
     /**
      * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function create(): Response
+    public function create()
     {
-        return response()->view('admissions.form');
+        return view('admissions.form');
     }
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function store(StoreRequest $request): RedirectResponse
+    public function store(Request $request)
     {
-        $validated = $request->validated();
+        $this->validate($request, [
+            'title' => 'required|string|min:3|max:250',
+            'descrip' => 'required|string|min:3|max:6000'
+        ]);
 
-        // if ($request->hasFile('bg_pic')) {
-        //      // put image in the public storage
-        //     $filePath = Storage::disk('public')->put('admi_pic/admissions/bg_pics', request()->file('bg_pic'));
-        //     $validated['bg_pic'] = $filePath;
-        // }
+        $admission = Admission::create([
+            'title' => $request->title,
+            'descrip' => $request->descrip,
+            'status' => $request->status == 'on' ? 1 : 0
+        ]);
 
-        // insert only requests that already validated in the StoreRequest
-        $create = Admission::create($validated);
 
-        if($create) {
-            // add flash for the success notification
-            session()->flash('notif.success', 'Admission created successfully!');
-            return redirect()->route('admissions.index');
-        }
-
-        return abort(500);
+        return redirect()->route('admissions.index');
     }
 
     /**
      * Display the specified resource.
+     *
+     * @param  \App\Models\Admission  $admission
+     * @return \Illuminate\Http\Response
      */
-    public function show(string $id): Response
+    public function show(Admission $admission)
     {
-        return response()->view('admissions.show', [
-            'admission' => Admission::findOrFail($id),
-        ]);
+        return view('admissions.show', compact('admission'));
     }
 
     /**
      * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Admission  $admission
+     * @return \Illuminate\Http\Response
      */
-    public function edit(string $id): Response
+    public function edit(Admission $admission)
     {
-        return response()->view('admissions.form', [
-            'admission' => Admission::findOrFail($id),
-        ]);
+        return view('admissions.form', compact('admission'));
     }
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Admission  $admission
+     * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request, string $id): RedirectResponse
+    public function update(Request $request, Admission $admission)
     {
-        $admissions = Admission::findOrFail($id);
-        $validated = $request->validated();
+        $request->validate([
+            'title' => 'required|string|min:3|max:250',
+            'descrip' => 'required|string|min:3|max:6000'
+        ]);
 
-        // if ($request->hasFile('bg_pic')) {
-        //     // delete image
-        //     Storage::disk('public')->delete($admissions->bg_pic);
+        $admission->update([
+            'title' => $request->title,
+            'descrip' => $request->descrip,
+            'status' => $request->status == 'on' ? 1 : 0
+        ]);
 
-        //     $filePath = Storage::disk('public')->put('admi_pic/admissions/bg_pics', request()->file('bg_pic'), 'public');
-        //     $validated['bg_pic'] = $filePath;
-        // }
-
-        $update = $admissions->update($validated);
-
-        if($update) {
-            session()->flash('notif.success', 'Admission updated successfully!');
-            return redirect()->route('admissions.index');
-        }
-
-        return abort(500);
+        return redirect()->route('admissions.index');
     }
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Admission  $admission
+     * @return \Illuminate\Http\Response
      */
-    public function destroy(string $id): RedirectResponse
+    public function destroy(Admission $admission)
     {
-        $admission = Admission::findOrFail($id);
+        $admission->delete();
 
-        // Storage::disk('public')->delete($admission->bg_pic);
-
-        $delete = $admission->delete($id);
-
-        if($delete) {
-            session()->flash('notif.success', 'Admission deleted successfully!');
-            return redirect()->route('admissions.index');
-        }
-
-        return abort(500);
+        return redirect()->route('admissions.index');
     }
 }
