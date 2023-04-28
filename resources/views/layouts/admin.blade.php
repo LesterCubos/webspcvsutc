@@ -31,8 +31,6 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/adminstyle.css') }}" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
 

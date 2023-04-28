@@ -20,7 +20,7 @@ class StoreRequest extends FormRequest
         // make all of the fields required, set featured image to accept only images
         return [
             'title' => 'required|string|min:3|max:250',
-            'descrip' => 'required|string|min:3|max:6000',
+            'descrip' => 'required',
         ];
     }
 }
