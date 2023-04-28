@@ -32,10 +32,8 @@
                     @foreach ($admissions as $admission)
                     <input type="checkbox" name="status" />
 
-                    <input type="checkbox" name="status" value="{{ $admission->status==1?'checked':'' }}"/>
-                    @endforeach
-                    <button type="submit" class="btn btn-primary btn-rounded">Save</button>
-                </form>
+                    {{-- <a href="" class="btn btn-primary" id="switch">Show/Hide</a> --}}
+
             </div>
         </div>
     </div>

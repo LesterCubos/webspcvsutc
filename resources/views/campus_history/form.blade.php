@@ -39,7 +39,7 @@
 
                 <div>
                     <label for="body" class="form-label">Body</label>
-                    <textarea style="height: 500px" id="body" name="body" class="form-control tinymce-editor" required autofocus>{{ $campushistory->body ?? old('body') }}</textarea>
+                    <textarea style="height: 500px" id="body" name="body" class="form-control tinymce-editor">{{ $campushistory->body ?? old('body') }}</textarea>
                 </div>
 
                 {{-- <textarea name="desc" class="tinymce-editor" cols="30" rows="10"></textarea> --}}

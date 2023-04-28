@@ -317,9 +317,9 @@
 
 
             <!-- ======= Admission Section ======= -->
-            {{-- <div id="admis" @if ($show) style="display: block;" @else style="display: none;" @endif> --}}
-                {{-- id="element-to-showhide" class="form-group" @if($status) style="display:none" @endif --}}
-                <section id="admissions" class="admissions" >
+            {{-- <div id="admis" @if ($show) style="display: block;" @else style="display: none;" @endif>
+                @if ($show) style="display: block;" @else style="display: none;" @endif--}}
+                <section id="admissions" class="admissions">
                     <div class="container" data-aos="zoom-in">
 
                         <div class="section-title">

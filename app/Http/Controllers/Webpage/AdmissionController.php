@@ -21,16 +21,6 @@ class AdmissionController extends Controller
 
 
 
-    public function show(string $id): Response
-    {
-        return response()->view('admissions.show', [
-            'admission' => Admission::findOrFail($id),
-        ]);
-    }
-
-
-
-
     public function index(): Response
     {
         return response()->view('admissions.index', [
@@ -74,7 +64,12 @@ class AdmissionController extends Controller
     /**
      * Display the specified resource.
      */
-
+    public function show(string $id): Response
+    {
+        return response()->view('admissions.show', [
+            'admission' => Admission::findOrFail($id),
+        ]);
+    }
 
     /**
      * Show the form for editing the specified resource.
