@@ -20,17 +20,23 @@
             <br>
             <h2>Admission Section</h2>
 
-            <div class="d-flex align-center">
+
                 <a href="{{ route('admissions.create') }}" class="btn btn-success">Add</a>
+            <br>
+            <br>
+            <div>
+                <form action="post" action="{{ isset($admission) ? route('admissions.update', $admission->id) : route('admissions.store') }}">
+                    <label for="title" class="form-label"><strong>Status</strong></label>
+                    {{-- etong nasa baba for create tab tas yung may checked for edi/update --}}
+                    {{-- <input type="checkbox" name="status" /> --}}
+                    @foreach ($admissions as $admission)
+                    <input type="checkbox" name="status" />
 
-                    <a href="" class="btn btn-primary" id="switch">Show/Hide</a>
-
-
-
+                    <input type="checkbox" name="status" value="{{ $admission->status==1?'checked':'' }}"/>
+                    @endforeach
+                    <button type="submit" class="btn btn-primary btn-rounded">Save</button>
+                </form>
             </div>
-
-
-
         </div>
     </div>
 
@@ -48,6 +54,7 @@
             <th scope="col">#</th>
             <th scope="col">Title</th>
             {{-- <th scope="col">Image</th> --}}
+            <th scope="col">Status</th>
             <th scope="col">Description</th>
             <th scope="col">Created At</th>
             <th scope="col">Updated At</th>
@@ -62,6 +69,7 @@
                 <th scope="row">{{ $admission->id }}</th>
                 <td>{{ $admission->title }}</td>
                 {{-- <td><img style="width:250px" src="{{ Storage::url($admission->bg_pic) }}" alt="{{ $admission->title }}" srcset=""></td> --}}
+                <td>{{ $admission->status == 1 ? 'Active' : 'inActive' }}</td>
                 <td>{!! $admission->descrip !!}</td>
                 <td>{{ $admission->created_at }}</td>
                 <td>{{ $admission->updated_at }}</td>
@@ -83,15 +91,15 @@
         </tbody>
     </table>
 
-<script>
+{{-- <script>
     var switchController = $('#switch').val();
     if (switchController === 'show') {
     $('#admissions').show();
     } else {
     $('#admissions').hide();
     }
-</script>
-<script>
+</script> --}}
+{{-- <script>
     $.ajax({
     type: "POST",
     url: "/AdmissionController/sectionSwitch",
@@ -104,7 +112,7 @@
     }
     });
 
-</script>
+</script> --}}
 @endsection
 
 

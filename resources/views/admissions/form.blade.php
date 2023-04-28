@@ -43,7 +43,7 @@
 
                 <div>
                     <label for="descrip" class="form-label">Description</label>
-                    <textarea id="descrip" name="descrip" class="form-control tinymce-editor" required autofocus>{{ $admission->descrip ?? old('descrip') }}</textarea>
+                    <textarea id="descrip" name="descrip" class="form-control tinymce-editor">{{ $admission->descrip ?? old('descrip') }}</textarea>
                 </div>
 
                 {{-- <div>

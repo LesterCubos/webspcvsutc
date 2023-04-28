@@ -35,7 +35,7 @@
         {{-- Main CSS File --}}
         <link rel="stylesheet" href="{{ asset('css/mainshow.css') }}">
 
-
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         @livewireStyles --}}
     </head>
@@ -318,7 +318,8 @@
 
             <!-- ======= Admission Section ======= -->
             {{-- <div id="admis" @if ($show) style="display: block;" @else style="display: none;" @endif> --}}
-                <section id="admissions" class="admissions" @if ($show) style="display: block;" @else style="display: none;" @endif>
+                {{-- id="element-to-showhide" class="form-group" @if($status) style="display:none" @endif --}}
+                <section id="admissions" class="admissions" >
                     <div class="container" data-aos="zoom-in">
 
                         <div class="section-title">

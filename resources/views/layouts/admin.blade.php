@@ -31,7 +31,7 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/adminstyle.css') }}" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> --}}
 
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
@@ -65,7 +65,6 @@
     <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
 
 
-    {{-- <script src="{{ asset('js/summernote-bs4.js')}}"></script> --}}
 
     <!-- Template Main JS File -->
     <script src="{{ asset('js/adminmain.js') }}"></script>

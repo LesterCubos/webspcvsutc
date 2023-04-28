@@ -19,13 +19,7 @@ class AdmissionController extends Controller
      * Display a listing of the resource.
      */
 
-    //  public function toggleSection(Request $request)
-    // {
-    //     $showSection = ! $request->session()->get('show_section', false);
-    //     $request->session()->put('show_section', $showSection);
 
-    //     return redirect()->back();
-    // }
 
     public function show(string $id): Response
     {
