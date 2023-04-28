@@ -4,41 +4,29 @@
 
 @extends('layouts.admin')
 @section('content')
-    <div class="pagetitle">
-        {{-- <h1>Dashboard</h1> --}}
-        <nav>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
-            <li class="breadcrumb-item">Dashboard</li>
-            <li class="breadcrumb-item active">Admission Section</li>
-        </ol>
-        </nav>
-    </div><!-- End Page Title -->
+<div class="pagetitle">
+    {{-- <h1>Dashboard</h1> --}}
+    <nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
+        <li class="breadcrumb-item">Dashboard</li>
+        <li class="breadcrumb-item active">Admission Section</li>
+    </ol>
+    </nav>
+</div><!-- End Page Title -->
+<div class="card flex justify-between">
+    <div class="card-body">
+        <br>
+        <h2>Admission Section</h2>
 
-    <div class="card flex justify-between">
-        <div class="card-body">
-            <br>
-            <h2>Admission Section</h2>
 
+            <a href="{{ route('admissions.create') }}" class="btn btn-success">Add</a>
+        <br>
+        <br>
 
-                <a href="{{ route('admissions.create') }}" class="btn btn-success">Add</a>
-            <br>
-            <br>
-            <div>
-                <form action="post" action="{{ isset($admission) ? route('admissions.update', $admission->id) : route('admissions.store') }}">
-                    <label for="title" class="form-label"><strong>Status</strong></label>
-                    {{-- etong nasa baba for create tab tas yung may checked for edi/update --}}
-                    {{-- <input type="checkbox" name="status" /> --}}
-                    @foreach ($admissions as $admission)
-                    <input type="checkbox" name="status" />
-
-                    {{-- <a href="" class="btn btn-primary" id="switch">Show/Hide</a> --}}
-
-            </div>
-        </div>
     </div>
-
-    @if(session('notif.success'))
+</div>
+@if(session('notif.success'))
         <div class="alert alert-success">
             {{ session('notif.success') }}
         </div>
@@ -52,7 +40,6 @@
             <th scope="col">#</th>
             <th scope="col">Title</th>
             {{-- <th scope="col">Image</th> --}}
-            <th scope="col">Status</th>
             <th scope="col">Description</th>
             <th scope="col">Created At</th>
             <th scope="col">Updated At</th>
@@ -67,7 +54,7 @@
                 <th scope="row">{{ $admission->id }}</th>
                 <td>{{ $admission->title }}</td>
                 {{-- <td><img style="width:250px" src="{{ Storage::url($admission->bg_pic) }}" alt="{{ $admission->title }}" srcset=""></td> --}}
-                <td>{{ $admission->status == 1 ? 'Active' : 'inActive' }}</td>
+
                 <td>{!! $admission->descrip !!}</td>
                 <td>{{ $admission->created_at }}</td>
                 <td>{{ $admission->updated_at }}</td>
@@ -89,28 +76,4 @@
         </tbody>
     </table>
 
-{{-- <script>
-    var switchController = $('#switch').val();
-    if (switchController === 'show') {
-    $('#admissions').show();
-    } else {
-    $('#admissions').hide();
-    }
-</script> --}}
-{{-- <script>
-    $.ajax({
-    type: "POST",
-    url: "/AdmissionController/sectionSwitch",
-    data: { switchController: switchController },
-    success: function(data){
-        // Handle success response from the controller
-    },
-    error: function(xhr, textStatus, errorThrown){
-        // Handle error response from the controller
-    }
-    });
-
-</script> --}}
 @endsection
-
-
