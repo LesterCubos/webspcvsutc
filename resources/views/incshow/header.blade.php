@@ -58,7 +58,7 @@
           <li class="dropdown"><a href="#">Admission</a>
             <ul>
               <li><a href="/admissionrequirements">Admission Requirements and Procedure</a></li>
-              <li><a href="/ProgramsOffered">Program Offerings</a></li>
+              <li><a href="admission_programs_offered">Program Offerings</a></li>
               <li><a href="/AdmissionResult">Admission Result</a></li>
             </ul>
           </li>

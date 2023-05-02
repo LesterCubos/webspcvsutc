@@ -21,7 +21,7 @@ class UpdateRequest extends FormRequest
         return [
             'title' => 'nullable|string|min:3|max:250',
             'descrip' => 'nullable|string|min:3|max:6000',
-            'status' => 'nullable|boolean:0,1,true,false',
+            // 'status' => 'nullable|boolean:0,1,true,false',
         ];
     }
 }

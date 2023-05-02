@@ -118,7 +118,7 @@
             </a>
           </li>
           <li>
-            <a href="/viewstudentreg.php">
+            <a href="{{ route('programs_offers.index') }}">
               <i class="bi bi-circle"></i><span>Program Offerings</span>
             </a>
           </li>
@@ -136,7 +136,7 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="viewcalendar.php">
+            <a href="{{ route('office_registrars.index') }}">
               <i class="bi bi-circle"></i><span>Office of the Campus Registrar</span>
             </a>
           </li>

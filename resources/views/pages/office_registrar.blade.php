@@ -66,7 +66,7 @@
                 magna aliqua.
               </p>
               <br>
-              <img src="assets/img/kazuha.jpg" alt="" class="img-fluid">
+              <img src="assets/img/kazuha.jpg" alt="kazuha" class="img-fluid">
             </div>
           </div>
         </div><!-- End tab content item -->

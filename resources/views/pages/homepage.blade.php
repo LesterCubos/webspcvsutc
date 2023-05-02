@@ -630,9 +630,46 @@
 
 
         @include('incshow.scroll-top')
-        {{-- <div id="preloader">
-            <div class="line"></div>
-        </div> --}}
+        <!-- Preloader -->
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+          <div class="animation-preloader">
+            <!-- <div class="spinner"></div> -->
+            <div class="ring">Loading
+              <span class="mema"></span>
+            </div>
+            <div class="txt-loading">
+              <span data-text-preloader="C" class="letters-loading">
+                C
+              </span>
+
+              <span data-text-preloader="v" class="letters-loading">
+                v
+              </span>
+
+              <span data-text-preloader="S" class="letters-loading">
+                S
+              </span>
+
+              <span data-text-preloader="U" class="letters-loading">
+                U
+              </span>
+
+              <span data-text-preloader="-" class="letters-loading">
+                -
+              </span>
+
+              <span data-text-preloader="T" class="letters-loading">
+                T
+              </span>
+
+              <span data-text-preloader="C" class="letters-loading">
+                C
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
         @include('incshow.script')
     </body>
 </html>
