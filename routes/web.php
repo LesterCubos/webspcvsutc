@@ -40,7 +40,8 @@ use App\Http\Controllers\Webpage\OsasController;
 use App\Http\Controllers\Webpage\HumanResourceController;
 use App\Http\Controllers\Webpage\MISController;
 use App\Http\Controllers\Webpage\QAACController;
-
+use App\Http\Controllers\Webpage\ResearchController;
+use App\Http\Controllers\Webpage\LibraryController;
 
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Route;
@@ -68,6 +69,8 @@ Route::get('admin_osas', [AdministrationController::class, 'osass'])->name('page
 Route::get('admin_hr', [AdministrationController::class, 'hrs'])->name('pages.hr');
 Route::get('admin_mis', [AdministrationController::class, 'mis'])->name('pages.mis');
 Route::get('admin_qaac', [AdministrationController::class, 'qaacs'])->name('pages.qaac');
+Route::get('admin_research', [AdministrationController::class, 'researchs'])->name('pages.research');
+Route::get('admin_lib', [AdministrationController::class, 'libs'])->name('pages.library');
 
 
 // Route::post('/switches', 'HomeController@update')->name('switches.update');
@@ -129,6 +132,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('hrs', HumanResourceController::class);
     Route::resource('mis', MISController::class);
     Route::resource('qaacs', QAACController::class);
+    Route::resource('researchs', ResearchController::class);
+    Route::resource('libs', LibraryController::class);
+
 });
 
 require __DIR__.'/auth.php';
