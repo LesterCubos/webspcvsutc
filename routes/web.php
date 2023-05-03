@@ -31,8 +31,12 @@ use App\Http\Controllers\Webpage\ContactInfoController;
 //Admission
 use App\Http\Controllers\Webpage\ProgramsOfferedController;
 
+
 //Administration Controllers
 use App\Http\Controllers\Webpage\OfficeRegistrarController;
+use App\Http\Controllers\Webpage\ClinicController;
+use App\Http\Controllers\Webpage\CashierController;
+use App\Http\Controllers\Webpage\OsasController;
 
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Route;
@@ -54,7 +58,9 @@ Route::get('admission_programs_offered', [AdmissionPageController::class, 'progr
 
 //Administration
 Route::get('admin_office_registrar', [AdministrationController::class, 'office_registrars'])->name('pages.office_registrar');
-
+Route::get('admin_clinic',[AdministrationController::class, 'clinics'])->name('pages.clinic');
+Route::get('admin_cashier', [AdministrationController::class, 'cashiers'])->name('pages.cashier');
+Route::get('admin_osas', [AdministrationController::class, 'osass'])->name('pages.osas');
 
 
 // Route::post('/switches', 'HomeController@update')->name('switches.update');
@@ -110,6 +116,9 @@ Route::middleware('auth')->group(function () {
 
     //Administration
     Route::resource('office_registrars',OfficeRegistrarController::class);
+    Route::resource('clinics', ClinicController::class);
+    Route::resource('cashiers', CashierController::class);
+    Route::resource('osass', OsasController::class);
 
 });
 

@@ -13,4 +13,6 @@ class AdmissionPageController extends Controller
         $programs_offers = ProgramsOffered::all();
         return view('pages.programs_offered', compact('programs_offers'));
     }
+
+
 }

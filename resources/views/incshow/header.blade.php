@@ -65,9 +65,9 @@
           <li class="dropdown"><a href="#">Administration</a>
             <ul>
               <li><a href="admin_office_registrar">Office of the Campus Registrar</a></li>
-              <li><a href="/Clinic">Clinic</a></li>
-              <li><a href="/Cashier">Cashier</a></li>
-              <li><a href="/Osas">Office of the Student Affairs Services</a></li>
+              <li><a href="admin_clinic">Clinic</a></li>
+              <li><a href="admin_cashier">Cashier</a></li>
+              <li><a href="admin_osas">Office of the Student Affairs Services</a></li>
               <li><a href="/DeptInfoTech">Department of Information Technlogy</a></li>
               <li><a href="#">Teacher Education Department</a></li>
               <li><a href="#">Department of Arts and Sciences</a></li>

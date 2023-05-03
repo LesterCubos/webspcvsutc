@@ -3,16 +3,35 @@
 namespace App\Http\Controllers\Webpage;
 
 use App\Http\Controllers\Controller;
+use App\Models\OfficeRegistrar;
+use App\Models\Clinic;
+use App\Models\Cashier;
+use App\Models\Osas;
 use Illuminate\Http\Request;
 
-use App\Models\OfficeRegistrar;
+
 
 class AdministrationController extends Controller
 {
     public function office_registrars(){
         // $mvgs = MVG::all();
         // return view('pages.mvg',compact('mvgs'));
-        //$office_registrars = OfficeRegistrar::all();
-        return view('pages.office_registrar');
+        $office_registrars = OfficeRegistrar::all();
+        return view('pages.office_registrar', compact('office_registrars'));
+    }
+
+    public function clinics(){
+        $clinics = Clinic::all();
+        return view('pages.clinic', compact('clinics'));
+    }
+
+    public function cashiers(){
+        $cashiers = Cashier::all();
+        return view('pages.cashier', compact('cashiers'));
+    }
+
+    public function osass(){
+        $osass = Osas::all();
+        return view('pages.osas', compact('osass'));
     }
 }

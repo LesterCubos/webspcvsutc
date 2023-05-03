@@ -141,17 +141,17 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{ route('clinics.index') }}">
               <i class="bi bi-circle"></i><span>Clinic</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{ route('cashiers.index') }}">
               <i class="bi bi-circle"></i><span>Cashier</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{ route('osass.index') }}">
               <i class="bi bi-circle"></i><span>Office of the Student Affairs Services</span>
             </a>
           </li>
