@@ -7,6 +7,9 @@ use App\Models\OfficeRegistrar;
 use App\Models\Clinic;
 use App\Models\Cashier;
 use App\Models\Osas;
+use App\Models\HumanResource;
+use App\Models\MIS;
+
 use Illuminate\Http\Request;
 
 
@@ -33,5 +36,15 @@ class AdministrationController extends Controller
     public function osass(){
         $osass = Osas::all();
         return view('pages.osas', compact('osass'));
+    }
+
+    public function hrs(){
+        $hrs = HumanResource::all();
+        return view('pages.hr', compact('hrs'));
+    }
+
+    public function mis(){
+        $mis = MIS::all();
+        return view('pages.mis', compact('mis'));
     }
 }

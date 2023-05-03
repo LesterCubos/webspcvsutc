@@ -13,8 +13,8 @@
       <div class="container">
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
-          <li>About</li>
-          <li></li>
+          <li>Administration</li>
+          <li>QAAC</li>
         </ol>
       </div>
     </nav>

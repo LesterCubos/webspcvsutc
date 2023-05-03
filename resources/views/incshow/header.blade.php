@@ -72,11 +72,11 @@
               <li><a href="#">Teacher Education Department</a></li>
               <li><a href="#">Department of Arts and Sciences</a></li>
               <li><a href="#">Department of Management</a></li>
-              <li><a href="/Hr">Human Resource Management</a></li>
-              <li><a href="/Mis">Management Information S</a></li>
-              <li><a href="/Qaac">QAAC</a></li>
-              <li><a href="/ResearchE">Research Extension</a></li>
-              <li><a href="/Library">Library</a></li>
+              <li><a href="admin_hr">Human Resource Management</a></li>
+              <li><a href="admin_mis">Management Information S</a></li>
+              <li><a href="admin_qaac">QAAC</a></li>
+              <li><a href="admin_research">Research Extension</a></li>
+              <li><a href="admin_library">Library</a></li>
             </ul>
           </li>
           {{-- <li class="dropdown"><a href="#">Instruction</a>

@@ -37,6 +37,10 @@ use App\Http\Controllers\Webpage\OfficeRegistrarController;
 use App\Http\Controllers\Webpage\ClinicController;
 use App\Http\Controllers\Webpage\CashierController;
 use App\Http\Controllers\Webpage\OsasController;
+use App\Http\Controllers\Webpage\HumanResourceController;
+use App\Http\Controllers\Webpage\MISController;
+use App\Http\Controllers\Webpage\QAACController;
+
 
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Route;
@@ -61,6 +65,9 @@ Route::get('admin_office_registrar', [AdministrationController::class, 'office_r
 Route::get('admin_clinic',[AdministrationController::class, 'clinics'])->name('pages.clinic');
 Route::get('admin_cashier', [AdministrationController::class, 'cashiers'])->name('pages.cashier');
 Route::get('admin_osas', [AdministrationController::class, 'osass'])->name('pages.osas');
+Route::get('admin_hr', [AdministrationController::class, 'hrs'])->name('pages.hr');
+Route::get('admin_mis', [AdministrationController::class, 'mis'])->name('pages.mis');
+Route::get('admin_qaac', [AdministrationController::class, 'qaacs'])->name('pages.qaac');
 
 
 // Route::post('/switches', 'HomeController@update')->name('switches.update');
@@ -119,7 +126,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('clinics', ClinicController::class);
     Route::resource('cashiers', CashierController::class);
     Route::resource('osass', OsasController::class);
-
+    Route::resource('hrs', HumanResourceController::class);
+    Route::resource('mis', MISController::class);
+    Route::resource('qaacs', QAACController::class);
 });
 
 require __DIR__.'/auth.php';

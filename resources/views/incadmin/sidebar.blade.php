@@ -156,9 +156,11 @@
             </a>
           </li>
 
+
+
           <li>
             <a href="">
-              <i class="bi bi-circle"></i><span>Department of Information Technlogy</span>
+              <i class="bi bi-circle"></i><span>Department of Information Technology</span>
             </a>
           </li>
 
@@ -181,7 +183,19 @@
           </li>
 
           <li>
-            <a href="">
+            <a href="{{ route('hrs.index') }}">
+              <i class="bi bi-circle"></i><span>Human Resource</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('mis.index') }}">
+              <i class="bi bi-circle"></i><span>MIS</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ route('qaacs.index')}}">
               <i class="bi bi-circle"></i><span>QAAC</span>
             </a>
           </li>
