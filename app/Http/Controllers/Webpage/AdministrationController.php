@@ -9,7 +9,7 @@ use App\Models\Cashier;
 use App\Models\Osas;
 use App\Models\HumanResource;
 use App\Models\MIS;
-
+use App\Models\Research;
 use Illuminate\Http\Request;
 
 
@@ -47,4 +47,10 @@ class AdministrationController extends Controller
         $mis = MIS::all();
         return view('pages.mis', compact('mis'));
     }
+
+    public function researchs(){
+        $researchs = Research::all();
+        return view('pages.research', compact('researchs'));
+    }
+
 }

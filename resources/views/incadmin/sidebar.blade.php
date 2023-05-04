@@ -201,7 +201,7 @@
           </li>
 
           <li>
-            <a href="">
+            <a href="{{ route('researchs.index') }}">
               <i class="bi bi-circle"></i><span>Research and Extension</span>
             </a>
           </li>
