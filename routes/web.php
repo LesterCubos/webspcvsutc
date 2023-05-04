@@ -42,6 +42,11 @@ use App\Http\Controllers\Webpage\MISController;
 use App\Http\Controllers\Webpage\QAACController;
 use App\Http\Controllers\Webpage\ResearchController;
 use App\Http\Controllers\Webpage\LibraryController;
+use App\Http\Controllers\Webpage\DITController;
+use App\Http\Controllers\Webpage\TEDController;
+use App\Http\Controllers\Webpage\DASController;
+use App\Http\Controllers\Webpage\DoMController;
+
 
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Route;
@@ -70,7 +75,11 @@ Route::get('admin_hr', [AdministrationController::class, 'hrs'])->name('pages.hr
 Route::get('admin_mis', [AdministrationController::class, 'mis'])->name('pages.mis');
 Route::get('admin_qaac', [AdministrationController::class, 'qaacs'])->name('pages.qaac');
 Route::get('admin_research', [AdministrationController::class, 'researchs'])->name('pages.research');
-Route::get('admin_lib', [AdministrationController::class, 'libs'])->name('pages.library');
+Route::get('admin_library', [AdministrationController::class, 'libs'])->name('pages.library');
+Route::get('admin_dit', [AdministrationController::class, 'dits'])->name('pages.dep_it');
+Route::get('admin_ted', [AdministrationController::class, 'teds'])->name('pages.teacher_dep');
+Route::get('admin_das', [AdministrationController::class, 'dass'])->name('pages.dep_artscience');
+Route::get('admin_dom', [AdministrationController::class, 'doms'])->name('pages.dep_management');
 
 
 // Route::post('/switches', 'HomeController@update')->name('switches.update');
@@ -134,7 +143,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('qaacs', QAACController::class);
     Route::resource('researchs', ResearchController::class);
     Route::resource('libs', LibraryController::class);
-
+    Route::resource('dits', DITController::class);
+    Route::resource('teds', TEDController::class);
+    Route::resource('dass', DASController::class);
+    Route::resource('doms', DoMController::class);
 });
 
 require __DIR__.'/auth.php';

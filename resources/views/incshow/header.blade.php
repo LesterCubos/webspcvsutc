@@ -68,10 +68,10 @@
               <li><a href="admin_clinic">Clinic</a></li>
               <li><a href="admin_cashier">Cashier</a></li>
               <li><a href="admin_osas">Office of the Student Affairs Services</a></li>
-              <li><a href="/DeptInfoTech">Department of Information Technlogy</a></li>
-              <li><a href="#">Teacher Education Department</a></li>
-              <li><a href="#">Department of Arts and Sciences</a></li>
-              <li><a href="#">Department of Management</a></li>
+              <li><a href="admin_dit">Department of Information Technlogy</a></li>
+              <li><a href="admin_ted">Teacher Education Department</a></li>
+              <li><a href="admin_das">Department of Arts and Sciences</a></li>
+              <li><a href="admin_dom">Department of Management</a></li>
               <li><a href="admin_hr">Human Resource Management</a></li>
               <li><a href="admin_mis">Management Information S</a></li>
               <li><a href="admin_qaac">QAAC</a></li>

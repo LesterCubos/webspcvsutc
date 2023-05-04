@@ -159,25 +159,25 @@
 
 
           <li>
-            <a href="">
+            <a href="{{ route('dits.index') }}">
               <i class="bi bi-circle"></i><span>Department of Information Technology</span>
             </a>
           </li>
 
           <li>
-            <a href="">
+            <a href="{{ route('teds.index') }}">
               <i class="bi bi-circle"></i><span>Teacher Education Department</span>
             </a>
           </li>
 
           <li>
-            <a href="">
+            <a href="{{ route('dass.index') }}">
               <i class="bi bi-circle"></i><span>Department of Arts and Sciences</span>
             </a>
           </li>
 
           <li>
-            <a href="">
+            <a href="{{ route('doms.index') }}">
               <i class="bi bi-circle"></i><span>Department of Management</span>
             </a>
           </li>
@@ -206,7 +206,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{route('libs.index')}}">
               <i class="bi bi-circle"></i><span>Library</span>
             </a>
           </li>
