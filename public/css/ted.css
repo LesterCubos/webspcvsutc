@@ -1,0 +1,32 @@
+/* Fonts */
+:root {
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Poppins", sans-serif;
+    --font-secondary: "McLaren", sans-serif;
+  }
+
+  /* Colors */
+  :root {
+    --color-default: #000;
+    --color-primary:  #a04ef6;
+    --color-secondary: #fddb0d;
+  }
+
+  /* Smooth scroll behavior */
+  :root {
+    scroll-behavior: smooth;
+  }
+
+
+.ted .container {
+  box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
+  padding: 30px;
+}
+
+.ted .imfo p {
+  font-size: 20px;
+}
+
+.ted .orgimg img {
+  width: 100%;
+}
