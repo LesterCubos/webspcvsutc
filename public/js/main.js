@@ -16,6 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
    });
  }
 
+ //progress bar
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("bar").style.width = scrolled + "%";
+}
+
+
+
+
   /**
    * Sticky Header on Scroll
    */
@@ -288,4 +302,10 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 
+
+  
+
+
+
 });
+

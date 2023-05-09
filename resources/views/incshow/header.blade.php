@@ -33,7 +33,7 @@
   </section>
   <!-- End Top Bar -->
 
-  <header id="header" class="header d-flex align-items-center">
+  <div id="header" class="header">
 
     <div class="container-fluid d-flex align-items-center justify-content-between">
       <div class="logo-header d-flex align-items-center">
@@ -123,5 +123,10 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
     </div>
-  </header><!-- End Header -->
+
+    <div class="progress-container">
+      <div class="progress-bar" id="bar"></div>
+   </div>
+
+  </div><!-- End Header -->
   <!-- End Header -->
