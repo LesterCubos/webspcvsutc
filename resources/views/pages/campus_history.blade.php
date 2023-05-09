@@ -1,9 +1,5 @@
 @extends('layouts.show')
-<head>
-    <!-- Main CSS File -->
-    <link href="{{ asset('css/history.css') }}" rel="stylesheet">
 
-  </head>
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->
@@ -61,3 +57,4 @@
     </div>
   </section><!-- End History Section -->
 @endsection
+

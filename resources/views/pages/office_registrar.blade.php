@@ -1,8 +1,5 @@
 @extends('layouts.show')
-<head>
-    <!-- Main CSS File -->
-    <link href="{{ asset('css/ocr.css') }}" rel="stylesheet">
-  </head>
+
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->

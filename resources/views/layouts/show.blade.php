@@ -26,6 +26,30 @@
 
         {{-- Main CSS File --}}
         <link rel="stylesheet" href="{{ asset('css/mainshow.css') }}">
+        {{-- About CSS File --}}
+        <link href="{{ asset('css/history.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/mvg.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/uniseal.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/uniofficials.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/campusofficials.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/contact.css') }}" rel="stylesheet">
+        {{-- Admission CSS File --}}
+        <link href="{{ asset('css/admissiomrandp.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/programsoffered.css') }}" rel="stylesheet">
+        {{-- Administration CSS File --}}
+        <link href="{{ asset('css/ocr.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/clinic.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/cashier.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/osas.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/dit.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/ted.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/das.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/dom.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/hr.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/mis.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/qaac.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/researche.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/lib.css') }}" rel="stylesheet">
 </head>
 <body class="antialiased">
 
@@ -36,9 +60,6 @@
         @include('incshow.footer')
     </main>
     @include('incshow.scroll-top')
-        {{-- <div id="preloader">
-            <div class="line"></div>
-        </div> --}}
     @include('incshow.script')
 </body>
 </html>

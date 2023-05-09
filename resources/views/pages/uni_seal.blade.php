@@ -1,9 +1,5 @@
 @extends('layouts.show')
-<head>
-    <!-- Main CSS File -->
-    <link href="{{ asset('css/uniseal.css') }}" rel="stylesheet">
 
-  </head>
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->

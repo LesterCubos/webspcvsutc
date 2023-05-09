@@ -1,9 +1,5 @@
 @extends('layouts.show')
-<head>
-    <!-- Main CSS File -->
-    <link href="{{ asset('css/mvg.css') }}" rel="stylesheet">
 
-  </head>
 @section('content')
 
 <!-- ======= Breadcrumbs ======= -->
@@ -76,3 +72,5 @@
     </div>
   </section><!-- End MVG Section -->
 @endsection
+
+

@@ -1,9 +1,5 @@
 @extends('layouts.show')
-<head>
-    <!-- Main CSS File -->
-    <link href="{{ asset('css/hr.css') }}" rel="stylesheet">
 
-  </head>
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->
