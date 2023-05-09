@@ -26,6 +26,8 @@
 
         {{-- Main CSS File --}}
         <link rel="stylesheet" href="{{ asset('css/mainshow.css') }}">
+        {{-- Breadcrumb CSS File --}}
+        <link href="{{ asset('css/breadcrumbs.css') }}" rel="stylesheet">
         {{-- About CSS File --}}
         <link href="{{ asset('css/history.css') }}" rel="stylesheet">
         <link href="{{ asset('css/mvg.css') }}" rel="stylesheet">
