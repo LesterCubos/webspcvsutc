@@ -91,8 +91,9 @@
             <ul>
               <li class="dropdown"><a href="#">Student Affairs</a>
                 <ul>
-                  <li><a href="#">Central Student Goverment</a></li>
+                  <li><a href="services_csg">Central Student Goverment</a></li>
                   <li><a href="#">Academic Organizations</a></li>
+                  <li><a href="#">Non-Academic Organizations</a></li>
                 </ul>
               </li>
               <li><a href="#">CvSU Events</a></li>

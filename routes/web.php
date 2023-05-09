@@ -6,6 +6,7 @@ use App\Http\Controllers\Webpage\HomeController;
 use App\Http\Controllers\Webpage\AboutController;
 use App\Http\Controllers\Webpage\AdmissionPageController;
 use App\Http\Controllers\Webpage\AdministrationController;
+use App\Http\Controllers\Webpage\ServicesController;
 
 //Homepage Controllers
 use App\Http\Controllers\Webpage\CarouselController;
@@ -47,7 +48,8 @@ use App\Http\Controllers\Webpage\TEDController;
 use App\Http\Controllers\Webpage\DASController;
 use App\Http\Controllers\Webpage\DoMController;
 
-
+//Services
+use App\Http\Controllers\Webpage\CSGController;
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -81,6 +83,8 @@ Route::get('admin_ted', [AdministrationController::class, 'teds'])->name('pages.
 Route::get('admin_das', [AdministrationController::class, 'dass'])->name('pages.dep_artscience');
 Route::get('admin_dom', [AdministrationController::class, 'doms'])->name('pages.dep_management');
 
+//Services
+Route::get('services_csg', [ServicesController::class, 'csgs'])->name('pages.csg');
 
 // Route::post('/switches', 'HomeController@update')->name('switches.update');
 
@@ -147,6 +151,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('teds', TEDController::class);
     Route::resource('dass', DASController::class);
     Route::resource('doms', DoMController::class);
+
+    //Services
+    Route::resource('csgs', CSGController::class);
+
 });
 
 require __DIR__.'/auth.php';

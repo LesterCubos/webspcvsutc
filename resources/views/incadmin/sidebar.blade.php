@@ -253,13 +253,14 @@
 
 
               <li class="">
-                <a href="#">
+                <a href="">
                      <i class="bi bi-circle"></i><span>Student Affairs</span>
                 </a>
 
                 <ul>
-                  <li><a href="#"><i class="bi bi-circle"></i> Student Goverment</a></li>
+                  <li><a href="{{ route('csgs.index') }}"><i class="bi bi-circle"></i>Central Student Goverment</a></li>
                   <li><a href="#"><i class="bi bi-circle"></i>Academic Organizations</a></li>
+                  <li><a href="#"><i class="bi bi-circle"></i>Non-Academic Organizations</a></li>
                 </ul>
               </li>
 
