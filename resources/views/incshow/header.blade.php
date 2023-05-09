@@ -33,7 +33,7 @@
   </section>
   <!-- End Top Bar -->
 
-  <div id="header" class="header">
+  <header id="header" class="header">
 
     <div class="container-fluid d-flex align-items-center justify-content-between">
       <div class="logo-header d-flex align-items-center">
@@ -91,8 +91,9 @@
             <ul>
               <li class="dropdown"><a href="#">Student Affairs</a>
                 <ul>
-                  <li><a href="#">Central Student Goverment</a></li>
+                  <li><a href="services_csg">Central Student Goverment</a></li>
                   <li><a href="#">Academic Organizations</a></li>
+                  <li><a href="#">Non-Academic Organizations</a></li>
                 </ul>
               </li>
               <li><a href="#">CvSU Events</a></li>
@@ -127,5 +128,5 @@
       <div class="progress-bar" id="bar"></div>
    </div>
 
-  </div><!-- End Header -->
+</header><!-- End Header -->
   <!-- End Header -->
