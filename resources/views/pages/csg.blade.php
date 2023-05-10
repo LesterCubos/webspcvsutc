@@ -29,7 +29,8 @@
       </div>
       @foreach ($csgs as $csg)
       <div class="info">
-        <p>{!! $csg->desc !!}
+        <h2>{{ $csg->title }}</h2>
+        <p>{!! $csg->content !!}
         </p>
       </div>
 

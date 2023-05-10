@@ -11,7 +11,8 @@ class CSG extends Model
     protected $fillable = [
         'name',
         'position',
-        'desc',
+        'title',
+        'content',
     ];
 
 }

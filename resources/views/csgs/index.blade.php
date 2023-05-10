@@ -10,7 +10,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
             <li class="breadcrumb-item">Dashboard</li>
-            <li class="breadcrumb-item active">Central Student Governement Page</li>
+            <li class="breadcrumb-item active">Central Student Government Page</li>
         </ol>
         </nav>
     </div><!-- End Page name -->
@@ -21,7 +21,7 @@
             <h2>Central Student Government Page</h2>
             <a href="{{ route('csgs.create') }}" class="btn btn-success">Add CSG Member</a>
             @foreach ( $csgs as $csg )
-            <a href="{{ route('csgs.edit', $csg->id) }}" class="btn btn-success">Edit Description</a>
+            <a href="{{ route('csgs.create', $csg->id) }}" class="btn btn-success">Edit Description</a>
             @endforeach
             {{-- <button href="{{ route('carousel_items.create') }}" type="submit" name="" class="btn btn-success">Add img</button> --}}
         </div>
@@ -39,7 +39,8 @@
 
             <h4>Description</h4>
             @foreach ($csgs as $csg)
-                <p>{!! $csg->desc !!}</p>
+                <h2>{{ $csg->title }}</h2>
+                <p>{!! $csg->content !!}</p>
             @endforeach
         </div>
 
