@@ -24,7 +24,8 @@ class UpdateRequest extends FormRequest
         return [
             'name' => 'nullable|string|min:3|max:250',
             'position' => 'nullable|string|min:3|max:250',
-            'desc' => 'nullable|string|min:3|max:6000',
+            'title' => 'nullable|string|min:3|max:250',
+            'content' => 'nullable|string|min:3|max:6000',
         ];
     }
 }

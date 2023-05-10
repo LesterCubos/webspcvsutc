@@ -23,6 +23,37 @@
 
 <section>
     <div class="card">
+        <div class="card-body">
+            <form method="POST" action="{{ isset($csg) ? route('csgs.update', $csg->id) : route('csgs.store') }}" enctype="multipart/form-data">
+                @csrf
+                {{-- add @method('put') for edit mode --}}
+                @isset($csg)
+                    @method('put')
+                @endisset
+                <h6>Content</h6>
+                <br>
+                <div>
+                    <label for="description" class="form-label">Title</label>
+                    <textarea id="description" name="description" class="form-control tinymce-editor">{{ $csg->title ?? old('title') }}</textarea>
+
+                </div>
+                <br>
+                <div>
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" name="description" class="form-control tinymce-editor">{{ $csg->content ?? old('content') }}</textarea>
+                </div>
+
+                <div class="flex text-center" style="padding-top: 10px">
+                    <button class="btn btn-success col-md-4 col-lg-2" style="margin-right: 5px">{{ __('Save') }}</button>
+                    @if(URL::previous())
+                        <a href="{{ URL::previous() }}" class="btn btn-warning col-md-4 col-lg-2">Back</a>
+                    @endif
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="card">
 
 
         <div class="card-body">
@@ -33,6 +64,7 @@
                 @isset($csg)
                     @method('put')
                 @endisset
+
                 <br>
                 <div>
                     <h6>CSG MEMBERS</h6>
@@ -47,12 +79,12 @@
                     <input type="text" class="form-control" id="position" name="position" value="{{ $csg->position ?? old('position') }}">
                 </div>
                 <br>
-                <div>
+                {{-- <div>
                     <label for="desc" class="form-label">CSG CONTENT/Description</label>
                     <textarea style="height: 250px" id="desc" name="desc" class="form-control tinymce-editor">{{ $csg->desc ?? old('desc') }}</textarea>
                 </div>
 
-                <br>
+                <br> --}}
 
                 {{-- <div>
                     <x-input-label for="name" value="name" />
