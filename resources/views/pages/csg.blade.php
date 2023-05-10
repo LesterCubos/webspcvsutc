@@ -8,7 +8,7 @@
 
   <!-- ======= Breadcrumbs ======= -->
   <div class="breadcrumbs">
-    @include('incshow.bread')
+    <div class="bread d-flex align-items-center"></div>
     <nav>
       <div class="container">
         <ol>
