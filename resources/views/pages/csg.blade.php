@@ -20,34 +20,21 @@
 <section id="csg" class="csg">
     <div class="container" data-aos="fade-up">
 
+      @foreach ($about_orgs as $about_org)
       <div class="section-title">
-        <h3>Central<span> Student Government</span></h3>
+        <h3><span>{{ $about_org->org_name }}</span></h3>
       </div>
-      @foreach ($csgs as $csg)
+        <p>{{ $about_org->type }}</p>
+        <br>
       <div class="info">
-        <h2>{{ $csg->title }}</h2>
-        <p>{!! $csg->content !!}
-        </p>
+        <p>{!! $about_org->desc !!}</p>
       </div>
 
-      <div class="section-title">
-        <h3>CSG Members</span></h3>
+      <div>
+        <h3><span>{{ $about_org->org_name }}</span> Members</h3><br>
+        <p>{!! $about_org->org_members !!}</p>
       </div>
 
-      <table class="table table-bordered table-hover">
-        <thead class="table-dark">
-          <tr>
-            <th scope="col">NAME</th>
-            <th scope="col">POSITION</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">{{ $csg->name }}</th>
-            <td>{{ $csg->position }}</td>
-          </tr>
-        </tbody>
-      </table>
       @endforeach
     </div>
   </section><!-- End CSG Section -->

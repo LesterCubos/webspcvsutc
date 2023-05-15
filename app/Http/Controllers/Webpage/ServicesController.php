@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Webpage;
 
 use App\Http\Controllers\Controller;
-use App\Models\CSG;
 use App\Models\AboutOrgs;
 
 use Illuminate\Http\Request;
@@ -11,7 +10,6 @@ use Illuminate\Http\Request;
 class ServicesController extends Controller
 {
     public function csgs(){
-        // $csgs = CSG::all();
         $about_orgs = AboutOrgs::all();
        
         return view('pages.csg', compact('about_orgs'));
