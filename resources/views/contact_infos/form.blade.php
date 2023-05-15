@@ -50,9 +50,9 @@
 
                 <div class="flex text-center" style="padding-top: 10px">
                     <button class="btn btn-success col-md-4 col-lg-2" style="margin-right: 5px">{{ __('Save') }}</button>
-                    @if(URL::previous())
-                        <a href="{{ URL::previous() }}" class="btn btn-warning col-md-4 col-lg-2">Back</a>
-                    @endif
+                   
+                    <a href="{{ route('contact_infos.index') }}" class="btn btn-warning col-md-4 col-lg-2">Back</a>
+                   
                 </div>
             </form>
         </div>

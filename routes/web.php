@@ -50,6 +50,7 @@ use App\Http\Controllers\Webpage\DoMController;
 
 //Services
 use App\Http\Controllers\Webpage\CSGController;
+use App\Http\Controllers\Webpage\AboutOrgsController;
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -85,7 +86,8 @@ Route::get('admin_dom', [AdministrationController::class, 'doms'])->name('pages.
 
 //Services
 Route::get('services_csg', [ServicesController::class, 'csgs'])->name('pages.csg');
-
+Route::get('services_acadorgs', [ServicesController::class, 'acadorgs']);
+Route::get('services_nonacadorgs', [ServicesController::class, 'nonacadorgs']);
 // Route::post('/switches', 'HomeController@update')->name('switches.update');
 
 
@@ -154,7 +156,7 @@ Route::middleware('auth')->group(function () {
 
     //Services
     Route::resource('csgs', CSGController::class);
-
+    Route::resource('about_orgs', AboutOrgsController::class);
 });
 
 require __DIR__.'/auth.php';
