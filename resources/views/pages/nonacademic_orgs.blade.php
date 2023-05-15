@@ -10,7 +10,7 @@
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
           <li>Student Affairs</li>
-          <li>Central Student Government</li>
+          <li>Non- Academic Organizations</li>
         </ol>
       </div>
     </nav>
@@ -20,21 +20,34 @@
 <section id="csg" class="csg">
     <div class="container" data-aos="fade-up">
 
-      @foreach ($about_orgs as $about_org)
       <div class="section-title">
-        <h3><span>{{ $about_org->org_name }}</span></h3>
+        <h3>Central<span> Student Government</span></h3>
       </div>
-        <p>{{ $about_org->type }}</p>
-        <br>
+      @foreach ($csgs as $csg)
       <div class="info">
-        <p>{!! $about_org->desc !!}</p>
+        <h2>{{ $csg->title }}</h2>
+        <p>{!! $csg->content !!}
+        </p>
       </div>
 
-      <div>
-        <h3><span>{{ $about_org->org_name }}</span> Members</h3><br>
-        <p>{!! $about_org->org_members !!}</p>
+      <div class="section-title">
+        <h3>CSG Members</span></h3>
       </div>
 
+      <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">NAME</th>
+            <th scope="col">POSITION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{ $csg->name }}</th>
+            <td>{{ $csg->position }}</td>
+          </tr>
+        </tbody>
+      </table>
       @endforeach
     </div>
   </section><!-- End CSG Section -->

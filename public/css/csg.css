@@ -23,25 +23,21 @@
 .csg .container {
     box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
     padding: 30px;
-  }
+}
 
-  .csg .table {
-    text-align: center;
-  }
+.csg-title {
+  padding-bottom: 30px;
+}
 
-  .csg-title {
-      padding-bottom: 30px;
-    }
+.csg-title  h3 {
+  margin: 15px 0 0 0;
+  font-size: 32px;
+  font-weight: 700;
+}
 
-  .csg-title  h3 {
-      margin: 15px 0 0 0;
-      font-size: 32px;
-      font-weight: 700;
-    }
-
-  .csg-title  h3 span {
-      color: var(--color-primary);
-    }
+.csg-title  h3 span {
+  color: var(--color-primary);
+}
 
 .csg .info p {
   font-size: 20px;
