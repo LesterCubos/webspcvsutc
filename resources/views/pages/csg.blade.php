@@ -21,17 +21,16 @@
     <div class="container" data-aos="fade-up">
 
       @foreach ($about_orgs as $about_org)
-      <div class="section-title">
-        <h3><span>{{ $about_org->org_name }}</span></h3>
-      </div>
+      <div class="title">
+        <h2>{{ $about_org->org_name }}</h2>
         <p>{{ $about_org->type }}</p>
-        <br>
+      </div>
       <div class="info">
         <p>{!! $about_org->desc !!}</p>
       </div>
 
-      <div>
-        <h3><span>{{ $about_org->org_name }}</span> Members</h3><br>
+      <div class="org_members">
+        <h3>{{ $about_org->org_name }} Members</h3><br>
         <p>{!! $about_org->org_members !!}</p>
       </div>
 

@@ -16,38 +16,28 @@
     </nav>
   </div><!-- End Breadcrumbs -->
 
-<!-- ======= CSG Section ======= -->
-<section id="csg" class="csg">
+<!-- ======= Academic Organization Section ======= -->
+<section id="acad" class="acad">
     <div class="container" data-aos="fade-up">
 
-      <div class="section-title">
-        <h3>Central<span> Student Government</span></h3>
-      </div>
-      @foreach ($csgs as $csg)
-      <div class="info">
-        <h2>{{ $csg->title }}</h2>
-        <p>{!! $csg->content !!}
-        </p>
-      </div>
+      @foreach ($about_orgs as $about_org)
 
-      <div class="section-title">
-        <h3>CSG Members</span></h3>
-      </div>
+      @if ($about_org->type == 'Academic Organization')
+        @if ($about_org->org_name != 'Central Student Government')
+          <div class="title">
+            <h2>{{ $about_org->org_name }}</h2>
+            <p>{{ $about_org->type }}</p>
+          </div>
+          <div class="info">
+            <p>{!! $about_org->desc !!}</p>
+          </div>
 
-      <table class="table table-bordered table-hover">
-        <thead class="table-dark">
-          <tr>
-            <th scope="col">NAME</th>
-            <th scope="col">POSITION</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">{{ $csg->name }}</th>
-            <td>{{ $csg->position }}</td>
-          </tr>
-        </tbody>
-      </table>
+          <div class="org_members">
+            <h3>{{ $about_org->org_name }} Members</h3><br>
+            <p>{!! $about_org->org_members !!}</p>
+          </div>
+        @endif
+      @endif
       @endforeach
     </div>
   </section><!-- End CSG Section -->

@@ -18,13 +18,11 @@ class ServicesController extends Controller
     public function acadorgs(){
         $about_orgs = AboutOrgs::all();
         
-        
-        return view('pages.csg', 
-        compact('about_orgs'));
-    }public function nonacadorgs(){
+        return view('pages.academic_orgs', compact('about_orgs'));
+    }
+    public function nonacadorgs(){
         $about_orgs = AboutOrgs::all();
         
-        return view('pages.csg', 
-        compact('about_orgs'));
+        return view('pages.nonacademic_orgs', compact('about_orgs'));
     }
 }

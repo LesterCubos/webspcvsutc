@@ -942,30 +942,34 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
-}
-
-.section-title h2 {
-  font-size: 13px;
-  letter-spacing: 1px;
-  font-weight: 700;
-  padding: 8px 20px;
-  margin: 0;
-  background: #e7f1fd;
-  color: #106eea;
-  display: inline-block;
-  text-transform: uppercase;
-  border-radius: 50px;
+  padding-bottom: 70px;
 }
 
 .section-title h3 {
-  margin: 15px 0 0 0;
   font-size: 32px;
   font-weight: 700;
+  position: relative;
 }
 
 .section-title h3 span {
   color: var(--color-primary);
+}
+
+.section-title h3:before,
+.section-title h3:after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--color-secondary);
+  display: inline-block;
+}
+
+.section-title h3:before {
+  margin: 0 15px 10px 0;
+}
+
+.section-title h3:after {
+  margin: 0 0 10px 15px;
 }
 
 .section-title p {

@@ -52,8 +52,9 @@
         <link href="{{ asset('css/qaac.css') }}" rel="stylesheet">
         <link href="{{ asset('css/researche.css') }}" rel="stylesheet">
         <link href="{{ asset('css/lib.css') }}" rel="stylesheet">
-
         <link href="{{ asset('css/csg.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/acad.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/nonacad.css') }}" rel="stylesheet">
 </head>
 <body class="antialiased">
 
