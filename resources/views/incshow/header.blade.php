@@ -97,7 +97,7 @@
                 </ul>
               </li>
               <li><a href="#">CvSU Events</a></li>
-              <li><a href="#">News and Updates</a></li>
+              <li><a href="services_newsandupdates">News and Updates</a></li>
               <li><a href="#">Announcements</a></li>
               <li><a href="#">Campus Calendar</a></li>
             </ul>

@@ -1,9 +1,5 @@
 @extends('layouts.show')
-<head>
-    <!-- Main CSS File -->
-    <link href="{{ asset('css/news&updates.css') }}" rel="stylesheet">
 
-  </head>
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->
@@ -43,7 +39,7 @@
           </div>
 
           <div>
-            <button>Read More</button>
+            <a href="newsandupdates_news1"><button>Read More</button></a>
           </div>
 
         </div><!-- End News Box -->
@@ -60,7 +56,7 @@
             </div>
 
             <div>
-              <button>Read More</button>
+              <a href="newsandupdates_news2"><button>Read More</button></a>
             </div>
           </div>
           <div class="col-lg-6 img-bg" style="background-image: url(assets/img/news2.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
@@ -79,7 +75,7 @@
           </div>
 
           <div>
-            <button>Read More</button>
+            <a href="newsandupdates_news3"><button>Read More</button></a>
           </div>
 
         </div><!-- End News Box -->
@@ -96,7 +92,7 @@
             </div>
 
             <div>
-              <button>Read More</button>
+              <a href="newsandupdates_news4"><button>Read More</button></a>
             </div>
           </div>
           <div class="col-lg-6 img-bg" style="background-image: url(assets/img/news4.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
@@ -115,7 +111,7 @@
           </div>
 
           <div>
-            <button>Read More</button>
+            <a href="newsandupdates_news5"><button>Read More</button></a>
           </div>
 
         </div><!-- End News Box -->

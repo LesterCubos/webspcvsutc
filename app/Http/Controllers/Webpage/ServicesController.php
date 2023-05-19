@@ -25,4 +25,8 @@ class ServicesController extends Controller
         
         return view('pages.nonacademic_orgs', compact('about_orgs'));
     }
+
+    public function newsandupdates(){
+        return view('pages.news&updates');
+    }
 }

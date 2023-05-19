@@ -51,6 +51,10 @@ use App\Http\Controllers\Webpage\DoMController;
 //Services
 use App\Http\Controllers\Webpage\CSGController;
 use App\Http\Controllers\Webpage\AboutOrgsController;
+
+//Services
+use App\Http\Controllers\Webpage\NewsandUpdatesController;
+
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -88,6 +92,15 @@ Route::get('admin_dom', [AdministrationController::class, 'doms'])->name('pages.
 Route::get('services_csg', [ServicesController::class, 'csgs'])->name('pages.csg');
 Route::get('services_acadorgs', [ServicesController::class, 'acadorgs']);
 Route::get('services_nonacadorgs', [ServicesController::class, 'nonacadorgs']);
+Route::get('services_newsandupdates', [ServicesController::class, 'newsandupdates']);
+
+//News
+Route::get('newsandupdates_news1', [NewsandUpdatesController::class, 'news1']);
+Route::get('newsandupdates_news2', [NewsandUpdatesController::class, 'news2']);
+Route::get('newsandupdates_news3', [NewsandUpdatesController::class, 'news3']);
+Route::get('newsandupdates_news4', [NewsandUpdatesController::class, 'news4']);
+Route::get('newsandupdates_news5', [NewsandUpdatesController::class, 'news5']);
+
 // Route::post('/switches', 'HomeController@update')->name('switches.update');
 
 
