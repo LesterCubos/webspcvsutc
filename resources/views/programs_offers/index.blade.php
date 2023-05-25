@@ -59,12 +59,11 @@
 
                         {{-- <a class="btn btn-info" href="{{ route('program_offers.show', $programs_offer->id) }}">Show</a> --}}
 
-                        <a class="btn btn-primary btn-rounded" href="{{ route('programs_offers.edit', $programs_offer->id) }}" style="margin-right: 5px">Edit</a>
-
+                        <a class="btn" id="icon_edit" href="{{ route('programs_offers.edit', $programs_offer->id) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger btn-rounded">Delete</button>
+                        <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button>
                     </form>
                 </td>
             </tr>

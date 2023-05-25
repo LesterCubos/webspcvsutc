@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Webpage;
 
 use App\Http\Controllers\Controller;
 use App\Models\AboutOrgs;
+use App\Models\News;
 
 use Illuminate\Http\Request;
 
@@ -27,6 +28,8 @@ class ServicesController extends Controller
     }
 
     public function newsandupdates(){
-        return view('pages.news&updates');
+        $news = News::all();
+
+        return view('pages.news&updates', compact('news'));
     }
 }

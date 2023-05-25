@@ -28,8 +28,6 @@ function myFunction() {
 }
 
 
-
-
   /**
    * Sticky Header on Scroll
    */

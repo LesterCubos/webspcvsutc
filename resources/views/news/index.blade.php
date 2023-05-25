@@ -58,19 +58,20 @@
                 <th scope="row">{{ $new->id }}</th>
                 <td>{{ $new->news_title }}</td>
                 <td>{{ $new->news_headline }}</td>
-                <td >{{ $new->news_content }}</td>
+                <td >{!! Str::limit($new->news_content,'250','...') !!}</td>
                 <td><img style="width:250px" src="{{ Storage::url($new->news_image) }}" alt="{{ $new->news_title }}" srcset=""></td>
                 <td>{{ $new->created_at }}</td>
                 <td>{{ $new->updated_at }}</td>
                 <td>
                     <form method="post" action="{{ route('news.destroy', $new->id) }}" class="d-grid gap-2">
 
-                        <a class="btn btn-primary btn-rounded" href="{{ route('news.edit', $new->id) }}" style="margin-right: 5px">Edit</a>
+                        <a class="btn" id="icon_edit" href="{{ route('news.edit', $new->id) }}"><i class="ri-edit-box-fill"></i></a>
 
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger btn-rounded">Delete</button>
+                        <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button>
+                        
                     </form>
                 </td>
             </tr>

@@ -51,11 +51,11 @@
               <i class="bi bi-circle"></i><span>Admission Section</span>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a href="{{ route('news.index') }}">
               <i class="bi bi-circle"></i><span>News and Updates Section</span>
             </a>
-          </li>
+          </li> --}}
           <li>
             <a href="{{ route('announcements.index') }}">
               <i class="bi bi-circle"></i><span>Announcements Section</span>
@@ -268,7 +268,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{ route('news.index') }}">
               <i class="bi bi-circle"></i><span>News and Updates</span>
             </a>
           </li>

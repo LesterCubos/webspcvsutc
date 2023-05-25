@@ -60,8 +60,7 @@
 
                         {{-- <a class="btn btn-info" href="{{ route('campus_history.show', $campushistory->id) }}">Show</a> --}}
 
-                        <a class="btn btn-primary btn-rounded" href="{{ route('campus_history.edit', $campushistory->id) }}" style="margin-right: 5px">Edit</a>
-
+                       <a class="btn" id="icon_edit" href="{{ route('campus_history.edit', $campus_history.edit) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')
 

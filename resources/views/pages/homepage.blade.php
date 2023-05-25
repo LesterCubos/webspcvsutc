@@ -63,7 +63,7 @@
                                     <p class="animate__animated animate__fadeInUp"> {{ $carousel_item->content }}</p>
                                     <div class="d-flex justify-content-center justify-content-lg-start">
                                         <p><a class="btn btn-lg btn-light btn-get-started animate__animated animate__fadeInUp scrollto" href="#">Sign up today</a></p>
-                                        <p><a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video animate__animated animate__fadeInUp"><i class="bi bi-play-circle"></i><span>Watch Video</span></a></p>
+                                        <p><a href="#" class="glightbox btn-watch-video animate__animated animate__fadeInUp"><i class="bi bi-play-circle"></i><span>Watch Video</span></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -180,7 +180,7 @@
                     @foreach($discover_tanza_infos as $discover_tanza_info)
                         <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
                             <img class="img-fluid" src="{{ asset('storage/' . $discover_tanza_info->image) }}" alt="{{ $discover_tanza_info->headline }}">
-                            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+                            <a href="#" class="glightbox play-btn"></a>
                         </div>
                         <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
                             <h3>{{ $discover_tanza_info->headline }}</h3>
@@ -380,7 +380,7 @@
                                 @endphp --}}
                             <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                             <p>
-                                {{ $new->news_content }}
+                                {!! Str::limit($new->news_content,'250','...') !!}
 
                             </p>
                             </div>
@@ -390,7 +390,7 @@
                             <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                             <p>
-                                {{ $new->news_content }}
+                                {!! Str::limit($new->news_content,'250','...') !!}
                             </p>
                             </div>
                         </li>
@@ -399,7 +399,7 @@
                             <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                             <p>
-                                {{ $new->news_content }}
+                                {!! Str::limit($new->news_content,'250','...') !!}
                             </p>
                             </div>
                         </li>
@@ -407,14 +407,14 @@
                         <li>
                             <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4" class="collapsed"><span>04</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-4" class="collapse" data-bs-parent=".accordion-list">
-                            <p>{{ $new->news_content }}</p>
+                            <p>{!! Str::limit($new->news_content,'250','...') !!}</p>
                             </div>
                         </li>
                         @elseif ($loop->iteration == 5)
                         <li>
                             <a data-bs-toggle="collapse" data-bs-target="#accordion-list-5" class="collapsed"><span>05</span> {{ $new->news_title }} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-5" class="collapse" data-bs-parent=".accordion-list">
-                            <p>{{ $new->news_content }} </p>
+                            <p>{!! Str::limit($new->news_content,'250','...') !!}</p>
                             </div>
                         </li>
                         @endif
@@ -441,35 +441,35 @@
                         <div class="carousel-item {{ $loop->first ? 'active' : '' }}" id="carousel-item">
                             <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
                             <div class="carousel-caption text-start">
-                            <h5 class="animate__animated animate__fadeInUp">Heading......1</h5>
+                            <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
                             </div>
                         </div>
                         @elseif ($loop->iteration == 2 )
                         <div class="carousel-item" id="carousel-item">
                             <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
                             <div class="carousel-caption text-start">
-                            <h5 class="animate__animated animate__fadeInUp">Heading......2</h5>
+                            <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
                             </div>
                         </div>
                         @elseif ($loop->iteration == 3 )
                         <div class="carousel-item" id="carousel-item">
                             <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
                             <div class="carousel-caption text-start">
-                            <h5 class="animate__animated animate__fadeInUp">Heading......3</h5>
+                            <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
                             </div>
                         </div>
                         @elseif ($loop->iteration == 4 )
                         <div class="carousel-item" id="carousel-item">
                             <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
                             <div class="carousel-caption text-start">
-                            <h5 class="animate__animated animate__fadeInUp">Heading......4</h5>
+                            <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
                             </div>
                         </div>
                         @elseif ($loop->iteration == 5 )
                         <div class="carousel-item" id="carousel-item">
                             <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
                             <div class="carousel-caption text-start">
-                            <h5 class="animate__animated animate__fadeInUp">Heading......5</h5>
+                            <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
                             </div>
                         </div>
                         @endif

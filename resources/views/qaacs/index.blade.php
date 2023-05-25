@@ -60,12 +60,11 @@
                 <td>
                     <form method="post" action="{{ route('qaacs.destroy', $qaac->id) }}" class="d-grid gap-2">
 
-                        <a class="btn btn-primary btn-rounded" href="{{ route('qaacs.edit', $qaac->id) }}" style="margin-right: 5px">Edit</a>
-
+                        <a class="btn" id="icon_edit" href="{{ route('qaacs.edit', $qaac->id) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger btn-rounded">Delete</button>
+                        <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button>
                     </form>
                 </td>
             </tr>

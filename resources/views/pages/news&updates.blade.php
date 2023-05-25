@@ -26,97 +26,80 @@
       <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
     </div>
 
-    <div class="row justify-content-around gy-4" id="news-box">
-      <div class="col-lg-6 img-bg" style="background-image: url(assets/img/news1.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
-    
+    @foreach($news as $new)
 
-      <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-        <h3 id="title">Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-          <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
-
-          <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
-            <p>Hun Trustee and alumna Alicia Tillman, will join Delta Airlines as Chief Marketing Officer and the newest member of the airline’s Leadership Committee this June. In her new role with Delta, Ms. Tillman will be responsible for brand strategy, global marketing, creative services, and community engagement. In addition to her leadership as a Hun School Trustee, Ms. Tillman is chair of the School’s Education Committee, a dedicated volunteer, and served as a keynote presenter for the School’s 50th Celebration of Girls and Women in 2021.</p>
-          </div>
-
-          <div>
-            <a href="newsandupdates_news1"><button>Read More</button></a>
-          </div>
-
-        </div><!-- End News Box -->
-
-      </div>
-
-      <div class="row justify-content-around gy-4" id="news-box">
+      @if ($loop->iteration == 1 )
+        <div class="row justify-content-around gy-4" id="news-box">
+          <div class="col-lg-6 img-bg" style="background-image: url({{ asset('storage/' . $new->news_image) }});" data-aos="zoom-in" data-aos-delay="100"></div>
           <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <h3 id="title">Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-            <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
+            <h3 id="title">{{ $new->news_title }}</h3>
+              <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+                <p>{!! $new->news_content !!}</p>
+              </div>
+              <div>
+                <a href="newsandupdates_news1"><button>Read More</button></a>
+              </div>
+          </div><!-- End News Box -->
+        </div>
 
+      @elseif ($loop->iteration == 2)
+        <div class="row justify-content-around gy-4" id="news-box">
+          <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <h3 id="title">{{ $new->news_title }}</h3>
             <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
-              <p>Hun Trustee and alumna Alicia Tillman, will join Delta Airlines as Chief Marketing Officer and the newest member of the airline’s Leadership Committee this June. In her new role with Delta, Ms. Tillman will be responsible for brand strategy, global marketing, creative services, and community engagement. In addition to her leadership as a Hun School Trustee, Ms. Tillman is chair of the School’s Education Committee, a dedicated volunteer, and served as a keynote presenter for the School’s 50th Celebration of Girls and Women in 2021.</p>
+              <p>{!! $new->news_content !!}</p>
             </div>
-
             <div>
               <a href="newsandupdates_news2"><button>Read More</button></a>
             </div>
           </div>
-          <div class="col-lg-6 img-bg" style="background-image: url(assets/img/news2.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
-      </div>
+          <div class="col-lg-6 img-bg" style="background-image: url({{ asset('storage/' . $new->news_image) }});" data-aos="zoom-in" data-aos-delay="100"></div>
+        </div>
 
-      <div class="row justify-content-around gy-4" id="news-box">
-      <div class="col-lg-6 img-bg" style="background-image: url(assets/img/news3.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
-    
-
-      <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-        <h3 id="title">Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-          <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
-
-          <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
-            <p>Hun Trustee and alumna Alicia Tillman, will join Delta Airlines as Chief Marketing Officer and the newest member of the airline’s Leadership Committee this June. In her new role with Delta, Ms. Tillman will be responsible for brand strategy, global marketing, creative services, and community engagement. In addition to her leadership as a Hun School Trustee, Ms. Tillman is chair of the School’s Education Committee, a dedicated volunteer, and served as a keynote presenter for the School’s 50th Celebration of Girls and Women in 2021.</p>
-          </div>
-
-          <div>
-            <a href="newsandupdates_news3"><button>Read More</button></a>
-          </div>
-
-        </div><!-- End News Box -->
-
-      </div>
-
-      <div class="row justify-content-around gy-4" id="news-box">
+      @elseif ($loop->iteration == 3)
+        <div class="row justify-content-around gy-4" id="news-box">
+          <div class="col-lg-6 img-bg" style="background-image: url({{ asset('storage/' . $new->news_image) }});" data-aos="zoom-in" data-aos-delay="100"></div>
           <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <h3 id="title">Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-            <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
+            <h3 id="title">{{ $new->news_title }}</h3>
+              <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+                <p>{!! $new->news_content !!}</p>
+              </div>
+              <div>
+                <a href="newsandupdates_news3"><button>Read More</button></a>
+              </div>
+          </div><!-- End News Box -->
+        </div>
 
+      @elseif ($loop->iteration == 4)
+        <div class="row justify-content-around gy-4" id="news-box">
+          <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <h3 id="title">{{ $new->news_title }}</h3>
             <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
-              <p>Hun Trustee and alumna Alicia Tillman, will join Delta Airlines as Chief Marketing Officer and the newest member of the airline’s Leadership Committee this June. In her new role with Delta, Ms. Tillman will be responsible for brand strategy, global marketing, creative services, and community engagement. In addition to her leadership as a Hun School Trustee, Ms. Tillman is chair of the School’s Education Committee, a dedicated volunteer, and served as a keynote presenter for the School’s 50th Celebration of Girls and Women in 2021.</p>
+              <p>{!! $new->news_content !!}</p>
             </div>
-
             <div>
               <a href="newsandupdates_news4"><button>Read More</button></a>
             </div>
           </div>
-          <div class="col-lg-6 img-bg" style="background-image: url(assets/img/news4.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
-      </div>
+          <div class="col-lg-6 img-bg" style="background-image: url({{ asset('storage/' . $new->news_image) }});" data-aos="zoom-in" data-aos-delay="100"></div>
+        </div>
 
+      @elseif ($loop->iteration == 5)
       <div class="row justify-content-around gy-4" id="news-box">
-      <div class="col-lg-6 img-bg" style="background-image: url(assets/img/news5.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
-    
-
-      <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-        <h3 id="title">Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-          <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
-
-          <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
-            <p>Hun Trustee and alumna Alicia Tillman, will join Delta Airlines as Chief Marketing Officer and the newest member of the airline’s Leadership Committee this June. In her new role with Delta, Ms. Tillman will be responsible for brand strategy, global marketing, creative services, and community engagement. In addition to her leadership as a Hun School Trustee, Ms. Tillman is chair of the School’s Education Committee, a dedicated volunteer, and served as a keynote presenter for the School’s 50th Celebration of Girls and Women in 2021.</p>
-          </div>
-
-          <div>
-            <a href="newsandupdates_news5"><button>Read More</button></a>
-          </div>
-
+        <div class="col-lg-6 img-bg" style="background-image: url({{ asset('storage/' . $new->news_image) }});" data-aos="zoom-in" data-aos-delay="100"></div>
+        <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <h3 id="title">{{ $new->news_title }}</h3>
+            <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+              <p>{!! $new->news_content !!}</p>
+            </div>
+            <div>
+              <a href="newsandupdates_news5"><button>Read More</button></a>
+            </div>
         </div><!-- End News Box -->
-
       </div>
+
+      @endif
+      @endforeach
     
   </div>
 </section><!-- End News and Updates Page -->

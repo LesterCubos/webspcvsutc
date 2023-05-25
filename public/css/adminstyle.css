@@ -370,6 +370,34 @@ h6 {
   font-size: 20px;
 }
 
+/* Style buttons */
+#icon_delete {
+  background-color: #b90e0a; 
+  color: white; /* White text */
+  padding: 5px 5px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+#icon_delete:hover {
+  background-color: RoyalBlue;
+}
+
+/* Style buttons */
+#icon_edit {
+  background-color: var(--color-primary); 
+  color: white; /* White text */
+  padding: 5px 5px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+#icon_edit:hover {
+  background-color: #aef359;
+}
+
 /* Close Button */
 .btn-close {
   background-size: 25%;

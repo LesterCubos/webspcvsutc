@@ -49,7 +49,7 @@
             <tr>
                 <th scope="row">{{ $about_org->id }}</th>
                 <td>{{ $about_org->org_name }}</td>
-                <td>{!! $about_org->desc !!}</td>
+                <td>{!! Str::limit($about_org->desc,'250','...')!!}</td>
                 <td>{{ $about_org->type }}</td>
                 <td>{!! $about_org->org_members !!}</td>
                 <td>{{ $about_org->created_at }}</td>
@@ -57,12 +57,11 @@
                 <td>
                     <form method="post" action="{{ route('about_orgs.destroy', $about_org->id) }}" class="d-grid gap-2">
 
-                        <a class="btn btn-primary btn-rounded" href="{{ route('about_orgs.edit', $about_org->id) }}" style="margin-right: 5px">Edit</a>
-
+                        <a class="btn" id="icon_edit" href="{{ route('about_orgs.edit', $about_org->id) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger btn-rounded">Delete</button>
+                        <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button>
                     </form>
                 </td>
             </tr>

@@ -65,12 +65,11 @@
                 <td>
                     <form method="post" action="{{ route('uni_officials.destroy', $uni_official->id) }}" class="d-grid gap-2">
 
-                        <a class="btn btn-primary btn-rounded" href="{{ route('uni_officials.edit', $uni_official->id) }}" style="margin-right: 5px">Edit</a>
-
+                        <a class="btn" id="icon_edit" href="{{ route('uni_officials.edit', $uni_official->id) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger btn-rounded">Delete</button>
+                        <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button>
                     </form>
                 </td>
             </tr>

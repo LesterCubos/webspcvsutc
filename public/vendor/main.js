@@ -27,6 +27,24 @@ function myFunction() {
   document.getElementById("bar").style.width = scrolled + "%";
 }
 
+/**
+   * News Slider
+   */
+new Swiper('.news-slider', {
+  speed: 600,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  slidesPerView: 'auto',
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  }
+});
+
   /**
    * Sticky Header on Scroll
    */
