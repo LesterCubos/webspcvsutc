@@ -278,11 +278,7 @@
             </a>
           </li>
           <li>
-<<<<<<< HEAD
-            <a href="{{ route('calendar.index')}}">
-=======
-            <a href="/calendar">
->>>>>>> ad4d921cab7a00443f64fab3f79c7dae2300d71c
+            <a href="calendar-event">
               <i class="bi bi-circle"></i><span>Campus Calendar</span>
             </a>
           </li>

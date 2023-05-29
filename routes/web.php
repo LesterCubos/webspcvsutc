@@ -170,9 +170,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('csgs', CSGController::class);
     Route::resource('about_orgs', AboutOrgsController::class);
         //CrudEvent Calendar
-    Route::resource('/calendar', CalenderController::class);
-    // Route::get('calendar-event', [CalenderController::class, 'index']);
-    // Route::post('calendar-crud-ajax', [CalenderController::class, 'calendarEvents']);
+    // Route::resource('/calendar', CalenderController::class);
+    // Route::resource('/calendar-event', CalenderController::class);
+    // Route::resource('/calendar-crud-ajax', CalenderController::class);
+
+    Route::get('calendar-event', [CalenderController::class, 'index']);
+    Route::post('calendar-crud-ajax', [CalenderController::class, 'calendarEvents']);
     // Route::get('/calendar', 'CalenderController@index')->name('calender.index');
 
 });
