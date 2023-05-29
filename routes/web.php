@@ -170,6 +170,13 @@ Route::middleware('auth')->group(function () {
     //Services
     Route::resource('csgs', CSGController::class);
     Route::resource('about_orgs', AboutOrgsController::class);
+    Route::resource('calendarevents', FullCalendarController::class);
+
+    // Route::get('/getevent', 'FullCalendarController@getEvent')->name('getevent');
+    // Route::post('/createevent','FullCalendarController@createEvent')->name('createevent');
+    // Route::post('/deleteevent','FullCalendarController@deleteEvent')->name('deleteevent');
+    Route::resource('calendar_events', FullCalendarController::class);
+    
 });
 
 require __DIR__.'/auth.php';

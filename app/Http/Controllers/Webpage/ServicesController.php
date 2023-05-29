@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Webpage;
 use App\Http\Controllers\Controller;
 use App\Models\AboutOrgs;
 use App\Models\News;
+use App\Models\CalendarEvent;
 
 use Illuminate\Http\Request;
 
@@ -31,5 +32,11 @@ class ServicesController extends Controller
         $news = News::all();
 
         return view('pages.news&updates', compact('news'));
+    }
+
+    public function fullcalendar(){
+        // $news = News::all();
+
+        // return view('pages.news&updates', compact('news'));
     }
 }

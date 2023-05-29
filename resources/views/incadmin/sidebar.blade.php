@@ -278,7 +278,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="{{ route('calendar.index')}}">
               <i class="bi bi-circle"></i><span>Campus Calendar</span>
             </a>
           </li>
