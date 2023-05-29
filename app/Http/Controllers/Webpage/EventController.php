@@ -1,124 +1,168 @@
 <?php
 
 namespace App\Http\Controllers\Webpage;
+namespace Latfur\Event\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Storage;
-
-use App\Models\Event;
-
-use App\Http\Requests\Event\StoreRequest;
-use App\Http\Requests\Event\UpdateRequest;
-
-
+use Latfur\Event\Models\Event;
+use Illuminate\Support\Facades\Validator;
 
 class EventController extends Controller
 {
-    public function index(): Response
-    {
-        return response()->view('events.index', [
-            'events' => Event::orderBy('updated_at', 'desc')->get(),
-        ]);
+    public function index(){
+
+        return view('event::calendar');
+    }
+     public function event_list(){
+        return view('event::list');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create(): Response
+      public function save_event(Request $request)
     {
-        return response()->view('events.form');
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreRequest $request): RedirectResponse
-    {
-        $validated = $request->validated();
+            $validator = Validator::make($request->all(),[
+            'event_title' => 'required|string|max:150',
+            'event_start_date' =>'required|string|max:15',
+           ]);
 
-        // if ($request->hasFile('interactive_img')) {
-        //      // put interactive_img in the public storage
-        //     $filePath = Storage::disk('public')->put('eventimg/events/interactive_imgs', request()->file('interactive_img'));
-        //     $validated['interactive_img'] = $filePath;
-        // }
 
-        // insert only requests that already validated in the StoreRequest
-        $create = Event::create($validated);
+         $feed_back=array();
+        if ($validator->passes()){
 
-        if($create) {
-            // add flash for the success notification
-            session()->flash('notif.success', 'Events has been posted successfully!');
-            return redirect()->route('events.index');
+             if($request['set_end_date_data']=="No"){
+             $request['event_end_date']= $request['event_start_date'];
+            }
+             $request['event_start_date']=implode("-", array_reverse(explode("/", $request['event_start_date'])));
+             $request['event_end_date']= implode("-", array_reverse(explode("/", $request['event_end_date'])));
+             Event::create($request->all());
+
+         $feed_back['type']='alert-success';
+         $feed_back['message']='Added new records';
+         $feed_back['error']=array();
+
+        }else{
+         $feed_back['type']='alert-danger';
+          $feed_back['error']=  $validator->errors()->all();
+
         }
 
-        return abort(500);
+         return json_encode($feed_back);
+
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id): Response
-    {
-        return response()->view('events.show', [
-            'event' => Event::findOrFail($id),
-        ]);
+    public function all_event(){
+        $all_event = Event::all()->toArray();
+
+
+        $event_data=array();
+        foreach ($all_event as $key => $event_val) {
+        $event_data[$key]['title'] =$event_val['event_title'];
+	$event_data[$key]['start'] =$event_val['event_start_date'].' '.date('H:i:s', strtotime($event_val['event_start_time']));
+	$event_data[$key]['end']  =$event_val['event_end_date'].' '.date('H:i:s', strtotime($event_val['event_end_time']));
+
+        $event_data[$key]['start_formate'] =implode("/", array_reverse(explode("-", $event_val['event_start_date']))).' '.date('h:i:s A', strtotime($event_val['event_start_time']));
+	$event_data[$key]['end_formate']  =implode("/", array_reverse(explode("-", $event_val['event_end_date']))).' '.date('h:i:s A', strtotime($event_val['event_end_time']));
+
+
+        $event_data[$key]['events_id'] = $event_val['id'];
+        $event_data[$key]['event_description'] =$event_val['event_description'];
+        $event_data[$key]['created_at'] =date('d/m/Y', strtotime($event_val['created_at']));
+
+	}
+
+        echo json_encode($event_data);
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id): Response
+      public function single_event($id)
     {
-        return response()->view('events.form', [
-            'event' => Event::findOrFail($id),
-        ]);
+          $single_event = Event::where('id', $id)->first();
+     if($single_event){
+        $single_event = $single_event->toArray();
+        }
+           if(isset($single_event['event_start_date'])){
+           $single_event['event_start_date']= implode("/", array_reverse(explode("-", $single_event['event_start_date'])));
+
+
+          }
+           if(isset($single_event['event_end_date'])){
+           $single_event['event_end_date']= implode("/", array_reverse(explode("-", $single_event['event_end_date'])));
+          }
+         echo json_encode($single_event);
+
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateRequest $request, string $id): RedirectResponse
-    {
-        $event = Event::findOrFail($id);
-        $validated = $request->validated();
+    public function update_event(Request $request){
 
-        // if ($request->hasFile('interactive_img')) {
-        //     // delete interactive_img
-        //     Storage::disk('public')->delete($event->interactive_img);
 
-        //     $filePath = Storage::disk('public')->put('eventimg/events/interactive_imgs', request()->file('interactive_img'), 'public');
-        //     $validated['interactive_img'] = $filePath;
-        // }
+        if($request['id']>0){
 
-        $update = $event->update($validated);
+        $validator = Validator::make($request->all(),[
+            'event_title' => 'required|string|max:150',
+            'event_start_date' =>'required|string|max:15',
+           ]);
 
-        if($update) {
-            session()->flash('notif.success', 'Events has been updated successfully!');
-            return redirect()->route('events.index');
+
+         $feed_back=array();
+        if ($validator->passes()){
+
+             if($request['set_end_date_data']=="No"){
+             $request['event_end_date']= $request['event_start_date'];
+            }
+             $request['event_start_date']=implode("-", array_reverse(explode("/", $request['event_start_date'])));
+             $request['event_end_date']= implode("-", array_reverse(explode("/", $request['event_end_date'])));
+
+            $event  = Event::findOrFail($request['id']);
+            $input = $request->all();
+            $event->fill($input)->save();
+
+
+         $feed_back['type']='alert-success';
+         $feed_back['message']='Record successfully updated';
+         $feed_back['error']=array();
+
+        }else{
+         $feed_back['type']='alert-danger';
+          $feed_back['error']=  $validator->errors()->all();
+
         }
 
-        return abort(500);
-    }
+         return json_encode($feed_back);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id): RedirectResponse
-    {
-        $event = Event::findOrFail($id);
 
-        // Storage::disk('public')->delete($event->interactive_img);
 
-        $delete = $event->delete($id);
 
-        if($delete) {
-            session()->flash('notif.success', 'Events has been deleted successfully!');
-            return redirect()->route('events.index');
+
+
+
+
+
+
         }
 
-        return abort(500);
+    }
+    public function delete_event($id){
+         $feed_back['type']='alert-danger';
+          $feed_back['message']=  'Something Wrong';
+
+        $event = Event::find($id);
+      if ($event != null)
+      {
+      $event->delete();
+    $feed_back['type']='alert-success';
+         $feed_back['message']='Record successfully deleted';
+
+      }else{
+     $feed_back['type']='alert-danger';
+        $feed_back['message']=  'Something Wrong';
+       }
+
+
+
+
+        echo json_encode($feed_back);
     }
 }

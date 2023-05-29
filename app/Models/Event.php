@@ -1,17 +1,12 @@
 <?php
 
 namespace App\Models;
-
+namespace Latfur\Event\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    protected $fillable = [
-        'date',
-        'event_title',
-        'desc',
-        'interactive_img',
-    ];
-
+    use HasFactory;
+    protected $guarded = ['set_end_date_data'];
 }
