@@ -278,7 +278,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="/calendar">
               <i class="bi bi-circle"></i><span>Campus Calendar</span>
             </a>
           </li>

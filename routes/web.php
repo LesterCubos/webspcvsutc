@@ -54,10 +54,9 @@ use App\Http\Controllers\Webpage\AboutOrgsController;
 
 //Services
 use App\Http\Controllers\Webpage\NewsandUpdatesController;
-
+use App\Http\Controllers\CalenderController;
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Route;
-
 
 //Home
 Route::get('/', [HomeController::class, 'homepage'])->name('pages.homepage');
@@ -170,6 +169,12 @@ Route::middleware('auth')->group(function () {
     //Services
     Route::resource('csgs', CSGController::class);
     Route::resource('about_orgs', AboutOrgsController::class);
+        //CrudEvent Calendar
+    Route::resource('/calendar', CalenderController::class);
+    // Route::get('calendar-event', [CalenderController::class, 'index']);
+    // Route::post('calendar-crud-ajax', [CalenderController::class, 'calendarEvents']);
+    // Route::get('/calendar', 'CalenderController@index')->name('calender.index');
+
 });
 
 require __DIR__.'/auth.php';
