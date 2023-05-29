@@ -34,7 +34,7 @@ class HomeController extends Controller
         $admissions = Admission::all();
         $news = News::all();
         $announcements = Announcement::all();
-        $events = Event::all();
+        // $events = Event::all();
 
         return view('pages.homepage',
             compact(
@@ -46,6 +46,6 @@ class HomeController extends Controller
                     'admissions',
                     'news',
                     'announcements',
-                    'events'));
+                    ));
     }
 }

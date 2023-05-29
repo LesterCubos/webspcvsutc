@@ -556,7 +556,7 @@
             <!-- End Announcements Section -->
 
             <!-- ======= Events Section ======= -->
-            <section id="events" class="events section-bg">
+            {{-- <section id="events" class="events section-bg">
                 <div class="section-title">
                 <h3>Upcoming <span>Events</span></h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
@@ -621,7 +621,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
             <!-- End Events Section -->
 
             @include('incshow.footer')

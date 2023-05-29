@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "241d02c1c7fd59fa2b66fcbbf85d7649",
+    "content-hash": "cff0a7d6a671e16109a178811d14ac1b",
     "packages": [
         {
             "name": "brick/math",
@@ -1367,6 +1367,50 @@
                 "source": "https://github.com/laravel/tinker/tree/v2.8.1"
             },
             "time": "2023-02-15T16:40:09+00:00"
+        },
+        {
+            "name": "latfur/laravel-event-crud",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/latfur1/laravel-event-crud.git",
+                "reference": "2aeefe722d5fd883753ae525975b6fb0b5df6081"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/latfur1/laravel-event-crud/zipball/2aeefe722d5fd883753ae525975b6fb0b5df6081",
+                "reference": "2aeefe722d5fd883753ae525975b6fb0b5df6081",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Latfur\\Event\\EventServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Latfur\\Event\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "latfur",
+                    "email": "rubel.itlive@gmail.com"
+                }
+            ],
+            "description": "Laravel Event CRUD With Full Calendar",
+            "support": {
+                "issues": "https://github.com/latfur1/laravel-event-crud/issues",
+                "source": "https://github.com/latfur1/laravel-event-crud/tree/master"
+            },
+            "time": "2018-08-26T10:41:43+00:00"
         },
         {
             "name": "league/commonmark",

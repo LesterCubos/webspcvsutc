@@ -278,7 +278,8 @@
             </a>
           </li>
           <li>
-            <a href="calendar-event">
+
+            <a href="/event">
               <i class="bi bi-circle"></i><span>Campus Calendar</span>
             </a>
           </li>
