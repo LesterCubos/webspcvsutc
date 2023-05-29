@@ -372,7 +372,7 @@ h6 {
 
 /* Style buttons */
 #icon_delete {
-  background-color: #b90e0a; 
+  background-color: #b90e0a;
   color: white; /* White text */
   padding: 5px 5px; /* Some padding */
   font-size: 16px; /* Set a font size */
@@ -386,7 +386,7 @@ h6 {
 
 /* Style buttons */
 #icon_edit {
-  background-color: var(--color-primary); 
+  background-color: var(--color-primary);
   color: white; /* White text */
   padding: 5px 5px; /* Some padding */
   font-size: 16px; /* Set a font size */
