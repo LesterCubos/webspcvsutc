@@ -28,7 +28,7 @@ use App\Http\Controllers\Webpage\UniversitySealsController;
 use App\Http\Controllers\Webpage\UniversityOfficialsController;
 use App\Http\Controllers\Webpage\CampusOfficialsController;
 use App\Http\Controllers\Webpage\ContactInfoController;
-use App\Http\Controllers\Webpage\ContactUsFormController;
+use App\Http\Controllers\Webpage\ContactController;
 
 
 //Admission
@@ -58,6 +58,7 @@ use App\Http\Controllers\Webpage\AboutOrgsController;
 use App\Http\Controllers\Webpage\NewsandUpdatesController;
 // use App\Http\Controllers\CalenderController;
 // use App\Http\Livewire\ShowHideComponent;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 //Home
@@ -70,12 +71,16 @@ Route::get('about_uni_officials', [AboutController::class, 'uni_officials'])->na
 Route::get('about_campus_officials', [AboutController::class, 'campus_officials'])->name('pages.campus_officials');
 Route::get('about_contact_info', [AboutController::class, 'contact_infos'])->name('pages.contact_info');
 // Route::get('about_contact_info', [ContactUsFormController::class, 'createForm']);
-Route::post('about_contact_info', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+// Route::post('about_contact_info', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 // Route::post('/contact', function(){
 //     $data = request(['name','email','subject','message']);
 //     return $data;
 // });
-
+// Route::get('/contact', function(){
+//     Mail::to('test@email.com')->send(new TestMail());
+// });
+Route::get('about_contact_info', [ContactController::class, 'show'])->name('contact.show');
+Route::post('about_contact_info', [ContactController::class, 'submit'])->name('contact.submit');
 
 //Admission Pages
 Route::get('admission_programs_offered', [AdmissionPageController::class, 'programs_offered'])->name('pages.programs_offered');
