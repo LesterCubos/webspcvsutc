@@ -28,6 +28,8 @@ use App\Http\Controllers\Webpage\UniversitySealsController;
 use App\Http\Controllers\Webpage\UniversityOfficialsController;
 use App\Http\Controllers\Webpage\CampusOfficialsController;
 use App\Http\Controllers\Webpage\ContactInfoController;
+use App\Http\Controllers\Webpage\ContactUsFormController;
+
 
 //Admission
 use App\Http\Controllers\Webpage\ProgramsOfferedController;
@@ -54,7 +56,7 @@ use App\Http\Controllers\Webpage\AboutOrgsController;
 
 //Services
 use App\Http\Controllers\Webpage\NewsandUpdatesController;
-use App\Http\Controllers\CalenderController;
+// use App\Http\Controllers\CalenderController;
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -67,6 +69,13 @@ Route::get('about_uni_seal', [AboutController::class, 'uni_seals'])->name('pages
 Route::get('about_uni_officials', [AboutController::class, 'uni_officials'])->name('pages.uni_officials');
 Route::get('about_campus_officials', [AboutController::class, 'campus_officials'])->name('pages.campus_officials');
 Route::get('about_contact_info', [AboutController::class, 'contact_infos'])->name('pages.contact_info');
+// Route::get('about_contact_info', [ContactUsFormController::class, 'createForm']);
+Route::post('about_contact_info', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+// Route::post('/contact', function(){
+//     $data = request(['name','email','subject','message']);
+//     return $data;
+// });
+
 
 //Admission Pages
 Route::get('admission_programs_offered', [AdmissionPageController::class, 'programs_offered'])->name('pages.programs_offered');
@@ -130,7 +139,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('admissions',AdmissionController::class);
     Route::resource('news',NewsController::class);
     Route::resource('announcements',AnnouncementController::class);
-    Route::resource('events',EventController::class);
     // Route::get('livewire',ShowHideComponent::class);
     // Route::get('/livewire/show-hide-component', ShowHideComponent::class)->name('show_hide');
     // Route::get('/livewire/show-hide-component', function () {
@@ -169,18 +177,12 @@ Route::middleware('auth')->group(function () {
     //Services
     Route::resource('csgs', CSGController::class);
     Route::resource('about_orgs', AboutOrgsController::class);
-        //CrudEvent Calendar
-    // Route::resource('/calendar', CalenderController::class);
-    // Route::get('calendar-event', [CalenderController::class, 'index']);
-    // Route::post('calendar-crud-ajax', [CalenderController::class, 'calendarEvents']);
-    // Route::resource('/calendar', CalenderController::class);
-    // Route::resource('/calendar-event', CalenderController::class);
-    // Route::resource('/calendar-crud-ajax', CalenderController::class);
-
-    Route::get('calendar-event', [CalenderController::class, 'index']);
-    Route::post('calendar-crud-ajax', [CalenderController::class, 'calendarEvents']);
-    // Route::get('/calendar', 'CalenderController@index')->name('calender.index');
-
+    
+    Route::get('/events', function () {
+        return view('event::calendar');
+     });
+    
+    
 
 });
 

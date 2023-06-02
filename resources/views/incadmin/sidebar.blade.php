@@ -61,11 +61,11 @@
               <i class="bi bi-circle"></i><span>Announcements Section</span>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a href="{{ route('events.index') }}">
               <i class="bi bi-circle"></i><span>Events Section</span>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </li><!-- End homepage Nav -->
 
@@ -263,23 +263,13 @@
               </li>
 
           <li>
-            <a href="">
-              <i class="bi bi-circle"></i><span>CvSU Events</span>
-            </a>
-          </li>
-          <li>
             <a href="{{ route('news.index') }}">
               <i class="bi bi-circle"></i><span>News and Updates</span>
             </a>
           </li>
           <li>
-            <a href="">
-              <i class="bi bi-circle"></i><span>Announcement</span>
-            </a>
-          </li>
-          <li>
 
-            <a href="/event">
+            <a href="/events">
               <i class="bi bi-circle"></i><span>Campus Calendar</span>
             </a>
           </li>
@@ -302,7 +292,11 @@
         </ul>
       </li><!-- End Portal Nav -->
 
-
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#portal-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-window"></i><span>Contact Form</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+      </li><!-- End Contact Form Nav -->
       <!-- <li class="nav-heading">Pages</li> -->
 
 

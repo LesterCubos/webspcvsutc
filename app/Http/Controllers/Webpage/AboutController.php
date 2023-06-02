@@ -11,6 +11,8 @@ use App\Models\UniversitySeal;
 use App\Models\UniversityOfficial;
 use App\Models\CampusOfficial;
 use App\Models\ContactInfo;
+use App\Models\Contact;
+
 
 class AboutController extends Controller
 {
@@ -51,8 +53,9 @@ class AboutController extends Controller
         return view('pages.contact_info', compact('contact_infos'));
     }
 
-    public function admissionrequirements(){
-        return view('pages.admissionrequirements');
-    }
+   public function contact(){
+        $contacts = Contact::all();
+        return view('pages.contact_info');
+   }
 
 }

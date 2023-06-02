@@ -60,7 +60,8 @@
         {{-- News CSS File --}}
         <link href="{{ asset('css/newsadd.css') }}" rel="stylesheet">
         <link href="{{ asset('css/news2.css') }}" rel="stylesheet">
-
+        {{-- custom contact form --}}
+        <link href="{{ asset('css/customcontactform.css') }}" rel="stylesheet">
 </head>
 <body class="antialiased">
 

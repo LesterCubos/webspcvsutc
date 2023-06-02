@@ -185,7 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Latfur\Event\EventServiceProvider::class,
         /*
          * Application Service Providers...
          */
