@@ -135,14 +135,14 @@
 
         <li class="nav-item">
           <a class="nav-link " id="nav_link" href="{{url('event')}}">
-            <i class="bi bi-grid"></i>
+            <i class="ri-calendar-event-fill"></i>
             <span>Event Calender</span>
           </a>
         </li><!-- End Event Nav -->
 
         <li class="nav-item">
           <a class="nav-link " id="nav_link" href="{{url('event-list')}}">
-            <i class="bi bi-grid"></i>
+            <i class="ri-calendar-todo-fill"></i>
             <span>Event List</span>
           </a>
         </li><!-- End Event Nav -->

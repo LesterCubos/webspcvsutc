@@ -106,6 +106,9 @@ Route::get('services_csg', [ServicesController::class, 'csgs'])->name('pages.csg
 Route::get('services_acadorgs', [ServicesController::class, 'acadorgs']);
 Route::get('services_nonacadorgs', [ServicesController::class, 'nonacadorgs']);
 Route::get('services_newsandupdates', [ServicesController::class, 'newsandupdates']);
+Route::get('/services_campuscalendar', function () {
+    return view('event::campuscalendar');
+ });
 
 //News
 Route::get('newsandupdates_news1', [NewsandUpdatesController::class, 'news1']);
