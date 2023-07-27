@@ -36,7 +36,27 @@
                 <button id="refresh">Refresh</button>
           </div>
 
-
+          <br>
+          {{-- table for Campus Official info --}}
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">NAME</th>
+                <th scope="col">POSITION</th>
+                <th scope="col">CONTACT INFORMATION</th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach ($campus_official_infos as $campus_official_info)
+                <tr>
+                    <th scope="row">{{ $campus_official->name }}</th>
+                    <td>{{ $campus_official_info->position }}</td>
+                    <td>{{ $campus_official_info->contact }}<br>{{ $campus_official_info->email }}</td>
+                </tr>
+              @endforeach
+    
+            </tbody>
+          </table> 
         </div>
       </section><!-- End Campus Officials Section -->
 

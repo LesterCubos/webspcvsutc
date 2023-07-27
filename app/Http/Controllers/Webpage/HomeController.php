@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Webpage;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 use App\Models\CarouselItem;
 use App\Models\FeaturedService;
 use App\Models\DiscoverTanzaInfo;
@@ -12,8 +13,7 @@ use App\Models\Program;
 use App\Models\Admission;
 use App\Models\News;
 use App\Models\Announcement;
-use App\Models\Event;
-use App\Models\CampusHistory;
+use Latfur\Event\Models\Event;
 
 
 
@@ -25,6 +25,8 @@ class HomeController extends Controller
     public function homepage()
     {
 
+        
+
         // $showSection = DB::table('section_switch')->pluck('show_section')->first();
         $carousel_items = CarouselItem::all();
         $featured_services = FeaturedService::all();
@@ -34,7 +36,7 @@ class HomeController extends Controller
         $admissions = Admission::all();
         $news = News::all();
         $announcements = Announcement::all();
-        // $events = Event::all();
+        $events = Event::all();
 
         return view('pages.homepage',
             compact(
@@ -46,6 +48,7 @@ class HomeController extends Controller
                     'admissions',
                     'news',
                     'announcements',
+                    'events',
                     ));
     }
 }

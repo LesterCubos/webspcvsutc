@@ -60,11 +60,11 @@
 
                         {{-- <a class="btn btn-info" href="{{ route('campus_history.show', $campushistory->id) }}">Show</a> --}}
 
-                       <a class="btn" id="icon_edit" href="{{ route('campus_history.edit', $campus_history.edit) }}"><i class="ri-edit-box-fill"></i></a>
+                       <a class="btn" id="icon_edit" href="{{ route('campus_history.edit', $campushistory->id) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')
 
-                        {{-- <button type="submit" class="btn btn-danger btn-rounded">Delete</button> --}}
+                        <button type="submit" class="btn btn-danger btn-rounded">Delete</button>
                     </form>
                 </td>
             </tr>

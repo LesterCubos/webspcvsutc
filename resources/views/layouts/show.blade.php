@@ -26,6 +26,8 @@
 
         {{-- Main CSS File --}}
         <link rel="stylesheet" href="{{ asset('css/mainshow.css') }}">
+        {{-- Announcements CSS File --}}
+        <link rel="stylesheet" href="{{ asset('css/announce.css') }}">
         {{-- Breadcrumb CSS File --}}
         <link href="{{ asset('css/breadcrumbs.css') }}" rel="stylesheet">
         {{-- About CSS File --}}
@@ -38,6 +40,7 @@
         {{-- Admission CSS File --}}
         <link href="{{ asset('css/admissiomrandp.css') }}" rel="stylesheet">
         <link href="{{ asset('css/programsoffered.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/admissionresult.css') }}" rel="stylesheet">
         {{-- Administration CSS File --}}
         <link href="{{ asset('css/ocr.css') }}" rel="stylesheet">
         <link href="{{ asset('css/clinic.css') }}" rel="stylesheet">
@@ -62,6 +65,7 @@
         <link href="{{ asset('css/news2.css') }}" rel="stylesheet">
         {{-- custom contact form --}}
         <link href="{{ asset('css/customcontactform.css') }}" rel="stylesheet">
+
 </head>
 <body class="antialiased">
 
@@ -73,5 +77,6 @@
     </main>
     @include('incshow.scroll-top')
     @include('incshow.script')
+
 </body>
 </html>

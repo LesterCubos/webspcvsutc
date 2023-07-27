@@ -266,6 +266,24 @@ new Swiper('.news-slider', {
   });
 
   /**
+   * Announcements slider
+   */
+  new Swiper('.announcements-slider', {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  /**
    * Porfolio isotope and filter
    */
   let portfolionIsotope = document.querySelector('.portfolio-isotope');

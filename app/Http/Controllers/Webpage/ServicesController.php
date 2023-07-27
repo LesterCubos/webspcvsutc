@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Webpage;
 use App\Http\Controllers\Controller;
 use App\Models\AboutOrgs;
 use App\Models\News;
+use App\Models\Announcement;
+// use Latfur\Event\Models\Event;
 
 use Illuminate\Http\Request;
 
@@ -32,4 +34,16 @@ class ServicesController extends Controller
 
         return view('pages.news&updates', compact('news'));
     }
+
+    public function announcements(){
+        $announcements = Announcement::all();
+
+        return view('pages.announcement', compact('announcements'));
+    }
+
+    // public function campuscalendar(){
+    //     $events = Event::all();
+
+    //     return view('pages.campuscalendar', compact('events'));
+    // }
 }

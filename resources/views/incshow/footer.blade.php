@@ -5,6 +5,11 @@
       <div class="container">
         <div class="row">
 
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <img width="50%" height="70%" src="{{ asset('img/republic.png')}}" alt="">
+          </div>
+
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>CvSU<span> TANZA</span></h3>
             <p>
@@ -31,14 +36,16 @@
             <h4>Quick Links</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Student Portal</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">List of Enrolled Students</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Campus Calendar</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">E-Learning</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">ComLab</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">E-Library</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Job Vacancies</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+
+
+          {{-- <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione inventore hic possimus quia, dicta dolor magni amet ducimus ipsa provident quae sequi porro officia doloribus enim. Et eum eius inventore?</p>
             <div class="social-links mt-3">
@@ -48,7 +55,7 @@
               <a href="#" class="google-plus"><i class="bi bi-google"></i></a>
               <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
-          </div>
+          </div> --}}
 
         </div>
       </div>

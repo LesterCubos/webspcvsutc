@@ -1,8 +1,7 @@
-
 <!-- ======= Header ======= -->
 <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="brand-name d-flex align-items-center">
+      <div class="brand-name d-flex align-items-center" id="orgname">
         <a href="#">Cavite State University</a>
       </div>
 
@@ -44,8 +43,8 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li class="dropdown"><a href="#">About</a>
+          <li><a class="{{ Request::is('/') ? 'active' : '' }}" href="/">Home</a></li>
+          <li class="dropdown"><a class="{{ Request::is('about_campus_history', 'about_mvg','about_uni_seal','about_uni_officials','about_campus_officials','about_contact_info') ? 'active' : '' }}" href="#">About</a>
             <ul>
               <li><a href="about_campus_history">Campus History</a></li>
               <li><a href="about_mvg">Vision, Mission, and Goals</a></li>
@@ -55,14 +54,14 @@
               <li><a href="about_contact_info">Contact Information</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#">Admission</a>
+          <li class="dropdown"><a class="{{ Request::is('admission_requirements_procedure','admission_programs_offered','admission_result') ? 'active' : '' }}" href="#">Admission</a>
             <ul>
-              <li><a href="/admissionrequirements">Admission Requirements and Procedure</a></li>
+              <li><a href="admission_requirements_procedure">Admission Requirements and Procedure</a></li>
               <li><a href="admission_programs_offered">Program Offerings</a></li>
-              <li><a href="/AdmissionResult">Admission Result</a></li>
+              <li><a href="admission_result">Admission Result</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#">Administration</a>
+          <li class="dropdown"><a class="{{ Request::is('admin_office_registrar','admin_clinic','admin_cashier','admin_osas','admin_dit','admin_ted','admin_das','admin_dom','admin_hr','admin_mis','admin_qaac','admin_research','admin_library') ? 'active' : '' }}" href="#">Administration</a>
             <ul>
               <li><a href="admin_office_registrar">Office of the Campus Registrar</a></li>
               <li><a href="admin_clinic">Clinic</a></li>
@@ -87,7 +86,7 @@
               <li><a href="#">Department of Management</a></li>
             </ul>
           </li> --}}
-          <li class="dropdown"><a href="#">Services</a>
+          <li class="dropdown"><a class="{{ Request::is('services_csg','services_acadorgs','services_nonacadorgs','services_newsandupdates','services_announcements','services_campuscalendar') ? 'active' : '' }}" href="#">Services</a>
             <ul>
               <li class="dropdown"><a href="#">Student Affairs</a>
                 <ul>
@@ -96,10 +95,9 @@
                   <li><a href="services_nonacadorgs">Non-Academic Organizations</a></li>
                 </ul>
               </li>
-              <li><a href="#">CvSU Events</a></li>
-              <li><a href="services_newsandupdates">News and Updates</a></li>
-              <li><a href="#">Announcements</a></li>
-              <li><a href="/services_campuscalendar">Campus Calendar</a></li>
+              <li><a href="services_newsandupdates">News Updates</a></li>
+              <li><a href="services_announcements">Announcements</a></li>
+              <li><a href="services_campuscalendar">Campus Calendar</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#">Portal</a>
@@ -107,6 +105,7 @@
               <li><a href="#">Student Portal</a></li>
 
               <li><a href="/login">MIS Portal</a></li>
+              <li><a href="search">Search</a></li>
             </ul>
           </li>
 

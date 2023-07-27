@@ -10,6 +10,7 @@ use App\Models\MVG;
 use App\Models\UniversitySeal;
 use App\Models\UniversityOfficial;
 use App\Models\CampusOfficial;
+use App\Models\CampusOfficialInfo;
 use App\Models\ContactInfo;
 use App\Models\Contact;
 
@@ -44,7 +45,8 @@ class AboutController extends Controller
     public function campus_officials(){
 
         $campus_officials = CampusOfficial::all();
-        return view('pages.campus_officials', compact('campus_officials'));
+        $campus_official_infos= CampusOfficialInfo::all();
+        return view('pages.campus_officials', compact('campus_officials','campus_official_infos'));
     }
 
     public function contact_infos(){

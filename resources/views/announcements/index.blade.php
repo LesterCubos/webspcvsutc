@@ -39,7 +39,6 @@
             <th scope="col">Title</th>
             <th scope="col">Content</th>
             <th scope="col">Image</th>
-            <th scope="col">Description</th>
             <th scope="col">Created At</th>
             <th scope="col">Updated At</th>
             <th scope="col">Action</th>
@@ -52,7 +51,7 @@
             <tr>
                 <th scope="row">{{ $announcement->id }}</th>
                 <td>{{ $announcement->title }}</td>
-                <td>{!! $announcement->content !!}</td>
+                <td>{!! Str::limit($announcement->content,'250','...') !!} </td>
                 <td><img style="width:250px" src="{{ Storage::url($announcement->poster) }}" alt="{{ $announcement->title }}" srcset=""></td>
                 <td>{{ $announcement->created_at }}</td>
                 <td>{{ $announcement->updated_at }}</td>
@@ -72,7 +71,7 @@
             @endforeach
         </tbody>
     </table>
-
+    
 
 @endsection
 

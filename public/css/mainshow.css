@@ -653,7 +653,7 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #fff;
+    color: var(--color-secondary);
   }
 
   .navbar .getstarted,
@@ -752,6 +752,17 @@ section {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(0deg, rgb(42, 44, 57) 0%, rgb(51, 54, 74) 100%);
+  padding: 0;
+}
+
+/* #hero .carousel-item {
+  height: 450px;
+} */
+
 .bd-placeholder-img {
     filter: brightness(70%);
     font-size: 1.125rem;
@@ -760,7 +771,7 @@ section {
     -moz-user-select: none;
     user-select: none;
   }
-
+  
   .container h1 {
     color: #fff;
   }
@@ -798,16 +809,8 @@ section {
   }
 
   .carousel-item {
-    height: 36rem;
+    height: 34rem;
   }
-
-#hero {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  background: linear-gradient(0deg, rgb(42, 44, 57) 0%, rgb(51, 54, 74) 100%);
-  padding: 0;
-}
 
 #hero .carousel-control-prev,
 #hero .carousel-control-next {
@@ -844,7 +847,6 @@ section {
 #hero .btn-watch-video:hover i {
   color: #47b2e4;
 }
-
 
 .hero-waves {
   display: block;
@@ -943,7 +945,7 @@ section {
 }
 
 .section-bg {
-  background-color: #f6f9fe;
+  background-color: #f3f5fa;
 }
 
 .section-title {
@@ -1043,7 +1045,7 @@ section {
   color: #fddb0d;
 }
 
-.featured-services .icon-box:hover .description {
+.featured-services .icon-box:hover p{
   color: #fff;
 }
 
@@ -1132,6 +1134,60 @@ section {
   transform: scale(20);
 }
 
+.discover button{
+  position: relative;
+  height: 50px;
+  width: 150px;
+  margin-top: 10px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+  overflow: hidden;
+  transition: 0.6s;
+}
+.discover button{
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.discover button:before, button:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  filter: blur(30px);
+  opacity: 0.4;
+  transition: 0.6s;
+}
+.discover button:before{
+  width: 60px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.discover button:after{
+  width: 30px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.discover button:hover:before,
+.discover button:hover:after{
+  opacity: 0.6;
+  transform: translateX(320px) skewX(-45deg);
+}
+.discover button:hover{
+  color: #f2f2f2;
+}
+.discover button:hover{
+  background: var(--color-primary);
+}
+
 @-webkit-keyframes pulsate-btn {
   0% {
     transform: scale(0.6, 0.6);
@@ -1214,6 +1270,8 @@ section {
 
 .programs .img img {
   transition: 0.6s;
+  width: 100%;
+  height: 300px;
 }
 
 .programs .details {
@@ -1281,7 +1339,6 @@ section {
 # Admission Section
 --------------------------------------------------------------*/
 .admissions .container {
-  background: linear-gradient(rgba(37, 50, 72, 0.9), rgba(25, 40, 66, 0.9)), url('../img/admission.jpg') center center;
   background-size: cover;
   padding: 100px 60px;
   border-radius: 15px;
@@ -1403,7 +1460,7 @@ section {
   cursor: pointer;
 }
 
-.newsandupdates .accordion-list span {
+.newsandupdates .accordion-list #num {
   color: var(--color-secondary);
   font-weight: 600;
   font-size: 18px;
@@ -1451,20 +1508,21 @@ section {
 }
 
 #carousel-inner {
-  height: 350px;
+  height: 500px;
 }
 
 #carousel-item img {
+filter: brightness(70%);
  position: absolute;
  object-fit: cover;
  top: 0;
  left: 0;
- min-height: 350px;
+ min-height: 500px;
 }
 
 .carousel-caption {
  text-align: right;
- top: 45%;
+ bottom: 10%;
 }
 
 @media (max-width: 1024px) {
@@ -1498,11 +1556,74 @@ section {
 
 }
 
+.newsandupdates #load{
+  position: relative;
+  height: 50px;
+  width: 150px;
+  margin-top: 10px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+  overflow: hidden;
+  transition: 0.6s;
+}
+.newsandupdates #load{
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.newsandupdates #load:before, #load:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  filter: blur(30px);
+  opacity: 0.4;
+  transition: 0.6s;
+}
+.newsandupdates #load:before{
+  width: 60px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.newsandupdates #load:after{
+  width: 30px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.newsandupdates #load:hover:before,
+.newsandupdates #load:hover:after{
+  opacity: 0.6;
+  transform: translateX(320px) skewX(-45deg);
+}
+.newsandupdates #load:hover{
+  color: #f2f2f2;
+}
+.newsandupdates #load:hover{
+  background: var(--color-primary);
+}
+
 /*--------------------------------------------------------------
 # Announcements Section
 --------------------------------------------------------------*/
 .announcements {
   padding-top: 80px;
+}
+
+.announcements img {
+  width: 600px;
+  height: 350px;
+}
+
+.announcements .swiper-slide {
+  margin-left: 10px;
 }
 
 .announcements .announcements-item+.announcements-item {
@@ -1517,12 +1638,134 @@ section {
 
 .announcements .announcements-item h3 {
   font-weight: 600;
-  font-size: 26px;
-  color: var(--color-default);
+  font-size: 30px;
+  color: var(--color-secondary);
 }
 
-.announcements .announcements-item p:last-child {
-  margin-bottom: 0;
+.announcements .announcements-item p {
+  margin-bottom: 0px;
+}
+
+.announcements button{
+  position: relative;
+  height: 50px;
+  width: 150px;
+  margin-top: 20px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+  overflow: hidden;
+  transition: 0.6s;
+}
+.announcements #load{
+  margin-top: 50px;
+  position: relative;
+  height: 50px;
+  width: 150px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background: #fff;
+  overflow: hidden;
+  transition: 0.6s;
+}
+.announcements button{
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.announcements button:before, button:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  filter: blur(30px);
+  opacity: 0.4;
+  transition: 0.6s;
+}
+.announcements button:before{
+  width: 60px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.announcements button:after{
+  width: 30px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.announcements button:hover:before,
+.announcements button:hover:after{
+  opacity: 0.6;
+  transform: translateX(320px) skewX(-45deg);
+}
+.announcements button:hover{
+  color: #f2f2f2;
+}
+.announcements button:hover{
+  background: var(--color-primary);
+}
+
+.announcements #load{
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.announcements #load:before, #load:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  filter: blur(30px);
+  opacity: 0.4;
+  transition: 0.6s;
+}
+.announcements #load:before{
+  width: 60px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.announcements #load:after{
+  width: 30px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.announcements #load:hover:before,
+.announcements #load:hover:after{
+  opacity: 0.6;
+  transform: translateX(320px) skewX(-45deg);
+}
+.announcements #load:hover{
+  color: #f2f2f2;
+}
+.announcements #load:hover{
+  background: var(--color-primary);
+}
+
+.announcements .swiper-pagination {
+  margin-top: 30px;
+  position: relative;
+}
+
+.announcements .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+
+.announcements .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-secondary);
 }
 
 /*--------------------------------------------------------------
@@ -1530,15 +1773,47 @@ section {
 --------------------------------------------------------------*/
 .events .content {
   padding: 30px;
-  background: var(--color-primary);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+  border: 2px solid var(--color-primary);
   border-radius: 4px;
   color: #fff;
 }
 
-.events .content h3 {
+.events .content .title p {
   font-weight: 700;
   font-size: 34px;
   margin-bottom: 30px;
+}
+
+.events .content .title p {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 5px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-default);
+  font-family: "Poppins", sans-serif;
+}
+
+.events .content .title p::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--color-secondary);
+  margin: 4px 10px;
+}
+
+.events .content .title h3 {
+  margin: 0;
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
 }
 
 .events .content .img-calendar {
@@ -1562,10 +1837,12 @@ section {
   color: var(--color-secondary);
   font-weight: bold;
   background: #fff;
+  border: 2px solid var(--color-secondary);
 }
 
 .events .event {
   position: relative;
+  height: 200px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
   border-radius: 5px;
@@ -1583,32 +1860,38 @@ section {
 }
 
 .events .event h4 {
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 20px;
-  color: #37517e;
-}
-
-.events .event span {
   display: block;
-  font-size: 15px;
-  padding-bottom: 10px;
   position: relative;
-  font-weight: 500;
+  font-weight: 700;
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: var(--color-primary);
 }
 
-.events .event span::after {
+.events .event h4::after {
   content: "";
   position: absolute;
   display: block;
-  width: 50px;
+  width: 70px;
   height: 1px;
-  background: #cbd6e9;
+  background: var(--color-secondary);
   bottom: 0;
   left: 0;
 }
-
 .events .event p {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  display: block;
+  font-size: 12px;
+  position: relative;
+}
+
+.events .event p span {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.events .event .descrip {
   margin: 10px 0 0 0;
   font-size: 14px;
 }
