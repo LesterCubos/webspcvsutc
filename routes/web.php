@@ -17,7 +17,6 @@ use App\Http\Controllers\Webpage\ProgramsController;
 use App\Http\Controllers\Webpage\AdmissionController;
 use App\Http\Controllers\Webpage\NewsController;
 use App\Http\Controllers\Webpage\AnnouncementController;
-use App\Http\Controllers\Webpage\AnnouncementsController;
 
 
 use App\Http\Controllers\Webpage\SwitchController;
@@ -31,7 +30,6 @@ use App\Http\Controllers\Webpage\MVGController;
 use App\Http\Controllers\Webpage\UniversitySealsController;
 use App\Http\Controllers\Webpage\UniversityOfficialsController;
 use App\Http\Controllers\Webpage\CampusOfficialsController;
-use App\Http\Controllers\Webpage\CampusOfficialInfosController;
 use App\Http\Controllers\Webpage\ContactInfoController;
 use App\Http\Controllers\Webpage\ContactController;
 
@@ -73,7 +71,6 @@ use App\Http\Controllers\Webpage\SearchController;
 
 //Home
 Route::get('/', [HomeController::class, 'homepage'])->name('pages.homepage');
-// Route::resource('photos.comments', HomeController::class);
 //About
 Route::get('about_campus_history', [AboutController::class, 'campus_history'])->name('pages.campus_history');
 Route::get('about_mvg', [AboutController::class, 'mvgs'])->name('pages.mvg');
@@ -108,22 +105,9 @@ Route::get('services_csg', [ServicesController::class, 'csgs'])->name('pages.csg
 Route::get('services_acadorgs', [ServicesController::class, 'acadorgs']);
 Route::get('services_nonacadorgs', [ServicesController::class, 'nonacadorgs']);
 Route::get('services_newsandupdates', [ServicesController::class, 'newsandupdates']);
-Route::get('services_announcements', [ServicesController::class, 'announcements']);
-Route::get('services_campuscalendar', [ServicesController::class, 'campuscalendar']);
-// Route::get('services_campuscalendar', function () {
-//     return view('event::campuscalendar');
-//  });
-
-// News
-Route::get('newsandupdates_news{new}', [NewsandUpdatesController::class, 'news']);
-
-// Announcements
-Route::get('announcements{announce}', [AnnouncementsController::class, 'announcements']);
-
-
-// Route::get('announce1', [AnnouncementsController::class, 'announce1']);
-// Route::get('announce2', [AnnouncementsController::class, 'announce2']);
-// Route::get('announce3', [AnnouncementsController::class, 'announce3']);
+Route::get('/services_campuscalendar', function () {
+    return view('event::campuscalendar');
+ });
 
 //Search
 Route::get('search', [SearchController::class, 'search']);
@@ -171,13 +155,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('uni_seals',UniversitySealsController::class);
     Route::resource('uni_officials', UniversityOfficialsController::class);
     Route::resource('campus_officials',CampusOfficialsController::class);
-    Route::resource('campus_official_infos',CampusOfficialInfosController::class);
     Route::resource('contact_infos',ContactInfoController::class);
 
     //Admission
     Route::resource('programs_offers',ProgramsOfferedController::class);
-    Route::resource('requirements_procedures',RequirementsProcedureController::class);
-    Route::resource('admission_results',AdmissionResultController::class);
 
     //Administration
     Route::resource('office_registrars',OfficeRegistrarController::class);

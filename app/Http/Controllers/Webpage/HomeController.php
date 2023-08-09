@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Webpage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
 use App\Models\CarouselItem;
 use App\Models\FeaturedService;
 use App\Models\DiscoverTanzaInfo;
@@ -13,6 +14,7 @@ use App\Models\Program;
 use App\Models\Admission;
 use App\Models\News;
 use App\Models\Announcement;
+use Latfur\Event\Models\Event;
 use Latfur\Event\Models\Event;
 
 
@@ -44,6 +46,7 @@ class HomeController extends Controller
         $admissions = Admission::all();
         $news = News::all();
         $announcements = Announcement::all();
+        $events = Event::all();
         $events = Event::all();
 
         return view('pages.homepage',
