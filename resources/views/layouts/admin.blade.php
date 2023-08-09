@@ -45,12 +45,11 @@
     <main class="main" id="main">
         @yield('content')
     </main>
-    <footer id="footer" class="footer">
+    <div id="footer" class="footer">
         <div class="copyright">
           &copy; Copyright <strong><span>CVSU Tanza Campus</span></strong>. All Rights Reserved <?php echo date("Y.");?>
         </div>
-
-    </footer><!-- End Footer -->
+    </div><!-- End Footer -->
 
       <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

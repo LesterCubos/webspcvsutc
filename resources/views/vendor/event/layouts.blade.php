@@ -134,14 +134,14 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-          <a class="nav-link " id="nav_link" href="{{url('event')}}">
+          <a class="nav-link {{ Request::is('events','event') ? 'active' : '' }}" id="nav_link" href="{{url('event')}}">
             <i class="ri-calendar-event-fill"></i>
             <span>Event Calender</span>
           </a>
         </li><!-- End Event Nav -->
 
         <li class="nav-item">
-          <a class="nav-link " id="nav_link" href="{{url('event-list')}}">
+          <a class="nav-link {{ Request::is('event-list') ? 'active' : '' }}" id="nav_link" href="{{url('event-list')}}">
             <i class="ri-calendar-todo-fill"></i>
             <span>Event List</span>
           </a>

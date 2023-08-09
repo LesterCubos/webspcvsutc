@@ -25,6 +25,55 @@
   padding: 30px;
 }
 
-.campusofficials .orgimg img {
-  width: 100%;
+.campusofficials .org_img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
+}
+
+.campusofficials .org_img img {
+  transition: 0.3s;
+}
+
+.campusofficials .org-links {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.campusofficials .org-links .preview-link {
+  font-size: 20px;
+  color: #fff;
+  transition: 0.3s;
+  line-height: 1.2;
+  margin: 30px 8px 0 8px;
+}
+
+.campusofficials .org-links .preview-link:hover {
+  color: var(--color-secondary);
+}
+
+.campusofficials .org_img:hover .org-links {
+  opacity: 1;
+}
+
+.campusofficials .org_img:hover .preview-link {
+  margin-top: 0;
+}
+
+.campusofficials .org_img:hover img {
+  transform: scale(1.1);
+}
+
+.glightbox-clean .gslide-description {
+  background: #222425;
+}
+
+.glightbox-clean .gslide-title {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
 }

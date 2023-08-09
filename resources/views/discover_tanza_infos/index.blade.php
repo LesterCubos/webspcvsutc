@@ -58,7 +58,7 @@
                 <th scope="row">{{ $discover_tanza_info->id }}</th>
                 <td>{{ $discover_tanza_info->headline }}</td>
                 <td>{{ $discover_tanza_info->subheadline }}</td>
-                <td>{!! $discover_tanza_info->content !!}</td>
+                <td>{!! Str::limit($discover_tanza_info->content,'500','...') !!}</td>
                 <td><img style="width:250px" src="{{ Storage::url($discover_tanza_info->image) }}" alt="{{ $discover_tanza_info->headline }}" srcset=""></td>
                 <td>{{ $discover_tanza_info->created_at }}</td>
                 <td>{{ $discover_tanza_info->updated_at }}</td>

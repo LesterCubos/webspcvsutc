@@ -550,10 +550,13 @@ h6 {
   color: #4154f1;
 }
 
-.nav-tabs-bordered .nav-link.active {
+.sidebar .nav-item.active {
+  color: var(--color-primary);
+}
+
+.sidebar .nav-link.active {
   background-color: #fff;
-  color: #4154f1;
-  border-bottom: 2px solid #4154f1;
+  color: var(--color-primary);
 }
 
 /*--------------------------------------------------------------
@@ -962,8 +965,21 @@ h6 {
   color: var(--color-secondary);
 }
 
-.sidebar-nav .nav-content a.active i {
+/* .sidebar-nav .nav-content a.active i {
   background-color: var(--color-secondary);
+} */
+
+.sidebar-nav #navi #nlink {
+  color: #012970;
+}
+
+.sidebar-nav #navi #nlink.active,
+.sidebar-nav #navi #nlink.active i {
+  color: var(--color-secondary);
+}
+
+.sidebar-nav #navi #down {
+  font-size: 16px;
 }
 
 /*--------------------------------------------------------------
@@ -1009,6 +1025,7 @@ h6 {
 
 /* Info Cards */
 .dashboard .info-card {
+  height: 200px;
   padding-bottom: 10px;
   background-color: white;
 }

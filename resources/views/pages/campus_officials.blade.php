@@ -28,19 +28,42 @@
 
           <div id="container">
             @foreach ($campus_officials as $campus_official)
-
-                <img id="image" src="{{ asset('storage/' . $campus_official->org_image) }}" alt="{{ $campus_official->id }}" alt="Zoom and Drag Image">
+            <div>
+              <div class="org_img">
+                <img id="image" src="{{ asset('storage/' . $campus_official->org_image) }}" alt="{{ $campus_official->id }}" alt="" width="100%" height="100%">
+                <div class="org-links d-flex align-items-center justify-content-center">
+                  <a href="{{ asset('storage/' . $campus_official->org_image) }}" title="Organizational Chart" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                </div>
+              </div>
+            </div><!-- Organization Chart Item -->
             @endforeach
-                <button id="zoom-in">Zoom In</button>
-                <button id="zoom-out">Zoom Out</button>
-                <button id="refresh">Refresh</button>
           </div>
 
-
+          <br>
+          {{-- table for Campus Official info --}}
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">NAME</th>
+                <th scope="col">POSITION</th>
+                <th scope="col">CONTACT INFORMATION</th>
+              </tr>
+            </thead>
+            <tbody>
+            @foreach ($campus_official_infos as $campus_official_info)
+                <tr>
+                    <th scope="row">{{ $campus_official_info->name }}</th>
+                    <td>{{ $campus_official_info->position }}</td>
+                    <td>{{ $campus_official_info->contact }}<br>{{ $campus_official_info->email }}</td>
+                </tr>
+              @endforeach
+    
+            </tbody>
+          </table> 
         </div>
       </section><!-- End Campus Officials Section -->
 
-      <script>
+      {{-- <script>
         var container = document.getElementById("container");
         var image = document.getElementById("image");
         var zoomInBtn = document.getElementById("zoom-in");
@@ -89,5 +112,5 @@
         container.addEventListener("mouseup", function(event) {
           isDragging = false;
         });
-      </script>
+      </script> --}}
 @endsection

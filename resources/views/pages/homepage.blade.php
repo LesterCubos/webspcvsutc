@@ -47,9 +47,6 @@
         <section id="hero" class="d-flex flex-column justify-content-end position-relative">
             <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
-              <!-- Slide 1 -->
-
-
                 <div class="carousel-inner">
                     @foreach($carousel_items as $carousel_item)
 
@@ -88,13 +85,13 @@
                               <div class="carousel-caption text-end">
                                 <h1 class="animate__animated animate__fadeInDown">{{ $carousel_item->title }}</h1>
                                 <p class="animate__animated animate__fadeInUp">{{ $carousel_item->content }}</p>
-                                <p><a class="btn btn-lg btn-light btn-get-started animate__animated animate__fadeInUp scrollto" href="#">Browse gallery</a></p>
+                                <p><a class="btn btn-lg btn-light btn-get-started animate__animated animate__fadeInUp scrollto" href="#">Browse News</a></p>
                               </div>
                             </div>
                           </div>
                     @else
                         <!-- Slide -->
-                        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                        <div class="carousel-item">
                             <img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('storage/' . $carousel_item->featured_image) }}" alt="{{ $carousel_item->title }}">
                             <div class="container">
                                 <div class="carousel-caption text-start">
@@ -140,6 +137,8 @@
         <!-- End Hero Section -->
 
         <main id="main">
+
+            {{-- <p>{{ $totalViews }}</p> --}}
 
             <!-- ======= Featured Services Section ======= -->
             <section id="featured-services" class="featured-services">
@@ -188,9 +187,10 @@
                                 {{ $discover_tanza_info->subheadline }}
                             </p>
                             <p>
-
-                                {{ $discover_tanza_info->content }}
+                                {!! Str::limit($discover_tanza_info->content,'500','...') !!}
                             </p>
+                            <a href="about_campus_history"><button>Read More</button></a>
+
                         </div>
                     @endforeach
                 </div>
@@ -202,6 +202,9 @@
             <!-- ======= Counts Section ======= -->
             <section id="counts" class="counts">
                 <div class="container" data-aos="fade-up">
+
+                    {{-- <div class="website-counter"></div> --}}
+                    {{-- <div class="website-counter">{{ $totalViews }}</div> --}}
 
                 <div class="row">
                     @foreach($counts as $count)
@@ -264,7 +267,7 @@
                         </div>
                         <div class="details position-relative">
                         <div class="icon">
-                            <i class="bi bi-controller"></i>
+                            <i class="bi bi-stickies"></i>
                         </div>
                         <a href="#" class="stretched-link">
                             <h3>{{ $program->title }}</h3>
@@ -320,7 +323,7 @@
             {{-- <div id="admis" @if ($show) style="display: block;" @else style="display: none;" @endif>
                 @if ($show) style="display: block;" @else style="display: none;" @endif--}}
                 <section id="admissions" class="admissions">
-                    <div class="container" data-aos="zoom-in">
+                    <div class="container" data-aos="zoom-in" style="background: linear-gradient(rgba(37, 50, 72, 0.9), rgba(25, 40, 66, 0.9)), url('../img/admission.jpg') center center">
 
                         <div class="section-title">
                             <h3><span>Admissions</span> On Going</h3>
@@ -355,221 +358,196 @@
             <!-- ======= News and updates Section ======= -->
             <section id="newsandupdates" class="newsandupdates section-bg">
                 <div class="section-title">
-                <h3><span>News</span> and Updates</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
+                    <h3><span>News</span> Updates</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
                 </div>
 
                 <div class="container-fluid" data-aos="fade-up">
 
-                <div class="row">
+                    <div class="row">
 
-                    <div class="col-lg-6 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+                        <div class="col-lg-6 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
-                    <div class="accordion-list">
-                        <ul>
-                            {{-- @php
-                            $increment = 1;
-                            @endphp --}}
-                            @foreach($news as $new)
+                            <div class="accordion-list">
+                                <ul> 
+                                    @foreach($news as $new)
+                                        @if ($loop->iteration == 1 )
+                                        <li>
+                                            <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span id="num">01</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                            <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                                            <p>
+                                                {!! Str::limit($new->news_content,'250','...') !!}
+                                                <a href="newsandupdates_news{{$new->id}}">Read More</a>
+                                            </p>
+                                            </div>
+                                        </li>
+                                        @elseif ($loop->iteration == 2)
+                                        <li>
+                                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span id="num">02</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                            <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                                            <p>
+                                                {!! Str::limit($new->news_content,'250','...') !!}
+                                                <a href="newsandupdates_news{{$new->id}}">Read More</a>
+                                            </p>
+                                            </div>
+                                        </li>
+                                        @elseif ($loop->iteration == 3)
+                                        <li>
+                                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span id="num">03</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                            <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                                            <p>
+                                                {!! Str::limit($new->news_content,'250','...') !!}
+                                                <a href="newsandupdates_news{{$new->id}}">Read More</a>
+                                            </p>
+                                            </div>
+                                        </li>
+                                        @elseif ($loop->iteration == 4)
+                                        <li>
+                                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4" class="collapsed"><span id="num">04</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                            <div id="accordion-list-4" class="collapse" data-bs-parent=".accordion-list">
+                                            <p>
+                                                {!! Str::limit($new->news_content,'250','...') !!}
+                                                <a href="newsandupdates_news{{$new->id}}">Read More</a>
+                                            </p>
+                                            </div>
+                                        </li>
+                                        @elseif ($loop->iteration == 5)
+                                        <li>
+                                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-5" class="collapsed"><span id="num">05</span> {{ $new->news_title }} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                            <div id="accordion-list-5" class="collapse" data-bs-parent=".accordion-list">
+                                            <p>
+                                                {!! Str::limit($new->news_content,'250','...') !!}
+                                                <a href="newsandupdates_news{{$new->id}}">Read More</a>
+                                            </p>
+                                            </div>
+                                        </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </div>
 
-                        @if ($loop->iteration == 1 )
-                        <li>
-                            <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                                {{-- @php
-                                $increment++;
-                                @endphp --}}
-                            <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                            <p>
-                                {!! Str::limit($new->news_content,'250','...') !!}
+                        </div>
 
-                            </p>
+                        <div class="col-lg-5 align-items-stretch order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
+                            <div id="carouselIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+                                <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                </div>
+                                <div class="carousel-inner" id="carousel-inner">
+                                    @foreach ( $news as $new )
+
+                                @if ($loop->iteration == 1 )
+
+                                <div class="carousel-item {{ $loop->first ? 'active' : '' }}" id="carousel-item">
+                                    <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption text-start">
+                                    <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
+                                    </div>
+                                </div>
+                                @elseif ($loop->iteration == 2 )
+                                <div class="carousel-item" id="carousel-item">
+                                    <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption text-start">
+                                    <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
+                                    </div>
+                                </div>
+                                @elseif ($loop->iteration == 3 )
+                                <div class="carousel-item" id="carousel-item">
+                                    <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption text-start">
+                                    <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
+                                    </div>
+                                </div>
+                                @elseif ($loop->iteration == 4 )
+                                <div class="carousel-item" id="carousel-item">
+                                    <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption text-start">
+                                    <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
+                                    </div>
+                                </div>
+                                @elseif ($loop->iteration == 5 )
+                                <div class="carousel-item" id="carousel-item">
+                                    <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption text-start">
+                                    <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
+                                    </div>
+                                </div>
+                                @endif
+
+                                @endforeach
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                             </div>
-                        </li>
-                        @elseif ($loop->iteration == 2)
-                        <li>
-                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                            <p>
-                                {!! Str::limit($new->news_content,'250','...') !!}
-                            </p>
-                            </div>
-                        </li>
-                        @elseif ($loop->iteration == 3)
-                        <li>
-                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                            <p>
-                                {!! Str::limit($new->news_content,'250','...') !!}
-                            </p>
-                            </div>
-                        </li>
-                        @elseif ($loop->iteration == 4)
-                        <li>
-                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4" class="collapsed"><span>04</span> {{ $new->news_title }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="accordion-list-4" class="collapse" data-bs-parent=".accordion-list">
-                            <p>{!! Str::limit($new->news_content,'250','...') !!}</p>
-                            </div>
-                        </li>
-                        @elseif ($loop->iteration == 5)
-                        <li>
-                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-5" class="collapsed"><span>05</span> {{ $new->news_title }} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="accordion-list-5" class="collapse" data-bs-parent=".accordion-list">
-                            <p>{!! Str::limit($new->news_content,'250','...') !!}</p>
-                            </div>
-                        </li>
-                        @endif
-                        @endforeach
-                        </ul>
+                        </div>
                     </div>
-
-                    </div>
-
-                    <div class="col-lg-5 align-items-stretch order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
-                    <div id="carouselIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-                        <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                        </div>
-                        <div class="carousel-inner" id="carousel-inner">
-                            @foreach ( $news as $new )
-
-                        @if ($loop->iteration == 1 )
-
-                        <div class="carousel-item {{ $loop->first ? 'active' : '' }}" id="carousel-item">
-                            <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption text-start">
-                            <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
-                            </div>
-                        </div>
-                        @elseif ($loop->iteration == 2 )
-                        <div class="carousel-item" id="carousel-item">
-                            <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption text-start">
-                            <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
-                            </div>
-                        </div>
-                        @elseif ($loop->iteration == 3 )
-                        <div class="carousel-item" id="carousel-item">
-                            <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption text-start">
-                            <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
-                            </div>
-                        </div>
-                        @elseif ($loop->iteration == 4 )
-                        <div class="carousel-item" id="carousel-item">
-                            <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption text-start">
-                            <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
-                            </div>
-                        </div>
-                        @elseif ($loop->iteration == 5 )
-                        <div class="carousel-item" id="carousel-item">
-                            <img src="{{ asset('storage/' . $new->news_image) }}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption text-start">
-                            <h5 class="animate__animated animate__fadeInUp">{{ $new->news_headline }}</h5>
-                            </div>
-                        </div>
-                        @endif
-
-                        @endforeach
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                        </div>
-                    </div>
+                    <div class="col-md-12 text-center">
+                        <a href="services_newsandupdates"><button id="load">Load More</button></a>
                     </div>
                 </div>
-                </div>
-
             </section>
             <!-- End News and Updates Section -->
 
             <!-- ======= Announcements Section ======= -->
             <section id="announcements" class="announcements">
                 <div class="section-title">
-                <h3>Latest <span>Announcements</span></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
+                    <h3>Latest <span>Announcements</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
                 </div>
 
                 <div class="container">
-                @foreach($announcements as $announcement)
+                    <div class="announcements-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-wrapper">
+                            @foreach($announcements as $announcement)
+                                <div class="swiper-slide">
+                                    <div class="row announcements-item">
+                                    <div class="col-lg-6">
+                                        <img src="{{ asset('storage/' . $announcement->poster) }}" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="col-lg-6 pt-4 pt-lg-0 content">
+                                        <h3> {{ $announcement->title }}</h3>
+                                        <p class="fst-italic">
+                                            {!! Str::limit($announcement->content,'500','...') !!}
+                                        </p>
+                                        <div>
+                                            <a href="announcements{{$announcement->id}}"><button>Read More</button></a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div><!-- End Announcement item -->
+                            @endforeach
+                        </div>
+                        <div class="swiper-pagination"></div>
+                      </div>
 
-                @if ($loop->iteration == 1 )
-                <div class="row gy-4 align-items-center announcements-item" data-aos="fade-up">
-
-                    <div class="col-md-5">
-                    <img src="{{ asset('storage/' . $announcement->poster) }}" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-7">
-                    <h3>{{ $announcement->title }}</h3>
-                    <p class="fst-italic">
-                        {!! $announcement->content !!}
-                    </p>
-                    {{-- <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aut cupiditate aliquam maiores molestias eaque a commodi exercitationem expedita reprehenderit minima soluta iusto voluptas, culpa ipsa. Soluta laborum facere voluptas.
-                    </p> --}}
-                    </div>
-                </div><!-- Announcement Item -->
-                @elseif ($loop->iteration == 2 )
-                <div class="row gy-4 align-items-center announcements-item" data-aos="fade-up">
-                    <div class="col-md-5 order-1 order-md-2">
-                    <img src="{{ asset('storage/' . $announcement->poster) }}" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-7 order-2 order-md-1">
-                    <h3> {{ $announcement->title }}</h3>
-                    <p class="fst-italic">
-                        {!! $announcement->content !!}
-                    </p>
-                    {{-- <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aut cupiditate aliquam maiores molestias eaque a commodi exercitationem expedita reprehenderit minima soluta iusto voluptas, culpa ipsa. Soluta laborum facere voluptas.
-                    </p> --}}
-                    </div>
-                </div><!-- Announcement Item -->
-                @elseif ($loop->iteration == 3 )
-                <div class="row gy-4 align-items-center announcements-item" data-aos="fade-up">
-                    <div class="col-md-5">
-                    <img src="{{ asset('storage/' . $announcement->poster) }}" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-7">
-                    <h3> {{ $announcement->title }}</h3>
-                    <p class="fst-italic">
-                        {!! $announcement->content !!}
-                    </p>
-                    {{-- <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste aut cupiditate aliquam maiores molestias eaque a commodi exercitationem expedita reprehenderit minima soluta iusto voluptas, culpa ipsa. Soluta laborum facere voluptas.
-                    </p> --}}
-                    </div>
-                </div><!-- Announcement Item -->
-                @endif
-                @endforeach
                 </div>
             </section>
             <!-- End Announcements Section -->
 
             <!-- ======= Events Section ======= -->
-            {{-- <section id="events" class="events section-bg">
-                <div class="section-title">
-                <h3>Upcoming <span>Events</span></h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
-                </div>
+            <section id="events" class="events section-bg">
 
                 <div class="container" data-aos="fade-up">
 
                     <div class="row">
                         <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="content">
-                            <h3>View Full Calendar?</h3>
+                            <div class="title">
+                                <p>Upcoming</p>
+                                <h3>Events</h3>
+                            </div>
                             <div class="img-calendar">
-                            <img src="{{ asset('img/calendar.webp') }}" alt="" width="300" height="150">
+                            <img src="{{ asset('img/imgbin_calendar-brand-png.png') }}" alt="" width="300" height="300">
                             </div>
                             <div class="text-center">
                             <a href="" class="more-btn">View Calendar <i class="bx bx-chevron-right"></i></a>
@@ -577,43 +555,47 @@
                         </div>
                         </div>
 
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" style="margin-top: 10px">
                             @foreach ( $events as $event )
                                 @if ($loop->iteration == 1 )
-                                    <div class="event d-flex align-items-start event1" data-aos="zoom-in" data-aos-delay="100">
+                                    <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
                                         <div class="event-info">
-                                            <h4>{{ $event->date }}</h4>
-                                            <span>{{ $event->event_title }}</span>
-                                            <p>{!! $event->desc !!}</p>
+                                            <h4>{{ $event->event_title }}</h4>
+                                            <p><span>Start Date: </span>{{ $event->event_start_date }} <span>| Start Time:</span> {{ $event->event_start_time }}</p>
+                                            <p><span>End Date: </span>{{ $event->event_end_date }} <span>| End Time:</span> {{ $event->event_end_time }}</p>
+                                            <p class="descrip"><span>Desciprtion: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
                                         </div>
                                     </div>
                                 @elseif ($loop->iteration == 2 )
                                     <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
                                         <div class="event-info">
-                                            <h4>{{ $event->date }}</h4>
-                                            <span>{{ $event->event_title }}</span>
-                                            <p>{!! $event->desc !!}</p>
+                                            <h4>{{ $event->event_title }}</h4>
+                                            <p><span>Start Date: </span>{{ $event->event_start_date }} <span>| Start Time:</span> {{ $event->event_start_time }}</p>
+                                            <p><span>End Date: </span>{{ $event->event_end_date }} <span>| End Time:</span> {{ $event->event_end_time }}</p>
+                                            <p class="descrip"><span>Desciprtion: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
                         </div>
-                        <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="col-lg-4" style="margin-top: 10px">
                             @foreach ( $events as $event )
                                 @if ($loop->iteration == 3 )
                                     <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
                                         <div class="event-info">
-                                            <h4>{{ $event->date }}</h4>
-                                            <span>{{ $event->event_title }}</span>
-                                            <p>{!! $event->desc !!}</p>
+                                            <h4>{{ $event->event_title }}</h4>
+                                            <p><span>Start Date: </span>{{ $event->event_start_date }} <span>| Start Time:</span> {{ $event->event_start_time }}</p>
+                                            <p><span>End Date: </span>{{ $event->event_end_date }} <span>| End Time:</span> {{ $event->event_end_time }}</p>
+                                            <p class="descrip"><span>Desciprtion: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
                                         </div>
                                     </div>
                                 @elseif ($loop->iteration == 4 )
                                     <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
                                         <div class="event-info">
-                                            <h4>{{ $event->date }}</h4>
-                                            <span>{{ $event->event_title }}</span>
-                                            <p>{!! $event->desc !!}</p>
+                                            <h4>{{ $event->event_title }}</h4>
+                                            <p><span>Start Date: </span>{{ $event->event_start_date }} <span>| Start Time:</span> {{ $event->event_start_time }}</p>
+                                            <p><span>End Date: </span>{{ $event->event_end_date }} <span>| End Time:</span> {{ $event->event_end_time }}</p>
+                                            <p class="descrip"><span>Desciprtion: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
                                         </div>
                                     </div>
                                 @endif
@@ -621,7 +603,7 @@
                         </div>
                     </div>
                 </div>
-            </section> --}}
+            </section>
             <!-- End Events Section -->
 
             @include('incshow.footer')

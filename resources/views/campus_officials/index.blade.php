@@ -10,7 +10,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
             <li class="breadcrumb-item">Dashboard</li>
-            <li class="breadcrumb-item active">Campus Officials Page</li>
+            <li class="breadcrumb-item active">Campus Organizational Image Page</li>
         </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -18,9 +18,9 @@
     <div class="card flex justify-between">
         <div class="card-body">
             <br>
-            <h2>Campus Officials Page</h2>
+            <h2>Campus Organizational Image Page</h2>
             {{-- <button href="{{ route('carousel_items.create') }}" type="submit" name="" class="btn btn-success">Add org_image</button> --}}
-            <a href="{{ route('campus_officials.create') }}" class="btn btn-success">Add</a>
+            <a href="{{ route('campus_officials.create') }}" class="btn btn-success">Add Image</a>
 
             {{-- <div class="form-check form-switch">
                 <input type="checkbox" class="form-check-input" id="show-section-switch" value="$showSection ? 'checked' : '' }}">
@@ -71,4 +71,5 @@
         </tbody>
     </table>
 
+       
 @endsection

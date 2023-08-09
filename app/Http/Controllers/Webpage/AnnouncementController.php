@@ -15,10 +15,14 @@ use App\Http\Requests\Announcement\StoreRequest;
 use App\Http\Requests\Announcement\UpdateRequest;
 use Illuminate\Support\Facades\Storage;
 
+
+
 class AnnouncementController extends Controller
 {
+    
     public function index(): Response
     {
+
         return response()->view('announcements.index', [
             'announcements' => Announcement::orderBy('updated_at', 'desc')->get(),
         ]);

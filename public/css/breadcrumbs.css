@@ -71,3 +71,17 @@
     color: #4278cc;
     content: "/";
   }
+
+  .breadcrumbs .view {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    color: var(--color-default);
+  }
+  
+  .breadcrumbs .view i {
+    font-weight: 700;
+    font-size: 20px;
+    color: #028a0f;
+  }

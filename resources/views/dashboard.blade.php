@@ -42,28 +42,18 @@
           <div class="col-xxl-4 col-md-6">
             <div class="card info-card metrics-card">
 
-              <div class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
-
               <div class="card-body">
-                <h5 class="card-title"> Total Views<span>| Today</span></h5>
+                <h5 class="card-title"> Total<span> | Visitors</span></h5>
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-eye"></i>
+                    <i class="bi bi-people"></i>
                   </div>
                   <div class="ps-3">
-                    <h1><strong>145</strong></h1>
+                    <span class="text-success small pt-1 fw-bold">{{ $todayVisits }}</span> <span class="text-muted small pt-2 ps-1"> Today</span><br>
+                    <span class="text-success small pt-1 fw-bold">{{ $monthVisits }}</span> <span class="text-muted small pt-2 ps-1"> This Month</span><br>
+                    <span class="text-success small pt-1 fw-bold">{{ $yearVisits }}</span> <span class="text-muted small pt-2 ps-1"> This Year</span><br>
+                    <span class="text-success small pt-1 fw-bold">{{ $totalVisits }}</span> <span class="text-muted small pt-2 ps-1"> Total</span>
                   </div>
                 </div>
               </div>
@@ -75,32 +65,44 @@
           <div class="col-xxl-4 col-md-6">
             <div class="card info-card metrics-card">
 
-              <div   class="filter">
-                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                  <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                  </li>
-
-                  <li><a class="dropdown-item" href="#">Today</a></li>
-                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                </ul>
-              </div>
-
               <div class="card-body">
-                <h5 class="card-title">Uptime <span>| This Month</span></h5>
+                <h5 class="card-title">Total <span>| Views</span></h5>
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                     <i class="bi bi-eye"></i>
                   </div>
                   <div class="ps-3">
-                    <h1>3,264</h1>
-
+                    <span class="text-success small pt-1 fw-bold">{{ $totalNews }}</span> <span class="text-muted small pt-2 ps-1"> News</span><br>
+                    <span class="text-success small pt-1 fw-bold">{{ $totalAnnouncement }}</span> <span class="text-muted small pt-2 ps-1"> Announcements</span><br>
+                    <span class="text-success small pt-1 fw-bold">{{ $totalEvents }}</span> <span class="text-muted small pt-2 ps-1"> Events</span>
                   </div>
                 </div>
               </div>
+              
+
+            </div>
+          </div><!-- End Clock Card -->
+
+          <!-- clockCard -->
+          <div class="col-xxl-4 col-md-6">
+            <div class="card info-card metrics-card">
+
+              <div class="card-body">
+                <h5 class="card-title">Total <span>| Number</span></h5>
+
+                <div class="d-flex align-items-center">
+                  <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bi bi-newspaper"></i>
+                  </div>
+                  <div class="ps-3">
+                    <span class="text-success small pt-1 fw-bold">{{ $newscount }}</span> <span class="text-muted small pt-2 ps-1"> News</span><br>
+                    <span class="text-success small pt-1 fw-bold">{{ $announcementcount }}</span> <span class="text-muted small pt-2 ps-1"> Announcements</span><br>
+                    <span class="text-success small pt-1 fw-bold">{{ $eventscount }}</span> <span class="text-muted small pt-2 ps-1"> Events</span>
+                  </div>
+                </div>
+              </div>
+              
 
             </div>
           </div><!-- End Clock Card -->
@@ -117,70 +119,60 @@
 
         <!-- Recent Activity -->
         <div class="card">
-          <div class="filter">
-            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-              <li class="dropdown-header text-start">
-                <h6>Filter</h6>
-              </li>
-
-              <li><a class="dropdown-item" href="#">Today</a></li>
-              <li><a class="dropdown-item" href="#">This Month</a></li>
-              <li><a class="dropdown-item" href="#">This Year</a></li>
-            </ul>
-          </div>
-
+        
           <div class="card-body">
-            <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+            <h5 class="card-title">Recent Activity <span>| This Month</span></h5>
 
             <div class="activity">
 
               <div class="activity-item d-flex">
-                <div class="activite-label">32 min</div>
-                <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                <div class="activity-content">
-                  Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
-                </div>
+                
+                  <div class="activite-label">ID</div>
+                  {{-- <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i> --}}
+                  <div class="activity-content">
+                    <a href="" class="fw-bold text-primary"> Activity Description</a>
+                  </div>
+                
               </div><!-- End activity item-->
 
               <div class="activity-item d-flex">
-                <div class="activite-label">56 min</div>
-                <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                <div class="activity-content">
-                  Voluptatem blanditiis blanditiis eveniet
-                </div>
+                @foreach($carouselItem as $carousel_item)
+                  <div class="activite-label">{{ $carousel_item->id }}</div>
+                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                  <div class="activity-content">
+                    {!! Str::limit($carousel_item->title,'25','...') !!}<a href="{{ route('carousel_items.index') }}" class="fw-bold text-dark"> Carousel Item</a>
+                  </div>
+                @endforeach
               </div><!-- End activity item-->
 
               <div class="activity-item d-flex">
-                <div class="activite-label">2 hrs</div>
-                <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                <div class="activity-content">
-                  Voluptates corrupti molestias voluptatem
-                </div>
+                @foreach($newsItem as $news_item)
+                  <div class="activite-label">{{ $news_item->id }}</div>
+                  <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                  <div class="activity-content">
+                    {!! Str::limit($news_item->news_headline,'25','...') !!}<a href="{{ route('news.index') }}" class="fw-bold text-dark"> News Item</a>
+                  </div>
+                @endforeach
               </div><!-- End activity item-->
 
               <div class="activity-item d-flex">
-                <div class="activite-label">1 day</div>
-                <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                <div class="activity-content">
-                  Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
-                </div>
+                @foreach($announcementItem as $announcement_item)
+                  <div class="activite-label">{{ $announcement_item->id }}</div>
+                  <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                  <div class="activity-content">
+                    {!! Str::limit($announcement_item->title,'25','...') !!}<a href="{{ route('announcements.index') }}" class="fw-bold text-dark"> Announcement Item</a>
+                  </div>
+                @endforeach
               </div><!-- End activity item-->
 
               <div class="activity-item d-flex">
-                <div class="activite-label">2 days</div>
+                @foreach($eventItem as $event_item)
+                <div class="activite-label">{{ $event_item->id }}</div>
                 <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
                 <div class="activity-content">
-                  Est sit eum reiciendis exercitationem
+                  {!! Str::limit($event_item->event_title,'25','...') !!}<a href="/events" class="fw-bold text-dark"> Event Item</a>
                 </div>
-              </div><!-- End activity item-->
-
-              <div class="activity-item d-flex">
-                <div class="activite-label">4 weeks</div>
-                <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-                <div class="activity-content">
-                  Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-                </div>
+                @endforeach
               </div><!-- End activity item-->
 
             </div>
