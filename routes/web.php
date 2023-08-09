@@ -30,6 +30,7 @@ use App\Http\Controllers\Webpage\MVGController;
 use App\Http\Controllers\Webpage\UniversitySealsController;
 use App\Http\Controllers\Webpage\UniversityOfficialsController;
 use App\Http\Controllers\Webpage\CampusOfficialsController;
+use App\Http\Controllers\Webpage\CampusOfficialInfosController;
 use App\Http\Controllers\Webpage\ContactInfoController;
 use App\Http\Controllers\Webpage\ContactController;
 
@@ -155,6 +156,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('uni_seals',UniversitySealsController::class);
     Route::resource('uni_officials', UniversityOfficialsController::class);
     Route::resource('campus_officials',CampusOfficialsController::class);
+    Route::resource('campus_official_infos',CampusOfficialInfosController::class);
     Route::resource('contact_infos',ContactInfoController::class);
 
     //Admission

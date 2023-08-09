@@ -15,7 +15,7 @@ use App\Models\Admission;
 use App\Models\News;
 use App\Models\Announcement;
 use Latfur\Event\Models\Event;
-use Latfur\Event\Models\Event;
+
 
 
 

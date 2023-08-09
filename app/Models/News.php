@@ -9,7 +9,6 @@ use CyrildeWit\EloquentViewable\Contracts\Viewable;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class News extends Model implements Viewable
-class News extends Model implements Viewable
 {
     use InteractsWithViews;
     use InteractsWithViews;
