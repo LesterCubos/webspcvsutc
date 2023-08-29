@@ -10,7 +10,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
             <li class="breadcrumb-item">Dashboard</li>
-            <li class="breadcrumb-item active">News and Update Section</li>
+            <li class="breadcrumb-item active">News Update Section</li>
         </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -18,7 +18,7 @@
     <div class="card flex justify-between">
         <div class="card-body">
             <br>
-            <h2>News and Update Section</h2>
+            <h2>News Update Section</h2>
             {{-- <button href="{{ route('carousel_items.create') }}" type="submit" name="" class="btn btn-success">Add Image</button> --}}
             <a href="{{ route('news.create') }}" class="btn btn-success">Add</a>
 
@@ -78,5 +78,9 @@
             @endforeach
         </tbody>
     </table>
+    {{-- Pagination --}}
+    <div class="d-flex justify-content-center">
+        {!! $news->links() !!}
+    </div>
 
 @endsection

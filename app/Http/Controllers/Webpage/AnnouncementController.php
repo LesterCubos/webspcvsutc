@@ -24,7 +24,7 @@ class AnnouncementController extends Controller
     {
 
         return response()->view('announcements.index', [
-            'announcements' => Announcement::orderBy('updated_at', 'desc')->get(),
+            'announcements' => Announcement::orderBy('updated_at', 'desc')->paginate(5),
         ]);
     }
 

@@ -5,28 +5,28 @@
       <a href="#">Cavite State University</a>
     </div>
 
-    {{-- <div class="social-links d-none d-md-flex align-items-center">
-      <a href="#" class="facebook"><i class='bx bxl-facebook'></i></a>
-      <a href="#" class="twitter ms-1"><i class='bx bxl-twitter'></i></a>
-      <a href="#" class="gmail ms-1"><i class='bx bxs-envelope'></i></a>
-    </div> --}}
-    <div class="d-none d-md-flex align-items-center">
-      @if (Route::has('login'))
-              <div class="admin">
-                  @auth
-                      {{-- <a href="{{ url('/dashboard') }}">Dashboard</a> --}}
-                  @else
-                      <a href="{{ route('login') }}">Log in</a>
-
-                      <span>|</span>
-
-                      @if (Route::has('register'))
-                          <a href="{{ route('register') }}">Register</a>
-                      @endif
-                  @endauth
-              </div>
-          @endif
+    <div class="social-links d-none d-md-flex align-items-center">
+      @foreach ($socialmedias as $socialmedia)
+        <a href="{{ $socialmedia->link }}" class=""><i class="{{ $socialmedia->icon }}"></i></a>
+      @endforeach
     </div>
+    {{-- <div class="d-none d-md-flex align-items-center">
+      @if (Route::has('login'))
+        <div class="admin">
+          @auth
+                      
+            @else
+              <a href="{{ route('login') }}">Log in</a>
+
+              <span>|</span>
+
+            @if (Route::has('register'))
+              <a href="{{ route('register') }}">Register</a>
+            @endif
+          @endauth
+        </div>
+      @endif
+    </div> --}}
 
   </div>
 </section>
@@ -98,6 +98,7 @@
             <li><a href="services_newsandupdates">News Updates</a></li>
             <li><a href="services_announcements">Announcements</a></li>
             <li><a href="services_campuscalendar">Campus Calendar</a></li>
+            <li><a href="services_jobvacancies">Job Vacancies</a></li>
           </ul>
         </li>
         <li class="dropdown"><a href="#">Portal</a>

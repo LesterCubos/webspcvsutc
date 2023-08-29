@@ -15,7 +15,9 @@ use App\Models\Admission;
 use App\Models\News;
 use App\Models\Announcement;
 use Latfur\Event\Models\Event;
-
+use App\Models\QuickLinks;
+use App\Models\OtherLinks;
+use App\Models\SocialMediaLinks;
 
 
 
@@ -26,8 +28,6 @@ class HomeController extends Controller
 {
     public function homepage()
     {
-
-  
         /* Views */
         $views = CarouselItem::find(1);
         
@@ -47,7 +47,10 @@ class HomeController extends Controller
         $news = News::all();
         $announcements = Announcement::all();
         $events = Event::all();
-        $events = Event::all();
+        $quicks = QuickLinks::all();
+        $others = OtherLinks::all();
+        $socialmedias = SocialMediaLinks::all();
+
 
         return view('pages.homepage',
             compact(
@@ -60,6 +63,9 @@ class HomeController extends Controller
                     'news',
                     'announcements',
                     'events',
+                    'quicks',
+                    'others',
+                    'socialmedias',
                     'totalVisits'
                     ));
     }

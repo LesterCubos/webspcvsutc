@@ -7,6 +7,8 @@ use App\Http\Controllers\Webpage\AboutController;
 use App\Http\Controllers\Webpage\AdmissionPageController;
 use App\Http\Controllers\Webpage\AdministrationController;
 use App\Http\Controllers\Webpage\ServicesController;
+use App\Http\Controllers\Webpage\SettingsController;
+
 
 //Homepage Controllers
 use App\Http\Controllers\Webpage\CarouselController;
@@ -62,6 +64,8 @@ use App\Http\Controllers\Webpage\AboutOrgsController;
 
 //Services
 use App\Http\Controllers\Webpage\NewsandUpdatesController;
+use App\Http\Controllers\Webpage\AnnouncementsController;
+use App\Http\Controllers\Webpage\JobVacanciesController;
 // use App\Http\Controllers\CalenderController;
 // use App\Http\Livewire\ShowHideComponent;
 use Illuminate\Support\Facades\Mail;
@@ -69,6 +73,12 @@ use Illuminate\Support\Facades\Route;
 
 //Search
 use App\Http\Controllers\Webpage\SearchController;
+
+//Settings
+use App\Http\Controllers\Webpage\QuickLinksController;
+use App\Http\Controllers\Webpage\OtherLinksController;
+use App\Http\Controllers\Webpage\SocialMediaController;
+
 
 //Home
 Route::get('/', [HomeController::class, 'homepage'])->name('pages.homepage');
@@ -106,9 +116,18 @@ Route::get('services_csg', [ServicesController::class, 'csgs'])->name('pages.csg
 Route::get('services_acadorgs', [ServicesController::class, 'acadorgs']);
 Route::get('services_nonacadorgs', [ServicesController::class, 'nonacadorgs']);
 Route::get('services_newsandupdates', [ServicesController::class, 'newsandupdates']);
-Route::get('/services_campuscalendar', function () {
-    return view('event::campuscalendar');
- });
+Route::get('services_announcements', [ServicesController::class, 'announcements']);
+Route::get('services_campuscalendar', [ServicesController::class, 'campuscalendar']);
+// Route::get('services_campuscalendar', function () {
+//     return view('event::campuscalendar');
+//  });
+
+
+// News
+Route::get('newsandupdates_news{new}', [NewsandUpdatesController::class, 'news']);
+
+// Announcements
+Route::get('announcements{announce}', [AnnouncementsController::class, 'announcements']);
 
 //Search
 Route::get('search', [SearchController::class, 'search']);
@@ -161,6 +180,8 @@ Route::middleware('auth')->group(function () {
 
     //Admission
     Route::resource('programs_offers',ProgramsOfferedController::class);
+    Route::resource('requirements_procedures',RequirementsProcedureController::class);
+    Route::resource('admission_results',AdmissionResultController::class);
 
     //Administration
     Route::resource('office_registrars',OfficeRegistrarController::class);
@@ -181,10 +202,16 @@ Route::middleware('auth')->group(function () {
     Route::resource('csgs', CSGController::class);
     Route::resource('about_orgs', AboutOrgsController::class);
     
+    
     Route::get('/events', function () {
         return view('event::calendar');
      });
-     
+    Route::resource('job_vacancies', JobVacanciesController::class);
+ 
+    //Settings
+    Route::resource('quick_links', QuickLinksController::class);
+    Route::resource('other_links', OtherLinksController::class);
+    Route::resource('social_media', SocialMediaController::class);
     
 
 });

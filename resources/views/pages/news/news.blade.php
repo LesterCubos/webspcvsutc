@@ -10,7 +10,7 @@
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
           <li>Services</li>
-          <li>News and Update</li>
+          <li>News Update</li>
         </ol>
       </div>
     </nav>

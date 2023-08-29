@@ -21,7 +21,7 @@ class CarouselController extends Controller
     public function index(): Response
     {
         return response()->view('carousel_items.index', [
-            'carousel_items' => CarouselItem::orderBy('updated_at', 'desc')->get(),
+            'carousel_items' => CarouselItem::orderBy('updated_at', 'desc')->paginate(5),
         ]);
     }
 

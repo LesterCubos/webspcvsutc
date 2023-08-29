@@ -30,26 +30,20 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Other Links</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">CHED</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">GovPH</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">THAI NGUYEN UNIVERSITY</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">TESDA</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">DOST</a></li>
+              @foreach ($others as $other)
+              <li><i class="bi bi-chevron-right"></i> <a href="#">{{$other->link}}</a></li>
+              @endforeach
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Quick Links</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Student Portal</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Campus Calendar</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">E-Learning</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">E-Library</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Job Vacancies</a></li>
+              @foreach ($quicks as $quick)
+              <li><i class="bi bi-chevron-right"></i> <a href="#">{{$quick->link}}</a></li>
+              @endforeach
             </ul>
           </div>
-
-
 
           {{-- <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>

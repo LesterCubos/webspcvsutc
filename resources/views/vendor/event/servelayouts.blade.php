@@ -29,17 +29,16 @@
         <link rel="stylesheet" href="{{ asset('css/campuscalendar.css') }}">
 
         {{-- Breadcrumb CSS File --}}
-        {{-- <link href="{{ asset('css/breadcrumbs.css') }}" rel="stylesheet"> --}}
+        <link href="{{ asset('css/breadcrumbs.css') }}" rel="stylesheet">
 
         {{-- <title>Event</title> --}}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link href="{{asset('vendor/event/css/bootstrap-datetimepicker.css')}}" rel="stylesheet">
         <link href="{{asset('vendor/event/css/custom.css')}}" rel="stylesheet"> 
-        {{-- Breadcrumb CSS File --}}
-        <link href="{{ asset('css/breadcrumbs.css') }}" rel="stylesheet">
 
         <!-- Latest compiled and minified CSS -->
         {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
@@ -49,7 +48,7 @@
 
   <!-- ======= Header ======= -->
   {{-- @include('incshow.header') --}}
-  <section id="topbar" class="topbar d-flex align-items-center">
+  <div id="topbar" class="topbar d-flex align-items-center">
     <div class="container-xl d-flex justify-content-center justify-content-md-between">
       <div class="brand-name d-flex align-items-center">
         <a>Cavite State University</a>
@@ -73,13 +72,12 @@
       </div>
 
     </div>
-  </section>
+  </div>
   <!-- End Top Bar -->
 
   <header id="header" class="header">
 
     <div class="container-fluid d-flex align-items-center justify-content-between">
-      <div id="menu-expand-collapse"><i class="bi bi-list"></i></div>
       <div class="logo-header d-flex align-items-center">
         <a href="/" class="logo d-flex align-items-center">
           <img src="{{ asset('img/CvSU_logo.png') }}" alt="Logo" width="150" height="50">
@@ -165,49 +163,60 @@
   </div>
   </header><!-- End Header -->
   <!-- End Header -->
-  
-  {{-- <header id="header" class="header">
-    <div id="responsive-menu" class="container-fluid">
-      <div class="logo-header d-flex align-items-center">
-        <a href="/" class="logo d-flex align-items-center">
-          <img src="{{ asset('img/CvSU_logo.png') }}" alt="Logo" width="150" height="50">
-        </a>
+
+  {{-- <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="align-items-center d-none d-md-flex">
+        <i class="bi bi-clock"></i> Monday - Saturday, 8AM to 10PM
       </div>
-      <div id="menu-expand-collapse"><img src="../img/menu-icon.png" width="25px"></div>
-        <div id="responsive-menu-list">
-          <div class="menu-item">
-            <a href="/" >Home</a>
-          </div>
-          <div class="menu-item dropdown">
-            <a href="#">About</a>
-              <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-              </div>
-          </div>	
-          <div class="menu-item ">
-            <a href="#">Download</a>
-          </div>	 
-          <div class="menu-item ">
-           <a href="#">Demos</a>
-          </div>	
-          <div class="dropdown">
-            <button class="dropbtn" style="float: right">Dropdown</button>
-            <div class="dropdown-content" >
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </div>		 
-        </div>		 
+      <div class="d-flex align-items-center">
+        <i class="bi bi-phone"></i> Call us now +1 5589 55488 55
+      </div>
     </div>
+  </div> --}}
 
-    <div class="progress-container">
-      <div class="progress-bar" id="bar"></div>
+  {{-- <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <a href="index.html" class="logo me-auto"><img src="{{ asset('img/CvSU_logo.png') }}" alt=""></a>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
+          <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+
     </div>
-
-  </header> --}}
+  </header><!-- End Header --> --}}
   
 
   <main id="main" class="main">
@@ -294,7 +303,7 @@
 
     <!--  Main JS File -->
     <script src="{{ asset('vendor/main.js') }}"></script>
-    {{-- <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> --}}
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('vendor/aos/aos.js') }}"></script>
     <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script src="{{ asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>
@@ -304,17 +313,18 @@
     <script src="{{ asset('vendor/waypoints/noframework.waypoints.js') }}"></script>
 
     <!-- jQuery library -->
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
     <script src="{{asset('vendor/event/js/bootstrap-datetimepicker.min.js')}}"></script>
     <script src="{{asset('vendor/event/js/parsley.js')}}"></script>
 
+    
     <!-- Latest compiled JavaScript -->
-    {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
       @section('content_script')   
       @show
@@ -325,6 +335,15 @@
             $("#responsive-menu-list").toggle();
           });
         });
+
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
       </script> --}}
     
 </body>
