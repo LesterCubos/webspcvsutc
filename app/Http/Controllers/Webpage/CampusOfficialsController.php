@@ -20,7 +20,7 @@ class CampusOfficialsController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('campus_officials.index', [
+        return response()->view('superadmin.website_admin_panel.about_section.campus_officials.index', [
             'campus_officials' => CampusOfficial::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -30,7 +30,7 @@ class CampusOfficialsController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('campus_officials.form');
+        return response()->view('superadmin.website_admin_panel.about_section.campus_officials.form');
     }
 
     /**
@@ -73,7 +73,7 @@ class CampusOfficialsController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('campus_officials.form', [
+        return response()->view('superadmin.website_admin_panel.about_section.campus_officials.form', [
             'campus_official' => CampusOfficial::findOrFail($id),
         ]);
     }

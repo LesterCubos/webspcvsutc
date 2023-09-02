@@ -18,7 +18,7 @@ class NewsController extends Controller
 {
     public function index(): Response
     {
-        return response()->view('news.index', [
+        return response()->view('superadmin.website_admin_panel.services_section.news.index', [
             'news' => News::orderBy('updated_at', 'desc')->paginate(5),
         ]);
     }
@@ -28,7 +28,7 @@ class NewsController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('news.form');
+        return response()->view('superadmin.website_admin_panel.services_section.news.form');
     }
 
     /**
@@ -71,7 +71,7 @@ class NewsController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('news.form', [
+        return response()->view('superadmin.website_admin_panel.services_section.news.form', [
             'new' => News::findOrFail($id),
         ]);
     }

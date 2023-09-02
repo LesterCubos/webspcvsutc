@@ -37,7 +37,7 @@
   <div class="container-fluid d-flex align-items-center justify-content-between">
     <div class="logo-header d-flex align-items-center">
       <a href="/" class="logo d-flex align-items-center">
-        <img src="{{ asset('img/CvSU_logo.png') }}" alt="Logo" width="150" height="50">
+        <img src="{{ asset('img/CvsuSeal_logo_edit.png') }}" alt="Logo" width="150" height="50">
       </a>
     </div>
 
@@ -105,7 +105,7 @@
           <ul>
             <li><a href="#">Student Portal</a></li>
 
-            <li><a href="/login">MIS Portal</a></li>
+            <li><a href="/superadmin/login">MIS Portal</a></li>
             <li><a href="search">Search</a></li>
           </ul>
         </li>

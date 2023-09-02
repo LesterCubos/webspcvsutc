@@ -7,7 +7,7 @@
         <title>{{ config('app.name', 'CvSU Tanza') }}</title>
 
         <!-- Icon -->
-        <link rel="shortcut icon" type="image/png" href="{{ asset('img/Cavite_State_University_(CvSU).png') }}">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('img/campus_seal.png') }}">
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,8 +32,7 @@
         <link href="{{ asset('css/breadcrumbs.css') }}" rel="stylesheet">
 
         {{-- <title>Event</title> --}}
-        {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --}}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -80,7 +79,7 @@
     <div class="container-fluid d-flex align-items-center justify-content-between">
       <div class="logo-header d-flex align-items-center">
         <a href="/" class="logo d-flex align-items-center">
-          <img src="{{ asset('img/CvSU_logo.png') }}" alt="Logo" width="150" height="50">
+          <img src="{{ asset('img/CvsuSeal_logo_edit.png') }}" alt="Logo" width="150" height="50">
         </a>
       </div>
       <nav id="navbar" class="navbar ms-auto p-2">
@@ -303,7 +302,7 @@
 
     <!--  Main JS File -->
     <script src="{{ asset('vendor/main.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    {{-- <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> --}}
     <script src="{{ asset('vendor/aos/aos.js') }}"></script>
     <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
     <script src="{{ asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>

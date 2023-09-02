@@ -12,10 +12,10 @@
 
       <span style="color: green">Manage Pages</span>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('carousel_items','featured_services','discover_tanza_infos','counts','programs','admissions','announcements') ? 'collapse active' : 'collapsed' }}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ Request::is('carousel_items','featured_services','discover_tanza_infos','counts','programs','admissions') ? 'collapse active' : 'collapsed' }}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-house-door"></i><span>Homepage</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content {{ Request::is('carousel_items','featured_services','discover_tanza_infos','counts','programs','admissions','announcements') ? 'show' : 'collapse' }}" data-bs-parent="#sidebar-nav">
+        <ul id="components-nav" class="nav-content {{ Request::is('carousel_items','featured_services','discover_tanza_infos','counts','programs','admissions') ? 'show' : 'collapse' }}" data-bs-parent="#sidebar-nav">
 
           <li>
             <a class="{{ Request::is('carousel_items') ? 'active' : '' }}" href="{{ route('carousel_items.index') }}" active="request()->routeIs('carousel_items.index')">
@@ -47,21 +47,6 @@
               <i class="bi bi-circle"></i><span>Admission Section</span>
             </a>
           </li>
-          {{-- <li>
-            <a href="{{ route('news.index') }}">
-              <i class="bi bi-circle"></i><span>News and Updates Section</span>
-            </a>
-          </li> --}}
-          <li>
-            <a class="{{ Request::is('announcements') ? 'active' : '' }}" href="{{ route('announcements.index') }}">
-              <i class="bi bi-circle"></i><span>Announcements Section</span>
-            </a>
-          </li>
-          {{-- <li>
-            <a href="{{ route('events.index') }}">
-              <i class="bi bi-circle"></i><span>Events Section</span>
-            </a>
-          </li> --}}
         </ul>
       </li><!-- End homepage Nav -->
 
@@ -225,10 +210,10 @@
      
 
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('about_orgs','news','/events') ? 'collapse active' : 'collapsed' }}" data-bs-target="#services-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ Request::is('about_orgs','news','/events','job_vacancies','announcements') ? 'collapse active' : 'collapsed' }}" data-bs-target="#services-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-newspaper"></i><span>Services</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="services-nav" class="nav-content {{ Request::is('about_orgs','news','/events') ? 'show' : 'collapse' }} " data-bs-parent="#sidebar-nav">
+        <ul id="services-nav" class="nav-content {{ Request::is('about_orgs','news','/events','job_vacancies','announcements') ? 'show' : 'collapse' }} " data-bs-parent="#sidebar-nav">
           <li>
             <a class="{{ Request::is('about_orgs') ? 'active' : '' }}" href="{{route('about_orgs.index')}}">
               <i class="bi bi-circle"></i><span>Students Organizations</span>
@@ -238,6 +223,11 @@
           <li>
             <a class="{{ Request::is('news') ? 'active' : '' }}" href="{{ route('news.index') }}">
               <i class="bi bi-circle"></i><span>News Updates</span>
+            </a>
+          </li>
+          <li>
+            <a class="{{ Request::is('announcements') ? 'active' : '' }}" href="{{ route('announcements.index') }}">
+              <i class="bi bi-circle"></i><span>Announcements Section</span>
             </a>
           </li>
           <li>
@@ -256,19 +246,17 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#settings-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ Request::is('quick_links','other_links','social_media') ? 'collapse active' : 'collapsed' }}" data-bs-target="#settings-nav" data-bs-toggle="collapse" href="#">
           <i class="ri-settings-3-line"></i><span>Settings</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="settings-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          
-
+        <ul id="settings-nav" class="nav-content collapse {{ Request::is('quick_links','other_links','social_media') ? 'show' : 'collapse' }}" data-bs-parent="#sidebar-nav">
           <li>
-            <a class="{{ Request::is('quicks') ? 'active' : '' }}" href="{{ route('quick_links.index') }}">
+            <a class="{{ Request::is('quick_links') ? 'active' : '' }}" href="{{ route('quick_links.index') }}">
               <i class="bi bi-circle"></i><span>Quick links</span>
             </a>
           </li>
           <li>
-            <a class="{{ Request::is('others') ? 'active' : '' }}" href="{{ route('other_links.index')}}">
+            <a class="{{ Request::is('other_links') ? 'active' : '' }}" href="{{ route('other_links.index')}}">
               <i class="bi bi-circle"></i><span>Other Links</span>
             </a>
           </li>

@@ -31,7 +31,7 @@ class DashboardController extends Controller
         ->period(Period::since(Carbon::create($today)))
         ->count();
         //Month
-        $month = Carbon::now()->format('m');
+        $month = Carbon::now()->month;
         $monthVisits = views (CarouselItem::class)
         ->period(Period::since(Carbon::create($month)))
         ->count();

@@ -23,7 +23,7 @@ class AdmissionController extends Controller
 
     public function index(): Response
     {
-        return response()->view('admissions.index', [
+        return response()->view('superadmin.website_admin_panel.homepage_section.admissions.index', [
             'admissions' => Admission::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -33,7 +33,7 @@ class AdmissionController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('admissions.form');
+        return response()->view('superadmin.website_admin_panel.homepage_section.admissions.form');
     }
 
     /**
@@ -76,7 +76,7 @@ class AdmissionController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('admissions.form', [
+        return response()->view('superadmin.website_admin_panel.homepage_section.admissions.form', [
             'admission' => Admission::findOrFail($id),
         ]);
     }

@@ -7,7 +7,7 @@
         <title>{{ config('app.name', 'CvSU Tanza') }}</title>
 
         <!-- Icon -->
-        <link rel="shortcut icon" type="image/png" href="{{ asset('img/Cavite_State_University_(CvSU).png') }}">
+        <link rel="shortcut icon" type="image/png" href="{{ asset('img/campus_seal.png') }}">
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -617,7 +617,7 @@
         <div id="ctn-preloader" class="ctn-preloader">
           <div class="animation-preloader">
             <!-- <div class="spinner"></div> -->
-            <div class="ring">Loading
+            <div class="ring">Welcome
               <span class="mema"></span>
             </div>
             <div class="txt-loading">

@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\ContactInfo;
 
@@ -17,8 +18,15 @@ class ContactInfoController extends Controller
 {
     public function index(): Response
     {
-        return response()->view('contact_infos.index', [
-            'contact_infos' => ContactInfo::orderBy('updated_at', 'desc')->get(),
+        $count = DB::table('contact_infos')->count();
+
+        if($count > 0) {
+            $null = 1;
+        }else {
+            $null = 0;
+        }
+        return response()->view('superadmin.website_admin_panel.about_section.contact_infos.index', [
+            'contact_infos' => ContactInfo::orderBy('updated_at', 'desc')->get(),'nullbtn' => $null
         ]);
     }
 
@@ -27,7 +35,7 @@ class ContactInfoController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('contact_infos.form');
+        return response()->view('superadmin.website_admin_panel.about_section.contact_infos.form');
     }
 
     /**
@@ -65,7 +73,7 @@ class ContactInfoController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('contact_infos.form', [
+        return response()->view('superadmin.website_admin_panel.about_section.contact_infos.form', [
             'contact_info' => ContactInfo::findOrFail($id),
         ]);
     }

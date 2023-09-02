@@ -7,8 +7,8 @@
         <title>{{ config('app.name', 'CvSU Tanza') }}</title>
 
         <!-- Icon -->
-        <link rel="shortcut icon" type="image/png" href="{{ asset('img/Cavite_State_University_(CvSU).png') }}">
-
+        <link rel="shortcut icon" type="image/png" href="{{ asset('img/campus_seal.png') }}">
+        
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

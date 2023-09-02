@@ -23,7 +23,7 @@ class AnnouncementController extends Controller
     public function index(): Response
     {
 
-        return response()->view('announcements.index', [
+        return response()->view('superadmin.website_admin_panel.services_section.announcements.index', [
             'announcements' => Announcement::orderBy('updated_at', 'desc')->paginate(5),
         ]);
     }
@@ -33,7 +33,7 @@ class AnnouncementController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('announcements.form');
+        return response()->view('superadmin.website_admin_panel.services_section.announcements.form');
     }
 
     /**
@@ -76,7 +76,7 @@ class AnnouncementController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('announcements.form', [
+        return response()->view('superadmin.website_admin_panel.services_section.announcements.form', [
             'announcement' => Announcement::findOrFail($id),
         ]);
     }

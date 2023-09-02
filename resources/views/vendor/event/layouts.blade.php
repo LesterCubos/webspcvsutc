@@ -10,7 +10,7 @@
     <title>CvSU-TC Admin</title>
 
     <!-- Icon -->
-    <link rel="icon" href="{{ asset('img/Cavite_State_University_(CvSU).png') }}">
+    <link rel="icon" href="{{ asset('img/campus_seal.png') }}">
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -71,9 +71,9 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
       <div class="d-flex align-items-center justify-content-between">
-          <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
-            <img src="{{ asset('img/Cavite_State_University_(CvSU).png') }}" alt="cvsu" class="rounded-circle">
-            <span class="d-none d-lg-block">CvSU-TC Admin</span>
+          <a href="{{ route('superadmin.dashboard') }}" class="logo d-flex align-items-center">
+            <img src="{{ asset('img/campus_seal.png') }}" alt="cvsu" class="rounded-circle">
+            <span class="d-none d-lg-block">CvSU-TC Website Admin</span>
           </a>
           <i class="bi bi-list toggle-sidebar-btn"></i>
       </div><!-- End Logo -->
@@ -127,14 +127,14 @@
       <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-          <a class="nav-link " id="nav_link" href="{{ route('dashboard') }}" active="request()->routeIs('dashboard')">
+          <a class="nav-link " id="nav_link" href="{{ route('superadmin.dashboard') }}" active="request()->routeIs('dashboard')">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
           </a>
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('events','event') ? 'active' : '' }}" id="nav_link" href="{{url('event')}}">
+          <a class="nav-link {{ Request::is('superadmin/superadmin/events','events','event') ? 'active' : '' }}" id="nav_link" href="{{url('event')}}">
             <i class="ri-calendar-event-fill"></i>
             <span>Event Calender</span>
           </a>

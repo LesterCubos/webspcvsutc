@@ -19,7 +19,7 @@ class ProgramsController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('programs.index', [
+        return response()->view('superadmin.website_admin_panel.homepage_section.programs.index', [
             'programs' => Program::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -29,7 +29,7 @@ class ProgramsController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('programs.form');
+        return response()->view('superadmin.website_admin_panel.homepage_section.programs.form');
     }
 
     /**
@@ -72,7 +72,7 @@ class ProgramsController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('programs.form', [
+        return response()->view('superadmin.website_admin_panel.homepage_section.programs.form', [
             'program' => Program::findOrFail($id),
         ]);
     }

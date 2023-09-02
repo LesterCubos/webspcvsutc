@@ -9,7 +9,7 @@
   :root {
     --color-default: #000;
     --color-primary:  #a04ef6;
-    --color-secondary: #feb900;
+    --color-secondary: #ec9706;
   }
   
   /* Smooth scroll behavior */
@@ -25,12 +25,29 @@
     padding: 30px;
   }
 
-.admissionrandp h2 {
+.admissionrandp .title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  position: relative;
     color: var(--color-primary);
     font-family: var(--font-primary);
 }
 
-.admissionrandp .table {
-    text-align: center;
+.admissionrandp .title:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-secondary);
+  left: 0;
+  bottom: 0;
 }
+
+.admissionrandp .imfo {
+  font-size: 18px;
+}
+
 

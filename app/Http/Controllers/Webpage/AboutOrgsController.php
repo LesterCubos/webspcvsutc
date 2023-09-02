@@ -16,7 +16,7 @@ class AboutOrgsController extends Controller
 {
     public function index(): Response
     {
-        return response()->view('about_orgs.index', [
+        return response()->view('superadmin.website_admin_panel.services_section.about_orgs.index', [
             'about_orgs' => AboutOrgs::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -26,7 +26,7 @@ class AboutOrgsController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('about_orgs.form');
+        return response()->view('superadmin.website_admin_panel.services_section.about_orgs.form');
     }
 
     /**
@@ -64,7 +64,7 @@ class AboutOrgsController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('about_orgs.form', [
+        return response()->view('superadmin.website_admin_panel.services_section.about_orgs.form', [
             'about_org' => AboutOrgs::findOrFail($id),
         ]);
     }

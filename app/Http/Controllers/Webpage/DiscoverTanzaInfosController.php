@@ -21,7 +21,7 @@ class DiscoverTanzaInfosController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('discover_tanza_infos.index', [
+        return response()->view('superadmin.website_admin_panel.homepage_section.discover_tanza_infos.index', [
             'discover_tanza_infos' => DiscoverTanzaInfo::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -31,7 +31,7 @@ class DiscoverTanzaInfosController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('discover_tanza_infos.form');
+        return response()->view('superadmin.website_admin_panel.homepage_section.discover_tanza_infos.form');
     }
 
     /**
@@ -74,7 +74,7 @@ class DiscoverTanzaInfosController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('discover_tanza_infos.form', [
+        return response()->view('superadmin.website_admin_panel.homepage_section.discover_tanza_infos.form', [
             'discover_tanza_info' => DiscoverTanzaInfo::findOrFail($id),
         ]);
     }

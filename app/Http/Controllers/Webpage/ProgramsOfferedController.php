@@ -17,7 +17,7 @@ class ProgramsOfferedController extends Controller
 {
     public function index(): Response
     {
-        return response()->view('programs_offers.index', [
+        return response()->view('superadmin.website_admin_panel.admission_section.programs_offers.index', [
             'programs_offers' => ProgramsOffered::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -27,7 +27,7 @@ class ProgramsOfferedController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('programs_offers.form');
+        return response()->view('superadmin.website_admin_panel.admission_section.programs_offers.form');
     }
 
     /**
@@ -65,7 +65,7 @@ class ProgramsOfferedController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('programs_offers.form', [
+        return response()->view('superadmin.website_admin_panel.admission_section.programs_offers.form', [
             'programs_offer' => ProgramsOffered::findOrFail($id),
         ]);
     }

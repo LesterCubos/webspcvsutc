@@ -9,7 +9,7 @@
   :root {
     --color-default: #000;
     --color-primary:  #a04ef6;
-    --color-secondary: #feb900;
+    --color-secondary: #ec9706;
   }
   
   /* Smooth scroll behavior */
@@ -26,14 +26,17 @@
   }
 
 .history h3 {
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 28px;
   margin-bottom: 20px;
   font-family: var(--font-secondary);
 }
 
-.history .content p:last-child {
+.history .content p {
+  text-align: justify;
   margin-bottom: 0;
+  font-size: 18px;
 }
 
 .history .play-btn {
@@ -131,4 +134,17 @@
     transform: scale(1, 1);
     opacity: 0;
   }
+}
+
+div.polaroid {
+  width: 90%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 60px;
+  margin-bottom: 50px;
+}
+
+div.name {
+  text-align: center;
+  padding: 10px 20px;
 }

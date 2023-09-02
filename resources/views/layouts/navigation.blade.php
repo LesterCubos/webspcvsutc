@@ -61,7 +61,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
-          <img src="{{ asset('img/Cavite_State_University_(CvSU).png') }}" alt="cvsu" class="rounded-circle">
+          <img src="{{ asset('img/campus_seal.png') }}" alt="cvsu" class="rounded-circle">
           <span class="d-none d-lg-block">CvSU-TC Admin</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>

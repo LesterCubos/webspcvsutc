@@ -16,7 +16,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Icon -->
-    <link rel="icon" href="admin/assets/img/Cavite_State_University_(CvSU).png">
+    <link rel="icon" href="admin/assets/img/campus_seal.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

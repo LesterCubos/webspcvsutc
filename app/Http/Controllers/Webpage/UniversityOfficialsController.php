@@ -18,7 +18,7 @@ class UniversityOfficialsController extends Controller
 {
     public function index(): Response
     {
-        return response()->view('uni_officials.index', [
+        return response()->view('superadmin.website_admin_panel.about_section.uni_officials.index', [
             'uni_officials' => UniversityOfficial::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -28,7 +28,7 @@ class UniversityOfficialsController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('uni_officials.form');
+        return response()->view('superadmin.website_admin_panel.about_section.uni_officials.form');
     }
 
     /**
@@ -66,7 +66,7 @@ class UniversityOfficialsController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('uni_officials.form', [
+        return response()->view('superadmin.website_admin_panel.about_section.uni_officials.form', [
             'uni_official' => UniversityOfficial::findOrFail($id),
         ]);
     }

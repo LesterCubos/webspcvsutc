@@ -13,6 +13,7 @@ use App\Models\UniversitySeal;
 use App\Http\Requests\UniversitySeal\StoreRequest;
 use App\Http\Requests\UniversitySeal\UpdateRequest;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class UniversitySealsController extends Controller
 {
@@ -21,8 +22,15 @@ class UniversitySealsController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('uni_seals.index', [
-            'uni_seals' => UniversitySeal::orderBy('updated_at', 'desc')->get(),
+        $count = DB::table('university_seals')->count();
+
+        if($count > 0) {
+            $null = 1;
+        }else {
+            $null = 0;
+        }
+        return response()->view('superadmin.website_admin_panel.about_section.uni_seals.index', [
+            'uni_seals' => UniversitySeal::orderBy('updated_at', 'desc')->get(), 'nullbtn' => $null
         ]);
     }
 
@@ -31,7 +39,7 @@ class UniversitySealsController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('uni_seals.form');
+        return response()->view('superadmin.website_admin_panel.about_section.uni_seals.form');
     }
 
     /**
@@ -74,7 +82,7 @@ class UniversitySealsController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('uni_seals.form', [
+        return response()->view('superadmin.website_admin_panel.about_section.uni_seals.form', [
             'uni_seal' => UniversitySeal::findOrFail($id),
         ]);
     }

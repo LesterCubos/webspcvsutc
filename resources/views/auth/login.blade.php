@@ -15,7 +15,7 @@
                 <div class="input-box">
                     <span class="icon"><i class="bi bi-person-circle"></i></span>
                     <input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-                    <label>Username</label>
+                    <label>Email</label>
                 </div>
         </div>
 

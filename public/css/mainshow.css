@@ -9,7 +9,8 @@
 :root {
   --color-default: #000;
   --color-primary:  #a04ef6;
-  --color-secondary: #feb900;
+  /* --color-secondary: #feb900; */
+  --color-secondary: #ec9706;
 }
 
 /* Smooth scroll behavior */
@@ -138,10 +139,10 @@ h6 {
     line-height:150px;
     font-family:sans-serif;
     font-size:20px;
-    color:#fff000;
+    color:var(--color-secondary);
     letter-spacing:4px;
     text-transform:uppercase;
-    text-shadow:0 0 10px #fff000;
+    text-shadow:0 0 10px var(--color-secondary);
     box-shadow:0 0 20px rgba(0,0,0,.5);
   }
   #preloader .ring:before
@@ -153,8 +154,8 @@ h6 {
     width:100%;
     height:100%;
     border:3px solid transparent;
-    border-top:3px solid #fff000;
-    border-right:3px solid #fff000;
+    border-top:3px solid var(--color-secondary);
+    border-right:3px solid var(--color-secondary);
     border-radius:50%;
     animation:animateC 2s linear infinite;
   }
@@ -177,10 +178,10 @@ h6 {
     width:16px;
     height:16px;
     border-radius:50%;
-    background:#fff000;
+    background:var(--color-secondary);
     top:-5px;
     right:-8px;
-    box-shadow:0 0 20px #fff000;
+    box-shadow:0 0 20px var(--color-secondary);
   }
   @keyframes animateC
   {
@@ -1041,7 +1042,7 @@ section {
 }
 
 .featured-services .icon-box:hover .title a {
-  color: #fddb0d;
+  color: var(--color-secondary);
 }
 
 .featured-services .icon-box:hover p{
@@ -1089,7 +1090,7 @@ section {
   animation-timing-function: steps;
   opacity: 1;
   border-radius: 50%;
-  border: 5px solid rgba(249, 253, 5, 0.7);
+  border: 5px solid #fcae1e;
   top: -15%;
   left: -15%;
   background: rgba(198, 16, 0, 0);

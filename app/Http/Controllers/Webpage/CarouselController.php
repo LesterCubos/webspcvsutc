@@ -20,7 +20,7 @@ class CarouselController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('carousel_items.index', [
+        return response()->view('superadmin.website_admin_panel.homepage_section.carousel_items.index', [
             'carousel_items' => CarouselItem::orderBy('updated_at', 'desc')->paginate(5),
         ]);
     }
@@ -30,7 +30,7 @@ class CarouselController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('carousel_items.form');
+        return response()->view('superadmin.website_admin_panel.homepage_section.carousel_items.form');
     }
 
     /**
@@ -73,7 +73,7 @@ class CarouselController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('carousel_items.form', [
+        return response()->view('superadmin.website_admin_panel.homepage_section.carousel_items.form', [
             'carousel_item' => CarouselItem::findOrFail($id),
         ]);
     }

@@ -15,7 +15,7 @@ class CampusOfficialInfosController extends Controller
 {
     public function index(): Response
     {
-        return response()->view('campus_official_infos.index', [
+        return response()->view('superadmin.website_admin_panel.about_section.campus_official_infos.index', [
             'campus_official_infos' => CampusOfficialInfo::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -25,7 +25,7 @@ class CampusOfficialInfosController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('campus_official_infos.form');
+        return response()->view('superadmin.website_admin_panel.about_section.campus_official_infos.form');
     }
 
     /**
@@ -63,7 +63,7 @@ class CampusOfficialInfosController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('campus_official_infos.form', [
+        return response()->view('superadmin.website_admin_panel.about_section.campus_official_infos.form', [
             'campus_official_info' => CampusOfficialInfo::findOrFail($id),
         ]);
     }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 // Use the CampusHistory Model
 use App\Models\CampusHistory;
 // We will use Form Request to validate incoming requests from our store and update method
@@ -20,8 +21,16 @@ class CampusHistoryController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('campus_history.index', [
-            'campus_history' => CampusHistory::orderBy('updated_at', 'desc')->get(),
+        $count = DB::table('campus_histories')->count();
+
+        if($count > 0) {
+            $null = 1;
+        }else {
+            $null = 0;
+        }
+
+        return response()->view('superadmin.website_admin_panel.about_section.campus_history.index', [
+            'campus_history' => CampusHistory::orderBy('updated_at', 'desc')->get(),'nullbtn' => $null
         ]);
     }
 
@@ -30,7 +39,7 @@ class CampusHistoryController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('campus_history.form');
+        return response()->view('superadmin.website_admin_panel.about_section.campus_history.form');
     }
 
     /**
@@ -73,7 +82,7 @@ class CampusHistoryController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('campus_history.form', [
+        return response()->view('superadmin.website_admin_panel.about_section.campus_history.form', [
             'campushistory' => CampusHistory::findOrFail($id),
         ]);
     }
@@ -97,7 +106,7 @@ class CampusHistoryController extends Controller
         $update = $campus_history->update($validated);
 
         if($update) {
-            session()->flash('notif.success', 'Campus historyhas been updated successfully!');
+            session()->flash('notif.success', 'Campus history has been updated successfully!');
             return redirect()->route('campus_history.index');
         }
 

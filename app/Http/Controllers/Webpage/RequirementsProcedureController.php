@@ -19,7 +19,7 @@ class RequirementsProcedureController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('requirements_procedures.index', [
+        return response()->view('superadmin.website_admin_panel.admission_section.requirements_procedures.index', [
             'requirements_procedures' => RequirementsProcedure::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -29,7 +29,7 @@ class RequirementsProcedureController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('requirements_procedures.form');
+        return response()->view('superadmin.website_admin_panel.admission_section.requirements_procedures.form');
     }
 
     /**
@@ -72,7 +72,7 @@ class RequirementsProcedureController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('requirements_procedures.form', [
+        return response()->view('superadmin.website_admin_panel.admission_section.requirements_procedures.form', [
             'requirements_procedure' => RequirementsProcedure::findOrFail($id),
         ]);
     }
