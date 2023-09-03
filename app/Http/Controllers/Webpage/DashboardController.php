@@ -33,7 +33,7 @@ class DashboardController extends Controller
         //Month
         $month = Carbon::now()->month;
         $monthVisits = views (CarouselItem::class)
-        ->period(Period::since(Carbon::create($month)))
+        ->period(Period::since(Carbon::create($today)))
         ->count();
         // Year
         $yeardate = Carbon::now()->format('Y');
@@ -115,7 +115,7 @@ class DashboardController extends Controller
     //    $announcementItem = Announcement::whereMonth('created_at', $month)->get();
 
 
-        return view('dashboard',compact('totalVisits','todayVisits','monthVisits','yearVisits','totalNews','totalAnnouncement','totalEvents','newscount','announcementcount','eventscount',
+        return view('superadmin.dashboard',compact('totalVisits','todayVisits','monthVisits','yearVisits','totalNews','totalAnnouncement','totalEvents','newscount','announcementcount','eventscount',
                     'carouselItem','eventItem','newsItem','announcementItem','month','currentTime','today','date','cardiff','eventdiff','newsdiff','announcementdiff',
                     'anchorTimecar','anchorTimeann','anchorTimeeve','anchorTimenew'
     ));

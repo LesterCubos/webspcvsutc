@@ -51,7 +51,7 @@
                   </div>
                   <div class="ps-3">
                     <span class="text-success small pt-1 fw-bold">{{ $todayVisits }}</span> <span class="text-muted small pt-2 ps-1"> Today</span><br>
-                    <span class="text-success small pt-1 fw-bold">{{ $monthVisits }}</span> <span class="text-muted small pt-2 ps-1">{{ $month }} This Month</span><br>
+                    <span class="text-success small pt-1 fw-bold">{{ $monthVisits }}</span> <span class="text-muted small pt-2 ps-1"> This Month</span><br>
                     <span class="text-success small pt-1 fw-bold">{{ $yearVisits }}</span> <span class="text-muted small pt-2 ps-1"> This Year</span><br>
                     <span class="text-success small pt-1 fw-bold">{{ $totalVisits }}</span> <span class="text-muted small pt-2 ps-1"> Total</span>
                   </div>

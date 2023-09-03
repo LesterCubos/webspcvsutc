@@ -227,6 +227,8 @@ Route::post('/login/owner',[SuperadminController::class, 'Login'])->name('supera
 Route::get('/dashboard',[SuperadminController::class, 'Dashboard'])->name('superadmin.dashboard')->middleware('superadmin');
 Route::get('/logout',[SuperadminController::class, 'SuperadminLogout'])->name('superadmin.logout')->middleware('superadmin');
 Route::get('/register',[SuperadminController::class, 'SuperadminRegister'])->name('superadmin.register');
+Route::post('/register/create',[SuperadminController::class, 'SuperadminRegisterCreate'])->name('superadmin.register.create');
+
 
 //homepage
 Route::resource('carousel_items',CarouselController::class);
