@@ -114,6 +114,6 @@ class ServicesController extends Controller
 
         $job_vacancies = JobVacancies::all();
 
-        return view('pages.jobvacancies', compact('job_vacancies','totalVisits','quicks','others','socialmedias'));
+        return view('pages.job_vacancies', compact('job_vacancies','totalVisits','quicks','others','socialmedias'));
     }
 }

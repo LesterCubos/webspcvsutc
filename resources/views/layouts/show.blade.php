@@ -61,6 +61,7 @@
         <link href="{{ asset('css/acad.css') }}" rel="stylesheet">
         <link href="{{ asset('css/nonacad.css') }}" rel="stylesheet">
         <link href="{{ asset('css/news&updates.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/jobvacancies.css') }}" rel="stylesheet">
         {{-- News CSS File --}}
         <link href="{{ asset('css/newsadd.css') }}" rel="stylesheet">
         <link href="{{ asset('css/news2.css') }}" rel="stylesheet">

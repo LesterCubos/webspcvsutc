@@ -122,6 +122,7 @@ Route::get('services_nonacadorgs', [ServicesController::class, 'nonacadorgs']);
 Route::get('services_newsandupdates', [ServicesController::class, 'newsandupdates']);
 Route::get('services_announcements', [ServicesController::class, 'announcements']);
 Route::get('services_campuscalendar', [ServicesController::class, 'campuscalendar']);
+Route::get('services_jobvacancies', [ServicesController::class, 'jobvacancies']);
 // Route::get('services_campuscalendar', function () {
 //     return view('event::campuscalendar');
 //  });
@@ -132,6 +133,9 @@ Route::get('newsandupdates_news{new}', [NewsandUpdatesController::class, 'news']
 
 // Announcements
 Route::get('announcements{announce}', [AnnouncementsController::class, 'announcements']);
+
+// Job Vacancies
+Route::get('jobvacancies{job}', [JobVacanciesController::class, 'jobvacancies']);
 
 //Search
 Route::get('search', [SearchController::class, 'search']);

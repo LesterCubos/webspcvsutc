@@ -9,7 +9,9 @@
       <div class="container">
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
+          <li>Services</li>
           <li>Announcements</li>
+          <li>{{ $announce->title }}</li>
         </ol>
       </div>
     </nav>

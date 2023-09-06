@@ -131,6 +131,7 @@
               <li><a href="services_newsandupdates">News and Updates</a></li>
               <li><a href="services_announcements">Announcements</a></li>
               <li><a href="services_campuscalendar">Campus Calendar</a></li>
+              <li><a href="services_jobvacancies">Job Vacancies</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#">Portal</a>
