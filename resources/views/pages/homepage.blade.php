@@ -137,9 +137,7 @@
         <!-- End Hero Section -->
 
         <main id="main">
-
-            {{-- <p>{{ $totalViews }}</p> --}}
-
+            
             <!-- ======= Featured Services Section ======= -->
             <section id="featured-services" class="featured-services">
                 {{-- @if()
@@ -320,43 +318,47 @@
 
 
             <!-- ======= Admission Section ======= -->
-            {{-- <div id="admis" @if ($show) style="display: block;" @else style="display: none;" @endif>
-                @if ($show) style="display: block;" @else style="display: none;" @endif--}}
-                <section id="admissions" class="admissions">
-                    <div class="container" data-aos="zoom-in" style="background: linear-gradient(rgba(37, 50, 72, 0.9), rgba(25, 40, 66, 0.9)), url('../img/admission.jpg') center center">
+            @foreach ($switchs as $switch)
+                @if ($switch->isActive == 1)
+                    <section id="admissions" class="admissions">
+                        <div class="container" data-aos="zoom-in" style="background: linear-gradient(rgba(37, 50, 72, 0.9), rgba(25, 40, 66, 0.9)), url('../img/admission.jpg') center center">
 
-                        <div class="section-title">
-                            <h3><span>Admissions</span> On Going</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
-                        </div>
+                            <div class="section-title">
+                                <h3><span>Admissions</span> On Going</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
+                            </div>
 
-                        <div class="row">
-                            @foreach($admissions as $admission)
-                                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                                    <div class="icon-box">
-                                        <div class="icon">
-                                            <i class='bx bxs-edit'></i>
-                                        </div>
-                                        <h4>{{ $admission->title }}</h4>
-                                        <p>{!! $admission->descrip !!}</p>
-                                        <div class="btn-wrap">
-                                            <a href="#" class="btn-apply">Apply Now <i class="bi bi-arrow-right-circle"></i></a>
+                            <div class="row">
+                                @foreach($admissions as $admission)
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                        <div class="icon-box">
+                                            <div class="icon">
+                                                <i class='bx bxs-edit'></i>
+                                            </div>
+                                            <h4>{{ $admission->title }}</h4>
+                                            <p>{!! $admission->descrip !!}</p>
+                                            <div class="btn-wrap">
+                                                <a href="#" class="btn-apply">Apply Now <i class="bi bi-arrow-right-circle"></i></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+
+                            </div>
 
                         </div>
-
-                    </div>
-                </section>
-            {{-- </div> --}}
-            <!-- End Admission Section -->
-            {{-- @endif --}}
-
-
+                    </section><!-- End Admission Section -->       
+                @endif
+            @endforeach
+                
             <!-- ======= News and updates Section ======= -->
-            <section id="newsandupdates" class="newsandupdates section-bg">
+            @foreach ($switchs as $switch)
+                @if ($switch->isActive == 1)
+                    <section id="newsandupdates" class="newsandupdates section-bg">
+                @else
+                    <section id="newsandupdates" class="newsandupdates">
+                @endif 
+            @endforeach
                 <div class="section-title">
                     <h3><span>News</span> Updates</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
@@ -499,7 +501,13 @@
             <!-- End News and Updates Section -->
 
             <!-- ======= Announcements Section ======= -->
-            <section id="announcements" class="announcements">
+            @foreach ($switchs as $switch)
+                @if ($switch->isActive == 1)
+                    <section id="announcements" class="announcements">
+                @else
+                    <section id="announcements" class="announcements section-bg">
+                @endif 
+            @endforeach
                 <div class="section-title">
                     <h3>Latest <span>Announcements</span></h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
@@ -535,7 +543,13 @@
             <!-- End Announcements Section -->
 
             <!-- ======= Events Section ======= -->
-            <section id="events" class="events section-bg">
+            @foreach ($switchs as $switch)
+                @if ($switch->isActive == 1)
+                    <section id="events" class="events section-bg">
+                @else
+                    <section id="events" class="events">
+                @endif 
+            @endforeach
 
                 <div class="container" data-aos="fade-up">
 

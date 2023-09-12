@@ -534,6 +534,53 @@ h6 {
   font-weight: 600;
 }
 
+/* toggle in label designing */
+.toggle {
+  position : relative ;
+  display : inline-block;
+  width : 100px;
+  height : 52px;
+  background-color: #32cd32;
+  border-radius: 30px;
+  border: 2px solid gray;
+}
+     
+/* After slide changes */
+.toggle:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: gray;
+  top: 0px;
+  left: 0px;
+  transition:  all 0.5s;
+}
+     
+/* Toggle text */
+.toggle p {
+  margin-top: 12px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+     
+/* Checkbox checked effect */
+.checkbox:checked + .toggle::after {
+  left : 49px;
+}
+     
+/* Checkbox checked toggle label bg color */
+.checkbox:checked + .toggle {
+  background-color: #ff8ba0;
+}
+     
+/* Checkbox vanished */
+.checkbox {
+  display : none;
+}
+
 /* Bordered Tabs */
 .nav-tabs-bordered {
   border-bottom: 2px solid #ebeef4;

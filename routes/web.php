@@ -243,6 +243,16 @@ Route::resource('programs',ProgramsController::class);
 Route::resource('admissions',AdmissionController::class);
 Route::resource('news',NewsController::class);
 Route::resource('announcements',AnnouncementController::class);   
+// Route::resource('section_switch',SwitchController::class); 
+Route::get('section_switch',[SwitchController::class, 'index'])->name('section_switch.index');
+// Route::get('changeStatus',[SwitchController::class, 'changeStatus']);
+
+// Route::get('section_switch', function () {
+//     return view('superadmin.website_admin_panel.homepage_section.section_switch.index',[
+//         'switchs' => App\Models\SwitchSection::all()
+//     ]);
+// });
+
 
 //about
 Route::resource('campus_history',CampusHistoryController::class);
