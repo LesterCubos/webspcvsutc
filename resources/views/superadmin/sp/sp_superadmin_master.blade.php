@@ -12,7 +12,8 @@
     <!-- Fonts -->
     {{-- <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> --}}
-     <!-- Google Fonts -->
+
+    <!-- Google Fonts -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=McLaren&family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
@@ -24,24 +25,42 @@
     <link rel="stylesheet" href="{{ asset('vendors/sp/base/vendor.bundle.base.css') }}">
     <!-- endinject -->
     <!-- plugin css for this page -->
+    <link rel="stylesheet" href="{{ asset('vendors/sp/flag-icon-css/css/flag-icon.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('vendors/sp/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/sp/jquery-bar-rating/fontawesome-stars-o.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/sp/jquery-bar-rating/fontawesome-stars.css') }}">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('css/sp/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('images/sp/campus_seal.jpg') }}" />
-    {{-- <link type="image/png" rel="shortcut icon" href="{{ asset('Cavite_State_University_(CvSU).png') }}" /> --}}
+    <link rel="shortcut icon" href="{{ asset('img/sp/images/campus_seal.jpg') }}" />
 
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 </head>
 <body>
-    <div id="app">
+    <div class="container-scroller">
+       
+        @include('superadmin.sp.sp_superadmin_navigation')
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+          
+          @include('superadmin.sp.sp_superadmin_sidebar')
+          <!-- partial -->
+          <div class="main-panel">
 
-        <main>
             @yield('content')
-        </main>
-    </div>
+
+            @include('superadmin.sp.sp_superadmin_footer')
+            <!-- partial -->
+          </div>
+          <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+      </div>
+      <!-- container-scroller -->
+
 
     <!-- base:js -->
     <script src="{{ asset('vendors/sp/base/vendor.bundle.base.js') }}"></script>
@@ -51,7 +70,12 @@
     <script src="{{ asset('js/sp/hoverable-collapse.js') }}"></script>
     <script src="{{ asset('js/sp/template.js') }}"></script>
     <!-- endinject -->
-
-
+    <!-- plugin js for this page -->
+    <script src="{{ asset('vendors/sp/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('vendors/sp/jquery-bar-rating/jquery.barrating.min.js') }}"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="{{ asset('js/sp/dashboard.js') }}"></script>
+    <!-- End custom js for this page-->
 </body>
 </html>

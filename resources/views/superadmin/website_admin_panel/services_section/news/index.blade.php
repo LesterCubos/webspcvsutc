@@ -36,51 +36,6 @@
         </div>
     @endif
 
-
-    <table class="table table-bordered table-hover border-primary">
-        <thead class="table-display text-center">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">News Title</th>
-            <th scope="col">Headline</th>
-            <th scope="col">Content</th>
-            <th scope="col">News Image</th>
-            <th scope="col">Created At</th>
-            <th scope="col">Updated At</th>
-            <th scope="col">Action</th>
-        </tr>
-        </thead>
-
-        <tbody>
-            {{-- populate our carousel item data --}}
-            @foreach ($news as $new)
-            <tr>
-                <th scope="row">{{ $new->id }}</th>
-                <td>{{ $new->news_title }}</td>
-                <td>{{ $new->news_headline }}</td>
-                <td >{!! Str::limit($new->news_content,'250','...') !!}</td>
-                <td><img style="width:250px" src="{{ Storage::url($new->news_image) }}" alt="{{ $new->news_title }}" srcset=""></td>
-                <td>{{ $new->created_at }}</td>
-                <td>{{ $new->updated_at }}</td>
-                <td>
-                    <form method="post" action="{{ route('news.destroy', $new->id) }}" class="d-grid gap-2">
-
-                        <a class="btn" id="icon_edit" href="{{ route('news.edit', $new->id) }}"><i class="ri-edit-box-fill"></i></a>
-
-                        @csrf
-                        @method('DELETE')
-
-                        <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button>
-                        
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-    {{-- Pagination --}}
-    <div class="d-flex justify-content-center">
-        {!! $news->links() !!}
-    </div>
+    @livewire('news-search')
 
 @endsection

@@ -13,7 +13,6 @@ class SwitchController extends Controller
 {
     public function index()
     {
-       
         return view('superadmin.website_admin_panel.homepage_section.section_switch.index',[
                     'switchs' => SwitchSection::all()
                 ]);

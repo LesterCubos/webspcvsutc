@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 // Use the CarouselItem Model
 use App\Models\CarouselItem;
+use App\Models\SwitchSection;
 // We will use Form Request to validate incoming requests from our store and update method
 use App\Http\Requests\Carousel\StoreRequest;
 use App\Http\Requests\Carousel\UpdateRequest;

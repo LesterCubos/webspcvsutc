@@ -103,7 +103,7 @@
         </li>
         <li class="dropdown"><a href="#">Portal</a>
           <ul>
-            <li><a href="#">Student Portal</a></li>
+            <li><a href="student_login">Student Portal</a></li>
 
             <li><a href="/superadmin/login">MIS Portal</a></li>
             <li><a href="search">Search</a></li>

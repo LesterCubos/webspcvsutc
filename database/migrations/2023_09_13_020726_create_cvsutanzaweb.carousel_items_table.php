@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('carousel_items', function (Blueprint $table) {
+        Schema::create('cvsutanzaweb.carousel_items', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('content');
             $table->text('featured_image');
+            $table->boolean('isActive') ->default(1);
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('carousel_items');
+        Schema::dropIfExists('cvsutanzaweb.carousel_items');
     }
 };

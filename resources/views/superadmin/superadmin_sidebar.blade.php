@@ -275,7 +275,21 @@
         </ul>
       </li><!-- End Settings Nav -->
 
+      {{-- for portaal --}}
+      <li class="nav-item">
+        <a class="nav-link {{ (request()->is('sp/dashboard*')) ? 'collapse active' : 'collapsed' }}" data-bs-target="#portal-nav" data-bs-toggle="collapse" href="#">
+          <i class="ri-admin-fill"></i><span>Portal</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="portal-nav" class="nav-content collapse {{ (request()->is('sp/dashboard*')) ? 'show' : 'collapse' }}" data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="{{ (request()->is('sp/dashboard*')) ? 'active' : '' }}" href="{{ route('sp/dashboard') }}">
+              <i class="bi bi-circle"></i><span>Student Portal</span>
+            </a>
+          </li>
+          
 
+        </ul>
+      </li><!-- End Portal Nav -->
 
       
 

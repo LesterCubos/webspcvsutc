@@ -31,6 +31,8 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/adminstyle.css') }}" rel="stylesheet">
 
+    @livewireStyles
+
 
     {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> --}}
 
@@ -63,9 +65,10 @@
     <script src="{{ asset('vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
 
-
-
     <!-- Template Main JS File -->
     <script src="{{ asset('js/adminmain.js') }}"></script>
+
+    @livewireScripts
+
 </body>
 </html>
