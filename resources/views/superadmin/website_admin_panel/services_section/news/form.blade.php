@@ -27,40 +27,30 @@
                 {{-- add @method('put') for edit mode --}}
                 @isset($new)
                     @method('put')
+                    <br>
+                    <label for="switch" class="form-label">Status:</label>
+                    @livewire('switch-status', ['model' => $new, 'field' => 'isActive'], key($new->id))
                 @endisset
                 <br>
                 <div>
                     {{-- <h6>Title</h6> --}}
-                    <label for="news_title" class="form-label">News Title</label>
+                    <label for="news_title" class="form-label">News Title:</label>
                     <input type="text" class="form-control" id="news_title" name="news_title" value="{{ $new->news_title ?? old('news_title') }}" required autofocus>
                 </div>
                 <br>
                 <div>
                     {{-- <h6>Title</h6> --}}
-                    <label for="news_headline" class="form-label">News Headline</label>
+                    <label for="news_headline" class="form-label">News Headline:</label>
                     <input type="text" class="form-control" id="headlline" name="news_headline" value="{{ $new->news_headline ?? old('news_headline') }}" required autofocus>
                 </div>
                 <br>
-                {{-- <div>
-                    <x-input-label for="title" value="Title" />
-                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="$carousel_item->title ?? old('title')" required autofocus />
-                    <x-input-error class="mt-2" :messages="$errors->get('title')" />
-                </div> --}}
-
                 <div>
-                    <label for="news_content" class="form-label">News Content</label>
+                    <label for="news_content" class="form-label">News Content:</label>
                     <textarea style="height: 250px" id="news_content" name="news_content" class="form-control tinymce-editor">{{ $new->news_content ?? old('news_content') }}</textarea>
                 </div>
-
-                {{-- <div>
-                    <x-input-label for="content" value="Content" /> --}}
-                    {{-- use textarea-input component that we will create after this --}}
-                    {{-- <x-textarea-input id="content" name="content" class="mt-1 block w-full" required autofocus>{{ $carousel_item->content ?? old('content') }}</x-textarea-input>
-                    <x-input-error class="mt-2" :messages="$errors->get('content')" />
-                </div> --}}
                 <br>
                 <div>
-                    <label for="news_image" class="form-label">News Image</label>
+                    <label for="news_image" class="form-label">News Image:</label>
                     <br>
                     <label class="block mt-2">
                         {{-- <span class="sr-only">Choose news_image</span> --}}

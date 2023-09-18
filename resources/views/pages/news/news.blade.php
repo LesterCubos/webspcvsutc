@@ -39,7 +39,7 @@
                     <div class="swiper-wrapper">
 
                       @foreach($news as $new)
-
+                        @if ($new->isActive == 1)
                           <div class="swiper-slide">
                             <div class="news-item">
                               <img src="{{ asset('storage/' . $new->news_image) }}" class="card-img-top" alt="...">
@@ -55,7 +55,7 @@
                               </div>
                             </div>
                           </div><!-- End News item -->
-
+                        @endif
                       @endforeach
 
                     </div>

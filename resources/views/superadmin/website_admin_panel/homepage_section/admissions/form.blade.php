@@ -30,40 +30,16 @@
                 @endisset
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
-                    <label for="title" class="form-label">Title</label>
+                    <label for="title" class="form-label">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{ $admission->title ?? old('title') }}" required autofocus>
                 </div>
                 <br>
-                {{-- <div>
-                    <x-input-label for="title" value="Title" />
-                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="$admission->title ?? old('title')" required autofocus />
-                    <x-input-error class="mt-2" :messages="$errors->get('title')" />
-                </div> --}}
-
                 <div>
-                    <label for="descrip" class="form-label">Description</label>
+                    <label for="descrip" class="form-label">Description:</label>
                     <textarea id="descrip" name="descrip" class="form-control tinymce-editor">{{ $admission->descrip ?? old('descrip') }}</textarea>
                 </div>
-
-                {{-- <div>
-                    <x-input-label for="descrip" value="descrip" /> --}}
-                    {{-- use textarea-input component that we will create after this --}}
-                    {{-- <x-textarea-input id="descrip" name="descrip" class="mt-1 block w-full" required autofocus>{{ $admission->descrip ?? old('descrip') }}</x-textarea-input>
-                    <x-input-error class="mt-2" :messages="$errors->get('descrip')" />
-                </div> --}}
                 <br>
-                {{-- <div class="mb-6">
-                    <label class="block">
-                        <span class="">Status</span>
-                        <input type="checkbox" name="status" {{ $admission->status==1?'checked':'' }}/>
-                    </label>
-                    @error('status')
-                    <div class="flex items-center text-sm text-red-600">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div> --}}
+        
                 {{-- <div>
                     <label for="bg_pic" class="form-label">Background Image</label>
                     <br>

@@ -49,8 +49,7 @@
         </thead>
 
         <tbody>
-            {{-- populate our carousel item data --}}
-            @foreach ($campus_officials as $campus_official)
+            @forelse ($campus_officials as $campus_official)
             <tr>
                 <th scope="row">{{ $campus_official->id }}</th>
                 <td><img style="width:250px" src="{{ Storage::url($campus_official->org_image) }}" alt="{{ $campus_official->id }}" srcset=""></td>
@@ -67,7 +66,13 @@
                     </form>
                 </td>
             </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="5" style="text-align: center; font-size: 24px">
+                        <div class="py-5" style="">No Data Found...</div>
+                    </td>  
+                </tr>
+            @endforelse
         </tbody>
     </table>
 

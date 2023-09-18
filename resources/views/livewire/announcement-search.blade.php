@@ -14,6 +14,7 @@
                     <th scope="col">Image</th>
                     <th scope="col">Created At</th>
                     <th scope="col">Updated At</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
@@ -29,6 +30,13 @@
                             <td>{{ $announcement->created_at }}</td>
                             <td>{{ $announcement->updated_at }}</td>
                             <td>
+                                @if ($announcement->isActive == 1)
+                                    Show
+                                @else
+                                    Hidden    
+                                @endif
+                            </td>
+                            <td>
                                 <form method="post" action="{{ route('announcements.destroy', $announcement->id) }}" class="d-grid gap-2">
             
                                     {{-- <a class="btn btn-info" href="{{ route('announcements.show', $announcement->id) }}">Show</a> --}}
@@ -43,7 +51,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <th colspan="7" style="text-align: center; font-size: 24px">
+                            <th colspan="8" style="text-align: center; font-size: 24px">
                                 <div class="py-5" style="">No Announcement Found...</div> 
                             </th>
                         </tr>

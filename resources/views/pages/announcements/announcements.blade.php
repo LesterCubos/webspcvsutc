@@ -39,21 +39,21 @@
                       <h3 class="title">Latest Post</h3>
 
                       @foreach($announcements as $announcement)
-
-                        <!-- Card with an image on left -->
-                        <div class="card mb-3">
-                          <div class="row g-0">
-                            <div class="col-md-4">
-                              <img src="{{ asset('storage/' . $announcement->poster) }}" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body">
-                                <a class="card-title" href="announcements{{$announcement->id}}">{{ $announcement->title }}</a>
+                        @if ($announcement->isActive == 1)
+                          <!-- Card with an image on left -->
+                          <div class="card mb-3">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="{{ asset('storage/' . $announcement->poster) }}" class="img-fluid rounded-start" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <a class="card-title" href="announcements{{$announcement->id}}">{{ $announcement->title }}</a>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </div><!-- End Card with an image on left -->
-
+                          </div><!-- End Card with an image on left -->
+                        @endif
                       @endforeach
               </div>
             </div>

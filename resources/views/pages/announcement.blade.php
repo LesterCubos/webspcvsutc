@@ -27,8 +27,8 @@
     </div>
 
     @foreach($announcements as $announcement)
-
-        <div class="row gy-4 align-items-center announcements-item">
+        @if ($announcement->isActive == 1)
+          <div class="row gy-4 align-items-center announcements-item">
             <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
                 <img src="{{ asset('storage/' . $announcement->poster) }}" class="img-fluid" alt="">
             </div>
@@ -41,8 +41,8 @@
                     <a href="announcements{{$announcement->id}}" class="read-more align-self-start"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
-        </div><!-- Announcement Item -->
-
+          </div><!-- Announcement Item -->
+        @endif
     @endforeach
     
   </div>

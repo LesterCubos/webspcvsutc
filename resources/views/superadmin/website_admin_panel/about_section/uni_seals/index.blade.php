@@ -49,8 +49,7 @@
         </thead>
 
         <tbody>
-            {{-- populate our carousel item data --}}
-            @foreach ($uni_seals as $uni_seal)
+            @forelse ($uni_seals as $uni_seal)
             <tr>
                 <th scope="row">{{ $uni_seal->id }}</th>
                 <td >{!! $uni_seal->content !!}</td>
@@ -68,7 +67,13 @@
                     </form>
                 </td>
             </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="6" style="text-align: center; font-size: 24px">
+                        <div class="py-5" style="">No Data Found...</div>
+                    </td>  
+                </tr>
+            @endforelse
         </tbody>
     </table>
 

@@ -31,36 +31,23 @@
                 <br>
                 <div>
                     {{-- <h6>Title</h6> --}}
-                    <label for="headline" class="form-label">Headline</label>
+                    <label for="headline" class="form-label">Headline:</label>
                     <input type="text" class="form-control" id="headline" name="headline" value="{{ $discover_tanza_info->headline ?? old('headline') }}" required autofocus>
                 </div>
                 <br>
                 <div>
                     {{-- <h6>Title</h6> --}}
-                    <label for="subheadline" class="form-label">Sub-Headline</label>
+                    <label for="subheadline" class="form-label">Sub-Headline:</label>
                     <input type="text" class="form-control" id="subheadlline" name="subheadline" value="{{ $discover_tanza_info->subheadline ?? old('subheadline') }}" required autofocus>
                 </div>
                 <br>
-                {{-- <div>
-                    <x-input-label for="title" value="Title" />
-                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="$carousel_item->title ?? old('title')" required autofocus />
-                    <x-input-error class="mt-2" :messages="$errors->get('title')" />
-                </div> --}}
-
                 <div>
-                    <label for="content" class="form-label">Content</label>
+                    <label for="content" class="form-label">Content:</label>
                     <textarea style="height: 250px" id="content" name="content" class="form-control tinymce-editor">{{ $discover_tanza_info->content ?? old('content') }}</textarea>
                 </div>
-
-                {{-- <div>
-                    <x-input-label for="content" value="Content" /> --}}
-                    {{-- use textarea-input component that we will create after this --}}
-                    {{-- <x-textarea-input id="content" name="content" class="mt-1 block w-full" required autofocus>{{ $carousel_item->content ?? old('content') }}</x-textarea-input>
-                    <x-input-error class="mt-2" :messages="$errors->get('content')" />
-                </div> --}}
                 <br>
                 <div>
-                    <label for="image" class="form-label">Featured Image</label>
+                    <label for="image" class="form-label">Featured Image:</label>
                     <br>
                     <label class="block mt-2">
                         {{-- <span class="sr-only">Choose image</span> --}}

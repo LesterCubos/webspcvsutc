@@ -224,19 +224,17 @@
                 @endisset
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
-                    <label for="name" class="form-label">Name</label>
+                    <label for="name" class="form-label">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" value="{{ $socialmedia->name ?? old('name') }}" required autofocus>
                 </div>
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
-                    <label for="icon" class="form-label">Icon</label>
+                    <label for="icon" class="form-label">Icon:</label>
                     <input type="text" class="form-control" id="icon" name="icon" value="{{ $socialmedia->icon ?? old('icon') }}" required autofocus>
                 </div>
                 <br>
                 <div>
-                    <label for="link" class="form-label">Link</label>
+                    <label for="link" class="form-label">Link:</label>
                     <textarea style="height: 100px" id="link" name="link" class="form-control" required autofocus>{{ $socialmedia->link ?? old('link') }}</textarea>
                 </div>
                 <br>

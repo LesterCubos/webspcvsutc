@@ -30,19 +30,17 @@
                 @endisset
                 <br>
                 <div>
-                    <label for="campus_address" class="form-label">Address</label>
+                    <label for="campus_address" class="form-label">Address:</label>
                     <input type="text" class="form-control" id="campus_address" name="campus_address" value="{{ $contact_info->campus_address ?? old('campus_address') }}" required autofocus>
                 </div>
                 <br>
                 <div>
-                    <label for="campus_email" class="form-label">Email</label>
+                    <label for="campus_email" class="form-label">Email:</label>
                     <input type="email" class="form-control" id="campus_email" name="campus_email" value="{{ $contact_info->campus_email ?? old('campus_email') }}">
                 </div>
-
-
                 <br>
                 <div>
-                    <label for="campus_number" class="form-label">Contact Number</label>
+                    <label for="campus_number" class="form-label">Contact Number:</label>
                     <input type="number" class="form-control" id="campus_number" name="campus_number" value="{{ $contact_info->campus_number ?? old('campus_number') }}">
                 </div>
 

@@ -156,84 +156,88 @@ Route::get('/dashboard',[DashboardController::class, 'dashboard'])->middleware([
 
 
 //route for auth user pages
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-//     // Add the following route to the existing routes because we want the posts route accessible to authenticated users only.
-//     // We'll use a resource route because it contains all the exact routes we need for a typical CRUD application.
-//     //homepage
-//     // Route::resource('carousel_items',CarouselController::class);
-//     // Route::resource('featured_services',FeaturedServicesController::class);
-//     // Route::resource('discover_tanza_infos',DiscoverTanzaInfosController::class);
-//     // Route::resource('counts',CountsController::class);
-//     // Route::resource('programs',ProgramsController::class);
-//     // Route::resource('admissions',AdmissionController::class);
-//     // Route::resource('news',NewsController::class);
-//     // Route::resource('announcements',AnnouncementController::class);
-//     // Route::get('livewire',ShowHideComponent::class);
-//     // Route::get('/livewire/show-hide-component', ShowHideComponent::class)->name('show_hide');
-//     // Route::get('/livewire/show-hide-component', function () {
-//     //     return view('livewire.show-hide-component', ShowHideComponent::class);
-//     // });
+    // Add the following route to the existing routes because we want the posts route accessible to authenticated users only.
+    // We'll use a resource route because it contains all the exact routes we need for a typical CRUD application.
+    //homepage
+    // Route::resource('carousel_items',CarouselController::class);
+    // Route::resource('featured_services',FeaturedServicesController::class);
+    // Route::resource('discover_tanza_infos',DiscoverTanzaInfosController::class);
+    // Route::resource('counts',CountsController::class);
+    // Route::resource('programs',ProgramsController::class);
+    // Route::resource('admissions',AdmissionController::class);
+    // Route::resource('news',NewsController::class);
+    // Route::resource('announcements',AnnouncementController::class);
+    // Route::get('livewire',ShowHideComponent::class);
+    // Route::get('/livewire/show-hide-component', ShowHideComponent::class)->name('show_hide');
+    // Route::get('/livewire/show-hide-component', function () {
+    //     return view('livewire.show-hide-component', ShowHideComponent::class);
+    // });
 
-//     // Route::post('/livewire/show-hide-component', 'AdmissionController@toggleSection')->name('show_hide');
-//     // Route::resource('switch',SwitchController::class);
+    // Route::post('/livewire/show-hide-component', 'AdmissionController@toggleSection')->name('show_hide');
+    // Route::resource('switch',SwitchController::class);
 
-//     //about
-//     // Route::resource('campus_history',CampusHistoryController::class);
-//     // Route::resource('mvgs',MVGController::class);
-//     // Route::resource('uni_seals',UniversitySealsController::class);
-//     // Route::resource('uni_officials', UniversityOfficialsController::class);
-//     // Route::resource('campus_officials',CampusOfficialsController::class);
-//     // Route::resource('campus_official_infos',CampusOfficialInfosController::class);
-//     // Route::resource('contact_infos',ContactInfoController::class);
+    //about
+    // Route::resource('campus_history',CampusHistoryController::class);
+    // Route::resource('mvgs',MVGController::class);
+    // Route::resource('uni_seals',UniversitySealsController::class);
+    // Route::resource('uni_officials', UniversityOfficialsController::class);
+    // Route::resource('campus_officials',CampusOfficialsController::class);
+    // Route::resource('campus_official_infos',CampusOfficialInfosController::class);
+    // Route::resource('contact_infos',ContactInfoController::class);
 
-//     //Admission
-//     // Route::resource('programs_offers',ProgramsOfferedController::class);
-//     // Route::resource('requirements_procedures',RequirementsProcedureController::class);
-//     // Route::resource('admission_results',AdmissionResultController::class);
+    //Admission
+    // Route::resource('programs_offers',ProgramsOfferedController::class);
+    // Route::resource('requirements_procedures',RequirementsProcedureController::class);
+    // Route::resource('admission_results',AdmissionResultController::class);
 
-//     //Administration
-//     // Route::resource('office_registrars',OfficeRegistrarController::class);
-//     // Route::resource('clinics', ClinicController::class);
-//     // Route::resource('cashiers', CashierController::class);
-//     // Route::resource('osass', OsasController::class);
-//     // Route::resource('hrs', HumanResourceController::class);
-//     // Route::resource('mis', MISController::class);
-//     // Route::resource('qaacs', QAACController::class);
-//     // Route::resource('researchs', ResearchController::class);
-//     // Route::resource('libs', LibraryController::class);
-//     // Route::resource('dits', DITController::class);
-//     // Route::resource('teds', TEDController::class);
-//     // Route::resource('dass', DASController::class);
-//     // Route::resource('doms', DoMController::class);
+    //Administration
+    // Route::resource('office_registrars',OfficeRegistrarController::class);
+    // Route::resource('clinics', ClinicController::class);
+    // Route::resource('cashiers', CashierController::class);
+    // Route::resource('osass', OsasController::class);
+    // Route::resource('hrs', HumanResourceController::class);
+    // Route::resource('mis', MISController::class);
+    // Route::resource('qaacs', QAACController::class);
+    // Route::resource('researchs', ResearchController::class);
+    // Route::resource('libs', LibraryController::class);
+    // Route::resource('dits', DITController::class);
+    // Route::resource('teds', TEDController::class);
+    // Route::resource('dass', DASController::class);
+    // Route::resource('doms', DoMController::class);
 
-//     //Services
-//     // Route::resource('csgs', CSGController::class);
-//     // Route::resource('about_orgs', AboutOrgsController::class);
+    //Services
+    // Route::resource('csgs', CSGController::class);
+    // Route::resource('about_orgs', AboutOrgsController::class);
     
     
-//     // Route::get('/events', function () {
-//     //     return view('event::calendar');
-//     //  });
-//     // Route::resource('job_vacancies', JobVacanciesController::class);
+    // Route::get('/events', function () {
+    //     return view('event::calendar');
+    //  });
+    // Route::resource('job_vacancies', JobVacanciesController::class);
  
-//     //Settings
-//     // Route::resource('quick_links', QuickLinksController::class);
-//     // Route::resource('other_links', OtherLinksController::class);
-//     // Route::resource('social_media', SocialMediaController::class);
+    //Settings
+    // Route::resource('quick_links', QuickLinksController::class);
+    // Route::resource('other_links', OtherLinksController::class);
+    // Route::resource('social_media', SocialMediaController::class);
     
 
-// });
+});
 
 // superadmin route
 Route::prefix('superadmin')->group(function(){
 Route::get('/login',[SuperadminController::class, 'Index'])->name('login_from');
 Route::post('/login/owner',[SuperadminController::class, 'Login'])->name('superadmin.login');
 Route::get('/dashboard',[SuperadminController::class, 'Dashboard'])->name('superadmin.dashboard')->middleware('superadmin');
+Route::get('/profile', [ProfileController::class, 'edit'])->name('superadmin.profile.edit');
+Route::post('/profile', [ProfileController::class, 'store'])->name('superadmin.profile.store');
+Route::patch('/profile', [ProfileController::class, 'update'])->name('superadmin.profile.update');
+Route::delete('/profile', [ProfileController::class, 'destroy'])->name('superadmin.profile.destroy');
 Route::get('/logout',[SuperadminController::class, 'SuperadminLogout'])->name('superadmin.logout')->middleware('superadmin');
 Route::get('/register',[SuperadminController::class, 'SuperadminRegister'])->name('superadmin.register');
 Route::post('/register/create',[SuperadminController::class, 'SuperadminRegisterCreate'])->name('superadmin.register.create');

@@ -30,16 +30,16 @@
                 @endisset
                 <br>
                 <div>
-                    <label for="org_name" class="form-label">Name</label>
+                    <label for="org_name" class="form-label">Name:</label>
                     <input type="text" class="form-control" id="org_name" name="org_name" value="{{ $about_org->org_name ?? old('org_name') }}" required autofocus>
                 </div>
                 <br>
                 <div>
-                    <label for="desc" class="form-label">Description</label>
+                    <label for="desc" class="form-label">Description:</label>
                     <textarea style="height: 150px" id="desc" name="desc" class="form-control tinymce-editor">{{ $about_org->desc ?? old('desc') }}</textarea>
                 </div>
                 <br>
-                    <label for="type" class="form-label">Type of Organization</label>
+                    <label for="type" class="form-label">Type of Organization:</label>
                     <select class="form-select"  id="type" name="type" aria-label="Default select example">
                         <option selected>{{ $about_org->type ?? old('type') }}</option>
                         <option value="Academic Organization")>Academic Organization</option>
@@ -47,7 +47,7 @@
                     </select>
                 <br>
                 <div>
-                    <label for="org_members" class="form-label">Organization Positions & Members</label>
+                    <label for="org_members" class="form-label">Organization Positions & Members:</label>
                     <textarea style="height: 150px" id="org_members" name="org_members" class="form-control tinymce-editor">{{ $about_org->org_members ?? old('org_members') }}</textarea>
                 </div>
                 <br>

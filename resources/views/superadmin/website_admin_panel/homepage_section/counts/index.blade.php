@@ -21,12 +21,6 @@
             <h2>Counts Section</h2>
             {{-- <button href="{{ route('carousel_items.create') }}" type="submit" name="" class="btn btn-success">Add Image</button> --}}
             <a href="{{ route('counts.create') }}" class="btn btn-success">Add</a>
-
-            {{-- <div class="form-check form-switch">
-                <input type="checkbox" class="form-check-input" id="show-section-switch" value="$showSection ? 'checked' : '' }}">
-                <label class="form-check-label" for="show-section-switch">Show Section</label>
-            </div> --}}
-
         </div>
     </div>
 
@@ -50,8 +44,8 @@
         </thead>
 
         <tbody>
-            {{-- populate our carousel item data --}}
-            @foreach ($counts as $count)
+    
+            @forelse ($counts as $count)
             <tr>
                 <th scope="row">{{ $count->id }}</th>
                 <td>{{ $count->category }}</td>
@@ -68,7 +62,13 @@
                     </form>
                 </td>
             </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="6" style="text-align: center; font-size: 24px">
+                        <div class="py-5" style="">No Data Found...</div>
+                    </td>  
+                </tr>
+            @endforelse
         </tbody>
     </table>
 

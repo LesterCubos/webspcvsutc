@@ -44,8 +44,7 @@
         </thead>
 
         <tbody>
-            {{-- populate our carousel item data --}}
-            @foreach ($about_orgs as $about_org)
+            @forelse ($about_orgs as $about_org)
             <tr>
                 <th scope="row">{{ $about_org->id }}</th>
                 <td>{{ $about_org->org_name }}</td>
@@ -65,7 +64,13 @@
                     </form>
                 </td>
             </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="8" style="text-align: center; font-size: 24px">
+                        <div class="py-5" style="">No Data Found...</div>
+                    </td>  
+                </tr>
+            @endforelse
         </tbody>
     </table>
 

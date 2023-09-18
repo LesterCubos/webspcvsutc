@@ -27,11 +27,16 @@
                 {{-- add @method('put') for edit mode --}}
                 @isset($carousel_item)
                     @method('put')
+                    <br>
+                    <label for="switch" class="form-label">Status:</label>
+                    @livewire('switch-status', ['model' => $carousel_item, 'field' => 'isActive'], key($carousel_item->id))
                 @endisset
+                
+                
                 <br>
                 <div>
                     {{-- <h6>Title</h6> --}}
-                    <label for="title" class="form-label">Title</label>
+                    <label for="title" class="form-label">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{ $carousel_item->title ?? old('title') }}" required autofocus>
                 </div>
                 <br>
@@ -42,7 +47,7 @@
                 </div> --}}
 
                 <div>
-                    <label for="content" class="form-label">Content</label>
+                    <label for="content" class="form-label">Content:</label>
                     <textarea id="content" name="content" class="form-control" required autofocus>{{ $carousel_item->content ?? old('content') }}</textarea>
                 </div>
 
@@ -54,7 +59,7 @@
                 </div> --}}
                 <br>
                 <div>
-                    <label for="featured_image" class="form-label">Featured Image</label>
+                    <label for="featured_image" class="form-label">Featured Image:</label>
                     <br>
                     <label class="block mt-2">
                         {{-- <span class="sr-only">Choose image</span> --}}

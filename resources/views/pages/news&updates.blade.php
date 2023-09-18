@@ -29,33 +29,35 @@
     @foreach($news as $new)
 
       @if ($loop->iteration % 2 == 1 )
-        <div class="row justify-content-around gy-4" id="news-box">
-          <div class="col-lg-6 img-bg" style="background-image: url({{ asset('storage/' . $new->news_image) }});" data-aos="zoom-in" data-aos-delay="100"></div>
-          <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <h3 id="title">{{ $new->news_title }}</h3>
-              <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
-                <p>{!! Str::limit($new->news_content,'500','...') !!}</p>
-              </div>
-              <div>
-                <a href="newsandupdates_news{{$new->id}}"><button>Read More</button></a>
-              </div>
-          </div><!-- End News Box -->
-        </div>
-
-      @elseif ($loop->iteration % 2 == 0)
-        <div class="row justify-content-around gy-4" id="news-box">
-          <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <h3 id="title">{{ $new->news_title }}</h3>
-            <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
-              <p>{!! Str::limit($new->news_content,'500','...') !!}</p>
-            </div>
-            <div>
-              <a href="newsandupdates_news{{$new->id}}"><button>Read More</button></a>
-            </div>
+        @if ($new->isActive == 1)
+          <div class="row justify-content-around gy-4" id="news-box">
+            <div class="col-lg-6 img-bg" style="background-image: url({{ asset('storage/' . $new->news_image) }});" data-aos="zoom-in" data-aos-delay="100"></div>
+            <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+              <h3 id="title">{{ $new->news_title }}</h3>
+                <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+                  <p>{!! Str::limit($new->news_content,'500','...') !!}</p>
+                </div>
+                <div>
+                  <a href="newsandupdates_news{{$new->id}}"><button>Read More</button></a>
+                </div>
+            </div><!-- End News Box -->
           </div>
-          <div class="col-lg-6 img-bg" style="background-image: url({{ asset('storage/' . $new->news_image) }});" data-aos="zoom-in" data-aos-delay="100"></div>
-        </div>
-
+        @endif
+      @elseif ($loop->iteration % 2 == 0)
+          @if ($new->isActive == 1)
+            <div class="row justify-content-around gy-4" id="news-box">
+              <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <h3 id="title">{{ $new->news_title }}</h3>
+                <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+                  <p>{!! Str::limit($new->news_content,'500','...') !!}</p>
+                </div>
+                <div>
+                  <a href="newsandupdates_news{{$new->id}}"><button>Read More</button></a>
+                </div>
+              </div>
+              <div class="col-lg-6 img-bg" style="background-image: url({{ asset('storage/' . $new->news_image) }});" data-aos="zoom-in" data-aos-delay="100"></div>
+            </div>
+          @endif
       @endif
       @endforeach
     

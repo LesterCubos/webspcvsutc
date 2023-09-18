@@ -30,24 +30,24 @@
                 @endisset
                 <br>
                 <div>
-                    <label for="official_name" class="form-label">Name</label>
+                    <label for="official_name" class="form-label">Name:</label>
                     <input type="text" class="form-control" id="official_name" name="official_name" value="{{ $uni_official->official_name ?? old('official_name') }}" required autofocus>
                 </div>
                 <br>
                 <div>
-                    <label for="official_position" class="form-label">Position</label>
+                    <label for="official_position" class="form-label">Position:</label>
                     <input type="text" class="form-control" id="official_position" name="official_position" value="{{ $uni_official->official_position ?? old('official_position') }}" required autofocus>
                 </div>
 
                 <br>
                 <div>
-                    <label for="official_contactnum" class="form-label">Contact Number</label>
+                    <label for="official_contactnum" class="form-label">Contact Number:</label>
                     <input type="number" class="form-control" id="official_contactnum" name="official_contactnum" value="{{ $uni_official->contact_number ?? old('official_contactnum') }}">
                 </div>
 
                 <br>
                 <div>
-                    <label for="official_email" class="form-label">Email</label>
+                    <label for="official_email" class="form-label">Email:</label>
                     <input type="email" class="form-control" id="official_email" name="official_email" value="{{ $uni_official->official_email ?? old('official_email') }}">
                 </div>
 

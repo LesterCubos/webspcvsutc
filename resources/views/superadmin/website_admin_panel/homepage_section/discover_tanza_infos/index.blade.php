@@ -53,7 +53,7 @@
 
         <tbody>
             {{-- populate our carousel item data --}}
-            @foreach ($discover_tanza_infos as $discover_tanza_info)
+            @forelse ($discover_tanza_infos as $discover_tanza_info)
             <tr>
                 <th scope="row">{{ $discover_tanza_info->id }}</th>
                 <td>{{ $discover_tanza_info->headline }}</td>
@@ -73,7 +73,13 @@
                     </form>
                 </td>
             </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="8" style="text-align: center; font-size: 24px">
+                        <div class="py-5" style="">No Data Found...</div>
+                    </td>  
+                </tr>
+            @endforelse
         </tbody>
     </table>
 

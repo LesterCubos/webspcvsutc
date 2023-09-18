@@ -14,6 +14,7 @@
                     <th scope="col">Content</th>
                     <th scope="col">Created At</th>
                     <th scope="col">Updated At</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
@@ -29,6 +30,13 @@
                             <td>{{ $carousel_item->created_at }}</td>
                             <td>{{ $carousel_item->updated_at }}</td>
                             <td>
+                                @if ($carousel_item->isActive == 1)
+                                    Show
+                                @else
+                                    Hidden    
+                                @endif
+                            </td>
+                            <td>
                                 <form method="post" action="{{ route('carousel_items.destroy', $carousel_item->id) }}" class="d-grid gap-2">
             
                                     {{-- <a class="btn btn-info" href="{{ route('carousel_items.show', $carousel_item->id) }}">Show</a> --}}
@@ -39,13 +47,11 @@
                                     <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button>
                                 </form>
                                 
-                                @livewire('switch-status', ['model' => $carousel_item, 'field' => 'isActive'], key($carousel_item->id))
-                                
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="7" style="text-align: center; font-size: 24px">
+                            <td colspan="8" style="text-align: center; font-size: 24px">
                                 <div class="py-5" style="">No Carousel Found...</div>
                             </td>  
                         </tr>

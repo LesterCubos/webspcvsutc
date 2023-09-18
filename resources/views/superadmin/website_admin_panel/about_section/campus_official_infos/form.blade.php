@@ -29,26 +29,26 @@
                     @method('put')
                 @endisset
 
-
+                <br>
                 <div>
-                    <label for="name" class="form-label">Name</label>
+                    <label for="name" class="form-label">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" value="{{ $campus_official_info->name ?? old('name') }}" required autofocus>
                 </div>
                 <br>
                 <div>
-                    <label for="position" class="form-label">Position</label>
+                    <label for="position" class="form-label">Position:</label>
                     <input type="text" class="form-control" id="position" name="position" value="{{ $campus_official_info->position ?? old('position') }}" required autofocus>
                 </div>
 
                 <br>
                 <div>
-                    <label for="contact" class="form-label">Contact Number</label>
+                    <label for="contact" class="form-label">Contact Number:</label>
                     <input type="number" class="form-control" id="contact" name="contact" value="{{ $campus_official_info->contact ?? old('contact') }}">
                 </div>
 
                 <br>
                 <div>
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label">Email:</label>
                     <input type="email" class="form-control" id="email" name="email" value="{{ $campus_official_info->email ?? old('email') }}">
                 </div>
 

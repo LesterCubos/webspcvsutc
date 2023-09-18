@@ -30,29 +30,14 @@
                 @endisset
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
-                    <label for="name" class="form-label">Name</label>
+                    <label for="name" class="form-label">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" value="{{ $other->name ?? old('name') }}" required autofocus>
                 </div>
-                
                 <br>
-                {{-- <div>
-                    <x-input-label for="title" value="Title" />
-                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="$carousel_item->title ?? old('title')" required autofocus />
-                    <x-input-error class="mt-2" :messages="$errors->get('title')" />
-                </div> --}}
-
                 <div>
-                    <label for="link" class="form-label">Link</label>
+                    <label for="link" class="form-label">Link:</label>
                     <textarea id="link" name="link" class="form-control" required autofocus>{{ $other->link ?? old('link') }}</textarea>
                 </div>
-
-                {{-- <div>
-                    <x-input-label for="link" value="link" /> --}}
-                    {{-- use textarea-input component that we will create after this --}}
-                    {{-- <x-textarea-input id="link" name="link" class="mt-1 block w-full" required autofocus>{{ $carousel_item->link ?? old('link') }}</x-textarea-input>
-                    <x-input-error class="mt-2" :messages="$errors->get('link')" />
-                </div> --}}
                 <br>
 
                 <div class="flex text-center" style="padding-top: 10px">

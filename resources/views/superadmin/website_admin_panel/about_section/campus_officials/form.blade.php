@@ -32,7 +32,7 @@
 
                 <br>
                 <div>
-                    <label for="org_image" class="form-label">Image</label>
+                    <label for="org_image" class="form-label">Image:</label>
                     <br>
                     <label class="block mt-2">
                         {{-- <span class="sr-only">Choose org_image</span> --}}
@@ -43,6 +43,7 @@
                     </div>
                 </div>
 
+                <br>
                 <div class="flex text-center" style="padding-top: 10px">
                     <button class="btn btn-success col-md-4 col-lg-2" style="margin-right: 5px">{{ __('Save') }}</button>
                     

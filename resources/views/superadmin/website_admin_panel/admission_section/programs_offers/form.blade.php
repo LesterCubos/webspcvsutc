@@ -31,28 +31,14 @@
                 @endisset
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
-                    <label for="title" class="form-label">Program Name</label>
+                    <label for="title" class="form-label">Program Name:</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{ $programs_offer->title ?? old('title') }}" required autofocus>
                 </div>
                 <br>
-                {{-- <div>
-                    <x-input-label for="title" value="Title" />
-                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="$programs_offer->title ?? old('title')" required autofocus />
-                    <x-input-error class="mt-2" :messages="$errors->get('title')" />
-                </div> --}}
-
                 <div>
-                    <label for="desc" class="form-label">Full Description</label>
+                    <label for="desc" class="form-label">Full Description:</label>
                     <textarea id="desc" name="desc" class="form-control tinymce-editor" >{{ $programs_offer->desc ?? old('desc') }}</textarea>
                 </div>
-
-                {{-- <div>
-                    <x-input-label for="content" value="Content" /> --}}
-                    {{-- use textarea-input component that we will create after this --}}
-                    {{-- <x-textarea-input id="content" name="content" class="mt-1 block w-full" required autofocus>{{ $programs_offer->content ?? old('content') }}</x-textarea-input>
-                    <x-input-error class="mt-2" :messages="$errors->get('content')" />
-                </div> --}}
                 <br>
 
                 <div class="flex text-center" style="padding-top: 10px">

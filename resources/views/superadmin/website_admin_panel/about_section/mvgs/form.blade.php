@@ -30,25 +30,17 @@
                 @endisset
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
-                    <label for="title1" class="form-label">Title Left</label>
+                    <label for="title1" class="form-label">Title Left:</label>
                     <input type="text" class="form-control" id="title" name="title1" value="{{ $mvg->title1 ?? old('title1') }}" required autofocus>
                 </div>
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
-                    <label for="title2" class="form-label">Title Right</label>
+                    <label for="title2" class="form-label">Title Right:</label>
                     <input type="text" class="form-control" id="title2" name="title2" value="{{ $mvg->title2 ?? old('title2') }}" required autofocus>
                 </div>
                 <br>
-                {{-- <div>
-                    <x-input-label for="title" value="Title" />
-                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="$carousel_item->title ?? old('title')" required autofocus />
-                    <x-input-error class="mt-2" :messages="$errors->get('title')" />
-                </div> --}}
-
                 <div>
-                    <label for="content" class="form-label">Content</label>
+                    <label for="content" class="form-label">Content:</label>
                     <textarea style="height: 250px" id="content" name="content" class="form-control tinymce-editor">{{ $mvg->content ?? old('content') }}</textarea>
                 </div>
 

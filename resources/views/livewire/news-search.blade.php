@@ -15,6 +15,7 @@
                     <th scope="col">News Image</th>
                     <th scope="col">Created At</th>
                     <th scope="col">Updated At</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
@@ -31,6 +32,13 @@
                             <td>{{ $new->created_at }}</td>
                             <td>{{ $new->updated_at }}</td>
                             <td>
+                                @if ($new->isActive == 1)
+                                    Show
+                                @else
+                                    Hidden    
+                                @endif
+                            </td>
+                            <td>
                                 <form method="post" action="{{ route('news.destroy', $new->id) }}" class="d-grid gap-2">
             
                                     <a class="btn" id="icon_edit" href="{{ route('news.edit', $new->id) }}"><i class="ri-edit-box-fill"></i></a>
@@ -45,7 +53,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <th colspan="8" style="text-align: center; font-size: 24px">
+                            <th colspan="9" style="text-align: center; font-size: 24px">
                                 <div class="py-5" style="">No News Found...</div>
                             </th>
                         </tr>

@@ -31,31 +31,17 @@
                 @endisset
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
-                    <label for="title" class="form-label">Title</label>
+                    <label for="title" class="form-label">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{ $program->title ?? old('title') }}" required autofocus>
                 </div>
                 <br>
-                {{-- <div>
-                    <x-input-label for="title" value="Title" />
-                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="$program->title ?? old('title')" required autofocus />
-                    <x-input-error class="mt-2" :messages="$errors->get('title')" />
-                </div> --}}
-
                 <div>
-                    <label for="content" class="form-label">Content</label>
+                    <label for="content" class="form-label">Content:</label>
                     <textarea id="content" name="content" class="form-control" required autofocus>{{ $program->content ?? old('content') }}</textarea>
                 </div>
-
-                {{-- <div>
-                    <x-input-label for="content" value="Content" /> --}}
-                    {{-- use textarea-input component that we will create after this --}}
-                    {{-- <x-textarea-input id="content" name="content" class="mt-1 block w-full" required autofocus>{{ $program->content ?? old('content') }}</x-textarea-input>
-                    <x-input-error class="mt-2" :messages="$errors->get('content')" />
-                </div> --}}
                 <br>
                 <div>
-                    <label for="program_image" class="form-label">Program Image</label>
+                    <label for="program_image" class="form-label">Program Image:</label>
                     <br>
                     <label class="block mt-2">
                         {{-- <span class="sr-only">Choose image</span> --}}

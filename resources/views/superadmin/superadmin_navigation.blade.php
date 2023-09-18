@@ -28,7 +28,7 @@
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
 
               <li>
-                <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.edit') }}">
+                <a class="dropdown-item d-flex align-items-center" href="{{ route('superadmin.profile.edit') }}">
                   <i class="bi bi-gear"></i>
                   <span>Account Settings</span>
                 </a>

@@ -48,8 +48,7 @@
 
 
         <tbody>
-            {{-- populate our carousel item data --}}
-            @foreach ($socialmedias as $socialmedia)
+            @forelse ($socialmedias as $socialmedia)
             <tr>
                 <th scope="row">{{ $socialmedia->id }}</th>
                 <td>{{ $socialmedia->name }}</td>
@@ -68,7 +67,13 @@
                     </form>
                 </td>
             </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="7" style="text-align: center; font-size: 24px">
+                        <div class="py-5" style="">No Data Found...</div>
+                    </td>  
+                </tr>
+            @endforelse
         </tbody>
     </table>
 

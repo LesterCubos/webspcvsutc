@@ -30,22 +30,17 @@
                 @endisset
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
-                    <label for="title" class="form-label">Title</label>
+                    <label for="title" class="form-label">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{ $campushistory->title ?? old('title') }}" required autofocus>
                 </div>
                 <br>
-
-
                 <div>
-                    <label for="body" class="form-label">Body</label>
+                    <label for="body" class="form-label">Body:</label>
                     <textarea style="height: 500px" id="body" name="body" class="form-control tinymce-editor">{{ $campushistory->body ?? old('body') }}</textarea>
                 </div>
-
-                {{-- <textarea name="desc" class="tinymce-editor" cols="30" rows="10"></textarea> --}}
                 <br>
                 <div>
-                    <label for="image" class="form-label">Image</label>
+                    <label for="image" class="form-label">Image:</label>
                     <br>
                     <label class="block mt-2">
                         {{-- <span class="sr-only">Choose image</span> --}}
