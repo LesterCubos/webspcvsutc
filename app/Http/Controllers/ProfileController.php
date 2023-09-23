@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -16,7 +17,7 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        return view('superadmin.profile.edit', [
+        return view('profile.edit', [
             'user' => $request->user(),
         ]);
     }
@@ -63,12 +64,12 @@ class ProfileController extends Controller
         $request->validate([
             'avatar' => 'required|image',
         ]);
-
+  
         $avatarName = time().'.'.$request->avatar->getClientOriginalExtension();
         $request->avatar->move(public_path('avatars'), $avatarName);
-
-        Auth()->user()->DB::update(['avatar'=>$avatarName]);
-
+  
+        Auth()->user()->update(['avatar'=>$avatarName]);
+  
         return back()->with('success', 'Avatar updated successfully.');
     }
 }

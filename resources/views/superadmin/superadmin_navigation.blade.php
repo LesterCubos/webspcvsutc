@@ -4,7 +4,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="{{ route('superadmin.dashboard') }}" class="logo d-flex align-items-center">
+        <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
           <img src="{{ asset('img/campus_seal.png') }}" alt="cvsu" class="rounded-circle">
           <span class="d-none d-lg-block">CvSU-TC Website Admin</span>
         </a>
@@ -18,17 +18,19 @@
           <li class="nav-item dropdown pe-3">
 
             <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-              <img src="{{ asset('img/profile.jpeg') }}" class="rounded-circle">
-              <div>
-                {{ Auth::guard('superadmin')->user()->name }}    
-             </div>
+              @if (empty(Auth::user()->avatar))
+                    <img height="90" src="{{ asset('img/147142.png') }}" alt="Profile Photo" class="rounded-circle">
+                @else
+                    <img height="90" src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo" class="rounded-circle">
+                @endif
+              <div>{{ Auth::user()->name }}</div>
               <span class="d-none d-md-block dropdown-toggle ps-2"></span>
             </a><!-- End Profile Iamge Icon -->
 
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
 
               <li>
-                <a class="dropdown-item d-flex align-items-center" href="{{ route('superadmin.profile.edit') }}">
+                <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.edit') }}">
                   <i class="bi bi-gear"></i>
                   <span>Account Settings</span>
                 </a>
@@ -41,7 +43,7 @@
                 {{-- <form method="POST" action="{{ route('logout') }}">
                     @csrf --}}
 
-                    <a class="dropdown-item d-flex align-items-center" href="{{ route('superadmin.logout')}}">
+                    <a class="dropdown-item d-flex align-items-center" href="{{ route('logout')}}">
                       {{-- onclick="event.preventDefault();this.closest('form').submit(); --}}
                         <i class="bi bi-box-arrow-right"></i>
                         <span>Logout</span>

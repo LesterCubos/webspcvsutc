@@ -28,6 +28,7 @@ class HomeController extends Controller
 {
     public function homepage()
     {
+        $carouselItem = CarouselItem::orderBy('created_at', 'desc')->get();
         /* Views */
         /*Comment/uncomment From $views to total visit */
         $views = CarouselItem::find(1);

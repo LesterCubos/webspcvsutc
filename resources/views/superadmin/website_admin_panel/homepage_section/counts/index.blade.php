@@ -8,7 +8,7 @@
         {{-- <h1>Dashboard</h1> --}}
         <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
             <li class="breadcrumb-item">Homepage</li>
             <li class="breadcrumb-item active">Counts Section</li>
         </ol>
