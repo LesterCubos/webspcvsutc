@@ -15,7 +15,7 @@ use CyrildeWit\EloquentViewable\Support\Period;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Auth;
-
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class SuperadminController extends Controller
 {

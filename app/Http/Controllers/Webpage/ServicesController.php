@@ -91,6 +91,8 @@ class ServicesController extends Controller
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
 
+        //note:uncomment after living from $views to $Total Views
+        //its important to post first a campus seal
         $views = UniversitySeal::find(1);
         
         views($views)
@@ -98,9 +100,11 @@ class ServicesController extends Controller
         ->record();
 
         $totalViews = views($views)->count();
+        //end note here
         
         $totalVisits=views(CarouselItem::class)->count();
-
+        //put here the 'totalViews', before living
+        
         return view('event::campuscalendar', compact('totalVisits','totalViews','quicks','others','socialmedias'));
     }
 

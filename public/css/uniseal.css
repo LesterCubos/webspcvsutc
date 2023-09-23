@@ -27,6 +27,8 @@
 
 .uniseal .seal-img .img-center {
   display: block;
+  width: 25%;
+  height: 25%;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 50px;

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cvsutanzaweb.switch_sections', function (Blueprint $table) {
+        Schema::create('switch_sections', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->boolean('isActive');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cvsutanzaweb.switch_sections');
+        Schema::dropIfExists('switch_sections');
     }
 };

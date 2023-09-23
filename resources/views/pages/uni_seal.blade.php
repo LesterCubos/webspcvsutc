@@ -10,7 +10,7 @@
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
           <li>About</li>
-          <li>University Seal</li>
+          <li>Campus Seal</li>
         </ol>
       </div>
     </nav>
@@ -21,7 +21,7 @@
     <div class="container">
 
       <div class="section-title">
-        <h3>University <span>Seal</span></h3>
+        <h3>Campus <span>Seal</span></h3>
         <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
       </div>
 

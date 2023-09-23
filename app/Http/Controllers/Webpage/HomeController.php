@@ -29,6 +29,7 @@ class HomeController extends Controller
     public function homepage()
     {
         /* Views */
+        /*Comment/uncomment From $views to total visit */
         $views = CarouselItem::find(1);
         
         views($views)
@@ -37,7 +38,6 @@ class HomeController extends Controller
         $totalVisits = views($views)->count();
 
 
-        // $showSection = DB::table('section_switch')->pluck('show_section')->first();
         $carousel_items = CarouselItem::all();
         $featured_services = FeaturedService::all();
         $discover_tanza_infos = DiscoverTanzaInfo::all();
@@ -68,7 +68,7 @@ class HomeController extends Controller
                     'quicks',
                     'others',
                     'socialmedias',
-                    'totalVisits',
+                    'totalVisits', //comment/uncomment
                     'switchs'
                     ));
     }

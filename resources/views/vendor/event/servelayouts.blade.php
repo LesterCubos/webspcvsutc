@@ -177,6 +177,7 @@
               <li>Services</li>
               <li>Campus Calendar</li>
             </ol>
+            {{-- Comment this p tag before living. Issue:views --}}
             <p class="view"><i class='bx bx-bar-chart'></i> <span>{{ $totalViews }}</span> Total Views</p> 
           </div>
         </nav>
