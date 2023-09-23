@@ -28,16 +28,21 @@ class HomeController extends Controller
 {
     public function homepage()
     {
+        $carouselItem = CarouselItem::orderBy('created_at', 'desc')->get();
         /* Views */
-        $views = CarouselItem::find(1);
-        
+        foreach ($carouselItem as $carouselitem){
+            if($carouselitem->isActive = 1){
+                $views = CarouselItem::find($carouselitem->id);
+            }
+        }
+        // $views = CarouselItem::find(1);
         views($views)
         ->cooldown($minutes = 3)
         ->record();
         $totalVisits = views($views)->count();
 
 
-        // $showSection = DB::table('section_switch')->pluck('show_section')->first();
+        
         $carousel_items = CarouselItem::all();
         $featured_services = FeaturedService::all();
         $discover_tanza_infos = DiscoverTanzaInfo::all();

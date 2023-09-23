@@ -4,7 +4,7 @@
     <h1>Dashboard</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
         <li class="breadcrumb-item active">Dashboard</li>
       </ol>
     </nav>
@@ -116,9 +116,11 @@
                   </div>
               </div><!-- End activity title-->
 
+              @php ($a = 0)
               @foreach($carouselItem as $carousel_item)
                 <div class="activity-item d-flex">
                   @if ($carousel_item->created_at->format('m') == $month)
+                    @php ($a++)
                     <img src="{{  asset('storage/' . $carousel_item->featured_image) }}" alt="">
                     <div class="activite-label">
                       @if ($cardiff[$carousel_item->id][0] < 60)
@@ -139,6 +141,11 @@
                   @endif
                 </div><!-- End activity item-->
               @endforeach
+              @if (empty($a))
+                <div class="activity-content">
+                  No New Data
+                </div>    
+              @endif
 
               <div class="activity-title d-flex" style="margin-top: 20px">
                 <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
@@ -147,9 +154,11 @@
                   </div>
               </div><!-- End activity title-->
 
+              @php ($a = 0)
               @foreach($newsItem as $news_item)
                 <div class="activity-item d-flex">
                   @if ($news_item->created_at->format('m') == $month)
+                    @php ($a++)
                     <img src="{{ asset('storage/' . $news_item->news_image) }}" alt="">
                     <div class="activite-label">
                       @if ($newsdiff[$news_item->id][0] < 60)
@@ -170,6 +179,11 @@
                   @endif
                 </div><!-- End activity item-->
               @endforeach
+              @if (empty($a))
+                <div class="activity-content">
+                  No New Data
+                </div>    
+              @endif
 
               <div class="activity-title d-flex" style="margin-top: 20px">
                 <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
@@ -178,9 +192,11 @@
                   </div>
               </div><!-- End activity title-->
 
+              @php ($a = 0)
               @foreach($announcementItem as $announcement_item)
                 <div class="activity-item d-flex">
                   @if ($announcement_item->created_at->format('m') == $month)
+                    @php ($a++)
                     <img src="{{ asset('storage/' . $announcement_item->poster) }}" alt="">
                     <div class="activite-label">
                       @if ($announcementdiff[$announcement_item->id][0] < 60)
@@ -201,6 +217,11 @@
                   @endif
                 </div><!-- End activity item-->
               @endforeach
+              @if (empty($a))
+                <div class="activity-content">
+                  No New Data
+                </div>    
+              @endif
 
               <div class="activity-title d-flex" style="margin-top: 20px">
                 <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
@@ -209,9 +230,11 @@
                   </div>
               </div><!-- End activity title-->
 
+              @php ($a = 0)
               @foreach($eventItem as $event_item)
                 <div class="activity-item d-flex">
                   @if ($event_item->created_at->format('m') == $month)
+                    @php ($a++)
                     <div class="activite-label">
                       @if ($eventdiff[$event_item->id][0] < 60)
                         {{ $eventdiff[$event_item->id][0] }} sec ago
@@ -231,6 +254,11 @@
                   @endif
                 </div><!-- End activity item-->
               @endforeach
+              @if (empty($a))
+                <div class="activity-content">
+                  No New Data
+                </div>    
+              @endif
 
             </div>
 

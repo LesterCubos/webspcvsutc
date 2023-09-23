@@ -5,28 +5,28 @@
         </h2>
     </x-slot> --}}
 
-    @extends('superadmin.superadmin_master')
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @extends('layouts.admin')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @section('content')
 
     <div class="pagetitle">
         <h1>Profile</h1>
         <nav>
             <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i>Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i>Home</a></li>
             <li class="breadcrumb-item active">Profile</li>
             </ol>
         </nav>
     </div>
 
-    <section class="section profile">
+    {{-- <section class="section profile">
         <div class="row">
             <div class="col-xl-4">
             <div class="card">
                 <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
                 <img src="{{ asset('img/profile.jpeg') }}" alt="Profile" class="rounded-circle">
-                <div style="font-family: var(--font-secondary); font-size: 20px; font-weight: bold; margin-top: 10px">{{ Auth::guard('superadmin')->user()->name }}</div>
+                <div style="font-family: var(--font-secondary); font-size: 20px; font-weight: bold; margin-top: 10px">{{ Auth::user()->name }}</div>
                 </div>
             </div>
             </div>
@@ -58,7 +58,7 @@
               <!-- Profile Edit Form -->
               <form>
 
-                @include('superadmin.profile.partials.update-profile-information-form')
+                @include('profile.partials.update-profile-information-form')
 
               </form><!-- End Profile Edit Form -->
 
@@ -92,9 +92,9 @@
 
     </div>
         </div>
-    </section>
+    </section> --}}
 
-    {{-- <div class="box">
+    <div class="box">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
@@ -114,7 +114,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     @endsection
 
