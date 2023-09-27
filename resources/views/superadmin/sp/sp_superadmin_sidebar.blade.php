@@ -1,6 +1,6 @@
 <!-- partial:partials/_sidebar.html -->
 <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #38d838">
-    <div class="user-profile">
+    {{-- <div class="user-profile">
       <div class="user-image">
         <img src="{{asset('img/sp/images/faces/superadminpic.png')}}">
       </div>
@@ -10,7 +10,7 @@
         </a>
       </div>
       
-    </div>
+    </div> --}}
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link" href="">
@@ -30,9 +30,9 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('dashboard') }}">
           <i class="icon-head menu-icon"></i>
-          <span class="menu-title">Manage Website</span>
+          <span class="menu-title">Go back to Website</span>
         </a>
       </li>
 

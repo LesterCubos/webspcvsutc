@@ -71,7 +71,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
       <div class="d-flex align-items-center justify-content-between">
-          <a href="{{ route('dashboard') }}" class="logo d-flex align-items-center">
+          <a href="{{ route('superadmin.dashboard') }}" class="logo d-flex align-items-center">
             <img src="{{ asset('img/campus_seal.png') }}" alt="cvsu" class="rounded-circle">
             <span class="d-none d-lg-block">CvSU-TC Website Admin</span>
           </a>
@@ -127,7 +127,7 @@
       <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-          <a class="nav-link " id="nav_link" href="{{ route('dashboard') }}" active="request()->routeIs('dashboard')">
+          <a class="nav-link " id="nav_link" href="{{ route('superadmin.dashboard') }}" active="request()->routeIs('dashboard')">
             <i class="bi bi-grid"></i>
             <span>Dashboard</span>
           </a>

@@ -86,9 +86,10 @@ use App\Http\Controllers\Webpage\SocialMediaController;
 
 //Controllers for Role
 use App\Http\Controllers\SuperadminController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StudentController;
 
-
-
+// Start of Route for Website Pages(show)
 //Home
 Route::get('/', [HomeController::class, 'homepage'])->name('pages.homepage');
 //About
@@ -119,7 +120,7 @@ Route::get('admin_dit', [AdministrationController::class, 'dits'])->name('pages.
 Route::get('admin_ted', [AdministrationController::class, 'teds'])->name('pages.teacher_dep');
 Route::get('admin_das', [AdministrationController::class, 'dass'])->name('pages.dep_artscience');
 Route::get('admin_dom', [AdministrationController::class, 'doms'])->name('pages.dep_management');
-
+Route::get('admin_department', [AdministrationController::class, 'department'])->name('pages.department');
 //Services
 Route::get('services_csg', [ServicesController::class, 'csgs'])->name('pages.csg');
 Route::get('services_acadorgs', [ServicesController::class, 'acadorgs']);
@@ -135,7 +136,7 @@ Route::get('services_jobvacancies', [ServicesController::class, 'jobvacancies'])
 //Student route from show
 Route::get('student_login', function () {
     return view('student.student_login');
- })->name('student_login');;
+ })->name('student_login');
 
 
 // News
@@ -156,9 +157,29 @@ Route::get('search', [SearchController::class, 'search']);
 // Route::get('/', 'HomeController@index')->name('home');
 // Route::post('/switch', 'HomeController@update')->name('switch.update');
 
+// End of Route for Website Pages(show)
 
-Route::get('/dashboard',[DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard',[DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard',[DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
+
+//new attemot for multi auth
+
+Route::middleware(['auth','role:superadmin'])->group(function(){
+    Route::get('/superadmin/dashboard', [SuperadminController::class, 'Dashboard'])->name('superadmin.dashboard');
+    Route::get('/superadmin/sp/dashboard', [SuperadminController::class, 'SPDashboard'])->name('superadmin.sp.dashboard');
+
+}); //End Group Superadmin Middleware
+
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard');
+
+}); //End Group Admin Middleware
+
+Route::middleware(['auth','role:student'])->group(function(){
+    Route::get('/student/dashboard', [StudentController::class, 'Dashboard'])->name('student.dashboard');
+
+}); //End Group Student Middleware
 
 //route for auth user pages
 Route::middleware('auth')->group(function () {
@@ -232,8 +253,9 @@ Route::middleware('auth')->group(function () {
     
 
 });
+require __DIR__.'/auth.php';
 
-// // superadmin route
+// // unang gawa superadmin route
 // Route::prefix('superadmin')->group(function(){
 // Route::get('/login',[SuperadminController::class, 'Index'])->name('login_from');
 // Route::post('/login/owner',[SuperadminController::class, 'Login'])->name('superadmin.login');
@@ -323,4 +345,3 @@ Route::middleware('auth')->group(function () {
 // });
 
 
-require __DIR__.'/auth.php';

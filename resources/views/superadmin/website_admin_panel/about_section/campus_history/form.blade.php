@@ -4,7 +4,7 @@
     <h1></h1>
     <nav>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
         <li class="breadcrumb-item">About</li>
         <li class="breadcrumb-item"><a href="{{ route('campus_history.index') }}">Campus History Section</a></li>
         <li class="breadcrumb-item active">Create History</li>

@@ -10,6 +10,7 @@
         <a href="{{ $socialmedia->link }}" class=""><i class="{{ $socialmedia->icon }}"></i></a>
       @endforeach
     </div>
+    {{-- login/register --}}
     {{-- <div class="d-none d-md-flex align-items-center">
       @if (Route::has('login'))
         <div class="admin">
@@ -67,25 +68,14 @@
             <li><a href="admin_clinic">Clinic</a></li>
             <li><a href="admin_cashier">Cashier</a></li>
             <li><a href="admin_osas">Office of the Student Affairs Services</a></li>
-            <li><a href="admin_dit">Department of Information Technlogy</a></li>
-            <li><a href="admin_ted">Teacher Education Department</a></li>
-            <li><a href="admin_das">Department of Arts and Sciences</a></li>
-            <li><a href="admin_dom">Department of Management</a></li>
-            <li><a href="admin_hr">Human Resource Management</a></li>
-            <li><a href="admin_mis">Management Information S</a></li>
-            <li><a href="admin_qaac">QAAC</a></li>
+            {{-- <li><a href="admin_qaac">QAAC</a></li> --}}
             <li><a href="admin_research">Research Extension</a></li>
             <li><a href="admin_library">Library</a></li>
+            <li><a href="admin_department">Departments</a></li>
+
           </ul>
         </li>
-        {{-- <li class="dropdown"><a href="#">Instruction</a>
-          <ul>
-            <li><a href="/DeptInfoTech">Department of Information Technlogy</a></li>
-            <li><a href="#">Teacher Education Department</a></li>
-            <li><a href="#">Department of Arts and Sciences</a></li>
-            <li><a href="#">Department of Management</a></li>
-          </ul>
-        </li> --}}
+        
         <li class="dropdown"><a class="{{ Request::is('services_csg','services_acadorgs','services_nonacadorgs','services_newsandupdates','newsandupdates_news*','services_announcements','announcements*','services_campuscalendar','services_jobvacancies','jobvacancies*') ? 'active' : '' }}" href="#">Services</a>
           <ul>
             <li class="dropdown"><a href="#">Student Affairs</a>
@@ -104,8 +94,6 @@
         <li class="dropdown"><a href="#">Portal</a>
           <ul>
             <li><a href="student_login">Student Portal</a></li>
-
-            <li><a href="/login">MIS Portal</a></li>
             <li><a href="search">Search</a></li>
           </ul>
         </li>

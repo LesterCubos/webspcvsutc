@@ -34,6 +34,12 @@
                       <h4 class="text-center">Login your Account!</h4>
                       <form class="pt-3" method="POST" action="{{ route('login') }}">
                         @csrf
+                        @if (Session::has('error'))
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>{{session::get('error')}}</strong>
+                            </div>
+                        @endif
+                        
                         <div class="form-group">
                           <label for="exampleInputEmail">Email</label>
                           <div class="input-group">

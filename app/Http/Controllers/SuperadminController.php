@@ -24,7 +24,7 @@ class SuperadminController extends Controller
     }
 
     public function dashboard(){
-        // Total Visitors
+        // Total Visitors. Comment totalvisits before live
         $totalVisits = views(CarouselItem::class)->count();
         //Today
         $today = Carbon::today();
@@ -113,17 +113,20 @@ class SuperadminController extends Controller
             $announcementdiff[$announcementitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
 
         }
-
+        //'totalVisits',
         return view('superadmin.superadmin_dashboard',compact('totalVisits','todayVisits','monthVisits','yearVisits','totalNews','totalAnnouncement','totalEvents','newscount','announcementcount','eventscount',
         'carouselItem','eventItem','newsItem','announcementItem','month','startMonth','endMonth','currentTime','today','date','cardiff','eventdiff','newsdiff','announcementdiff',
         'anchorTimecar','anchorTimeann','anchorTimeeve','anchorTimenew'
         ));
     }
 
+    public function SPDashboard(){
+        return view('superadmin.sp.sp_superadmin_dashboard');
+    }
     public function Login(Request $request){
         // dd($request->all());
         $check = $request->all();
-        if (Auth::guard('superadmin')->attempt(['email' => $check['email'], 'password' => $check['password'] ])){
+        if (FacadesAuth::guard('superadmin')->attempt(['email' => $check['email'], 'password' => $check['password'] ])){
             return redirect()->route('superadmin.dashboard')->with('error','Superadmin Login Successfully');
         }else {
             return back()->with('error','Invalid email or password!');
@@ -131,7 +134,7 @@ class SuperadminController extends Controller
     }
 
     public function SuperadminLogout(){
-        Auth::guard('superadmin')->logout();
+        FacadesAuth::guard('superadmin')->logout();
         return redirect()->route('login_from')->with('error','Superadmin Logout Successfully');
     }
 

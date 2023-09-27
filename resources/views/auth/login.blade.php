@@ -6,7 +6,11 @@
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
-
+        @if (Session::has('error'))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{session::get('error')}}</strong>
+            </div>
+        @endif
         <!-- Email Address -->
         <div>
             {{-- <x-input-label for="email" :value="__('Email')" />
@@ -14,7 +18,7 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
                 <div class="input-box">
                     <span class="icon"><i class="bi bi-person-circle"></i></span>
-                    <input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                    <input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="email" />
                     <label>Email</label>
                 </div>
         </div>

@@ -174,7 +174,7 @@
                     @foreach($discover_tanza_infos as $discover_tanza_info)
                         <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
                             <img class="img-fluid" src="{{ asset('storage/' . $discover_tanza_info->image) }}" alt="{{ $discover_tanza_info->headline }}">
-                            <a href="#" class="glightbox play-btn"></a>
+                            <a href="https://youtu.be/A2fOWAo9jME?si=2-IuGQBKogvQ3nqh" class="glightbox play-btn"></a>
                         </div>
                         <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
                             <h3>{{ $discover_tanza_info->headline }}</h3>

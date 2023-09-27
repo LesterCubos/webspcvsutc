@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ route('dashboard') }}" active="request()->routeIs('dashboard')">
+        <a class="nav-link {{ (request()->is('superadmin/dashboard')) ? 'active' : '' }}" href="{{ route('superadmin.dashboard') }}" active="request()->routeIs('dashboard')">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -184,17 +184,17 @@
             </a>
           </li>
 
-          <li>
+          {{-- <li>
             <a href="{{ route('mis.index') }}">
               <i class="bi bi-circle"></i><span>MIS</span>
             </a>
-          </li>
+          </li> --}}
 
-          <li>
+          {{-- <li>
             <a href="{{ route('qaacs.index')}}">
               <i class="bi bi-circle"></i><span>QAAC</span>
             </a>
-          </li>
+          </li> --}}
 
           <li>
             <a href="{{ route('researchs.index') }}">
@@ -275,21 +275,21 @@
         </ul>
       </li><!-- End Settings Nav -->
 
-      {{-- <!-- for portaal -->
+      <!-- for portaal -->
       <li class="nav-item">
-        <a class="nav-link {{ (request()->is('sp/dashboard*')) ? 'collapse active' : 'collapsed' }}" data-bs-target="#portal-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ (request()->is('/superadmin/sp/dashboard*')) ? 'collapse active' : 'collapsed' }}" data-bs-target="#portal-nav" data-bs-toggle="collapse" href="#">
           <i class="ri-admin-fill"></i><span>Portal</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="portal-nav" class="nav-content collapse {{ (request()->is('sp/dashboard*')) ? 'show' : 'collapse' }}" data-bs-parent="#sidebar-nav">
+        <ul id="portal-nav" class="nav-content collapse {{ (request()->is('/superadmin/sp/dashboard*')) ? 'show' : 'collapse' }}" data-bs-parent="#sidebar-nav">
           <li>
-            <a class="{{ (request()->is('sp/dashboard*')) ? 'active' : '' }}" href="{{ route('sp/dashboard') }}">
+            <a class="{{ (request()->is('/superadmin/sp/dashboard*')) ? 'active' : '' }}" href="{{ route('superadmin.sp.dashboard') }}">
               <i class="bi bi-circle"></i><span>Student Portal</span>
             </a>
           </li>
           
 
         </ul>
-      </li><!-- End Portal Nav --> --}}
+      </li><!-- End Portal Nav -->
 
       
 

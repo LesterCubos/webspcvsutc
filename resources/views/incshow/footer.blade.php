@@ -18,7 +18,7 @@
               Philippines <br><br>
               <strong>Phone:</strong> 09876543210<br>
               <strong>Email:</strong> info@example.com<br>
-              {{-- <strong>Total Visits:</strong> {{ $totalViews }} --}}
+              
             </p>
             <div class="totalVisits d-flex align-items-center justify-content-center" data-aos="zoom-in" data-aos-delay="300">
               <div class="totalVisits-info">

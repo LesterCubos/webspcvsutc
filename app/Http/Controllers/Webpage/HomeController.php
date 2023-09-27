@@ -38,6 +38,7 @@ class HomeController extends Controller
         ->record();
         $totalVisits = views($views)->count();
 
+        //end comment
 
         $carousel_items = CarouselItem::all();
         $featured_services = FeaturedService::all();

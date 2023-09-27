@@ -25,6 +25,11 @@
         <li class="breadcrumb-item active">Dashboard</li>
       </ol>
     </nav>
+    @if (Session::has('error'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{session::get('error')}}</strong>
+    </div>
+    @endif
     <h2>
       <?php  date_default_timezone_set('Asia/Manila');
         echo "Today is " . date("l, m-d-Y. h:i a");?>
