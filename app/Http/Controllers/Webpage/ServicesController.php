@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutOrgs;
 use App\Models\News;
 use App\Models\Announcement;
-use App\Models\UniversitySeal;
+use Latfur\Event\Models\Event;
 use App\Models\JobVacancies;
 
 use App\Models\QuickLinks;
@@ -91,16 +91,21 @@ class ServicesController extends Controller
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
 
-        //note:uncomment after living from $views to $Total Views
-        //its important to post first a campus seal
-        $views = UniversitySeal::find(1);
-        
-        views($views)
-        ->cooldown($minutes = 3)
-        ->record();
+        $events = Event::all();
 
-        $totalViews = views($views)->count();
-        //end note here
+        foreach ($events as $event) {
+            $views = Event::find($event->id);
+        
+            views($views)
+            ->cooldown($minutes = 3)
+            ->record();
+
+            $totalViews = views($views)->count();
+        }
+
+        if ($events->isEmpty()) {
+            $totalViews = 0;
+        }
         
         $totalVisits=views(CarouselItem::class)->count();
         //put here the 'totalViews', before living

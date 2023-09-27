@@ -28,16 +28,25 @@ class HomeController extends Controller
 {
     public function homepage()
     {
-        $carouselItem = CarouselItem::orderBy('created_at', 'desc')->get();
+        $carouselItems = CarouselItem::orderBy('created_at', 'desc')->get();
         /* Views */
         /*Comment/uncomment From $views to total visit */
-        $views = CarouselItem::find(1);
-        
-        views($views)
-        ->cooldown($minutes = 3)
-        ->record();
-        $totalVisits = views($views)->count();
+        foreach ($carouselItems as $carouselItem) {
 
+            $views = CarouselItem::find($carouselItem->id);
+        
+            views($views)
+            ->cooldown($minutes = 3)
+            ->record();
+            $totalVisits = views($views)->count();
+        }
+
+        if ($carouselItems->isEmpty()) {
+            $totalVisits = 0;
+        }
+        
+        
+        
         //end comment
 
         $carousel_items = CarouselItem::all();
@@ -70,7 +79,7 @@ class HomeController extends Controller
                     'quicks',
                     'others',
                     'socialmedias',
-                    'totalVisits', //comment/uncomment
+                    'totalVisits',
                     'switchs'
                     ));
     }

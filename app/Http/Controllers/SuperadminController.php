@@ -72,6 +72,10 @@ class SuperadminController extends Controller
 
         }
 
+        if ($carouselItem->isEmpty()) {
+            $anchorTimecar = 0;
+        }
+
         $eventItem = Event::orderBy('created_at', 'desc')->get();
         $eventdiff = array();
 
@@ -84,6 +88,10 @@ class SuperadminController extends Controller
             $dayDiff = $anchorTimeeve[$eventitem->id]->diffInDays($currentTime);
             $eventdiff[$eventitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
 
+        }
+
+        if ($eventItem->isEmpty()) {
+            $anchorTimeeve = 0;
         }
 
         $newsItem = News::orderBy('created_at', 'desc')->get();
@@ -100,6 +108,10 @@ class SuperadminController extends Controller
 
         }
 
+        if ($newsItem->isEmpty()) {
+            $anchorTimenew = 0;
+        }
+
         $announcementItem = Announcement::orderBy('created_at', 'desc')->get();
         $announcementdiff = array();
 
@@ -113,6 +125,11 @@ class SuperadminController extends Controller
             $announcementdiff[$announcementitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
 
         }
+
+        if ($announcementItem->isEmpty()) {
+            $anchorTimeann = 0;
+        }
+
         //'totalVisits',
         return view('superadmin.superadmin_dashboard',compact('totalVisits','todayVisits','monthVisits','yearVisits','totalNews','totalAnnouncement','totalEvents','newscount','announcementcount','eventscount',
         'carouselItem','eventItem','newsItem','announcementItem','month','startMonth','endMonth','currentTime','today','date','cardiff','eventdiff','newsdiff','announcementdiff',
