@@ -29,25 +29,21 @@ class HomeController extends Controller
     public function homepage()
     {
         $carouselItems = CarouselItem::orderBy('created_at', 'desc')->get();
-        /* Views */
-        /*Comment/uncomment From $views to total visit */
-        foreach ($carouselItems as $carouselItem) {
-
-            $views = CarouselItem::find($carouselItem->id);
-        
-            views($views)
-            ->cooldown($minutes = 3)
-            ->record();
-            $totalVisits = views($views)->count();
-        }
 
         if ($carouselItems->isEmpty()) {
             $totalVisits = 0;
+        } else {
+            foreach ($carouselItems as $carouselItem) {
+
+                $views = CarouselItem::find($carouselItem->id);
+            
+                views($views)
+                ->cooldown($minutes = 3)
+                ->record();
+               
+                $totalVisits=views(CarouselItem::class)->count();
+            }
         }
-        
-        
-        
-        //end comment
 
         $carousel_items = CarouselItem::all();
         $featured_services = FeaturedService::all();

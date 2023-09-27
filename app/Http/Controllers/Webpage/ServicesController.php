@@ -93,18 +93,18 @@ class ServicesController extends Controller
 
         $events = Event::all();
 
-        foreach ($events as $event) {
-            $views = Event::find($event->id);
-        
-            views($views)
-            ->cooldown($minutes = 3)
-            ->record();
-
-            $totalViews = views($views)->count();
-        }
-
         if ($events->isEmpty()) {
             $totalViews = 0;
+        } else {
+            foreach ($events as $event) {
+                $views = Event::find($event->id);
+            
+                views($views)
+                ->cooldown($minutes = 3)
+                ->record();
+    
+                $totalViews = views($views)->count();
+            }
         }
         
         $totalVisits=views(CarouselItem::class)->count();

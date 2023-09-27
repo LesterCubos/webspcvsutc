@@ -60,74 +60,74 @@ class SuperadminController extends Controller
 
         $carouselItem = CarouselItem::orderBy('created_at', 'desc')->get();
         $cardiff = array();
-        
-        foreach($carouselItem as $carouselitem){
-            
-            $anchorTimecar[$carouselitem->id] = Carbon::createFromFormat("Y-m-d H:i:s",$carouselitem->created_at);
-            $secondDiff = $anchorTimecar[$carouselitem->id]->diffInSeconds($currentTime);
-            $minuteDiff = $anchorTimecar[$carouselitem->id]->diffInMinutes($currentTime);
-            $hourDiff = $anchorTimecar[$carouselitem->id]->diffInHours($currentTime);
-            $dayDiff = $anchorTimecar[$carouselitem->id]->diffInDays($currentTime);
-            $cardiff[$carouselitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
-
-        }
 
         if ($carouselItem->isEmpty()) {
             $anchorTimecar = 0;
+        } else {
+            foreach($carouselItem as $carouselitem){
+            
+                $anchorTimecar[$carouselitem->id] = Carbon::createFromFormat("Y-m-d H:i:s",$carouselitem->created_at);
+                $secondDiff = $anchorTimecar[$carouselitem->id]->diffInSeconds($currentTime);
+                $minuteDiff = $anchorTimecar[$carouselitem->id]->diffInMinutes($currentTime);
+                $hourDiff = $anchorTimecar[$carouselitem->id]->diffInHours($currentTime);
+                $dayDiff = $anchorTimecar[$carouselitem->id]->diffInDays($currentTime);
+                $cardiff[$carouselitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
+    
+            }
         }
 
         $eventItem = Event::orderBy('created_at', 'desc')->get();
         $eventdiff = array();
 
-        foreach($eventItem as $eventitem){
-            
-            $anchorTimeeve[$eventitem->id] = Carbon::createFromFormat("Y-m-d H:i:s",$eventitem->created_at);
-            $secondDiff = $anchorTimeeve[$eventitem->id]->diffInSeconds($currentTime);
-            $minuteDiff = $anchorTimeeve[$eventitem->id]->diffInMinutes($currentTime);
-            $hourDiff = $anchorTimeeve[$eventitem->id]->diffInHours($currentTime);
-            $dayDiff = $anchorTimeeve[$eventitem->id]->diffInDays($currentTime);
-            $eventdiff[$eventitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
-
-        }
-
         if ($eventItem->isEmpty()) {
             $anchorTimeeve = 0;
+        } else {
+            foreach($eventItem as $eventitem){
+            
+                $anchorTimeeve[$eventitem->id] = Carbon::createFromFormat("Y-m-d H:i:s",$eventitem->created_at);
+                $secondDiff = $anchorTimeeve[$eventitem->id]->diffInSeconds($currentTime);
+                $minuteDiff = $anchorTimeeve[$eventitem->id]->diffInMinutes($currentTime);
+                $hourDiff = $anchorTimeeve[$eventitem->id]->diffInHours($currentTime);
+                $dayDiff = $anchorTimeeve[$eventitem->id]->diffInDays($currentTime);
+                $eventdiff[$eventitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
+    
+            }
         }
 
         $newsItem = News::orderBy('created_at', 'desc')->get();
         $newsdiff = array();
 
-        foreach($newsItem as $newsitem){
-            
-            $anchorTimenew[$newsitem->id] = Carbon::createFromFormat("Y-m-d H:i:s",$newsitem->created_at);
-            $secondDiff = $anchorTimenew[$newsitem->id]->diffInSeconds($currentTime);
-            $minuteDiff = $anchorTimenew[$newsitem->id]->diffInMinutes($currentTime);
-            $hourDiff = $anchorTimenew[$newsitem->id]->diffInHours($currentTime);
-            $dayDiff = $anchorTimenew[$newsitem->id]->diffInDays($currentTime);
-            $newsdiff[$newsitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
-
-        }
-
         if ($newsItem->isEmpty()) {
             $anchorTimenew = 0;
+        } else {
+            foreach($newsItem as $newsitem){
+            
+                $anchorTimenew[$newsitem->id] = Carbon::createFromFormat("Y-m-d H:i:s",$newsitem->created_at);
+                $secondDiff = $anchorTimenew[$newsitem->id]->diffInSeconds($currentTime);
+                $minuteDiff = $anchorTimenew[$newsitem->id]->diffInMinutes($currentTime);
+                $hourDiff = $anchorTimenew[$newsitem->id]->diffInHours($currentTime);
+                $dayDiff = $anchorTimenew[$newsitem->id]->diffInDays($currentTime);
+                $newsdiff[$newsitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
+    
+            }
         }
 
         $announcementItem = Announcement::orderBy('created_at', 'desc')->get();
         $announcementdiff = array();
-
-        foreach($announcementItem as $announcementitem){
-            
-            $anchorTimeann[$announcementitem->id] = Carbon::createFromFormat("Y-m-d H:i:s",$announcementitem->created_at);
-            $secondDiff = $anchorTimeann[$announcementitem->id]->diffInSeconds($currentTime);
-            $minuteDiff = $anchorTimeann[$announcementitem->id]->diffInMinutes($currentTime);
-            $hourDiff = $anchorTimeann[$announcementitem->id]->diffInHours($currentTime);
-            $dayDiff = $anchorTimeann[$announcementitem->id]->diffInDays($currentTime);
-            $announcementdiff[$announcementitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
-
-        }
-
+        
         if ($announcementItem->isEmpty()) {
             $anchorTimeann = 0;
+        } else {
+            foreach($announcementItem as $announcementitem){
+            
+                $anchorTimeann[$announcementitem->id] = Carbon::createFromFormat("Y-m-d H:i:s",$announcementitem->created_at);
+                $secondDiff = $anchorTimeann[$announcementitem->id]->diffInSeconds($currentTime);
+                $minuteDiff = $anchorTimeann[$announcementitem->id]->diffInMinutes($currentTime);
+                $hourDiff = $anchorTimeann[$announcementitem->id]->diffInHours($currentTime);
+                $dayDiff = $anchorTimeann[$announcementitem->id]->diffInDays($currentTime);
+                $announcementdiff[$announcementitem->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
+    
+            }    
         }
 
         //'totalVisits',
