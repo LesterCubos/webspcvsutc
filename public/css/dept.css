@@ -1,0 +1,113 @@
+/* Fonts */
+:root {
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Poppins", sans-serif;
+    --font-secondary: "McLaren", sans-serif;
+  }
+
+  /* Colors */
+  :root {
+    --color-default: #000;
+    --color-primary:  #a04ef6;
+    --color-secondary: #ec9706;
+  }
+
+  /* Smooth scroll behavior */
+  :root {
+    scroll-behavior: smooth;
+  }
+
+/*--------------------------------------------------------------
+# DIT Section
+--------------------------------------------------------------*/
+.dept .container {
+  box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
+  padding: 30px;
+}
+
+.dept .nav-tabs {
+  border: 0;
+}
+
+.dept .nav-link {
+  padding: 15px 0;
+  transition: 0.3s;
+  color: var(--color-secondary);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+  border: 0;
+  border-bottom: 4px solid #e2e4e6;
+}
+
+.dept .nav-link i {
+  padding-right: 15px;
+  font-size: 48px;
+}
+
+.dept .nav-link h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  .dept .nav-link h4 {
+    font-size: 16px;
+  }
+}
+
+.dept .nav-link:hover {
+  color: var(--color-primary);
+}
+
+.dept .nav-link.active {
+  color: var(--color-primary);
+  background-color: transparent;
+  border-color: var(--color-primary);
+}
+
+.dept .tab-content {
+  margin-top: 30px;
+}
+
+.dept.tab-pane h3 {
+  font-weight: 700;
+  font-size: 32px;
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.dept .tab-pane h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-primary);
+  left: 0;
+  bottom: 0;
+}
+
+.dept .tab-pane ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dept .tab-pane ul li {
+  padding-top: 10px;
+}
+
+.dept .tab-pane ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: var(--color-primary);
+}
+
+.dept .tab-pane p:last-child {
+  margin-bottom: 0;
+}
