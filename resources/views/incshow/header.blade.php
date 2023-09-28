@@ -71,7 +71,7 @@
             {{-- <li><a href="admin_qaac">QAAC</a></li> --}}
             <li><a href="admin_research">Research Extension</a></li>
             <li><a href="admin_library">Library</a></li>
-            <li><a href="admin_department">Departments</a></li>
+            <li><a href="admin_departments">Departments</a></li>
 
           </ul>
         </li>

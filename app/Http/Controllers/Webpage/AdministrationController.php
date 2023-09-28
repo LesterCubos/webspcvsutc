@@ -151,7 +151,15 @@ class AdministrationController extends Controller
         return view('pages.dep_management', compact('doms','totalVisits','quicks','others','socialmedias'));
     }
 
-    public function department(){
-        return view('pages.department');
+    public function departments(){
+
+        $quicks = QuickLinks::all();
+        $others = OtherLinks::all();
+        $socialmedias = SocialMediaLinks::all();
+
+        $totalVisits=views(CarouselItem::class)->count();
+        $doms = DoM::all();
+
+        return view('pages.departments', compact('doms','totalVisits','quicks','others','socialmedias'));
     }
 }
