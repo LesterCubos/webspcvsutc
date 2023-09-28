@@ -81,8 +81,8 @@
             <li class="dropdown"><a href="#">Student Affairs</a>
               <ul>
                 <li><a href="services_csg">Central Student Goverment</a></li>
-                <li><a href="services_acadorgs">Academic Organizations</a></li>
-                <li><a href="services_nonacadorgs">Non-Academic Organizations</a></li>
+                <li><a href="services_acadorgs">Academic & Non- Academic Org</a></li>
+                {{-- <li><a href="services_nonacadorgs">Non-Academic Organizations</a></li> --}}
               </ul>
             </li>
             <li><a href="services_newsandupdates">News Updates</a></li>
