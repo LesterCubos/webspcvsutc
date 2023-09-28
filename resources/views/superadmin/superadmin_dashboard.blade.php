@@ -273,7 +273,7 @@
         
 
         <!-- Website Traffic -->
-        {{-- <div class="card">
+        <div class="card">
           <div class="filter">
             <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -348,7 +348,8 @@
             </script>
 
           </div>
-        </div><!-- End Website Traffic --> --}}
+        </div>
+        <!-- End Website Traffic -->
 
       </div><!-- End Right side columns -->
 
