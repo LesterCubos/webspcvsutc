@@ -5,16 +5,19 @@
         </h2>
     </x-slot> --}}
 
-    @extends('superadmin.superadmin_master')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @section('content')
+@extends('superadmin.superadmin_master')
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+@section('content')
 
     <div class="pagetitle">
         <h1>Profile</h1>
         <nav>
             <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i>Home</a></li>
-            <li class="breadcrumb-item active">Profile</li>
+
+
+              <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i>Home</a></li>
+              
+              <li class="breadcrumb-item active">Profile</li>
             </ol>
         </nav>
     </div>
@@ -116,7 +119,7 @@
                               <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar">
 
                               @if (empty(Auth::user()->avatar))
-                                  <img height="90" src="{{ asset('img/147142.png') }}" alt="Profile Photo" style="width:80px;margin-top: 10px;">
+                                  <img height="90" src="{{ asset('img/default.png') }}" alt="Profile Photo" style="width:80px;margin-top: 10px;">
                               @else
                                 <img src="/avatars/{{ Auth::user()->avatar }}" style="width:80px;margin-top: 10px;">
                               @endif

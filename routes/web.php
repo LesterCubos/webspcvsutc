@@ -168,6 +168,9 @@ Route::get('search', [SearchController::class, 'search']);
 Route::middleware(['auth','role:superadmin'])->group(function(){
     Route::get('/superadmin/dashboard', [SuperadminController::class, 'Dashboard'])->name('superadmin.dashboard');
     Route::get('/superadmin/sp/dashboard', [SuperadminController::class, 'SPDashboard'])->name('superadmin.sp.dashboard');
+    Route::get('/superadmin/events', function (){
+        return view('event::calendar');
+    });
 
 }); //End Group Superadmin Middleware
 

@@ -22,7 +22,7 @@ class CashierController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('cashiers.index', [
+        return response()->view('superadmin.website_admin_panel.administration_section.cashiers.index', [
             'cashiers' => Cashier::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -32,7 +32,7 @@ class CashierController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('cashiers.form');
+        return response()->view('superadmin.website_admin_panel.administration_section.cashiers.form');
     }
 
     /**
@@ -65,7 +65,7 @@ class CashierController extends Controller
      */
     public function show(string $id): Response
     {
-        return response()->view('cashiers.show', [
+        return response()->view('superadmin.website_admin_panel.administration_section.cashiers.show', [
             'cashier' => Cashier::findOrFail($id),
         ]);
     }
@@ -75,7 +75,7 @@ class CashierController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('cashiers.form', [
+        return response()->view('superadmin.website_admin_panel.administration_section.cashiers.form', [
             'cashier' => Cashier::findOrFail($id),
         ]);
     }

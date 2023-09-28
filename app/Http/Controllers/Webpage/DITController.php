@@ -20,7 +20,7 @@ class DITController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('dits.index', [
+        return response()->view('superadmin.website_admin_panel.administration_section.dits.index', [
             'dits' => DIT::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -30,7 +30,7 @@ class DITController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('dits.form');
+        return response()->view('superadmin.website_admin_panel.administration_section.dits.form');
     }
 
     /**
@@ -73,7 +73,7 @@ class DITController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('dits.form', [
+        return response()->view('superadmin.website_admin_panel.administration_section.dits.form', [
             'dit' => DIT::findOrFail($id),
         ]);
     }

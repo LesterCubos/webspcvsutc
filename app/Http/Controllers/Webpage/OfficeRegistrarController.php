@@ -22,7 +22,7 @@ class OfficeRegistrarController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('office_registrars.index', [
+        return response()->view('superadmin.website_admin_panel.administration_section.office_registrars.index', [
             'office_registrars' => OfficeRegistrar::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -32,7 +32,7 @@ class OfficeRegistrarController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('office_registrars.form');
+        return response()->view('superadmin.website_admin_panel.administration_section.office_registrars.form');
     }
 
     /**
@@ -75,7 +75,7 @@ class OfficeRegistrarController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('office_registrars.form', [
+        return response()->view('superadmin.website_admin_panel.administration_section.office_registrars.form', [
             'office_registrar' => OfficeRegistrar::findOrFail($id),
         ]);
     }

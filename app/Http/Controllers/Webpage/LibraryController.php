@@ -20,7 +20,7 @@ class LibraryController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('libs.index', [
+        return response()->view('superadmin.website_admin_panel.administration_section.libs.index', [
             'libs' => Library::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -30,7 +30,7 @@ class LibraryController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('libs.form');
+        return response()->view('superadmin.website_admin_panel.administration_section.libs.form');
     }
 
     /**
@@ -73,7 +73,7 @@ class LibraryController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('libs.form', [
+        return response()->view('superadmin.website_admin_panel.administration_section.libs.form', [
             'lib' => Library::findOrFail($id),
         ]);
     }

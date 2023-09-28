@@ -20,7 +20,7 @@ class HumanResourceController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('hrs.index', [
+        return response()->view('superadmin.website_admin_panel.administration_section.hrs.index', [
             'hrs' => HumanResource::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -30,7 +30,7 @@ class HumanResourceController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('hrs.form');
+        return response()->view('superadmin.website_admin_panel.administration_section.hrs.form');
     }
 
     /**
@@ -73,7 +73,7 @@ class HumanResourceController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('hrs.form', [
+        return response()->view('superadmin.website_admin_panel.administration_section.hrs.form', [
             'hr' => HumanResource::findOrFail($id),
         ]);
     }

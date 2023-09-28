@@ -21,7 +21,7 @@ class ClinicController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('clinics.index', [
+        return response()->view('superadmin.website_admin_panel.administration_section.clinics.index', [
             'clinics' => Clinic::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -31,7 +31,7 @@ class ClinicController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('clinics.form');
+        return response()->view('superadmin.website_admin_panel.administration_section.clinics.form');
     }
 
     /**
@@ -74,7 +74,7 @@ class ClinicController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('clinics.form', [
+        return response()->view('superadmin.website_admin_panel.administration_section.clinics.form', [
             'clinic' => Clinic::findOrFail($id),
         ]);
     }

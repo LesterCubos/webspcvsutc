@@ -2,13 +2,13 @@
 
 
 
-@extends('layouts.admin')
+@extends('superadmin.superadmin_master')
 @section('content')
     <div class="pagetitle">
         {{-- <h1>Dashboard</h1> --}}
         <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
             <li class="breadcrumb-item">Dashboard</li>
             <li class="breadcrumb-item active">Office of Registrar Page</li>
         </ol>
@@ -49,7 +49,7 @@
 
         <tbody>
             {{-- populate our carousel item data --}}
-            @foreach ($office_registrars as $office_registrar)
+            @forelse ($office_registrars as $office_registrar)
             <tr>
                 <th scope="row">{{ $office_registrar->id }}</th>
                 <td>{{ $office_registrar->title }}</td>
@@ -68,7 +68,13 @@
                     </form>
                 </td>
             </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="7" style="text-align: center; font-size: 24px">
+                        <div class="py-5" style="">No Data Found...</div>
+                    </td>  
+                </tr>
+            @endforelse
         </tbody>
     </table>
 
