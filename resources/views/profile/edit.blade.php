@@ -5,7 +5,15 @@
         </h2>
     </x-slot> --}}
 
-@extends('superadmin.superadmin_master')
+@if(Auth::user()->role == 'superadmin')
+  @php $type = "superadmin.superadmin_master" @endphp
+@elseif(Auth::user()->role === 'admin')
+  @php $type = "admin.admin_master" @endphp
+@elseif(Auth::user()->role === 'student')
+  @php $type = "student.student_master" @endphp
+@endif
+
+@extends($type)
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 @section('content')
 
@@ -14,8 +22,14 @@
         <nav>
             <ol class="breadcrumb">
 
-
-              <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i>Home</a></li>
+              @if(Auth::user()->role == 'superadmin')
+                @php $dash = "superadmin.dashboard" @endphp
+              @elseif(Auth::user()->role === 'admin')
+                @php $dash = "admin.dashboard" @endphp
+              @elseif(Auth::user()->role === 'student')
+                @php $dash = "student.dashboard" @endphp
+              @endif
+              <li class="breadcrumb-item"><a href="{{ route($dash) }}"><i class="bx bx-home"></i>Home</a></li>
               
               <li class="breadcrumb-item active">Profile</li>
             </ol>

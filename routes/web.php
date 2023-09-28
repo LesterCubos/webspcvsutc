@@ -168,28 +168,6 @@ Route::get('search', [SearchController::class, 'search']);
 Route::middleware(['auth','role:superadmin'])->group(function(){
     Route::get('/superadmin/dashboard', [SuperadminController::class, 'Dashboard'])->name('superadmin.dashboard');
     Route::get('/superadmin/sp/dashboard', [SuperadminController::class, 'SPDashboard'])->name('superadmin.sp.dashboard');
-    Route::get('/superadmin/events', function (){
-        return view('event::calendar');
-    });
-
-}); //End Group Superadmin Middleware
-
-Route::middleware(['auth','role:admin'])->group(function(){
-    Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard');
-
-}); //End Group Admin Middleware
-
-Route::middleware(['auth','role:student'])->group(function(){
-    Route::get('/student/dashboard', [StudentController::class, 'Dashboard'])->name('student.dashboard');
-
-}); //End Group Student Middleware
-
-//route for auth user pages
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Website Management
 
@@ -253,6 +231,92 @@ Route::middleware('auth')->group(function () {
     Route::resource('other_links', OtherLinksController::class);
     Route::resource('social_media', SocialMediaController::class);
     //End Services
+
+    Route::get('/superadmin/events', function (){
+        return view('event::calendar');
+    });
+
+}); //End Group Superadmin Middleware
+
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard');
+
+}); //End Group Admin Middleware
+
+Route::middleware(['auth','role:student'])->group(function(){
+    Route::get('/student/dashboard', [StudentController::class, 'Dashboard'])->name('student.dashboard');
+
+}); //End Group Student Middleware
+
+//route for auth user pages
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // // Website Management
+
+    // //start homepage
+    // Route::resource('carousel_items',CarouselController::class);
+    // Route::resource('featured_services',FeaturedServicesController::class);
+    // Route::resource('discover_tanza_infos',DiscoverTanzaInfosController::class);
+    // Route::resource('counts',CountsController::class);
+    // Route::resource('programs',ProgramsController::class);
+    // Route::resource('admissions',AdmissionController::class);
+    // Route::resource('news',NewsController::class);
+    // Route::resource('announcements',AnnouncementController::class);   
+    // Route::get('section_switch',[SwitchController::class, 'index'])->name('section_switch.index');
+    // // End Homepage
+
+
+    // //Start about
+    // Route::resource('campus_history',CampusHistoryController::class);
+    // Route::resource('mvgs',MVGController::class);
+    // Route::resource('uni_seals',UniversitySealsController::class);
+    // Route::resource('uni_officials', UniversityOfficialsController::class);
+    // Route::resource('campus_officials',CampusOfficialsController::class);
+    // Route::resource('campus_official_infos',CampusOfficialInfosController::class);
+    // Route::resource('contact_infos',ContactInfoController::class);
+    // // End About
+
+    // //Start Admission
+    // Route::resource('programs_offers',ProgramsOfferedController::class);
+    // Route::resource('requirements_procedures',RequirementsProcedureController::class);
+    // Route::resource('admission_results',AdmissionResultController::class);
+    // // End Admission
+
+    // //Start Administration
+    // Route::resource('office_registrars',OfficeRegistrarController::class);
+    // Route::resource('clinics', ClinicController::class);
+    // Route::resource('cashiers', CashierController::class);
+    // Route::resource('osass', OsasController::class);
+    // Route::resource('hrs', HumanResourceController::class);
+    // Route::resource('mis', MISController::class);
+    // Route::resource('qaacs', QAACController::class);
+    // Route::resource('researchs', ResearchController::class);
+    // Route::resource('libs', LibraryController::class);
+    // Route::resource('dits', DITController::class);
+    // Route::resource('teds', TEDController::class);
+    // Route::resource('dass', DASController::class);
+    // Route::resource('doms', DoMController::class);
+    // //End Administration
+
+    // //Start Services
+    // Route::resource('csgs', CSGController::class);
+    // Route::resource('about_orgs', AboutOrgsController::class);
+
+    // Route::get('/events', function () {
+    //     return view('event::calendar');
+    // });
+    // Route::resource('job_vacancies', JobVacanciesController::class);
+    // //End Services
+
+    // //Start Settings
+    // Route::resource('quick_links', QuickLinksController::class);
+    // Route::resource('other_links', OtherLinksController::class);
+    // Route::resource('social_media', SocialMediaController::class);
+    // //End Services
     
 
 });
