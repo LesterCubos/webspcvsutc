@@ -346,6 +346,8 @@
             </script>
 
           </div>
+        </div>
+        <!-- End Website Traffic -->
         </div><!-- End Website Traffic -->
 
       </div><!-- End Right side columns -->
