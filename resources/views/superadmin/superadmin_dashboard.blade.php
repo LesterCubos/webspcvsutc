@@ -270,8 +270,6 @@
       <!-- Right side columns -->
       <div class="col-lg-4">
 
-        
-
         <!-- Website Traffic -->
         <div class="card">
           <div class="filter">
@@ -350,6 +348,7 @@
           </div>
         </div>
         <!-- End Website Traffic -->
+        </div><!-- End Website Traffic -->
 
       </div><!-- End Right side columns -->
 

@@ -120,7 +120,7 @@ Route::get('admin_dit', [AdministrationController::class, 'dits'])->name('pages.
 Route::get('admin_ted', [AdministrationController::class, 'teds'])->name('pages.teacher_dep');
 Route::get('admin_das', [AdministrationController::class, 'dass'])->name('pages.dep_artscience');
 Route::get('admin_dom', [AdministrationController::class, 'doms'])->name('pages.dep_management');
-Route::get('admin_department', [AdministrationController::class, 'department'])->name('pages.department');
+Route::get('admin_departments', [AdministrationController::class, 'departments'])->name('pages.departments');
 //Services
 Route::get('services_csg', [ServicesController::class, 'csgs'])->name('pages.csg');
 Route::get('services_acadorgs', [ServicesController::class, 'acadorgs']);
