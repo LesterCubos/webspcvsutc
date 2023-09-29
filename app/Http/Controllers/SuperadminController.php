@@ -14,8 +14,10 @@ use App\Models\User;
 use CyrildeWit\EloquentViewable\Support\Period;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-use Auth;
-use Illuminate\Support\Facades\Auth as FacadesAuth;
+// use Auth;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
 
 class SuperadminController extends Controller
 {
@@ -143,31 +145,37 @@ class SuperadminController extends Controller
     public function Login(Request $request){
         // dd($request->all());
         $check = $request->all();
-        if (FacadesAuth::guard('superadmin')->attempt(['email' => $check['email'], 'password' => $check['password'] ])){
+        if (Auth::guard('superadmin')->attempt(['email' => $check['email'], 'password' => $check['password'] ])){
             return redirect()->route('superadmin.dashboard')->with('error','Superadmin Login Successfully');
         }else {
             return back()->with('error','Invalid email or password!');
         }
     }
 
-    public function SuperadminLogout(){
-        FacadesAuth::guard('superadmin')->logout();
-        return redirect()->route('login_from')->with('error','Superadmin Logout Successfully');
-    }
+    public function SuperadminLogout(Request $request): RedirectResponse
+    {
+        Auth::guard('web')->logout();
 
-    public function SuperadminRegister(){
-        return view('superadmin.superadmin_register');
-    }
+        $request->session()->invalidate();
 
-    public function SuperadminRegisterCreate(Request $request){
-        // dd($request->all());
-        Superadmin::insert([
-            'name'=> $request->name,
-            'email'=> $request->email,
-            'password'=> Hash::make($request->password),
-            'created_at'=> Carbon::now(),
-        ]);
-        return redirect()->route('login_from')->with('error','Superadmin Created Successfully');
+        $request->session()->regenerateToken();
 
+        return redirect('/login')->with('error','Logout Successfully');
     }
+    
+    // public function SuperadminRegister(){
+    //     return view('superadmin.superadmin_register');
+    // }
+
+    // public function SuperadminRegisterCreate(Request $request){
+    //     // dd($request->all());
+    //     Superadmin::insert([
+    //         'name'=> $request->name,
+    //         'email'=> $request->email,
+    //         'password'=> Hash::make($request->password),
+    //         'created_at'=> Carbon::now(),
+    //     ]);
+    //     return redirect()->route('login_from')->with('error','Superadmin Created Successfully');
+
+    // }
 }

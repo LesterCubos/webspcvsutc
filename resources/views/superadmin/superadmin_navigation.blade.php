@@ -88,10 +88,10 @@
               </li>
 
               <li>
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="GET" action="{{ route('superadmin.logout') }}">
                   @csrf
 
-                  <a class="dropdown-item d-flex align-items-center" href="('logout')" onclick="event.preventDefault();this.closest('form').submit();">
+                  <a class="dropdown-item d-flex align-items-center" href="('superadmin.logout')" onclick="event.preventDefault();this.closest('form').submit();">
                       <i class="bi bi-box-arrow-right"></i>
                       <span>Logout</span>
                   </a>
