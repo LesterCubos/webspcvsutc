@@ -12,7 +12,7 @@
     </div><!-- End Logo -->
 
     <nav class="header-nav ms-auto">
-        <ul class="d-flex align-items-center">
+        {{-- <ul class="d-flex align-items-center">
 
 
           <li class="nav-item dropdown pe-3">
@@ -53,8 +53,41 @@
             </ul><!-- End Profile Dropdown Items -->
           </li><!-- End Profile Nav -->
 
-        </ul>
-      </nav><!-- End Icons Navigation -->
+        </ul> --}}
+        <x-dropdown align="right" width="48" class="d-flex align-items-center">
+          <x-slot name="trigger">
+              <button class="nav-item dropdown pe-3">
+                  <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                  @if (empty(Auth::user()->avatar))
+                        <img height="90" src="{{ asset('img/default.png') }}" alt="Profile Photo" class="rounded-circle">
+                    @else
+                        <img height="90" src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo" class="rounded-circle">
+                  @endif
+                  <div>{{ Auth::user()->name }}</div>
+                  
+                </a><!-- End Profile Iamge Icon -->
+
+              </button>
+          </x-slot>
+
+          <x-slot name="content">
+              <x-dropdown-link :href="route('profile.edit')">
+                  {{ __('Profile') }}
+              </x-dropdown-link>
+
+              <!-- Authentication -->
+              <form method="POST" action="{{ route('logout') }}">
+                  @csrf
+
+                  <x-dropdown-link :href="route('logout')"
+                          onclick="event.preventDefault();
+                                      this.closest('form').submit();">
+                      {{ __('Log Out') }}
+                  </x-dropdown-link>
+              </form>
+          </x-slot>
+        </x-dropdown>
+    </nav><!-- End Icons Navigation -->
 
 </header><!-- End Header -->
 
