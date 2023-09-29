@@ -20,7 +20,7 @@ class DASController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('dass.index', [
+        return response()->view('superadmin.website_admin_panel.administration_section.dass.index', [
             'dass' => DAS::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -30,7 +30,7 @@ class DASController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('dass.form');
+        return response()->view('superadmin.website_admin_panel.administration_section.dass.form');
     }
 
     /**
@@ -73,7 +73,7 @@ class DASController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('dass.form', [
+        return response()->view('superadmin.website_admin_panel.administration_section.dass.form', [
             'das' => DAS::findOrFail($id),
         ]);
     }

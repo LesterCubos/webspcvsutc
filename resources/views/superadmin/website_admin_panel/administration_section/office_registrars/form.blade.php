@@ -1,10 +1,10 @@
-@extends('layouts.admin')
+@extends('superadmin.superadmin_master')
 @section('content')
 <div class="pagetitle">
     <h1></h1>
     <nav>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
         <li class="breadcrumb-item">Dashboard</li>
         <li class="breadcrumb-item"><a href="{{ route('office_registrars.index') }}">Discover Tanza Section</a></li>
         <li class="breadcrumb-item active">Add</li>

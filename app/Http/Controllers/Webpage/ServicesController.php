@@ -6,16 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutOrgs;
 use App\Models\News;
 use App\Models\Announcement;
-use Latfur\Event\Models\Event;
 use App\Models\JobVacancies;
 
 use App\Models\QuickLinks;
 use App\Models\OtherLinks;
 use App\Models\SocialMediaLinks;
 
-// use Latfur\Event\Models\Event;
+use Latfur\Event\Models\Event;
 
 use App\Models\CarouselItem;
+use App\Models\UniversitySeal;
 
 use Illuminate\Http\Request;
 
@@ -91,19 +91,19 @@ class ServicesController extends Controller
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
 
-        $events = Event::all();
+        $events =  UniversitySeal::orderBy('created_at', 'desc')->get();
 
         if ($events->isEmpty()) {
             $totalViews = 0;
         } else {
             foreach ($events as $event) {
-                $views = Event::find($event->id);
+                $views = UniversitySeal::find($event->id);
             
                 views($views)
                 ->cooldown($minutes = 3)
                 ->record();
     
-                $totalViews = views($views)->count();
+                $totalViews = views(UniversitySeal::class)->count();
             }
         }
         

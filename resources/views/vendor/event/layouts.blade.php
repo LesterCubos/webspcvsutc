@@ -134,7 +134,7 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('events','event') ? 'active' : '' }}" id="nav_link" href="{{url('event')}}">
+          <a class="nav-link {{ Request::is('events','event','superadmin/events*') ? 'active' : '' }}" id="nav_link" href="{{url('event')}}">
             <i class="ri-calendar-event-fill"></i>
             <span>Event Calender</span>
           </a>

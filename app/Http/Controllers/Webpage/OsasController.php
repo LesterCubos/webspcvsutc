@@ -21,7 +21,7 @@ class OsasController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('osass.index', [
+        return response()->view('superadmin.website_admin_panel.administration_section.osass.index', [
             'osass' => Osas::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -31,7 +31,7 @@ class OsasController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('osass.form');
+        return response()->view('superadmin.website_admin_panel.administration_section.osass.form');
     }
 
     /**
@@ -74,7 +74,7 @@ class OsasController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('osass.form', [
+        return response()->view('superadmin.website_admin_panel.administration_section.osass.form', [
             'osas' => Osas::findOrFail($id),
         ]);
     }

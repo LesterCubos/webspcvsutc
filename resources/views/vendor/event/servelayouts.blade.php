@@ -49,7 +49,12 @@
         <a>Cavite State University</a>
       </div>
 
-      <div class="login d-none d-md-flex align-items-center">
+      <div class="social-links d-none d-md-flex align-items-center">
+        @foreach ($socialmedias as $socialmedia)
+          <a href="{{ $socialmedia->link }}" class=""><i class="{{ $socialmedia->icon }}"></i></a>
+        @endforeach
+      </div>
+      {{-- <div class="login d-none d-md-flex align-items-center">
         @if (Route::has('login'))
                 <div class="admin">
                     @auth
@@ -64,7 +69,7 @@
                     @endauth
                 </div>
             @endif
-      </div>
+      </div> --}}
 
     </div>
   </div>
@@ -132,7 +137,7 @@
           </li>
           <li class="dropdown"><a href="#">Portal</a>
             <ul>
-              <li><a href="#">Student Portal</a></li>
+              <li><a href="student_login">Student Portal</a></li>
 
               <li><a href="/login">MIS Portal</a></li>
             </ul>

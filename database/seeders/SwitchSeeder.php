@@ -15,7 +15,7 @@ class SwitchSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('cvsutanzaweb.switch_sections')->insert([
+        DB::table('switch_sections')->insert([
             'name' => 'Admission',
             'isActive' => false
         ]);

@@ -20,7 +20,7 @@ class TEDController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('teds.index', [
+        return response()->view('superadmin.website_admin_panel.administration_section.teds.index', [
             'teds' => TED::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -30,7 +30,7 @@ class TEDController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('teds.form');
+        return response()->view('superadmin.website_admin_panel.administration_section.teds.form');
     }
 
     /**
@@ -73,7 +73,7 @@ class TEDController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('teds.form', [
+        return response()->view('superadmin.website_admin_panel.administration_section.teds.form', [
             'ted' => TED::findOrFail($id),
         ]);
     }

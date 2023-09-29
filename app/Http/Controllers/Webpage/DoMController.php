@@ -20,7 +20,7 @@ class DoMController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('doms.index', [
+        return response()->view('superadmin.website_admin_panel.administration_section.doms.index', [
             'doms' => DoM::orderBy('updated_at', 'desc')->get(),
         ]);
     }
@@ -30,7 +30,7 @@ class DoMController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('doms.form');
+        return response()->view('superadmin.website_admin_panel.administration_section.doms.form');
     }
 
     /**
@@ -73,7 +73,7 @@ class DoMController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('doms.form', [
+        return response()->view('superadmin.website_admin_panel.administration_section.doms.form', [
             'dom' => DoM::findOrFail($id),
         ]);
     }

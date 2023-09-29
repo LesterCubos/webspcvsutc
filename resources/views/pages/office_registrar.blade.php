@@ -20,7 +20,7 @@
 <section id="ocr" class="ocr">
     <div class="container" data-aos="fade-up">
 
-      <ul class="nav nav-tabs row  g-2 d-flex">
+      {{-- <ul class="nav nav-tabs row  g-2 d-flex">
 
         <li class="nav-item col-3">
           <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
@@ -72,7 +72,7 @@
           </div>
         </div><!-- End tab content item -->
 
-      </div>
+      </div> --}}
 
     </div>
 </section><!-- End Ocr Section -->
