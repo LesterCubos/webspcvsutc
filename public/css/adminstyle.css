@@ -626,10 +626,29 @@ h6 {
 }
 
 .logo span {
-  font-size: 26px;
+  font-size: 10px;
   font-weight: 700;
   color: whitesmoke;
+  text-transform: uppercase;
   font-family: var(--font-secondary);
+}
+
+.logo span::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  display: inline-block;
+  background: var(--color-secondary);
+  margin: 4px 10px;
+}
+
+
+.logo h3 {
+  margin-left: 2px;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  color: whitesmoke;
 }
 
 .header {
