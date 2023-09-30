@@ -139,7 +139,7 @@
             <ul>
               <li><a href="student_login">Student Portal</a></li>
 
-              <li><a href="/login">MIS Portal</a></li>
+              
             </ul>
           </li>
 

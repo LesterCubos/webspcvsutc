@@ -494,7 +494,7 @@
                             <img src="{{ asset('img/imgbin_calendar-brand-png.png') }}" alt="" width="300" height="300">
                             </div>
                             <div class="text-center">
-                            <a href="" class="more-btn">View Calendar <i class="bx bx-chevron-right"></i></a>
+                            <a href="services_campuscalendar" class="more-btn">View Calendar <i class="bx bx-chevron-right"></i></a>
                             </div>
                         </div>
                         </div>
@@ -507,7 +507,7 @@
                                             <h4>{{ $event->event_title }}</h4>
                                             <p><span>Start Date: </span>{{ $event->event_start_date }} <span>| Start Time:</span> {{ $event->event_start_time }}</p>
                                             <p><span>End Date: </span>{{ $event->event_end_date }} <span>| End Time:</span> {{ $event->event_end_time }}</p>
-                                            <p class="descrip"><span>Desciprtion: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
+                                            <p class="descrip"><span>Description: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
                                         </div>
                                     </div>
                                 @elseif ($loop->iteration == 2 )
@@ -516,7 +516,7 @@
                                             <h4>{{ $event->event_title }}</h4>
                                             <p><span>Start Date: </span>{{ $event->event_start_date }} <span>| Start Time:</span> {{ $event->event_start_time }}</p>
                                             <p><span>End Date: </span>{{ $event->event_end_date }} <span>| End Time:</span> {{ $event->event_end_time }}</p>
-                                            <p class="descrip"><span>Desciprtion: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
+                                            <p class="descrip"><span>Description: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
                                         </div>
                                     </div>
                                 @endif
