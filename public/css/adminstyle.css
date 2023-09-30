@@ -1168,9 +1168,9 @@ h6 {
   flex-grow: 0;
 }
 
-.dashboard .activity-item img {
+.dashboard .activity .activity-item img {
   width: 150px;
-  height: 100px;
+  height: 150px;
   margin-bottom: 10px;
   margin-right: 20px;
   float: left;
