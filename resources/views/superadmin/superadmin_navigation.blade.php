@@ -103,6 +103,7 @@
 
         </ul>
       </nav><!-- End Icons Navigation -->
+    @endif
 
 </header><!-- End Header -->
 
