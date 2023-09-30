@@ -143,12 +143,38 @@
             </ul>
           </li>
 
-          <li>
+          {{-- <li>
             <form class="d-flex ms-4" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit" id="yellow">Search</button>
             </form>
-          </li>
+          </li> --}}
+
+          {{-- <li><span>|</span></li> --}}
+
+        <!-- Default dropstart button -->
+        <div class="btn-group dropstart wrapper">
+          <div type="button" class="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="icon"><i class="bi bi-grid-fill"></i></div>
+            <span>Campuses</span> 
+          </div>
+          <ul class="dropdown-menu">
+            <li><button class="dropdown-item" type="button">Main Campus</button></li>
+            <li><button class="dropdown-item" type="button">Bacoor Campus</button></li>
+            <li><button class="dropdown-item" type="button">Carmona Campus</button></li>
+            <li><button class="dropdown-item" type="button">Cavite City Campus</button></li>
+            <li><button class="dropdown-item" type="button">General Trias Campus</button></li>
+            <li><button class="dropdown-item" type="button">Imus Campus</button></li>
+            <li><button class="dropdown-item" type="button">Maragondon Campus</button></li>
+            <li><button class="dropdown-item" type="button">Naic Campus</button></li>
+            <li><button class="dropdown-item" type="button">Rosario Campus</button></li>
+            <li><button class="dropdown-item" type="button">Silang Campus</button></li>
+            <li><button class="dropdown-item" type="button">Tanza Campus</button></li>
+            <li><button class="dropdown-item" type="button">Trece Martires City Campus</button></li>
+          </ul>
+        </div>
+
+
         </ul>
 
         
@@ -221,22 +247,6 @@
       @section('content_script')   
       @show
 
-      {{-- <script>
-        $(document).ready(function(){
-          $("#menu-expand-collapse").click(function() {
-            $("#responsive-menu-list").toggle();
-          });
-        });
-
-        function myFunction() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-            x.className += " responsive";
-          } else {
-            x.className = "topnav";
-          }
-        }
-      </script> --}}
     
 </body>
 </html>

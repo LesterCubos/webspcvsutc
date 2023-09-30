@@ -10,6 +10,9 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
+      @if (\Route::current()->getName() == 'profile.edit')
+
+      @else
       <span style="color: green">Manage Pages</span>
       <li class="nav-item">
         <a class="nav-link {{ (request()->is('carousel_items*','featured_services*','discover_tanza_infos*','counts*','programs','programs/*','admissions*','section*')) ? 'collapse active' : 'collapsed' }}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -287,11 +290,10 @@
               <i class="bi bi-circle"></i><span>Student Portal</span>
             </a>
           </li>
-          
-
         </ul>
       </li><!-- End Portal Nav -->
 
+      @endif
       
 
 

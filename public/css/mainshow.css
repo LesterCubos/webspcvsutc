@@ -452,6 +452,92 @@ section {
   scroll-margin-top: 70px;
 }
 
+/* .navbar li span {
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--color-secondary);
+} */
+
+.navbar .btn-group {
+  margin-left: 20px;
+}
+
+.navbar .dropdown-menu {
+  visibility: hidden;
+}
+
+.navbar .show {
+  visibility: visible;
+  background: #475b5a;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar .show button {
+  color: #fff;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.navbar .show button:last-child {
+  margin-bottom: 10px;
+}
+
+.navbar .show button:hover {
+  color: var(--color-secondary);
+  border: none;
+  background: none;
+}
+
+.navbar .wrapper .button {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #0FF0FC;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.navbar .wrapper .button:hover,
+.navbar .wrapper .button[aria-expanded="true"] {
+  width: 150px;
+}
+.navbar .wrapper .button .icon {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 40px;
+  transition: all 0.3s ease-out;
+}
+.navbar .wrapper .button:hover .icon,
+.navbar .wrapper .button:hover .icon i,
+.navbar .wrapper .button[aria-expanded="true"] .icon,
+.navbar .wrapper .button[aria-expanded="true"] .icon i {
+  color: #0FF0FC;
+  background-color: #fff;
+}
+.navbar .wrapper .button .icon i {
+  color: #fff;
+}
+.navbar .wrapper .button span {
+  font-family: var(--font-secondary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 40px;
+  margin-left: 5px;
+  transition: all 0.3s ease-out;
+}
+.navbar .wrapper .button span {
+  background-color: #0FF0FC;
+}
+
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
