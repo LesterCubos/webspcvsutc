@@ -1,8 +1,8 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" style="background-color: #38d838">
-        <div class="card" style="border-radius: 28px; width: 50px; height: 45px">
-            <a class="navbar-brand brand-logo" href=""><img src="{{ asset('img/sp/images/campus_seal-removebg-preview.png') }}" alt="logo"/></a>
-            <a class="navbar-brand brand-logo-mini" href=""><img src="{{ asset('img/sp/images/campus_seal-removebg-preview.png') }}" alt="logo"/></a>
+        <div class="card" style="border-radius: 28px; width: 50px; height: 46px">
+            <a class="navbar-brand brand-logo" href="{{ route('superadmin.sp.dashboard')}}"><img src="{{ asset('img/campus_seal.png') }}" alt="logo"/></a>
+            <a class="navbar-brand brand-logo-mini" href="{{ route('superadmin.sp.dashboard')}}"><img src="{{ asset('img/campus_seal.png') }}" alt="logo"/></a>
 
         </div>
     </div>
@@ -44,6 +44,19 @@
 
         </li>
         <li class="nav-item dropdown d-flex mr-4 ">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            @if (empty(Auth::user()->avatar))
+                  <img height="90" src="{{ asset('img/default.png') }}" alt="Profile Photo" class="rounded-circle">
+              @else
+                  <img height="90" src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo" class="rounded-circle">
+            @endif
+            <div>{{ Auth::user()->name }}</div>
+            <div class="ml-1">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </a><!-- End Profile Iamge Icon -->
           <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
             <i class="icon-cog" style="color: #009200"></i>
           </a>

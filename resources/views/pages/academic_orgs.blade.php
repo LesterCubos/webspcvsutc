@@ -10,7 +10,7 @@
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
           <li>Student Affairs</li>
-          <li>Academic Organziations</li>
+          <li>Academic and Non-Academic Organizations</li>
         </ol>
       </div>
     </nav>

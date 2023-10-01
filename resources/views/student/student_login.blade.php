@@ -29,7 +29,7 @@
                 <div class="">
                     <div class="auth-form-transparent text-left p-3">
                       <div class="brand-logo">
-                        <img src="{{ asset('img/CvsuSeal_logo_edit.png') }}" alt="Logo" width="150" height="50">
+                        <img src="{{ asset('img/CvsuSeal_logo_edit.png') }}" alt="Logo" >
                       </div>
                       <h4 class="text-center">Login your Account!</h4>
                       <form class="pt-3" method="POST" action="{{ route('login') }}">

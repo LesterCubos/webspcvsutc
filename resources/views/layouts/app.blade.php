@@ -19,21 +19,20 @@
 
 
     <!-- base:css -->
-    <link rel="stylesheet" href="{{ asset('vendors/sp/mdi/css/materialdesignicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/sp/feather/feather.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/sp/base/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sp/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sp/feather/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sp/base/vendor.bundle.base.css') }}">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('css/sp/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('images/sp/campus_seal.jpg') }}" />
-    {{-- <link type="image/png" rel="shortcut icon" href="{{ asset('Cavite_State_University_(CvSU).png') }}" /> --}}
+    <link rel="shortcut icon" href="{{ asset('img/campus_seal.png') }}" />
 
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 </head>
 <body>
     <div id="app">
@@ -44,7 +43,7 @@
     </div>
 
     <!-- base:js -->
-    <script src="{{ asset('vendors/sp/base/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('vendor/sp/base/vendor.bundle.base.js') }}"></script>
     <!-- endinject -->
     <!-- inject:js -->
     <script src="{{ asset('js/sp/off-canvas.js') }}"></script>
@@ -52,6 +51,12 @@
     <script src="{{ asset('js/sp/template.js') }}"></script>
     <!-- endinject -->
 
-
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="/" target="_blank">Cavite State University=Tanza Campus</a>. All Rights Reserved <?php echo date("Y.");?></span>
+        </div>
+    </footer>
+    
 </body>
 </html>

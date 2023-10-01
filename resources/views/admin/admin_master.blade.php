@@ -20,16 +20,16 @@
 
 
     <!-- base:css -->
-    <link rel="stylesheet" href="{{ asset('vendors/sp/mdi/css/materialdesignicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/sp/feather/feather.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/sp/base/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sp/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sp/feather/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sp/base/vendor.bundle.base.css') }}">
     <!-- endinject -->
     <!-- plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('vendors/sp/flag-icon-css/css/flag-icon.min.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('vendors/sp/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/sp/fontawesome-free-6.4.2-web/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/sp/jquery-bar-rating/fontawesome-stars-o.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/sp/jquery-bar-rating/fontawesome-stars.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sp/flag-icon-css/css/flag-icon.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('vendor/sp/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sp/fontawesome-free-6.4.2-web/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sp/jquery-bar-rating/fontawesome-stars-o.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sp/jquery-bar-rating/fontawesome-stars.css') }}">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('css/sp/style.css') }}">
@@ -38,7 +38,7 @@
 
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 </head>
 <body>
     <div class="container-scroller">
@@ -64,7 +64,7 @@
 
 
     <!-- base:js -->
-    <script src="{{ asset('vendors/sp/base/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('vendor/sp/base/vendor.bundle.base.js') }}"></script>
     <!-- endinject -->
     <!-- inject:js -->
     <script src="{{ asset('js/sp/off-canvas.js') }}"></script>
@@ -72,8 +72,8 @@
     <script src="{{ asset('js/sp/template.js') }}"></script>
     <!-- endinject -->
     <!-- plugin js for this page -->
-    <script src="{{ asset('vendors/sp/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('vendors/sp/jquery-bar-rating/jquery.barrating.min.js') }}"></script>
+    <script src="{{ asset('vendor/sp/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('vendor/sp/jquery-bar-rating/jquery.barrating.min.js') }}"></script>
     <!-- End plugin js for this page -->
     <!-- Custom js for this page-->
     <script src="{{ asset('js/sp/dashboard.js') }}"></script>

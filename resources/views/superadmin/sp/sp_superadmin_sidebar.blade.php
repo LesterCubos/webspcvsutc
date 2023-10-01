@@ -30,7 +30,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('dashboard') }}">
+        <a class="nav-link" href="{{ route('superadmin.dashboard') }}">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Go back to Website</span>
         </a>
