@@ -78,12 +78,12 @@
         
         <li class="dropdown"><a class="{{ Request::is('services_csg','services_acadorgs','services_nonacadorgs','services_newsandupdates','newsandupdates_news*','services_announcements','announcements*','services_campuscalendar','services_jobvacancies','jobvacancies*') ? 'active' : '' }}" href="#">Services</a>
           <ul>
-            <li class="dropdown"><a href="#">Student Affairs</a>
-              <ul>
+            <li><a href="services_studentorgs">Student Affairs</a>
+              {{-- <ul>
                 <li><a href="services_csg">Central Student Goverment</a></li>
                 <li><a href="services_acadorgs">Academic & Non- Academic Org</a></li>
-                {{-- <li><a href="services_nonacadorgs">Non-Academic Organizations</a></li> --}}
-              </ul>
+                <li><a href="services_nonacadorgs">Non-Academic Organizations</a></li>
+              </ul> --}}
             </li>
             <li><a href="services_newsandupdates">News Updates</a></li>
             <li><a href="services_announcements">Announcements</a></li>
