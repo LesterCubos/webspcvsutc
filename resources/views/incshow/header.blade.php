@@ -1,48 +1,27 @@
-<!-- ======= Header ======= -->
-<section id="topbar" class="topbar d-flex align-items-center">
-  <div class="container d-flex justify-content-center justify-content-md-between">
-    <div class="brand-name d-flex align-items-center" id="orgname">
+<!-- ======= Top Bar ======= -->
+ <div id="topbar" class="topbar d-flex align-items-center fixed-top">
+  <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+    <div class="brand-name align-items-center d-none d-md-flex" id="orgname">
       <a href="#">Cavite State University</a>
     </div>
-
-    <div class="social-links d-none d-md-flex align-items-center">
+    <div class="social-links d-flex align-items-center">
       @foreach ($socialmedias as $socialmedia)
         <a href="{{ $socialmedia->link }}" class=""><i class="{{ $socialmedia->icon }}"></i></a>
       @endforeach
     </div>
-    {{-- login/register --}}
-    {{-- <div class="d-none d-md-flex align-items-center">
-      @if (Route::has('login'))
-        <div class="admin">
-          @auth
-                      
-            @else
-              <a href="{{ route('login') }}">Log in</a>
-
-              <span>|</span>
-
-            @if (Route::has('register'))
-              <a href="{{ route('register') }}">Register</a>
-            @endif
-          @endauth
-        </div>
-      @endif
-    </div> --}}
-
   </div>
-</section>
+</div>
 <!-- End Top Bar -->
 
-<header id="header" class="header">
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
 
-  <div class="container-fluid d-flex align-items-center justify-content-between">
-    <div class="logo-header d-flex align-items-center">
-      <a href="/" class="logo d-flex align-items-center">
-        <img src="{{ asset('img/CvsuSeal_logo_edit.png') }}" alt="Logo" width="150" height="50">
-      </a>
-    </div>
+    <a href="/" class="logo me-auto">
+      <img src="{{ asset('img/CvsuSeal_logo_edit.png') }}" alt="Logo" width="150" height="50">
+    </a>
 
-    <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
         <li><a class="{{ Request::is('/') ? 'active' : '' }}" href="/">Home</a></li>
         <li class="dropdown"><a class="{{ Request::is('about_campus_history', 'about_mvg','about_uni_seal','about_uni_officials','about_campus_officials','about_contact_info') ? 'active' : '' }}" href="#">About</a>
@@ -79,11 +58,6 @@
         <li class="dropdown"><a class="{{ Request::is('services_csg','services_acadorgs','services_nonacadorgs','services_newsandupdates','newsandupdates_news*','services_announcements','announcements*','services_campuscalendar','services_jobvacancies','jobvacancies*') ? 'active' : '' }}" href="#">Services</a>
           <ul>
             <li><a href="services_studentorgs">Student Affairs</a>
-              {{-- <ul>
-                <li><a href="services_csg">Central Student Goverment</a></li>
-                <li><a href="services_acadorgs">Academic & Non- Academic Org</a></li>
-                <li><a href="services_nonacadorgs">Non-Academic Organizations</a></li>
-              </ul> --}}
             </li>
             <li><a href="services_newsandupdates">News Updates</a></li>
             <li><a href="services_announcements">Announcements</a></li>
@@ -98,48 +72,36 @@
           </ul>
         </li>
 
-        {{-- <li>
-          <form class="d-flex ms-4" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit" id="yellow">Search</button>
-          </form>
-        </li> --}}
-
-        {{-- <li><span>|</span></li> --}}
-
-        <!-- Default dropstart button -->
-        <div class="btn-group dropstart wrapper">
-          <div type="button" class="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <div class="icon"><i class="bi bi-grid-fill"></i></div>
-            <span>Campuses</span> 
-          </div>
-          <ul class="dropdown-menu">
-            <li><button class="dropdown-item" type="button">Main Campus</button></li>
-            <li><button class="dropdown-item" type="button">Bacoor Campus</button></li>
-            <li><button class="dropdown-item" type="button">Carmona Campus</button></li>
-            <li><button class="dropdown-item" type="button">Cavite City Campus</button></li>
-            <li><button class="dropdown-item" type="button">General Trias Campus</button></li>
-            <li><button class="dropdown-item" type="button">Imus Campus</button></li>
-            <li><button class="dropdown-item" type="button">Maragondon Campus</button></li>
-            <li><button class="dropdown-item" type="button">Naic Campus</button></li>
-            <li><button class="dropdown-item" type="button">Rosario Campus</button></li>
-            <li><button class="dropdown-item" type="button">Silang Campus</button></li>
-            <li><button class="dropdown-item" type="button">Tanza Campus</button></li>
-            <li><button class="dropdown-item" type="button">Trece Martires City Campus</button></li>
-          </ul>
-        </div>
-
       </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
 
-    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    <!-- Default dropstart button -->
+    <div class="btn-group dropstart wrapper">
+      <div id="campusesButton" type="button" class="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="icon"><i class="bi bi-grid-fill"></i></div>
+        <span>Campuses</span> 
+      </div>
+      <ul class="dropdown-menu">
+        <li><button class="dropdown-item" type="button">Main Campus</button></li>
+        <li><button class="dropdown-item" type="button">Bacoor Campus</button></li>
+        <li><button class="dropdown-item" type="button">Carmona Campus</button></li>
+        <li><button class="dropdown-item" type="button">Cavite City Campus</button></li>
+        <li><button class="dropdown-item" type="button">General Trias Campus</button></li>
+        <li><button class="dropdown-item" type="button">Imus Campus</button></li>
+        <li><button class="dropdown-item" type="button">Maragondon Campus</button></li>
+        <li><button class="dropdown-item" type="button">Naic Campus</button></li>
+        <li><button class="dropdown-item" type="button">Rosario Campus</button></li>
+        <li><button class="dropdown-item" type="button">Silang Campus</button></li>
+        <li><button class="dropdown-item" type="button">Tanza Campus</button></li>
+        <li><button class="dropdown-item" type="button">Trece Martires City Campus</button></li>
+      </ul>
+    </div>
 
   </div>
 
   <div class="progress-container">
     <div class="progress-bar" id="bar"></div>
- </div>
-
+  </div>
+  
 </header><!-- End Header -->
-<!-- End Header -->

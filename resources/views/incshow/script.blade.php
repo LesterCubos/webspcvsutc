@@ -10,6 +10,7 @@
 
 <!--  Main JS File -->
 <script src="{{ asset('vendor/main.js') }}"></script>
+<script src="{{ asset('vendor/new.js') }}"></script>
 
 {{-- <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

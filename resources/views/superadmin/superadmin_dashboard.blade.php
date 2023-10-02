@@ -9,9 +9,11 @@
       </ol>
     </nav>
     @if (Session::has('error'))
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>{{session::get('error')}}</strong>
-    </div>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <i class="bi bi-exclamation-triangle me-1" style="margin-right: 5px"></i>
+          <strong>{{session::get('error')}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
     @endif
     <h2>
       <?php  date_default_timezone_set('Asia/Manila');
