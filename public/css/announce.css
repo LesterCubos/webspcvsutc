@@ -25,6 +25,10 @@
   padding: 30px;
 }
 
+.announcements .announcements-item {
+  margin-bottom: 30px;
+}
+
 .announcements .img {
   min-height: 400px;
 }
