@@ -280,11 +280,19 @@
       </li><!-- End Settings Nav -->
 
       <!-- for portaal -->
-      <li class="sidebar-footer">
-        <a class="{{ (request()->is('/superadmin/sp/dashboard*')) ? 'active' : '' }}" href="{{ route('superadmin.sp.dashboard') }}">
-          <i class="ri-shield-user-line"></i><span>Portal</span>
-        </a>
-      </li><!-- End Portal Nav -->
+        <div class="sidebar-footer"> 
+          <a class="btn-slide {{ (request()->is('/superadmin/sp/dashboard*')) ? 'active' : '' }}" href="{{ route('superadmin.sp.dashboard') }}" >
+            @if (empty(Auth::user()->avatar))
+              <img height="90" src="{{ asset('img/default.png') }}" alt="Profile Photo" class="rounded-circle">
+            @else
+              <img height="90" src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo" class="rounded-circle">
+            @endif
+         
+            <span class="title" >Student Portal</span>
+            <span class="title title-hover">Enter Now</span>
+          </a> 
+        </div>
+         <!-- End Portal Nav -->
 
       @endif
       
