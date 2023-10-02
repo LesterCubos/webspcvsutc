@@ -280,23 +280,16 @@
       </li><!-- End Settings Nav -->
 
       <!-- for portaal -->
-      <li class="nav-item">
-        <a class="nav-link {{ (request()->is('/superadmin/sp/dashboard*')) ? 'collapse active' : 'collapsed' }}" data-bs-target="#portal-nav" data-bs-toggle="collapse" href="#">
-          <i class="ri-admin-fill"></i><span>Portal</span><i class="bi bi-chevron-down ms-auto"></i>
+      <li class="sidebar-footer">
+        <a class="{{ (request()->is('/superadmin/sp/dashboard*')) ? 'active' : '' }}" href="{{ route('superadmin.sp.dashboard') }}">
+          <i class="ri-shield-user-line"></i><span>Portal</span>
         </a>
-        <ul id="portal-nav" class="nav-content collapse {{ (request()->is('/superadmin/sp/dashboard*')) ? 'show' : 'collapse' }}" data-bs-parent="#sidebar-nav">
-          <li>
-            <a class="{{ (request()->is('/superadmin/sp/dashboard*')) ? 'active' : '' }}" href="{{ route('superadmin.sp.dashboard') }}">
-              <i class="bi bi-circle"></i><span>Student Portal</span>
-            </a>
-          </li>
-        </ul>
       </li><!-- End Portal Nav -->
 
       @endif
       
-
-
     </ul>
+
+    
 
   </aside><!-- End Sidebar-->

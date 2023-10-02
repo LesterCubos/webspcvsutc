@@ -48,7 +48,7 @@
     <div id="contain" class="container">
 
       <!-- ======= Breadcrumbs ======= -->
-      <div class="breadcrumbs" style="margin-bottom: 20px">
+      <div class="breadcrumbs" style="margin-bottom: 20px; margin-top: 130px">
         {{-- <div class="bread d-flex align-items-center"></div> --}}
         <nav>
           <div class="container" style="height: 50px">

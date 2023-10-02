@@ -72,14 +72,13 @@ class ServicesController extends Controller
             $totalViews = 0;
         } else {
             foreach ($events as $event) {
-                $views = UniversitySeal::find($event->id);
-            
-                views($views)
-                ->cooldown($minutes = 3)
-                ->record();
-    
-                $totalViews = views(UniversitySeal::class)->count();
+                $views = UniversitySeal::find($event->id);    
             }
+            views($views)
+            ->cooldown($minutes = 3)
+            ->record();
+    
+            $totalViews = views(UniversitySeal::class)->count();
         }
         
         $totalVisits=views(CarouselItem::class)->count();

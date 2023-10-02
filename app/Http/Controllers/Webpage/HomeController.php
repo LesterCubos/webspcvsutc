@@ -34,15 +34,14 @@ class HomeController extends Controller
             $totalVisits = 0;
         } else {
             foreach ($carouselItems as $carouselItem) {
-
-                $views = CarouselItem::find($carouselItem->id);
-            
-                views($views)
-                ->cooldown($minutes = 3)
-                ->record();
-               
-                $totalVisits=views(CarouselItem::class)->count();
+                if($carouselItem->isActive = 1){
+                    $views = CarouselItem::find($carouselItem->id);
+                }
             }
+            views($views)
+            ->cooldown($minutes = 3)
+            ->record();
+            $totalVisits = views($views)->count();
         }
 
         $carousel_items = CarouselItem::all();
