@@ -122,9 +122,7 @@ Route::get('admin_das', [AdministrationController::class, 'dass'])->name('pages.
 Route::get('admin_dom', [AdministrationController::class, 'doms'])->name('pages.dep_management');
 Route::get('admin_departments', [AdministrationController::class, 'departments'])->name('pages.departments');
 //Services
-Route::get('services_csg', [ServicesController::class, 'csgs'])->name('pages.csg');
-Route::get('services_acadorgs', [ServicesController::class, 'acadorgs']);
-Route::get('services_nonacadorgs', [ServicesController::class, 'nonacadorgs']);
+Route::get('services_studentorgs', [ServicesController::class, 'studentorgs'])->name('pages.orgs');
 Route::get('services_newsandupdates', [ServicesController::class, 'newsandupdates']);
 Route::get('services_announcements', [ServicesController::class, 'announcements']);
 Route::get('services_campuscalendar', [ServicesController::class, 'campuscalendar']);

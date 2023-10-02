@@ -21,7 +21,7 @@ use Illuminate\Http\Request;
 
 class ServicesController extends Controller
 {
-    public function csgs(){
+    public function studentorgs(){
 
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
@@ -31,32 +31,7 @@ class ServicesController extends Controller
 
         $about_orgs = AboutOrgs::all();
        
-        return view('pages.csg', compact('about_orgs','totalVisits','quicks','others','socialmedias'));
-    }
-
-    public function acadorgs(){
-
-        $quicks = QuickLinks::all();
-        $others = OtherLinks::all();
-        $socialmedias = SocialMediaLinks::all();
-
-        $totalVisits=views(CarouselItem::class)->count();
-
-        $about_orgs = AboutOrgs::all();
-        
-        return view('pages.academic_orgs', compact('about_orgs','totalVisits','quicks','others','socialmedias'));
-    }
-    public function nonacadorgs(){
-
-        $quicks = QuickLinks::all();
-        $others = OtherLinks::all();
-        $socialmedias = SocialMediaLinks::all();
-
-        $totalVisits=views(CarouselItem::class)->count();
-
-        $about_orgs = AboutOrgs::all();
-        
-        return view('pages.nonacademic_orgs', compact('about_orgs','totalVisits','quicks','others','socialmedias'));
+        return view('pages.orgs', compact('about_orgs','totalVisits','quicks','others','socialmedias'));
     }
 
     public function newsandupdates(){
