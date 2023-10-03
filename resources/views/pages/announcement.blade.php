@@ -92,8 +92,8 @@
                       $nameMonth = 'Dec';
                     }
                   ?>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href=""><time datetime="{{ $announcement->created_at }}">{{ $nameMonth }} {{ $day }}, {{ $year }}</time></a></li>
-                  <li class="d-flex align-items-center"><i class="bx bx-bar-chart"></i> <a href="blog-details.html">{{ $annViews[$announcement->id] }} Total Views</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time datetime="{{ $announcement->created_at }}">{{ $nameMonth }} {{ $day }}, {{ $year }}</time></li>
+                  <li class="d-flex align-items-center"><i class="bx bx-bar-chart"></i>{{ $annViews[$announcement->id] }} Total Views</li>
                 </ul>
               </div>
     

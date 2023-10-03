@@ -48,7 +48,7 @@
 
           @foreach ($job_vacancies as $job_vacancy)
             <div class="swiper-slide">
-              <article>
+              <article class="article">
                 <div class="article-wrapper">
                   <figure>
                     <img src="{{ Storage::url($job_vacancy->jobposter) }}" alt="{{ $job_vacancy->title }}"/>

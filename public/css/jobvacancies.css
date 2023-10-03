@@ -25,7 +25,7 @@
     padding: 30px;
   }
 
-  article {
+  .article {
     --img-scale: 1.001;
     --title-color: black;
     --link-icon-translate: -20px;
@@ -40,7 +40,7 @@
     overflow: hidden;
   }
   
-  article a::after {
+  .article a::after {
     position: absolute;
     inset-block: 0;
     inset-inline: 0;
@@ -49,7 +49,7 @@
   }
   
   /* basic article elements styling */
-  article h2 {
+  .article h2 {
     margin: 0 0 18px 0;
     font-family: "Bebas Neue", cursive;
     font-size: 1.9rem;
@@ -65,7 +65,7 @@
     overflow: hidden;
   }
   
-  article img {
+  .article img {
     max-width: 100%;
     transform-origin: center;
     transform: scale(var(--img-scale));
@@ -76,18 +76,18 @@
     padding: 24px;
   }
   
-  article a {
+  .article a {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
     color: #28666e;
   }
   
-  article a:focus {
+  .article a:focus {
     outline: 1px dotted #28666e;
   }
   
-  article a .icon {
+  .article a .icon {
     min-width: 24px;
     width: 24px;
     height: 24px;
@@ -98,7 +98,7 @@
   }
   
   /* using the has() relational pseudo selector to update our custom properties */
-  article:has(:hover, :focus) {
+  .article:has(:hover, :focus) {
     --img-scale: 1.1;
     --title-color: #28666e;
     --link-icon-translate: 0;
@@ -136,7 +136,7 @@ Generic layout (demo looks)
 }
 
 @media screen and (max-width: 960px) {
-  article {
+  .article {
     container: card/inline-size;
   }
   .article-body p {

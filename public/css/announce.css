@@ -142,14 +142,14 @@
     padding-top: 60px;
 }
 
-.announcementsadd .container {
+.announcementsadd .container-ann {
     width: 81.7rem;
     box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
     padding: 30px;
     margin-bottom: 30px;
 }
 
-.announcementsadd .title {
+/* .announcementsadd .title {
   font-size: 20px;
   font-weight: 500;
   color: var(--color-default);
@@ -320,4 +320,107 @@
   left: 0;
   bottom: 0;
 }
+ */
 
+ /*--------------------------------------------------------------
+# Blog Details
+--------------------------------------------------------------*/
+.announcementsadd .left-blog h4 {
+  border-bottom: 2px solid #ddd;
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 0;
+  padding: 15px 10px;
+  text-transform: uppercase;
+}
+
+.announcementsadd .left-blog {
+  background: #f9f9f9 none repeat scroll 0 0;
+  margin-bottom: 30px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.announcementsadd .recent-single-post {
+  border-bottom: 2px solid #ddd;
+  display: block;
+  overflow: hidden;
+  padding: 15px 10px;
+}
+
+.announcementsadd .recent-single-post .post-img {
+  display: inline-block;
+  padding: 0 5px;
+  width: 35%;
+}
+
+.announcementsadd .recent-single-post .post-img img {
+  opacity: 80%;
+  height: 100px;
+  width: 150px;
+}
+
+.announcementsadd .recent-single-post .pst-content {
+  float: right;
+  width: 50%;
+}
+
+.announcementsadd .recent-single-post .pst-content p a:hover {
+  color: var(--color-primary);
+}
+
+.announcementsadd .recent-single-post .blog-page .single-blog {
+  margin-bottom: 40px;
+}
+
+.announcementsadd .recent-single-post .pst-content p a {
+  color: #444;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.announcementsadd .post-information h2 {
+  color: var(--color-secondary);
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+}
+
+.announcementsadd .post-information {
+  padding: 20px 0;
+}
+
+.announcementsadd .post-thumbnail img {
+  height: 100%;
+  width: 100%;
+}
+
+
+.announcementsadd .post-information .entry-meta span a {
+  color: #444;
+  display: inline-block;
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+.announcementsadd .post-information .entry-meta {
+  border-bottom: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+.announcementsadd .post-information .entry-meta span i {
+  padding: 0 10px;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.announcementsadd .entry-content>p {
+  color: #444;
+}
+
+.announcementsadd .entry-meta>span {
+  color: #444;
+}

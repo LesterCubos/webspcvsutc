@@ -26,7 +26,40 @@
               <img src="{{ asset('storage/' . $new->news_image) }}" class="card-img-top" alt="...">
               <div class="d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
                 <h3 id="title">{{ $new->news_title }}</h3>
-                <p class="view"><i class='bx bx-bar-chart'></i> <span>{{ $totalViews }}</span> Total Views</p> 
+                <p class="view">
+                  <i class='bx bx-bar-chart'></i> {{ $totalViews }} Total Views <br>
+                  <?php 
+                    $day = $new->created_at->format('d');
+                    $year = $new->created_at->year;
+                    $month = $new->created_at->month;
+                    if ($month == 1) {
+                      $nameMonth = 'Jan';
+                    } elseif ($month == 2) {
+                      $nameMonth = 'Feb';
+                    } elseif ($month == 3) {
+                      $nameMonth = 'Mar';
+                    } elseif ($month == 4) {
+                      $nameMonth = 'Apr';
+                    } elseif ($month == 5) {
+                      $nameMonth = 'May';
+                    } elseif ($month == 6) {
+                      $nameMonth = 'Jun';
+                    } elseif ($month == 7) {
+                      $nameMonth = 'Jul';
+                    } elseif ($month == 8) {
+                      $nameMonth = 'Aug';
+                    } elseif ($month == 9) {
+                      $nameMonth = 'Sep';
+                    } elseif ($month == 10) {
+                      $nameMonth = 'Oct';
+                    } elseif ($month == 11) {
+                      $nameMonth = 'Nov';
+                    } elseif ($month == 12) {
+                      $nameMonth = 'Dec';
+                    }
+                  ?>
+                  <i class="bx bx-time"></i> {{ $nameMonth }} {{ $day }}, {{ $year }}
+                </p> 
                   <div class="d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
                     <p>{!! $new->news_content !!}</p>
                   </div>
