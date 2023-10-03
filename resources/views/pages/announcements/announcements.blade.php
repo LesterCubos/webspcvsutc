@@ -36,7 +36,7 @@
             <div class="col-md-4">
               <div class="position-sticky" style="top: 4rem;">
                 <div class="main" data-aos="fade-up" data-aos-delay="100">
-                      <h3 class="title">Latest Post</h3>
+                      <h3 class="title">RECENT POST</h3>
 
                       @foreach($announcements as $announcement)
                         @if ($announcement->isActive == 1)
@@ -59,6 +59,7 @@
             </div>
           </div>
         </div>
+
     </div>
 
   </main>

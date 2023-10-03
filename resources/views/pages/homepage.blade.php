@@ -481,69 +481,42 @@
                 @endif 
             @endforeach
 
-                <div class="container" data-aos="fade-up">
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-                    <div class="row">
+                    <div class="row align-items-xl-center gy-5">
                         <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="content">
-                            <div class="title">
-                                <p>Upcoming</p>
-                                <h3>Events</h3>
+                            <div class="content">
+                                <div class="title">
+                                    <p>Upcoming</p>
+                                    <h3>Events</h3>
+                                </div>
+                                <div class="img-calendar">
+                                <img src="{{ asset('img/imgbin_calendar-brand-png.png') }}" alt="" width="300" height="300">
+                                </div>
+                                <div class="text-center">
+                                <a href="services_campuscalendar" class="more-btn">View Calendar <i class="bx bx-chevron-right"></i></a>
+                                </div>
                             </div>
-                            <div class="img-calendar">
-                            <img src="{{ asset('img/imgbin_calendar-brand-png.png') }}" alt="" width="300" height="300">
-                            </div>
-                            <div class="text-center">
-                            <a href="services_campuscalendar" class="more-btn">View Calendar <i class="bx bx-chevron-right"></i></a>
-                            </div>
-                        </div>
                         </div>
 
-                        <div class="col-lg-4" style="margin-top: 10px">
-                            @foreach ( $events as $event )
-                                @if ($loop->iteration == 1 )
-                                    <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-                                        <div class="event-info">
-                                            <h4>{{ $event->event_title }}</h4>
-                                            <p><span>Start Date: </span>{{ $event->event_start_date }} <span>| Start Time:</span> {{ $event->event_start_time }}</p>
-                                            <p><span>End Date: </span>{{ $event->event_end_date }} <span>| End Time:</span> {{ $event->event_end_time }}</p>
-                                            <p class="descrip"><span>Description: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
-                                        </div>
-                                    </div>
-                                @elseif ($loop->iteration == 2 )
-                                    <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
-                                        <div class="event-info">
-                                            <h4>{{ $event->event_title }}</h4>
-                                            <p><span>Start Date: </span>{{ $event->event_start_date }} <span>| Start Time:</span> {{ $event->event_start_time }}</p>
-                                            <p><span>End Date: </span>{{ $event->event_end_date }} <span>| End Time:</span> {{ $event->event_end_time }}</p>
-                                            <p class="descrip"><span>Description: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div>
-                        <div class="col-lg-4" style="margin-top: 10px">
-                            @foreach ( $events as $event )
-                                @if ($loop->iteration == 3 )
-                                    <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
-                                        <div class="event-info">
-                                            <h4>{{ $event->event_title }}</h4>
-                                            <p><span>Start Date: </span>{{ $event->event_start_date }} <span>| Start Time:</span> {{ $event->event_start_time }}</p>
-                                            <p><span>End Date: </span>{{ $event->event_end_date }} <span>| End Time:</span> {{ $event->event_end_time }}</p>
-                                            <p class="descrip"><span>Desciprtion: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
-                                        </div>
-                                    </div>
-                                @elseif ($loop->iteration == 4 )
-                                    <div class="event d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
-                                        <div class="event-info">
-                                            <h4>{{ $event->event_title }}</h4>
-                                            <p><span>Start Date: </span>{{ $event->event_start_date }} <span>| Start Time:</span> {{ $event->event_start_time }}</p>
-                                            <p><span>End Date: </span>{{ $event->event_end_date }} <span>| End Time:</span> {{ $event->event_end_time }}</p>
-                                            <p class="descrip"><span>Desciprtion: </span> <br>{!! Str::limit($event->event_description,'50','...') !!}</p>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
+                        <div class="col-xl-7">
+                            <div class="row gy-4 event-boxes">
+                                @php ($delay = 200)
+                                @foreach ($events as $event)
+                                    @if ($loop->iteration <= 4 )
+                                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="{{ $delay }}">
+                                            <div class="event-box">
+                                                <h3>{{ $event->event_title }}</h3> 
+                                                <p><span>Start Date: </span>{{ $event->event_start_date }} <span> | Start Time:</span> {{ $event->event_start_time }}</p>
+                                                <p><span>End Date: </span>{{ $event->event_end_date }} <span> | End Time:</span> {{ $event->event_end_time }}</p>
+                                                <p class="descrip"><span>Description: </span> <br>{!! Str::limit($event->event_description,'80','...') !!}</p>
+                                            </div>
+                                        </div> <!-- End Event Box -->
+                                        @php($delay = $delay + 100)
+                                    @endif
+                                @endforeach
+
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,13 @@ class ServicesController extends Controller
 
         $announcements = Announcement::all();
 
-        return view('pages.announcement', compact('announcements','totalVisits','quicks','others','socialmedias'));
+        foreach ($announcements as $announcement) {
+            if ($announcement->isActive == 1) {
+                $annViews[$announcement->id] = views(Announcement::class::find($announcement->id))->count();
+            }
+        }
+
+        return view('pages.announcement', compact('announcements','totalVisits','quicks','others','socialmedias','annViews'));
     }
 
     public function campuscalendar(){
