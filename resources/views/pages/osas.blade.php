@@ -18,26 +18,28 @@
 
 <!-- ======= Office of the Student Affairs Services Section ======= -->
 <section id="osas" class="osas">
-    <div class="container" data-aos="fade-up">
-        @foreach ($osass as $osas)
-        <div class="section-title">
-            <h3>{{ $osas->title }}</span></h3>
-            <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
-          </div>
+  <div class="container" data-aos="fade-up">
+      
+    <article class="entry entry-single">
+      @foreach ( $osass as $osas )
+        <div class="entry-img">
+          <img src="{{ asset('storage/' . $osas->img) }}" alt="{{ $osas->title}}" class="img-fluid">
+        </div>
+  
+        <h2 class="entry-title">
+          {{ $osas->title}}
+        </h2>
+  
+        <div class="entry-content">
+          <p>
+            {!! $osas->content !!}
+          </p>
+        </div>
+      @endforeach
+    </article>
 
-          <div class="imfo">
-            <p>{!! $osas->content !!}
-            </p>
-          </div>
-
-          <div class="orgimg" data-aos="zoom-in" data-aos-delay="200">
-            <img src="{{ asset('storage/' . $osas->img) }}" alt="{{ $osas->title}}">
-          </div>
-        @endforeach
-
-
-    </div>
-  </section><!-- End Office of the Student Affairs Services Section -->
+  </div>
+</section><!-- End Office of the Student Affairs Services Section -->
 
 
 @endsection

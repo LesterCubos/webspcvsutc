@@ -17,24 +17,27 @@
   </div><!-- End Breadcrumbs -->
 <!-- ======= Research Extension Section ======= -->
 <section id="re" class="re">
-    <div class="container" data-aos="fade-up">
-        @foreach ($researchs as $research)
-        <div class="section-title">
-            <h3>{{ $research->title }}</h3>
-            <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
-          </div>
+  <div class="container" data-aos="fade-up">
 
-          <div class="imfo">
-            <p>{!! $research->content !!} </p>
-          </div>
+    <article class="entry entry-single">
+      @foreach ( $researchs as $research )
+        <div class="entry-img">
+          <img src="{{ asset('storage/' . $research->img) }}" alt="{{ $research->title}}" class="img-fluid">
+        </div>
 
-          <div class="orgimg" data-aos="zoom-in" data-aos-delay="200">
-            <img src="{{ asset('storage/' . $research->img) }}" alt="{{ $research->title}}">
-          </div>
-        @endforeach
+        <h2 class="entry-title">
+          {{ $research->title}}
+        </h2>
 
+        <div class="entry-content">
+          <p>
+            {!! $research->content !!}
+          </p>
+        </div>
+      @endforeach
+    </article>
 
-    </div>
+  </div>
 </section><!-- End Research Extension Section -->
 
 

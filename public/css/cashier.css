@@ -20,15 +20,23 @@
 /*--------------------------------------------------------------
 # Cashier Section
 --------------------------------------------------------------*/
-.cashier .container {
-  box-shadow: 0 5px 25px 0 rgba(214, 215, 216, 0.6);
+.cashier .entry {
   padding: 30px;
+  margin-bottom: 60px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.cashier .imfo p {
-  font-size: 20px;
+.cashier .entry .entry-img {
+  max-height: 440px;
+  margin: -30px -30px 20px -30px;
+  overflow: hidden;
 }
 
-.cashier .orgimg img {
-  width: 100%;
+.cashier .entry .entry-title {
+  font-size: 28px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: var(--color-primary);
+  text-transform: uppercase;
 }

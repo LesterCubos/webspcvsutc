@@ -16,25 +16,28 @@
     </nav>
   </div><!-- End Breadcrumbs -->
 
-  <section id="re" class="re">
-    <div class="container" data-aos="fade-up">
-        @foreach ($libs as $lib)
-        <div class="section-title">
-            <h3><span>{{ $lib->title }}</span></h3>
-            <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
-          </div>
+<section id="lib" class="lib">
+  <div class="container" data-aos="fade-up">
+       
+    <article class="entry entry-single">
+      @foreach ( $libs as $lib )
+        <div class="entry-img">
+          <img src="{{ asset('storage/' . $lib->img) }}" alt="{{ $lib->title}}" class="img-fluid">
+        </div>
 
-          <div class="imfo">
-            <p>{!! $lib->content !!}</p>
-          </div>
+        <h2 class="entry-title">
+          {{ $lib->title}}
+        </h2>
 
-          <div class="orgimg" data-aos="zoom-in" data-aos-delay="200">
-            <img src="{{ asset('storage/' . $lib->img) }}" alt="{{ $lib->title}}">
-          </div>
-        @endforeach
+        <div class="entry-content">
+          <p>
+            {!! $lib->content !!}
+          </p>
+        </div>
+      @endforeach
+    </article>
 
-
-    </div>
-</section><!-- End Research Extension Section -->
+  </div>
+</section><!-- End Library Section -->
 
 @endsection

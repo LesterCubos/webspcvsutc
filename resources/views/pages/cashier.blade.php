@@ -18,25 +18,27 @@
 
 <!-- ======= Cashier Section ======= -->
 <section id="cashier" class="cashier">
-    <div class="container" data-aos="fade-up">
-    @foreach ( $cashiers as $cashier)
-    <div class="section-title">
-        <h3><span>{{ $cashier->title }}</span></h3>
-        <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
-      </div>
+  <div class="container" data-aos="fade-up">
 
-      <div class="imfo">
-        <p>{!! $cashier->content !!}
-        </p>
-      </div>
+    <article class="entry entry-single">
+      @foreach ( $cashiers as $cashier )
+        <div class="entry-img">
+          <img src="{{ asset('storage/' . $cashier->pic) }}" alt="{{ $cashier->title }}" class="img-fluid">
+        </div>
 
-      <div class="orgpic" data-aos="zoom-in" data-aos-delay="200">
-        <pic src="{{ asset('storage/' . $cashier->pic) }}" alt="{{ $cashier->title }}>
-      </div>
-    @endforeach
+        <h2 class="entry-title">
+          {{ $cashier->title }}
+        </h2>
 
+        <div class="entry-content">
+          <p>
+            {!! $cashier->content !!}
+          </p>
+        </div>
+      @endforeach
+    </article>
 
-    </div>
-  </section><!-- End Cashier Section -->
+  </div>
+</section><!-- End Cashier Section -->
 
 @endsection

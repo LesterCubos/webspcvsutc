@@ -18,24 +18,27 @@
 
 <!-- ======= Clinic Section ======= -->
 <section id="clinic" class="clinic">
-    <div class="container" data-aos="fade-up">
-      @foreach ($clinics as $clinic)
-      <div class="section-title">
-        <h3><span>{{ $clinic->title }}</span></h3>
-        <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
-      </div>
+  <div class="container" data-aos="fade-up">
 
-      <div class="imfo">
-        <p>{!! $clinic->content !!}
-        </p>
-      </div>
+      <article class="entry entry-single">
+        @foreach ( $clinics as $clinic )
+          <div class="entry-img">
+            <img src="{{ asset('storage/' . $clinic->pic) }}" alt="{{ $clinic->title }}" class="img-fluid">
+          </div>
 
-      <div class="orgimg" data-aos="zoom-in" data-aos-delay="200">
-        <img src="{{ asset('storage/' . $clinic->pic) }}"  alt="{{ $clinic->title }}">
-      </div>
-      @endforeach
+          <h2 class="entry-title">
+            {{ $clinic->title }}
+          </h2>
 
+          <div class="entry-content">
+            <p>
+              {!! $clinic->content !!}
+            </p>
+          </div>
+        @endforeach
+      </article>
 
+  </div>
 </section>
 
 @endsection
