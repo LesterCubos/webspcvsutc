@@ -28,7 +28,7 @@
           <ul>
             <li><a href="about_campus_history">Campus History</a></li>
             <li><a href="about_mvg">Vision, Mission, and Goals</a></li>
-            <li><a href="about_uni_seal">University Seals</a></li>
+            <li><a href="about_uni_seal">Campus Seals</a></li>
             <li><a href="about_uni_officials">University Officials</a></li>
             <li><a href="about_campus_officials">Campus Officials</a></li>
             <li><a href="about_contact_info">Contact Information</a></li>
@@ -68,7 +68,6 @@
         <li class="dropdown"><a href="#">Portal</a>
           <ul>
             <li><a href="student_login">Student Portal</a></li>
-            <li><a href="search">Search</a></li>
           </ul>
         </li>
 

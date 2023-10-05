@@ -159,7 +159,10 @@ class AdministrationController extends Controller
 
         $totalVisits=views(CarouselItem::class)->count();
         $doms = DoM::all();
+        $dass = DAS::all();
+        $teds = TED::all();
+        $dits = DIT::all();
 
-        return view('pages.departments', compact('doms','totalVisits','quicks','others','socialmedias'));
+        return view('pages.departments', compact('doms','dass','teds','dits','totalVisits','quicks','others','socialmedias'));
     }
 }
