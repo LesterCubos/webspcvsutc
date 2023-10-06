@@ -6,7 +6,7 @@
     </div>
     <div class="social-links d-flex align-items-center">
       @foreach ($socialmedias as $socialmedia)
-        <a href="{{ $socialmedia->link }}" class=""><i class="{{ $socialmedia->icon }}"></i></a>
+        <a href="{{ $socialmedia->link }}" target="_blank"><i class="{{ $socialmedia->icon }}"></i></a>
       @endforeach
     </div>
   </div>
@@ -82,18 +82,18 @@
         <span>Campuses</span> 
       </div>
       <ul class="dropdown-menu">
-        <li><button class="dropdown-item" type="button">Main Campus</button></li>
-        <li><button class="dropdown-item" type="button">Bacoor Campus</button></li>
-        <li><button class="dropdown-item" type="button">Carmona Campus</button></li>
-        <li><button class="dropdown-item" type="button">Cavite City Campus</button></li>
-        <li><button class="dropdown-item" type="button">General Trias Campus</button></li>
-        <li><button class="dropdown-item" type="button">Imus Campus</button></li>
-        <li><button class="dropdown-item" type="button">Maragondon Campus</button></li>
-        <li><button class="dropdown-item" type="button">Naic Campus</button></li>
-        <li><button class="dropdown-item" type="button">Rosario Campus</button></li>
-        <li><button class="dropdown-item" type="button">Silang Campus</button></li>
-        <li><button class="dropdown-item" type="button">Tanza Campus</button></li>
-        <li><button class="dropdown-item" type="button">Trece Martires City Campus</button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://cvsu.edu.ph/" target="_blank">Main Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://cvsu.edu.ph/bacoor/" target="_blank">Bacoor Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://cvsu.edu.ph/carmona/" target="_blank">Carmona Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://cvsu.edu.ph/cavite-city-campus/" target="_blank">Cavite City Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://cvsu.edu.ph/general-trias-campus/" target="_blank">General Trias Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://cvsu-imus.edu.ph/home/" target="_blank">Imus Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://cvsu.edu.ph/maragondon-campus/" target="_blank">Maragondon Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://www.cvsu-naic.edu.ph/" target="_blank">Naic Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://cvsu-rosario.edu.ph/" target="_blank">Rosario Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://cvsu.edu.ph/silang-campus/" target="_blank">Silang Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="/" target="_blank">Tanza Campus</a></button></li>
+        <li><button class="dropdown-item" type="button"><a href="https://cvsu-trececampus.com/" target="_blank">Trece Martires City Campus</a></button></li>
       </ul>
     </div>
 

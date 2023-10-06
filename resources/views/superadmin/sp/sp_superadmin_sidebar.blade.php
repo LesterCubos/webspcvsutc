@@ -1,16 +1,19 @@
 <!-- partial:partials/_sidebar.html -->
-<nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #38d838">
-    {{-- <div class="user-profile">
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <div class="user-profile">
       <div class="user-image">
-        <img src="{{asset('img/sp/images/faces/superadminpic.png')}}">
+        @if (empty(Auth::user()->avatar))
+          <img src="{{ asset('img/default.png') }}" alt="Profile Photo">
+        @else
+          <img src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo">
+        @endif
       </div>
       <div class="user-name">
         <a>
-            {{ Auth::guard('superadmin')->user()->name }}
+          {{ Auth::user()->name }}
         </a>
       </div>
-      
-    </div> --}}
+    </div>
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link" href="{{route('superadmin.sp.dashboard')}}">
@@ -29,9 +32,9 @@
         </a>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item" style="margin-top: 100px">
         <a class="nav-link" href="{{ route('superadmin.dashboard') }}">
-          <i class="icon-head menu-icon"></i>
+          <i class="icon-arrow-left menu-icon"></i>
           <span class="menu-title">Go back to Website</span>
         </a>
       </li>
