@@ -55,7 +55,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                             @enderror
-                        </div>
+                          </div>
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword">Password</label>

@@ -20,7 +20,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        // return view('auth.register');
+        return view('superadmin.sp.manage_user_pages.form');
     }
 
     /**
@@ -42,10 +43,10 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        // event(new Registered($user));
 
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        // Auth::login($user);
+        return redirect('/superadmin/sp/users');
+        // return redirect(RouteServiceProvider::HOME);
     }
 }

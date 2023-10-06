@@ -13434,9 +13434,9 @@ input[type="button"].btn-block {
 .breadcrumb-item + .breadcrumb-item:hover::before {
   text-decoration: none;
 }
-
+/* changed */
 .breadcrumb-item.active {
-  color: #6c757d;
+  color: purple;
 }
 
 .pagination {
