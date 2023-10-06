@@ -89,6 +89,9 @@ use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
 
+//Controllers related to Superadmin Student Portal
+use App\Http\Controllers\Superadmin\UserController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 // Start of Route for Website Pages(show)
 //Home
 Route::get('/', [HomeController::class, 'homepage'])->name('pages.homepage');
@@ -171,6 +174,13 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
     });
     //sp
     Route::get('/superadmin/sp/dashboard', [SuperadminController::class, 'SPDashboard'])->name('superadmin.sp.dashboard');
+    // Route::get('/superadmin/sp/users', [UserController::class, 'AllUser'])->name('superadmin.sp.manage_user_pages.index');
+    Route::get('/superadmin/sp/users', [UserController::class, 'index'])->name('superadmin.sp.manage_user_pages.index');
+    Route::get('/superadmin/sp/users/form', [UserController::class, 'form'])->name('superadmin.sp.manage_user_pages.form');
+    // Route::get('users',UserController::class);
+    Route::get('register', [RegisteredUserController::class, 'create'])
+                ->name('register');
+    Route::post('register', [RegisteredUserController::class, 'store']);
 
     // Website Management
 
