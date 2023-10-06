@@ -1,7 +1,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="{{ route('superadmin.sp.dashboard') }}"><img src="{{ asset('img/StudentPortal_Superadmin.png') }}" alt="logo" style="height: 70px; width: 200px"/></a>
+        <a class="navbar-brand brand-logo" href="{{ route('superadmin.sp.dashboard') }}"><img src="{{ asset('img/StudentPortal_Superadmin.png') }}" alt="logo" style="height: 50px; width: 170px"/></a>
         <a class="navbar-brand brand-logo-mini" href="{{ route('superadmin.sp.dashboard') }}"><img src="{{ asset('img/campus_seal.png') }}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-color: #202130; color: #37b246">

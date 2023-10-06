@@ -3,9 +3,9 @@
     <div class="user-profile">
       <div class="user-image">
         @if (empty(Auth::user()->avatar))
-          <img height="90" src="{{ asset('img/default.png') }}" alt="Profile Photo">
+          <img src="{{ asset('img/default.png') }}" alt="Profile Photo">
         @else
-          <img height="90" src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo" style="height: 70px; width: 70px">
+          <img src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo">
         @endif
       </div>
       <div class="user-name">
@@ -13,7 +13,6 @@
           {{ Auth::user()->name }}
         </a>
       </div>
-      
     </div>
     <ul class="nav">
       <li class="nav-item">

@@ -22023,8 +22023,8 @@ dl li {
 }
 
 .sidebar .user-profile .user-image img {
-  width: 50%;
-  height: 50%;
+  width: 30%;
+  height: 30%;
   border-radius: 100%;
   margin-bottom: .625rem;
 }
