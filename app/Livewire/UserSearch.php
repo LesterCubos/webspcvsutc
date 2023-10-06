@@ -3,12 +3,12 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\News;
 use Livewire\WithPagination;
+use App\Models\User;
 
-class NewsSearch extends Component
+class UserSearch extends Component
 {
-    public $searchNews='';
+    public $searchUser='';
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
@@ -19,8 +19,8 @@ class NewsSearch extends Component
     }
     public function render()
     {
-        return view('livewire.news-search',[
-            'news' => News::where('news_headline','like', "%{$this->searchNews}%")->orderBy('updated_at','desc')->paginate(5),
+        return view('livewire.user-search',[
+            'users' => User::where('name','like', "%{$this->searchUser}%")->orderBy('updated_at','desc')->paginate(10),
         ]);
     }
 }

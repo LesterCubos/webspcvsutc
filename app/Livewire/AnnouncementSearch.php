@@ -20,7 +20,7 @@ class AnnouncementSearch extends Component
     public function render()
     {
         return view('livewire.announcement-search',[
-            'announcements' => Announcement::where('title','like', "%{$this->searchAnnouncement}%")->paginate(5),
+            'announcements' => Announcement::where('title','like', "%{$this->searchAnnouncement}%")->orderBy('updated_at','desc')->paginate(5),
         ]);
     }
 }

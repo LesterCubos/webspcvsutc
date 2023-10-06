@@ -33,7 +33,7 @@
       </li>
 
       <li class="nav-item" style="margin-top: 100px">
-        <a class="nav-link" href="{{ route('superadmin.dashboard') }}">
+        <a class="nav-link" href="{{ route('superadmin.dashboard') }}" style="background-color: #37b246">
           <i class="icon-arrow-left menu-icon"></i>
           <span class="menu-title">Go back to Website</span>
         </a>

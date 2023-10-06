@@ -20,7 +20,7 @@ class CarouselSearch extends Component
     public function render()
     {
         return view('livewire.carousel-search',[
-            'carouselitems' => CarouselItem::where('title','like', "%{$this->searchCarousel}%")->paginate(5),
+            'carouselitems' => CarouselItem::where('title','like', "%{$this->searchCarousel}%")->orderBy('updated_at','desc')->paginate(5),
         ]);
     }
 }
