@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="email-wrapper" style="background-image: linear-gradient(#ffff, #00922C, #00922C, #00922C );">
+<div class="email-wrapper" style="background-image: linear-gradient(#ffff, #f4c2fe, #f4c2fe, #f4c2fe );">
   <div class="pagename">
     {{-- <h1>Dashboard</h1> --}}
     <nav>

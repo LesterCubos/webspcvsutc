@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="content-wrapper" style="background-image: linear-gradient(#ffff, #00922C, #00922C, #00922C );">
+<div class="content-wrapper" style="background-image: linear-gradient(#ffff, #f4c2fe, #f4c2fe, #f4c2fe );">
   <div class="pagetitle">
     {{-- <h1>Dashboard</h1> --}}
     <nav>
