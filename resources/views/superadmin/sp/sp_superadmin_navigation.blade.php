@@ -1,47 +1,35 @@
-<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" style="background-color: #38d838">
-        <div class="card" style="border-radius: 28px; width: 50px; height: 46px">
-            <a class="navbar-brand brand-logo" href="{{ route('superadmin.sp.dashboard')}}"><img src="{{ asset('img/campus_seal.png') }}" alt="logo"/></a>
-            <a class="navbar-brand brand-logo-mini" href="{{ route('superadmin.sp.dashboard')}}"><img src="{{ asset('img/campus_seal.png') }}" alt="logo"/></a>
-
-        </div>
-    </div>
-    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-image: linear-gradient( #BE1EC8,#ffff );">
-      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-        <span class="icon-menu" style="color: #009200"></span>
-      </button>
-      <ul class="navbar-nav navbar-nav-right">
-        <li class="nav-item dropdown d-flex mr-4 ">
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            @if (empty(Auth::user()->avatar))
-                  <img height="50" src="{{ asset('img/default.png') }}" alt="Profile Photo" class="rounded-circle">
-              @else
-                  <img height="50" src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo" class="rounded-circle">
-            @endif
-            <div>{{ Auth::user()->name }}</div>
-            {{-- <span class="d-none d-md-block dropdown-toggle ps-2"></span> --}}
-          </a><!-- End Profile Iamge Icon -->
-  
-          <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-            {{-- <i class="icon-cog" style="color: #009200"></i> --}}
-            <span class="d-none d-md-block dropdown-toggle ps-2"></span>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-            
-            <a class="dropdown-item preview-item" href="{{ route('profile.edit') }}">
-                <i class="icon-head"></i> Profile
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo" href="{{ route('superadmin.sp.dashboard') }}"><img src="{{ asset('img/StudentPortal_Superadmin.png') }}" alt="logo" style="height: 70px; width: 200px"/></a>
+        <a class="navbar-brand brand-logo-mini" href="{{ route('superadmin.sp.dashboard') }}"><img src="{{ asset('img/campus_seal.png') }}" alt="logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-color: #202130; color: #37b246">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown d-flex mr-4 ">
+            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="icon-cog" style="color: #37b246"></i>
             </a>
-             
-             <form method="POST" action="{{ route('logout') }}">
-              @csrf
-  
-              <a class="dropdown-item preview-item" href="{{ route('logout') }}" onclick="event.preventDefault();this.closest('form').submit();">
-                <i class="icon-inbox"></i> Logout
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
+              <a class="dropdown-item preview-item" href="{{ route('profile.edit') }}">
+                <i class="icon-head" style="color: #37b246"></i> Profile
               </a>
-            </form>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+    
+                <a class="dropdown-item preview-item" href="{{ route('logout') }}" onclick="event.preventDefault();this.closest('form').submit();">
+                  <i class="icon-inbox" style="color: #37b246"></i> Logout
+                </a>
+              </form>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
