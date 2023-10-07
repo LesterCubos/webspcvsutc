@@ -55,14 +55,14 @@
                 </div> --}}
                 <br>
                 <div>
-                    <label for="pic" class="form-label">Image</label>
+                    <label for="img" class="form-label">Image</label>
                     <br>
                     <label class="block mt-2">
                         {{-- <span class="sr-only">Choose pic</span> --}}
-                        <input type="file" id="pic" name="pic" class="btn rounded-pill block w-full text-sm text-slate-500"/>
+                        <input type="file" id="img" name="img" class="btn rounded-pill block w-full text-sm text-slate-500"/>
                     </label>
                     <div class="shrink-0 my-2">
-                        <pic style="width:600px" id="pic_preview" class="h-64 w-128 object-cover rounded-md" src="{{ isset($cashier) ? Storage::url($cashier->pic) : '' }}" alt="pic preview" />
+                        <img style="width:600px" id="img_preview" class="h-64 w-128 object-cover rounded-md" src="{{ isset($cashier) ? Storage::url($cashier->img) : '' }}" alt="pic preview" />
                     </div>
                 </div>
 
@@ -79,11 +79,11 @@
 
 <script>
     // create onchange event listener for featured_pic input
-    document.getElementById('pic').onchange = function(evt) {
+    document.getElementById('img').onchange = function(evt) {
         const [file] = this.files
         if (file) {
             // if there is an pic, create a preview in featured_pic_preview
-            document.getElementById('pic_preview').src = URL.createObjectURL(file)
+            document.getElementById('img_preview').src = URL.createObjectURL(file)
         }
     }
 </script>

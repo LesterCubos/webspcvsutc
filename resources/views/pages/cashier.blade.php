@@ -23,7 +23,7 @@
     <article class="entry entry-single">
       @foreach ( $cashiers as $cashier )
         <div class="entry-img">
-          <img src="{{ asset('storage/' . $cashier->pic) }}" alt="{{ $cashier->title }}" class="img-fluid">
+          <img src="{{ asset('storage/' . $cashier->img) }}" alt="{{ $cashier->title }}" class="img-fluid">
         </div>
 
         <h2 class="entry-title">

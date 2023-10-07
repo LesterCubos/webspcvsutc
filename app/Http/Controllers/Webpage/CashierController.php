@@ -42,10 +42,10 @@ class CashierController extends Controller
     {
         $validated = $request->validated();
 
-        if ($request->hasFile('pic')) {
+        if ($request->hasFile('img')) {
              // put pic in the public storage
-            $filePath = Storage::disk('public')->put('cashierimg/cashiers/pics', request()->file('pic'));
-            $validated['pic'] = $filePath;
+            $filePath = Storage::disk('public')->put('cashierimg/cashiers/pics', request()->file('img'));
+            $validated['img'] = $filePath;
         }
 
         // insert only requests that already validated in the StoreRequest

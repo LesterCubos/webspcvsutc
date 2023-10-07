@@ -29,7 +29,7 @@
     <div class="body">
         <section class="articles">
           @foreach ($job_vacancies as $job_vacancy)
-            <article>
+            <article class="article">
               <div class="article-wrapper">
                 <figure>
                   <img src="{{ Storage::url($job_vacancy->jobposter) }}" alt="{{ $job_vacancy->title }}"/>
@@ -37,7 +37,7 @@
                 <div class="article-body">
                   <h2>{{ $job_vacancy->title }}</h2>
                   <p>
-                    {!! Str::limit($job_vacancy->description,'250','...') !!} 
+                    {!! Str::limit($job_vacancy->description,'100','...') !!} 
                   </p>
                   <a href="jobvacancies{{$job_vacancy->id}}" class="read-more">
                     Read more <span class="sr-only">about this is some title</span>
