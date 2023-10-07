@@ -19,11 +19,11 @@
         <div class="card-body">
             <br>
             <h2>Department of Information Technology Page</h2>
-            {{-- <button href="{{ route('carousel_items.create') }}" type="submit" name="" class="btn btn-success">Add Imagetton> --}}
-            <a href="{{ route('dits.create') }}" class="btn btn-success">Add</a>
-
-
-
+            @if ($nullbtn > 0)
+                <a href="{{ route('dits.create') }}" class="btn btn-success" style="pointer-events: none; background-color: #989fa7">Add</a>
+            @else
+                <a href="{{ route('dits.create') }}" class="btn btn-success">Add</a>
+            @endif
         </div>
     </div>
 

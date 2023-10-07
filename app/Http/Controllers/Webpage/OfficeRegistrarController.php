@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\OfficeRegistrar;
 
@@ -22,8 +23,17 @@ class OfficeRegistrarController extends Controller
      */
     public function index(): Response
     {
+
+        $count = DB::table('office_registrars')->count();
+
+        if($count > 0) {
+            $null = 1;
+        }else {
+            $null = 0;
+        }
+
         return response()->view('superadmin.website_admin_panel.administration_section.office_registrars.index', [
-            'office_registrars' => OfficeRegistrar::orderBy('updated_at', 'desc')->get(),
+            'office_registrars' => OfficeRegistrar::orderBy('updated_at', 'desc')->get(), 'nullbtn' => $null
         ]);
     }
 

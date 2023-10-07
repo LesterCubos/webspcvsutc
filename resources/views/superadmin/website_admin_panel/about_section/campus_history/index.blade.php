@@ -67,7 +67,7 @@
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger btn-rounded"><i class="ri-delete-bin-5-fill"></i></button>
+                        {{-- <button type="submit" class="btn btn-danger btn-rounded"><i class="ri-delete-bin-5-fill"></i></button> --}}
                     </form>
                 </td>
             </tr>

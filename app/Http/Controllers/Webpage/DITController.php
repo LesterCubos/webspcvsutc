@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\DIT;
 
@@ -20,8 +21,17 @@ class DITController extends Controller
      */
     public function index(): Response
     {
+
+        $count = DB::table('d_i_t_s')->count();
+
+        if($count > 0) {
+            $null = 1;
+        }else {
+            $null = 0;
+        }
+
         return response()->view('superadmin.website_admin_panel.administration_section.dits.index', [
-            'dits' => DIT::orderBy('updated_at', 'desc')->get(),
+            'dits' => DIT::orderBy('updated_at', 'desc')->get(), 'nullbtn' => $null
         ]);
     }
 

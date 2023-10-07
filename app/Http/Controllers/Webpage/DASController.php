@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\DAS;
 
@@ -20,8 +21,17 @@ class DASController extends Controller
      */
     public function index(): Response
     {
+
+        $count = DB::table('d_a_s')->count();
+
+        if($count > 0) {
+            $null = 1;
+        }else {
+            $null = 0;
+        }
+
         return response()->view('superadmin.website_admin_panel.administration_section.dass.index', [
-            'dass' => DAS::orderBy('updated_at', 'desc')->get(),
+            'dass' => DAS::orderBy('updated_at', 'desc')->get(), 'nullbtn' => $null
         ]);
     }
 
