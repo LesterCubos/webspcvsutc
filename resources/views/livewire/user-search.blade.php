@@ -1,9 +1,9 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card" style="border-radius: 10px">
       <div class="card-body">
-        <div class="input-group col-6" style="margin-bottom: 20px; float:right">
+        <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="search">
+              <span class="input-group-text" id="search" style="background-color:  #ec37fc; color: #fff">
                 <i class="icon-search"></i>
               </span>
             </div>

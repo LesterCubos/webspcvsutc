@@ -1,10 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="col-6" style="margin-bottom: 10px; float:right">
-                <input type="text"  class="form-control" placeholder="Search News..." wire:model.lazy="searchNews" />
-            </div>
-    
+            <div class="search-form col-6">
+                <div class="col-6" style="margin-bottom: 10px; float:right">
+                  <input type="text" class="form-control" placeholder="Search News Headline..." wire:model.lazy="searchNews">
+                  <button><i class="bi bi-search"></i></button>
+                </div>
+            </div><!-- End search formn-->
             <table class="table table-bordered table-hover border-primary">
                 <thead class="table-display text-center">
                 <tr>
