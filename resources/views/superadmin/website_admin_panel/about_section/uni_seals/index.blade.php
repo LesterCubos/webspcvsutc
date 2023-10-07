@@ -1,16 +1,12 @@
-{{-- use AppLayout Component located in app\View\Components\AppLayout.php which use resources\views\layouts\app.blade.php view --}}
-
-
-
 @extends('superadmin.superadmin_master')
+@section('title','Campus Seal')
 @section('content')
     <div class="pagetitle">
-        {{-- <h1>Dashboard</h1> --}}
         <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
             <li class="breadcrumb-item">About</li>
-            <li class="breadcrumb-item active">University Seal Page</li>
+            <li class="breadcrumb-item active">Campus Seal Page</li>
         </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -19,7 +15,6 @@
         <div class="card-body">
             <br>
             <h2>University Seal Page</h2>
-            {{-- <button href="{{ route('carousel_items.create') }}" type="submit" name="" class="btn btn-success">Add Image</button> --}}
             @if ( $nullbtn > 0)
                 <a href="{{ route('uni_seals.create') }}" class="btn btn-success" style="pointer-events: none; background-color: #989fa7">Add</a>
             @else
@@ -63,7 +58,6 @@
                         @csrf
                         @method('DELETE')
 
-                        {{-- <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button> --}}
                     </form>
                 </td>
             </tr>

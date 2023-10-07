@@ -1,9 +1,7 @@
-{{-- use AppLayout Component located in app\View\Components\AppLayout.php which use resources\views\layouts\app.blade.php view --}}
-
 @extends('superadmin.superadmin_master')
+@section('title','Job Vacancies')
 @section('content')
     <div class="pagetitle">
-        {{-- <h1>Dashboard</h1> --}}
         <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -17,7 +15,6 @@
         <div class="card-body">
             <br>
             <h2>Job Vacancies Page</h2>
-            {{-- <button href="{{ route('job_vacancies.create') }}" type="submit" name="" class="btn btn-success">Add Image</button> --}}
             <a href="{{ route('job_vacancies.create') }}" class="btn btn-success">Add</a>
         </div>
     </div>
@@ -53,11 +50,7 @@
                 <td>{{ $job_vacancy->created_at }}</td>
                 <td>{{ $job_vacancy->updated_at }}</td>
                 <td>
-                    <form method="post" action="{{ route('job_vacancies.destroy', $job_vacancy->id) }}" class="d-grid gap-2">
-
-                        {{-- <a class="btn btn-info" href="{{ route('job_vacancies.show', $job_vacancy->id) }}">Show</a> --}}
-
-                        <a class="btn" id="icon_edit" href="{{ route('job_vacancies.edit', $job_vacancy->id) }}"><i class="ri-edit-box-fill"></i></a>
+                    <form method="post" action="{{ route('job_vacancies.destroy', $job_vacancy->id) }}" class="d-grid gap-2">                        <a class="btn" id="icon_edit" href="{{ route('job_vacancies.edit', $job_vacancy->id) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')
 

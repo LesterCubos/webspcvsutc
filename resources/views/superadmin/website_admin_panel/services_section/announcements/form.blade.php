@@ -1,4 +1,5 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage Announcement')
 @section('content')
 <div class="pagetitle">
     <h1></h1>
@@ -33,7 +34,6 @@
                 @endisset
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
                     <label for="title" class="form-label">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{ $announcement->title ?? old('title') }}" required autofocus>
                 </div>
@@ -47,7 +47,6 @@
                     <label for="poster" class="form-label">Featured Image:</label>
                     <br>
                     <label class="block mt-2">
-                        {{-- <span class="sr-only">Choose poster</span> --}}
                         <input type="file" id="poster" name="poster" class="btn rounded-pill block w-full text-sm text-slate-500"/>
                     </label>
                     <div class="shrink-0 my-2">

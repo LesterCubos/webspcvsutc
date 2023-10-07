@@ -1,7 +1,7 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage Student Organization Orgs')
 @section('content')
 <div class="pagetitle">
-    <h1></h1>
     <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -42,7 +42,7 @@
                     <label for="type" class="form-label">Type of Organization:</label>
                     <select class="form-select"  id="type" name="type" aria-label="Default select example">
                         <option selected>{{ $about_org->type ?? old('type') }}</option>
-                        <option value="Academic Organization")>Academic Organization</option>
+                        <option value="Academic Organization">Academic Organization</option>
                         <option value="Non-Academic Organization">Non-Academic Organization</option>
                     </select>
                 <br>

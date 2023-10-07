@@ -1,7 +1,7 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage Social Media Links')
 @section('content')
 <div class="pagetitle">
-    <h1></h1>
     <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>

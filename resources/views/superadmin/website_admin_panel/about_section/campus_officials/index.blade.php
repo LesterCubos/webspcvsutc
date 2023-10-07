@@ -1,16 +1,12 @@
-{{-- use AppLayout Component located in app\View\Components\AppLayout.php which use resources\views\layouts\app.blade.php view --}}
-
-
-
 @extends('superadmin.superadmin_master')
+@section('title','Campus Organizational Chart')
 @section('content')
     <div class="pagetitle">
-        {{-- <h1>Dashboard</h1> --}}
         <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
             <li class="breadcrumb-item">About</li>
-            <li class="breadcrumb-item active">Campus Organizational Image Page</li>
+            <li class="breadcrumb-item active">Campus Organizational Chart Page</li>
         </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -18,15 +14,8 @@
     <div class="card flex justify-between">
         <div class="card-body">
             <br>
-            <h2>Campus Organizational Image Page</h2>
-            {{-- <button href="{{ route('carousel_items.create') }}" type="submit" name="" class="btn btn-success">Add org_image</button> --}}
+            <h2>Campus Organizational Chart Page</h2>
             <a href="{{ route('campus_officials.create') }}" class="btn btn-success">Add Image</a>
-
-            {{-- <div class="form-check form-switch">
-                <input type="checkbox" class="form-check-input" id="show-section-switch" value="$showSection ? 'checked' : '' }}">
-                <label class="form-check-label" for="show-section-switch">Show Section</label>
-            </div> --}}
-
         </div>
     </div>
 

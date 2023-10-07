@@ -75,7 +75,7 @@
           </li>
           <li>
             <a class="{{ (request()->is('uni_seals*')) ? 'active' : '' }}" href="{{ route('uni_seals.index') }}">
-              <i class="bi bi-circle"></i><span>University Seals</span>
+              <i class="bi bi-circle"></i><span>Campus Seal</span>
             </a>
           </li>
           <li>

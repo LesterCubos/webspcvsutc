@@ -1,12 +1,7 @@
-
-{{-- use AppLayout Component located in app\View\Components\AppLayout.php which use resources\views\layouts\app.blade.php view --}}
-
-
-
 @extends('superadmin.superadmin_master')
+@section('title','List of Programs Offered')
 @section('content')
     <div class="pagetitle">
-        {{-- <h1>Dashboard</h1> --}}
         <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -19,8 +14,7 @@
     <div class="card flex justify-between">
         <div class="card-body">
             <br>
-            <h2>Program Offered Section</h2>
-            {{-- <button href="{{ route('program_offers.create') }}" type="submit" name="" class="btn btn-success">Add Image</button> --}}
+            <h2>Program Offered Section</h2> 
             <a href="{{ route('programs_offers.create') }}" class="btn btn-success">Add Program</a>
         </div>
     </div>
@@ -55,9 +49,6 @@
                 <td>{{ $programs_offer->updated_at }}</td>
                 <td>
                     <form method="post" action="{{ route('programs_offers.destroy', $programs_offer->id) }}" class="d-grid gap-2">
-
-                        {{-- <a class="btn btn-info" href="{{ route('program_offers.show', $programs_offer->id) }}">Show</a> --}}
-
                         <a class="btn" id="icon_edit" href="{{ route('programs_offers.edit', $programs_offer->id) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')

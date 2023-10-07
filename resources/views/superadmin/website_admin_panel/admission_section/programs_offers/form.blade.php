@@ -1,7 +1,7 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage Program Offer')
 @section('content')
 <div class="pagetitle">
-    <h1></h1>
     <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -43,25 +43,11 @@
 
                 <div class="flex text-center" style="padding-top: 10px">
                     <button class="btn btn-success col-md-4 col-lg-2" style="margin-right: 5px">{{ __('Publish') }}</button>
-                    {{-- @if(URL::previous())
-                        <a href="{{ URL::previous() }}" class="btn btn-warning col-md-4 col-lg-2">Back</a>
-                    @endif --}}
+                    
                     <a href="{{ route('programs_offers.index') }}" class="btn btn-warning col-md-4 col-lg-2">Back</a>
                 </div>
             </form>
         </div>
     </div>
 </section>
-
-
-{{-- <script>
-    // create onchange event listener for program_image input
-    document.getElementById('program_image').onchange = function(evt) {
-        const [file] = this.files
-        if (file) {
-            // if there is an image, create a preview in program_image_preview
-            document.getElementById('program_image_preview').src = URL.createObjectURL(file)
-        }
-    }
-</script> --}}
 @endsection

@@ -1,11 +1,7 @@
-{{-- use AppLayout Component located in app\View\Components\AppLayout.php which use resources\views\layouts\app.blade.php view --}}
-
-
-
 @extends('superadmin.superadmin_master')
+@section('title','Admission Result')
 @section('content')
     <div class="pagetitle">
-        {{-- <h1>Dashboard</h1> --}}
         <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -19,11 +15,7 @@
         <div class="card-body">
             <br>
             <h2>Admission Results</h2>
-            {{-- <button href="{{ route('carousel_items.create') }}" type="submit" name="" class="btn btn-success">Add img</button> --}}
             <a href="{{ route('admission_results.create') }}" class="btn btn-success">Add</a>
-
-
-
         </div>
     </div>
 
@@ -52,7 +44,6 @@
             <tr>
                 <th scope="row">{{ $admission_result->id }}</th>
                 <td>{{ $admission_result->title }}</td>
-                {{-- <td>{!! $admission_result->content !!}</td> --}}
                 <td>{!! Str::limit($admission_result->content,'250','...') !!}</td>
                 <td><img style="width:250px" src="{{ Storage::url($admission_result->img) }}" alt="{{ $admission_result->title }}" srcset=""></td>
                 <td>{{ $admission_result->created_at }}</td>

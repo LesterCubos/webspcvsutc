@@ -1,7 +1,7 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage Admission Result')
 @section('content')
 <div class="pagetitle">
-    <h1></h1>
     <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -43,7 +43,6 @@
                     <label for="img" class="form-label">Image:</label>
                     <br>
                     <label class="block mt-2">
-                        {{-- <span class="sr-only">Choose img</span> --}}
                         <input type="file" id="img" name="img" class="btn rounded-pill block w-full text-sm text-slate-500"/>
                     </label>
                     <div class="shrink-0 my-2">

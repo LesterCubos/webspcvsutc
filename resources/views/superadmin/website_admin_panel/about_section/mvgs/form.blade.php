@@ -1,7 +1,7 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage MVG')
 @section('content')
 <div class="pagetitle">
-    <h1></h1>
     <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -43,13 +43,6 @@
                     <label for="content" class="form-label">Content:</label>
                     <textarea style="height: 250px" id="content" name="content" class="form-control tinymce-editor">{{ $mvg->content ?? old('content') }}</textarea>
                 </div>
-
-                {{-- <div>
-                    <x-input-label for="content" value="Content" /> --}}
-                    {{-- use textarea-input component that we will create after this --}}
-                    {{-- <x-textarea-input id="content" name="content" class="mt-1 block w-full" required autofocus>{{ $carousel_item->content ?? old('content') }}</x-textarea-input>
-                    <x-input-error class="mt-2" :messages="$errors->get('content')" />
-                </div> --}}
                 <br>
 
                 <div class="flex text-center" style="padding-top: 10px">

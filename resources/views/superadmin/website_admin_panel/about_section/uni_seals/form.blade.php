@@ -1,4 +1,5 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage University Seal')
 @section('content')
 <div class="pagetitle">
     <h1></h1>
@@ -39,7 +40,6 @@
                     <label for="image" class="form-label">Image:</label>
                     <br>
                     <label class="block mt-2">
-                        {{-- <span class="sr-only">Choose image</span> --}}
                         <input type="file" id="image" name="image" class="btn rounded-pill block w-full text-sm text-slate-500"/>
                     </label>
                     <div class="shrink-0 my-2">

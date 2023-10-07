@@ -1,7 +1,7 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage News Update Section')
 @section('content')
 <div class="pagetitle">
-    <h1></h1>
     <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -33,13 +33,11 @@
                 @endisset
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
                     <label for="news_title" class="form-label">News Title:</label>
                     <input type="text" class="form-control" id="news_title" name="news_title" value="{{ $new->news_title ?? old('news_title') }}" required autofocus>
                 </div>
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
                     <label for="news_headline" class="form-label">News Headline:</label>
                     <input type="text" class="form-control" id="headlline" name="news_headline" value="{{ $new->news_headline ?? old('news_headline') }}" required autofocus>
                 </div>
@@ -53,7 +51,6 @@
                     <label for="news_image" class="form-label">News Image:</label>
                     <br>
                     <label class="block mt-2">
-                        {{-- <span class="sr-only">Choose news_image</span> --}}
                         <input type="file" id="news_image" name="news_image" class="btn rounded-pill block w-full text-sm text-slate-500"/>
                     </label>
                     <div class="shrink-0 my-2">

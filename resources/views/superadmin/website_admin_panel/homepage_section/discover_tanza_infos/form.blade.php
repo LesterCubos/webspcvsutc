@@ -1,4 +1,5 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage Discover Tanza Section')
 @section('content')
 <div class="pagetitle">
     <h1></h1>
@@ -30,13 +31,11 @@
                 @endisset
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
                     <label for="headline" class="form-label">Headline:</label>
                     <input type="text" class="form-control" id="headline" name="headline" value="{{ $discover_tanza_info->headline ?? old('headline') }}" required autofocus>
                 </div>
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
                     <label for="subheadline" class="form-label">Sub-Headline:</label>
                     <input type="text" class="form-control" id="subheadlline" name="subheadline" value="{{ $discover_tanza_info->subheadline ?? old('subheadline') }}" required autofocus>
                 </div>
@@ -50,7 +49,6 @@
                     <label for="image" class="form-label">Featured Image:</label>
                     <br>
                     <label class="block mt-2">
-                        {{-- <span class="sr-only">Choose image</span> --}}
                         <input type="file" id="image" name="image" class="btn rounded-pill block w-full text-sm text-slate-500"/>
                     </label>
                     <div class="shrink-0 my-2">

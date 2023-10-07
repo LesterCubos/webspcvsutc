@@ -1,11 +1,7 @@
-{{-- use AppLayout Component located in app\View\Components\AppLayout.php which use resources\views\layouts\app.blade.php view --}}
-
-
-
 @extends('superadmin.superadmin_master')
+@section('title','Department of Information Technology')
 @section('content')
     <div class="pagetitle">
-        {{-- <h1>Dashboard</h1> --}}
         <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -19,7 +15,6 @@
         <div class="card-body">
             <br>
             <h2>Department of Information Technology Page</h2>
-            {{-- <button href="{{ route('carousel_items.create') }}" type="submit" name="" class="btn btn-success">Add Imagetton> --}}
             <a href="{{ route('dits.create') }}" class="btn btn-success">Add</a>
 
 
@@ -63,8 +58,6 @@
                         <a class="btn" id="icon_edit" href="{{ route('dits.edit', $dit->id) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')
-
-                        {{-- <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button> --}}
                     </form>
                 </td>
             </tr>

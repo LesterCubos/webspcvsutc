@@ -1,7 +1,7 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage Program Section')
 @section('content')
 <div class="pagetitle">
-    <h1></h1>
     <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -44,7 +44,6 @@
                     <label for="program_image" class="form-label">Program Image:</label>
                     <br>
                     <label class="block mt-2">
-                        {{-- <span class="sr-only">Choose image</span> --}}
                         <input type="file" id="program_image" name="program_image" class="btn rounded-pill block w-full text-sm text-slate-500"/>
                     </label>
                     <div class="shrink-0 my-2">

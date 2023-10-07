@@ -1,14 +1,13 @@
 @extends('superadmin.sp.sp_superadmin_master')
 
-
+@section('title','Add New User')
 @section('content')
 
 <div class="content-wrapper" style="background-image: linear-gradient(#ffff, #f4c2fe, #f4c2fe, #f4c2fe );">
   <div class="pagename">
-    {{-- <h1>Dashboard</h1> --}}
     <nav>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('superadmin.sp.dashboard') }}" class="abreadlink"><i class="fa fa-home"></i> Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('superadmin.sp.dashboard') }}" class="abreadlink"><i class="fa fa-home"></i> Dashboard</a></li>
         <li class="breadcrumb-item">Manage User</li>
         <li class="breadcrumb-item active">Add New User</li>
     </ol>
@@ -21,20 +20,12 @@
         </div>
   @endif
 
-  {{-- <div class="col-lg-12 grid-margin stretch-card">
-      <div class="card">
-        <div class="card-body">
-          
-        </div>
-      </div>
-  </div> --}}
-
     <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
             <div class="card-body">
                     <br>
                     <h4>{{ isset($user) ? 'Edit User' : 'Add New User' }}</h4>
-                </div>
+            </div>
             </div>
     </div>
     <div class="col-lg-12 grid-margin stretch-card">

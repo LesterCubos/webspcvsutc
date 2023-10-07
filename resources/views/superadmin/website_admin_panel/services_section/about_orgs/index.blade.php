@@ -1,16 +1,12 @@
-{{-- use AppLayout Component located in app\View\Components\AppLayout.php which use resources\views\layouts\app.blade.php view --}}
-
-
-
 @extends('superadmin.superadmin_master')
+@section('title','List of Student Organizations')
 @section('content')
     <div class="pagetitle">
-        {{-- <h1>Dashboard</h1> --}}
         <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
             <li class="breadcrumb-item">Services</li>
-            <li class="breadcrumb-item active">CvSU Student Organizations</li>
+            <li class="breadcrumb-item active">Student Organizations</li>
         </ol>
         </nav>
     </div><!-- End Page Title -->

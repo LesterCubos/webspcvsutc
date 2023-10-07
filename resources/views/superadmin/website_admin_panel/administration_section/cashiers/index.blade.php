@@ -1,8 +1,5 @@
-{{-- use AppLayout Component located in app\View\Components\AppLayout.php which use resources\views\layouts\app.blade.php view --}}
-
-
-
 @extends('superadmin.superadmin_master')
+@section('title','Cashier')
 @section('content')
     <div class="pagetitle">
         {{-- <h1>Dashboard</h1> --}}
@@ -19,7 +16,6 @@
         <div class="card-body">
             <br>
             <h2>Cashier Page</h2>
-            {{-- <button href="{{ route('carousel_items.create') }}" type="submit" name="" class="btn btn-success">Add img</button> --}}
             <a href="{{ route('cashiers.create') }}" class="btn btn-success">Add</a>
 
 
@@ -59,12 +55,9 @@
                 <td>{{ $cashier->updated_at }}</td>
                 <td>
                     <form method="post" action="{{ route('cashiers.destroy', $cashier->id) }}" class="d-grid gap-2">
-
                         <a class="btn" id="icon_edit" href="{{ route('cashiers.edit', $cashier->id) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')
-
-                        {{-- <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button> --}}
                     </form>
                 </td>
             </tr>

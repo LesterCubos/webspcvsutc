@@ -1,4 +1,5 @@
 @extends('superadmin.superadmin_master')
+@section('title','Add Campus Organization Chart')
 @section('content')
 <div class="pagetitle">
     <h1></h1>
@@ -6,7 +7,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
         <li class="breadcrumb-item">About</li>
-        <li class="breadcrumb-item"><a href="{{ route('campus_officials.index') }}">Campus Official Page</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('campus_officials.index') }}">Campus Official Organizational Chart</a></li>
         <li class="breadcrumb-item active">Add</li>
     </ol>
     </nav>
@@ -35,7 +36,6 @@
                     <label for="org_image" class="form-label">Image:</label>
                     <br>
                     <label class="block mt-2">
-                        {{-- <span class="sr-only">Choose org_image</span> --}}
                         <input type="file" id="org_image" name="org_image" class="btn rounded-pill block w-full text-sm text-slate-500"/>
                     </label>
                     <div class="shrink-0 my-2">

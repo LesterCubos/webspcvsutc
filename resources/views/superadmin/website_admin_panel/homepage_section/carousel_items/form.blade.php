@@ -1,7 +1,7 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage Banner')
 @section('content')
 <div class="pagetitle">
-    <h1></h1>
     <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
@@ -35,34 +35,20 @@
                 
                 <br>
                 <div>
-                    {{-- <h6>Title</h6> --}}
                     <label for="title" class="form-label">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{ $carousel_item->title ?? old('title') }}" required autofocus>
                 </div>
                 <br>
-                {{-- <div>
-                    <x-input-label for="title" value="Title" />
-                    <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="$carousel_item->title ?? old('title')" required autofocus />
-                    <x-input-error class="mt-2" :messages="$errors->get('title')" />
-                </div> --}}
-
+                
                 <div>
                     <label for="content" class="form-label">Content:</label>
                     <textarea id="content" name="content" class="form-control" required autofocus>{{ $carousel_item->content ?? old('content') }}</textarea>
                 </div>
-
-                {{-- <div>
-                    <x-input-label for="content" value="Content" /> --}}
-                    {{-- use textarea-input component that we will create after this --}}
-                    {{-- <x-textarea-input id="content" name="content" class="mt-1 block w-full" required autofocus>{{ $carousel_item->content ?? old('content') }}</x-textarea-input>
-                    <x-input-error class="mt-2" :messages="$errors->get('content')" />
-                </div> --}}
                 <br>
                 <div>
                     <label for="featured_image" class="form-label">Featured Image:</label>
                     <br>
                     <label class="block mt-2">
-                        {{-- <span class="sr-only">Choose image</span> --}}
                         <input type="file" id="featured_image" name="featured_image" class="btn rounded-pill block w-full text-sm text-slate-500"/>
                     </label>
                     <div class="shrink-0 my-2">

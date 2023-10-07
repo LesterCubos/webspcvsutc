@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>CvSU-TC Website Admin</title>
-
+    <title>@yield('title') - CvSU-TC Website Admin</title>
     <!-- Icon -->
     <link rel="icon" href="{{ asset('img/campus_seal.png') }}">
     <!-- Google Fonts -->

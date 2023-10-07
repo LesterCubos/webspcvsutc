@@ -1,4 +1,5 @@
 @extends('superadmin.superadmin_master')
+@section('title','Manage Contact Infos')
 @section('content')
 <div class="pagetitle">
     <h1></h1>
