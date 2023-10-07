@@ -1,5 +1,7 @@
 @extends('layouts.show')
 
+@section('title','News Updates')
+
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->

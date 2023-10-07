@@ -4,7 +4,8 @@
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'CvSU Tanza') }}</title>
+        {{-- <title>{{ config('app.name', 'CvSU Tanza') }}</title> --}}
+        <title>@yield('title')</title>
 
         <!-- Icon -->
         <link rel="shortcut icon" type="image/png" href="{{ asset('img/campus_seal.png') }}">
