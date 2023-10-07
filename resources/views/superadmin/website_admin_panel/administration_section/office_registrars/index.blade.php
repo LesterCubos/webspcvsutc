@@ -15,10 +15,11 @@
         <div class="card-body">
             <br>
             <h2>Office of Registrar Page</h2>
-            <a href="{{ route('office_registrars.create') }}" class="btn btn-success">Add</a>
-
-
-
+            @if ($nullbtn > 0)
+                <a href="{{ route('office_registrars.create') }}" class="btn btn-success" style="pointer-events: none; background-color: #989fa7">Add</a>
+            @else
+                <a href="{{ route('office_registrars.create') }}" class="btn btn-success">Add</a>
+            @endif
         </div>
     </div>
 

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Cashier;
 
@@ -22,8 +23,17 @@ class CashierController extends Controller
      */
     public function index(): Response
     {
+
+        $count = DB::table('cashiers')->count();
+
+        if($count > 0) {
+            $null = 1;
+        }else {
+            $null = 0;
+        }
+
         return response()->view('superadmin.website_admin_panel.administration_section.cashiers.index', [
-            'cashiers' => Cashier::orderBy('updated_at', 'desc')->get(),
+            'cashiers' => Cashier::orderBy('updated_at', 'desc')->get(), 'nullbtn' => $null
         ]);
     }
 
