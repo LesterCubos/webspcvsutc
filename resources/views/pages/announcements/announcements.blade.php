@@ -1,5 +1,7 @@
 @extends('layouts.show')
 
+@section('title',$announce->title)
+
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->
