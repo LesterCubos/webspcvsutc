@@ -1,5 +1,5 @@
 @extends('layouts.show')
-
+@section('title','Job Vacancies')
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->

@@ -1,5 +1,5 @@
 @extends('layouts.show')
-
+@section('title','Department of Arts and Sciences')
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->

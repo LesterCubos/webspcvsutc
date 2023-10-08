@@ -1,5 +1,5 @@
 @extends('layouts.show')
-
+@section('title','Campus Calendar')
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->

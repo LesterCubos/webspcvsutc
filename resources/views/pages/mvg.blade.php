@@ -1,5 +1,5 @@
 @extends('layouts.show')
-
+@section('title','Mission, Vision, and Goals')
 @section('content')
 
 <!-- ======= Breadcrumbs ======= -->

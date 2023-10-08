@@ -1,5 +1,5 @@
 @extends('layouts.show')
-
+@section('title','CvSU-Tanza Departments')
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->

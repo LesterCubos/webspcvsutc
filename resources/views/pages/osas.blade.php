@@ -1,5 +1,5 @@
 @extends('layouts.show')
-
+@section('title','Office of Student Affairs and Services')
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->
@@ -10,7 +10,7 @@
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
           <li>Administration</li>
-          <li>Office of the Student Affairs</li>
+          <li>Office of the Student Affairs and Services</li>
         </ol>
       </div>
     </nav>
