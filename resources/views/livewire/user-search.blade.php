@@ -20,6 +20,7 @@
                 <th>EMAIL</th>
                 <th>ROLE</th>
                 <th>STATUS</th>
+                <th>DATE CREATED</th>
                 <th>ACTION</th>
               </tr>
             </thead>
@@ -35,7 +36,7 @@
                     @endif
                   </td>
                   <td>{{ $user->name}}</td>
-                  <td>Photoshop</td>
+                  <td>Last Name</td>
                   <td>{{ $user->email}}</td>
                   <td>{{ $user->role}}</td>
                   <td>
@@ -45,7 +46,16 @@
                       <label class="badge badge-danger">{{ $user->status}}</label>
                     @endif
                   </td>
-                  <td>
+                  <td>{{$user->created_at}}</td>
+                  <td> 
+                    <form method="post" action="{{ route('profile.destroy', $user->id) }}" class="d-grid gap-2">
+                      <a href="" class="btn btn-primary btn-rounded btn-fw"><i class="icon-eye"></i></a>
+                      <a class="btn btn-info btn-rounded btn-fw" href="{{ route('profile.edit', $user->id) }}"><i class="icon-open"></i></a>
+                      @csrf
+                      @method('DELETE')
+
+                      <button type="submit" class="btn btn-danger btn-rounded btn-fw"><i class="icon-trash"></i></button>
+                    </form>
                   </td>
                 </tr>
                 @empty
