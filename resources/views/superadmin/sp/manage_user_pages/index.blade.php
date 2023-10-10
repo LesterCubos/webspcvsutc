@@ -28,7 +28,7 @@
           <h1 class="display-4">Select Upload CSV file if multiple users needs to be created. Make sure ff the ff format.</h1>
           <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="file" name="file" class="form-control">
+            <input type="file" name="file" class="form-control col-lg-3">
             <br>
             <button class="btn btn-success">Import User Data</button>
             <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
