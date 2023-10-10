@@ -63,32 +63,37 @@
                   @enderror
                 </div>
                 
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <label for="status">Status</label>
                   
                   <select id="status" name="status" class="form-control">
                     @foreach ($users as $user)
-                    {{-- @if($user->id === 'active'){
+                    @if($user->id === 'active'){
                       
                     }
                         
                     @else
                         
-                    @endif --}}
+                    @endif
                     <option value="active" {{ $user->status === 'active' ? 'selected' : '' }}>Active</option>
                     <option value="inactive" {{ $user->status === 'inactive' ? 'selected' : '' }}>Inactive</option>
                     @endforeach
                   </select> 
-                </div>  
+                </div>   --}}
                 
 
                 <div class="form-group">
                   <label for="role">Role</label>
-                  <select id="role" name="role" class="form-control">
-                    <option value="superadmin" {{ $user->role === 'superadmin' ? 'selected' : '' }}>Superadmin</option>
-                    <option value="admin" {{ $user->role === 'admin' ? 'selected' : '' }}>Admin</option>
-                    <option value="student" {{ $user->role === 'student' ? 'selected' : '' }}>Student</option>
+                  <select id="role" name="role" class="form-control @error('role') is-invalid @enderror" value="{{ old('role') }}" required>
+                      <option value="superadmin">superadmin</option>
+                      <option value="admin">admin</option>
+                      <option value="student">student</option>
                   </select>
+                  @error('role')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
                 </div>
                 
                 <div class="form-group">

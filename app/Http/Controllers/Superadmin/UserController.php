@@ -25,8 +25,8 @@ class UserController extends Controller
     }
 
     public function form(){
-        $users = User::all();
-        return view('superadmin.sp.manage_user_pages.form', compact('users'));
+        // $users = User::all();
+        return view('superadmin.sp.manage_user_pages.form');
     }
 
     /**
