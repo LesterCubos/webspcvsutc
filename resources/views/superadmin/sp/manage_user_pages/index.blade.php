@@ -26,7 +26,14 @@
       <div class="card">
         <div class="card-body">
           <h1 class="display-4">Select Upload CSV file if multiple users needs to be created. Make sure ff the ff format.</h1>
-          <a href="" class="btn btn-success btn-rounded btn-fw">Upload CSV file</a>
+          <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="file" class="form-control">
+            <br>
+            <button class="btn btn-success">Import User Data</button>
+            <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
+          </form>
+          <br>
           <a href="{{ route('superadmin.sp.manage_user_pages.form')}}" class="btn btn-success btn-rounded btn-fw">Add New User</a>
         </div>
       </div>

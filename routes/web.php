@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Routes;
 use App\User;
 
+use App\Http\Controllers\CSVHandlerController;
+
 use App\Http\Controllers\Webpage\HomeController;
 use App\Http\Controllers\Webpage\AboutController;
 use App\Http\Controllers\Webpage\AdmissionPageController;
@@ -181,6 +183,11 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
     Route::post('register', [RegisteredUserController::class, 'store']);
+
+    // CSV Handler
+    // Route::get('importExportView', [CSVHandlerController::class, 'importExportView']);
+    Route::get('export', [CSVHandlerController::class, 'export'])->name('export');
+    Route::post('import', [CSVHandlerController::class, 'import'])->name('import');
 
     // Website Management
 
