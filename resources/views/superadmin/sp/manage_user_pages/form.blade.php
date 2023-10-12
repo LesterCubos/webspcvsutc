@@ -35,9 +35,9 @@
                 @csrf
                 
                 <div class="form-group">
-                  <label for="name">First Name</label>
-                  <input type="text" class="form-control  @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" placeholder="Input Name">
-                  @error('name')
+                  <label for="first_name">First Name</label>
+                  <input type="text" class="form-control  @error('first_name') is-invalid @enderror" id="first_name" name="first_name" value="{{ old('first_name') }}" placeholder="Input Name">
+                  @error('first_name')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                   </span>

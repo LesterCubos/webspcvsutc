@@ -10,7 +10,7 @@
       </div>
       <div class="user-name">
         <a>
-          {{ Auth::user()->name }}
+          {{ Auth::user()->first_name }}
         </a>
       </div>
     </div>

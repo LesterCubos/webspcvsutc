@@ -35,7 +35,7 @@
                       <img src="/avatars/{{ $user->avatar }}" alt="Profile Photo">
                     @endif
                   </td>
-                  <td>{{ $user->name}}</td>
+                  <td>{{ $user->first_name}}</td>
                   <td>Last Name</td>
                   <td>{{ $user->email}}</td>
                   <td>{{ $user->role}}</td>
