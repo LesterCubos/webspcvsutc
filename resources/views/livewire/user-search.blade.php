@@ -49,7 +49,7 @@
                   <td>{{$user->created_at}}</td>
                   <td> 
                     <form method="post" action="{{ route('profile.destroy', $user->id) }}" class="d-grid gap-2">
-                      <a href="" class="btn btn-primary btn-rounded btn-fw"><i class="icon-eye"></i></a>
+                      <a href="/superadmin/sp/users/userView{{$user->id}}" class="btn btn-primary btn-rounded btn-fw"><i class="icon-eye"></i></a>
                       <a class="btn btn-info btn-rounded btn-fw" href="{{ route('profile.edit', $user->id) }}"><i class="icon-open"></i></a>
                       @csrf
                       @method('DELETE')

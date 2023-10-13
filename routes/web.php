@@ -183,6 +183,8 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
     Route::post('register', [RegisteredUserController::class, 'store']);
+
+    Route::get('/superadmin/sp/users/userView{user}', [RegisteredUserController::class, 'userView']);
     
     // CSV Handler
     // Route::get('importExportView', [CSVHandlerController::class, 'importExportView']);

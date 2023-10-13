@@ -75,6 +75,84 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="sex">Sex</label>
+                  <select type="text" id="sex" name="sex" class="form-control @error('sex') is-invalid @enderror" value="{{ old('sex') }}" required>
+                      <option value="Male" {{ old('sex') == 'Male' ? 'selected' : '' }}>Male</option>
+                      <option value="Female" {{ old('sex') == 'Female' ? 'selected' : '' }}>Female</option>
+                      <option value="Others" {{ old('sex') == 'Others' ? 'selected' : '' }}>Others</option>
+                  </select>
+                  @error('sex')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="civil_status">Civil Status</label>
+                  <select type="text" id="civil_status" name="civil_status" class="form-control @error('civil_status') is-invalid @enderror" value="{{ old('civil_status') }}" required>
+                      <option value="Single" {{ old('civil_status') == 'Single' ? 'selected' : '' }}>Single</option>
+                      <option value="Married" {{ old('civil_status') == 'Married' ? 'selected' : '' }}>Married</option>
+                      <option value="Widow" {{ old('civil_status') == 'Widow' ? 'selected' : '' }}>Widow</option>
+                  </select>
+                  @error('civil_status')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="nationality">Nationality</label>
+                  <input type="text" class="form-control  @error('nationality') is-invalid @enderror" id="nationality" name="nationality" value="{{ old('nationality') }}" placeholder="Input Nationality">
+                  @error('nationality')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="religion">Religion</label>
+                  <input type="text" class="form-control  @error('religion') is-invalid @enderror" id="religion" name="religion" value="{{ old('religion') }}" placeholder="Input Religion">
+                  @error('religion')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="age">Age</label>
+                  <input type="number" class="form-control  @error('age') is-invalid @enderror" id="age" name="age" value="{{ old('age') }}" placeholder="Input Age">
+                  @error('age')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="birthday">Birthday</label>
+                  <input type="date" name="birthday" id="birthday" class="form-control @error('birthday') is-invalid @enderror" value="{{ old('birthday') }}">
+                  @error('birthday')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="birth_place">Birth Place</label>
+                  <input type="text" class="form-control  @error('birth_place') is-invalid @enderror" id="birth_place" name="birth_place" value="{{ old('birth_place') }}" placeholder="Input Birth Place">
+                  @error('birth_place')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
                   <label for="contact_number">Contact Number</label>
                   <input type="number" class="form-control  @error('contact_number') is-invalid @enderror" id="contact_number" name="contact_number" value="{{ old('contact_number') }}" placeholder="Input Contact Number">
                   @error('contact_number')
@@ -88,6 +166,114 @@
                   <label for="address">Address</label>
                   <input type="text" class="form-control  @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}" placeholder="Input Adress">
                   @error('address')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="postal_code">Postal Code</label>
+                  <input type="number" class="form-control  @error('postal_code') is-invalid @enderror" id="postal_code" name="postal_code" value="{{ old('postal_code') }}" placeholder="Input Postal Code">
+                  @error('postal_code')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="elementary_school">Elemantary School</label>
+                  <input type="text" class="form-control  @error('elementary_school') is-invalid @enderror" id="elementary_school" name="elementary_school" value="{{ old('elementary_school') }}" placeholder="Input Elemantary School">
+                  @error('elementary_school')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="juniorhigh_school">Junior High School</label>
+                  <input type="text" class="form-control  @error('juniorhigh_school') is-invalid @enderror" id="juniorhigh_school" name="juniorhigh_school" value="{{ old('juniorhigh_school') }}" placeholder="Input Junior High School">
+                  @error('juniorhigh_school')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="seniorhigh_school">Senior High School</label>
+                  <input type="text" class="form-control  @error('seniorhigh_school') is-invalid @enderror" id="seniorhigh_school" name="seniorhigh_school" value="{{ old('seniorhigh_school') }}" placeholder="Input Senior High School">
+                  @error('seniorhigh_school')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="program">Program</label>
+                  <select type="text" id="program" name="program" class="form-control @error('program') is-invalid @enderror" value="{{ old('program') }}" required>
+                      <option value="Bachelor of Science in Business Aadministration major in Business Management" {{ old('program') == 'Bachelor of Science in Business Aadministration major in Business Management' ? 'selected' : '' }}>Bachelor of Science in Business Aadministration major in Business Management</option>
+                      <option value="Bachelor of Science in Information Technology" {{ old('program') == 'Bachelor of Science in Information Technology' ? 'selected' : '' }}>Bachelor of Science in Information Technology</option>
+                      <option value="Bachelor ofF Elementary Education" {{ old('program') == 'Bachelor ofF Elementary Education' ? 'selected' : '' }}>Bachelor ofF Elementary Education</option>
+                      <option value="Bachelor of Secondary Education major in English" {{ old('program') == 'Bachelor of Secondary Education major in English' ? 'selected' : '' }}>Bachelor of Secondary Education major in English</option>
+                      <option value="Bachelor of Secondary Education major in Mathematics" {{ old('program') == 'Bachelor of Secondary Education major in Mathematics' ? 'selected' : '' }}>Bachelor of Secondary Education major in Mathematics</option>
+                      <option value="Bachelor of Science in Hospitality Management" {{ old('program') == 'Bachelor of Science in Hospitality Management' ? 'selected' : '' }}>Bachelor of Science in Hospitality Management</option>
+                      <option value="Bachelor of Science in Tourism Management" {{ old('program') == 'Bachelor of Science in Tourism Management' ? 'selected' : '' }}>Bachelor of Science in Tourism Management</option>
+                      <option value="Bachelor of Science in Psychology" {{ old('program') == 'Bachelor of Science in Psychology' ? 'selected' : '' }}>Bachelor of Science in Psychology</option>
+                      <option value="None" {{ old('program') == 'None' ? 'selected' : '' }}>None</option>
+                  </select>
+                  @error('program')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="undergraduate_year">Year</label>
+                  <select type="text" id="undergraduate_year" name="undergraduate_year" class="form-control @error('undergraduate_year') is-invalid @enderror" value="{{ old('undergraduate_year') }}" required>
+                      <option value="First Year" {{ old('undergraduate_year') == 'First Year' ? 'selected' : '' }}>First Year</option>
+                      <option value="Second Year" {{ old('undergraduate_year') == 'Second Year' ? 'selected' : '' }}>Second Year</option>
+                      <option value="Third Year" {{ old('undergraduate_year') == 'Third Year' ? 'selected' : '' }}>Third Year</option>
+                      <option value="Fourth Year" {{ old('undergraduate_year') == 'Fourth Year' ? 'selected' : '' }}>Fourth Year</option>
+                      <option value="None" {{ old('undergraduate_year') == 'None' ? 'selected' : '' }}>None</option>
+                  </select>
+                  @error('undergraduate_year')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="student_classification">Student Classification</label>
+                  <select type="text" id="student_classification" name="student_classification" class="form-control @error('student_classification') is-invalid @enderror" value="{{ old('student_classification') }}" required>
+                      <option value="Continuing" {{ old('student_classification') == 'Continuing' ? 'selected' : '' }}>Continuing</option>
+                      <option value="New" {{ old('student_classification') == 'New' ? 'selected' : '' }}>New</option>
+                      <option value="Transferee" {{ old('student_classification') == 'Transferee' ? 'selected' : '' }}>Transferee</option>
+                      <option value="Shiftee" {{ old('student_classification') == 'Shiftee' ? 'selected' : '' }}>Shiftee</option>
+                      <option value="Returnee" {{ old('student_classification') == 'Returnee' ? 'selected' : '' }}>Returnee</option>
+                      <option value="Cross Enrollee" {{ old('student_classification') == 'Cross Enrollee' ? 'selected' : '' }}>Cross Enrollee</option>
+                      <option value="None" {{ old('student_classification') == 'None' ? 'selected' : '' }}>None</option>
+                  </select>
+                  @error('student_classification')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="registration_status">Registration Status</label>
+                  <select type="text" id="registration_status" name="registration_status" class="form-control @error('registration_status') is-invalid @enderror" value="{{ old('registration_status') }}" required>
+                      <option value="Regular" {{ old('registration_status') == 'Regular' ? 'selected' : '' }}>Regular</option>
+                      <option value="Irregular" {{ old('registration_status') == 'Irregular' ? 'selected' : '' }}>Irregular</option>
+                      <option value="None" {{ old('registration_status') == 'None' ? 'selected' : '' }}>None</option>
+                  </select>
+                  @error('registration_status')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                   </span>
@@ -115,6 +301,16 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="guardian_occupation">Guardian Occupation</label>
+                  <input type="text" class="form-control  @error('guardian_occupation') is-invalid @enderror" id="guardian_occupation" name="guardian_occupation" value="{{ old('guardian_occupation') }}" placeholder="Input Guardian Occupation">
+                  @error('guardian_occupation')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
                   <label for="guardian_address">Guardian Address</label>
                   <input type="text" class="form-control  @error('guardian_address') is-invalid @enderror" id="guardian_address" name="guardian_address" value="{{ old('guardian_address') }}" placeholder="Input Guardian Address">
                   @error('guardian_address')
@@ -134,25 +330,6 @@
                   @enderror
                 </div>
                 
-                {{-- <div class="form-group">
-                  <label for="status">Status</label>
-                  
-                  <select id="status" name="status" class="form-control">
-                    @foreach ($users as $user)
-                    @if($user->id === 'active'){
-                      
-                    }
-                        
-                    @else
-                        
-                    @endif
-                    <option value="active" {{ $user->status === 'active' ? 'selected' : '' }}>Active</option>
-                    <option value="inactive" {{ $user->status === 'inactive' ? 'selected' : '' }}>Inactive</option>
-                    @endforeach
-                  </select> 
-                </div>   --}}
-                
-
                 <div class="form-group">
                   <label for="role">Role</label>
                   <select id="role" name="role" class="form-control @error('role') is-invalid @enderror" value="{{ old('role') }}" required>
