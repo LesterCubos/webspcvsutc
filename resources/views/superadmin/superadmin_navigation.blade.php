@@ -24,7 +24,7 @@
                     @else
                         <img height="90" src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo" class="rounded-circle">
                   @endif
-                  <div>{{ Auth::user()->firstname }}</div>
+                  <div>{{ Auth::user()->first_name }}</div>
 
                   <div class="ml-1">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">

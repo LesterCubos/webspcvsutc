@@ -16,7 +16,7 @@
                 <th>ID</th>
                 <th>AVATAR</th>
                 <th>FIRST NAME</th>
-                <th>LAST NAME</th>
+                <th>SURNAME</th>
                 <th>EMAIL</th>
                 <th>ROLE</th>
                 <th>STATUS</th>
@@ -36,7 +36,7 @@
                     @endif
                   </td>
                   <td>{{ $user->first_name}}</td>
-                  <td>Last Name</td>
+                  <td>{{ $user->surname }}</td>
                   <td>{{ $user->email}}</td>
                   <td>{{ $user->role}}</td>
                   <td>

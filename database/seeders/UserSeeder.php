@@ -16,37 +16,19 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
         //superadmin
         [
-          'name' => 'Superadmin', 
+          'first_name' => 'Superadmin', 
+          'surname' => 'Superadmin',
+          'middle_name' => 'Superadmin',
+          'student_number' => '1',
+          'contact_number' => '09876543210',
+          'address' => 'Blk 01 Lot 00 Superadmin Village',
+          'guardian_name' => 'Superadmin S. Superadmin',
+          'guardian_number' => '09123456789',
+          'guardian_address' => 'Blk 01 Lot 00 Superadmin Village',
           'email' => 'superadmin@mail.com', 
           'password' => Hash::make('111'),
           'role' => 'superadmin', 
           'status' => 'active'
-        ],
-
-        [
-            'name' => 'Superadmin1', 
-            'email' => 'superadmin1@mail.com', 
-            'password' => Hash::make('111'),
-            'role' => 'superadmin', 
-            'status' => 'active'
-        ],
-
-        //admin
-        [
-            'name' => 'Admin', 
-            'email' => 'admin@mail.com', 
-            'password' => Hash::make('111'),
-            'role' => 'admin', 
-            'status' => 'active'
-        ],
-
-        //student
-        [
-            'name' => 'Student', 
-            'email' => 'student@mail.com', 
-            'password' => Hash::make('111'),
-            'role' => 'student', 
-            'status' => 'active'
         ],
 
     ]);
