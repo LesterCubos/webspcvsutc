@@ -43,7 +43,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('avatar')->nullable();
             $table->enum('role', ['superadmin', 'admin', 'student'])->default('student');
-            $table->enum('status', ['active', 'inactive'])->default('active');  
+            $table->boolean('isActive') ->default(1);  
             $table->rememberToken();
             $table->timestamps();
         });

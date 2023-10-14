@@ -40,21 +40,22 @@
                   <td>{{ $user->email}}</td>
                   <td>{{ $user->role}}</td>
                   <td>
-                    @if($user->status == 'active')
-                      <label class="badge badge-success">{{ $user->status}}</label>
-                    @elseif($user->status == 'inactive')
-                      <label class="badge badge-danger">{{ $user->status}}</label>
+                    @if($user->isActive == 1)
+                      <label class="badge badge-success">Active</label>
+                    @elseif($user->isActive == 0)
+                      <label class="badge badge-danger">Inactive</label>
                     @endif
                   </td>
                   <td>{{$user->created_at}}</td>
                   <td> 
-                    <form method="post" action="{{ route('profile.destroy', $user->id) }}" class="d-grid gap-2">
+                    <form method="post" action="{{ route('user.destroy', $user->id) }}" class="d-grid gap-2">
                       <a href="/superadmin/sp/users/userView{{$user->id}}" class="btn btn-primary btn-rounded btn-fw"><i class="icon-eye"></i></a>
-                      <a class="btn btn-info btn-rounded btn-fw" href="{{ route('profile.edit', $user->id) }}"><i class="icon-open"></i></a>
+                      {{-- <a type="button" class="btn btn-info btn-rounded btn-fw" ><i class="icon-open"></i></a> --}}
+
                       @csrf
                       @method('DELETE')
 
-                      <button type="submit" class="btn btn-danger btn-rounded btn-fw"><i class="icon-trash"></i></button>
+                      <button  id="icon_delete" type="submit" class="btn btn-danger btn-rounded btn-fw"><i class="icon-trash"></i></button>
                     </form>
                   </td>
                 </tr>

@@ -39,7 +39,7 @@
 
             <div class="row mb-3">
               <div class="col-md-3">
-                <input type="file" name="file">
+                <input type="file" class="form-control file-upload-info" name="file">
               </div>
             </div>
             {{-- <input type="file" name="file" class="form-control col-lg-3">

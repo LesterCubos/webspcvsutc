@@ -106,5 +106,18 @@ class RegisteredUserController extends Controller
     public function userView(User $user): View {
 
         return view('superadmin.sp.manage_user_pages.show', ['user' => $user]);
+    }
+
+    public function destroy(string $id): RedirectResponse{
+
+        
+        $user = User::findOrFail($id);
+        $delete = $user->delete($id);
+        
+        if($delete) {
+            session()->flash('notif.success', 'User deleted successfully!');
+            return redirect()->route('superadmin.sp.manage_user_pages.index');
         }
+        return abort(500);
+    }
 }

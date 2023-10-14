@@ -44,7 +44,7 @@ class UserSeeder extends Seeder
           'email' => 'superadmin@mail.com', 
           'password' => Hash::make('111'),
           'role' => 'superadmin', 
-          'status' => 'active',
+          'isActive' => true,
           'created_at' => date("Y-m-d H:i:s"),
           'updated_at' => date("Y-m-d H:i:s"),
         ],
