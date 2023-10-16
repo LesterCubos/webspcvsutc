@@ -108,16 +108,23 @@ class RegisteredUserController extends Controller
         return view('superadmin.sp.manage_user_pages.show', ['user' => $user]);
     }
 
-    public function destroy(string $id): RedirectResponse{
+    public function destroy (Request $request, User $user) {
 
-        
-        $user = User::findOrFail($id);
-        $delete = $user->delete($id);
-        
-        if($delete) {
-            session()->flash('notif.success', 'User deleted successfully!');
-            return redirect()->route('superadmin.sp.manage_user_pages.index');
+        // Retrieve the superadmin user from the database
+        $superadmin = User::where('role', 'superadmin')->first();
+
+        // Check if the password provided by the superadmin user is valid
+        if (Hash::check($request->input('password'), $superadmin->password)) {
+            // Proceed with the deletion of the user
+            $user->delete();
+
+            // Redirect to the users index page with a success message
+            return redirect()->route('superadmin.sp.manage_user_pages.index')->with('notif.success', 'User deleted successfully.');
+        } else {
+            // Return an error message indicating that the password is incorrect
+            return redirect()->back()->with('notif.success','The password is incorrect.');
         }
-        return abort(500);
+
     }
+
 }

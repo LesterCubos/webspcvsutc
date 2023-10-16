@@ -48,15 +48,58 @@
                   </td>
                   <td>{{$user->created_at}}</td>
                   <td> 
-                    <form method="post" action="{{ route('user.destroy', $user->id) }}" class="d-grid gap-2">
-                      <a href="/superadmin/sp/users/userView{{$user->id}}" class="btn btn-primary btn-rounded btn-fw"><i class="icon-eye"></i></a>
-                      {{-- <a type="button" class="btn btn-info btn-rounded btn-fw" ><i class="icon-open"></i></a> --}}
+                    
+                      <a href="/superadmin/sp/users/userView{{$user->id}}" class="btn btn-primary btn-rounded btn-fw"><i class="icon-eye"></i></a> 
+  
 
-                      @csrf
-                      @method('DELETE')
+                      @if ($user->role == "superadmin")
+                        <button id="icon_delete" type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-user-deletion" disabled>
+                          <i class="icon-trash"></i>
+                        </button>
+                      @else
+                        <!-- Button trigger modal -->
+                        <button id="icon_delete" type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-user-deletion">
+                          <i class="icon-trash"></i>
+                        </button>
+                      @endif
 
-                      <button  id="icon_delete" type="submit" class="btn btn-danger btn-rounded btn-fw"><i class="icon-trash"></i></button>
-                    </form>
+                      <!-- Modal -->
+                      <div class="modal fade" id="confirm-user-deletion" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="ModalLabel">{{ __('Are you sure you want to delete your account?') }}</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <form method="POST" action="{{ route('user.destroy', $user->id) }}">
+                              @csrf
+                              @method('delete')
+
+                            <div class="modal-body">
+                              <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                                {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+                              </p>
+                              <br>
+                              <div class="form-group">
+                                <label for="password">{{ __('Password') }}</label>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                  @error('password')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                  @enderror
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-danger">{{ __('Delete Account') }}</button>
+                            </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
                   </td>
                 </tr>
                 @empty

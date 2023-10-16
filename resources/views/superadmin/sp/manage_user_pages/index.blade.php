@@ -57,4 +57,5 @@
   @livewire('user-search')
 
 </div>
+
 @endsection

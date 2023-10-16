@@ -185,7 +185,9 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
     Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('/superadmin/sp/users/userView{user}', [RegisteredUserController::class, 'userView'])->name('superadmin.sp.manage_user_pages.show');
+    
     Route::resource('user',RegisteredUserController::class);
+    // Route::get('/user', [RegisteredUserController::class, 'delete'])->name('user.delete');
     // CSV Handler
     // Route::get('importExportView', [CSVHandlerController::class, 'importExportView']);
     Route::get('export', [CSVHandlerController::class, 'export'])->name('export');
@@ -258,6 +260,8 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
         return view('event::calendar');
     });
 
+    
+
 }); //End Group Superadmin Middleware
 
 Route::middleware(['auth','role:admin'])->group(function(){
@@ -276,6 +280,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
     Route::patch('/profile',[ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    
 
     // // Website Management
 

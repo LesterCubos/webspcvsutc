@@ -64,7 +64,6 @@
       </div>
       <!-- container-scroller -->
 
-
     <!-- base:js -->
     <script src="{{ asset('vendor/sp/base/vendor.bundle.base.js') }}"></script>
     <!-- endinject -->
@@ -80,5 +79,6 @@
     <!-- Custom js for this page-->
     <script src="{{ asset('js/sp/dashboard.js') }}"></script>
     <!-- End custom js for this page-->
+
 </body>
 </html>
