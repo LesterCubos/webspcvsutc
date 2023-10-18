@@ -21,11 +21,31 @@
       {{-- <div class="align-items-center justify-content-center">
         <h5 style="color: purple"><strong>Manage</strong></h5>
       </div> --}}
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Student Information</span>
+        </a>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link" href="">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Grades</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Virtual RegForm</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Downloadable Forms</span>
         </a>
       </li>
 

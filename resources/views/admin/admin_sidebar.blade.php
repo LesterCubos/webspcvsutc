@@ -13,7 +13,7 @@
     </div>
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="dashboard">
           <i class="icon-box menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
@@ -25,14 +25,49 @@
       <li class="nav-item">
         <a class="nav-link" href="">
           <i class="icon-head menu-icon"></i>
-          <span class="menu-title">Manage Users</span>
+          <span class="menu-title">Academic Year</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="">
           <i class="icon-head menu-icon"></i>
-          <span class="menu-title">...</span>
+          <span class="menu-title">Grades</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Student Information</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Downloadable Forms</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Requested Documents</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Announcements</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">"Virtual Regform"</span>
         </a>
       </li>
 
