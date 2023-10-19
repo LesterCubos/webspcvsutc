@@ -122,7 +122,7 @@ class RegisteredUserController extends Controller
             return redirect()->route('superadmin.sp.manage_user_pages.index')->with('notif.success', 'User deleted successfully.');
         } else {
             // Return an error message indicating that the password is incorrect
-            return redirect()->back()->with('notif.success','The password is incorrect.');
+            return redirect()->back()->with('notif.danger','The password is incorrect.');
         }
 
     }

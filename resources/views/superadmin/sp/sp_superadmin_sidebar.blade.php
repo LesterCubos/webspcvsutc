@@ -21,10 +21,6 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
-      {{-- <div class="align-items-center justify-content-center">
-        <h5 style="color: purple"><strong>Manage</strong></h5>
-      </div> --}}
-
       <li class="nav-item">
         <a class="nav-link" href="{{ route('superadmin.sp.manage_user_pages.index')}}">
           <i class="icon-head menu-icon"></i>
@@ -38,6 +34,5 @@
           <span class="menu-title">Go back to Website</span>
         </a>
       </li>
-
     </ul>
-  </nav>
+</nav>

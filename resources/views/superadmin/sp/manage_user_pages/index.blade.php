@@ -16,11 +16,17 @@
     </nav>
   </div><!-- End Page Title -->
   
-  @if(session('notif.success'))
+      @if(session('notif.success'))
         <div class="alert alert-success">
             {{ session('notif.success') }} 
         </div>
-  @endif
+      @endif
+
+      @if(session('notif.danger'))
+        <div class="alert alert-danger">
+            {{ session('notif.danger') }} 
+        </div>
+      @endif
 
   <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">

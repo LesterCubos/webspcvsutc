@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="content-wrapper" style="background-image: linear-gradient(#ffff, #00922C, #00922C, #00922C );">
+<div class="content-wrapper" style="background-image: linear-gradient(#ffff, #f4c2fe, #f4c2fe, #f4c2fe );">
     <div class="row">
       <div class="col-sm-12 mb-4 mb-xl-0 text-center">
         <h4 class="font-weight-bold text-dark ">Welcome to CvSU-TC Student Portal</h4>
