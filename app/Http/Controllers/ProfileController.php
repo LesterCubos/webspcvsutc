@@ -11,6 +11,8 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
+use App\Models\User;
+
 class ProfileController extends Controller
 {
     /**
@@ -39,13 +41,18 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
+    public function checkPassword($attribute, $value, $parameters, $validator)
+    {
+        return Hash::check($value, Auth::user()->password);
+    }
+
     /**
      * Delete the user's account.
      */
     public function destroy(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
+            'password' => ['required', 'confirm_password'],
         ]);
 
         $user = $request->user();
@@ -58,6 +65,23 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+
+        // $userpass = User::find($user->id);
+        // if (Hash::check($request->input('password'), $userpass->password)) {
+        //     // Proceed with the deletion of the user
+        //     $user = $request->user();
+        //     Auth::logout();
+        //     $user->delete();
+
+        //     $request->session()->invalidate();
+        //     $request->session()->regenerateToken();
+
+        //     return Redirect::to('/');
+        // } else {
+        //     // Return an error message indicating that the password is incorrect
+        //     return Redirect::back()->with('notif.danger','The password is incorrect.');
+        // }
+
     }
 
     public function store(Request $request)

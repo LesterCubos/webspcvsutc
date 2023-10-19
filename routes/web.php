@@ -170,6 +170,12 @@ Route::get('search', [SearchController::class, 'search']);
 
 Route::middleware(['auth','role:superadmin'])->group(function(){
     Route::get('/superadmin/dashboard', [SuperadminController::class, 'Dashboard'])->name('superadmin.dashboard');
+    // Route::post('/delete-user', [ProfileController::class, 'deleteUser'])->name('delete-user');
+    Route::get('/profile',[ProfileController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
+    Route::patch('/profile',[ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::resource('profile', ProfileController::class);
     
     Route::get('/superadmin/events', function(){
         return view('event::calendar');
@@ -276,10 +282,10 @@ Route::middleware(['auth','role:student'])->group(function(){
 
 //route for auth user pages
 Route::middleware('auth')->group(function () {
-    Route::get('/profile',[ProfileController::class, 'edit'])->name('profile.edit');
-    Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
-    Route::patch('/profile',[ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::get('/profile',[ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
+    // Route::patch('/profile',[ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     
 
