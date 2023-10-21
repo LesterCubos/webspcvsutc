@@ -41,9 +41,9 @@
                 <br>
                     <label for="type" class="form-label">Type of Organization:</label>
                     <select class="form-select"  id="type" name="type" aria-label="Default select example">
-                        <option selected>{{ $about_org->type ?? old('type') }}</option>
-                        <option value="Academic Organization">Academic Organization</option>
-                        <option value="Non-Academic Organization">Non-Academic Organization</option>
+                        {{-- <option selected>{{ $about_org->type ?? old('type') }}</option> --}}
+                        <option value="Academic Organization" {{ old('type') == 'Academic Organization' ? 'selected' : '' }}>Academic Organization</option>
+                        <option value="Non-Academic Organization" {{ old('type') == 'Non-Academic Organization' ? 'selected' : '' }}>Non-Academic Organization</option>
                     </select>
                 <br>
                 <div>

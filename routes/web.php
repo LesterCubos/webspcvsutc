@@ -171,7 +171,7 @@ Route::get('search', [SearchController::class, 'search']);
 Route::middleware(['auth','role:superadmin'])->group(function(){
     Route::get('/superadmin/dashboard', [SuperadminController::class, 'Dashboard'])->name('superadmin.dashboard');
     // Route::post('/delete-user', [ProfileController::class, 'deleteUser'])->name('delete-user');
-    Route::get('/profile',[ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/superadmin/profile',[ProfileController::class, 'edit'])->name('superadmin.profile.edit');
     Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
     Route::patch('/profile',[ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -272,6 +272,9 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
 
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard');
+    Route::get('/admin/profile',[AdminController::class, 'edit'])->name('admin.profile.edit');
+    Route::post('/profile', [AdminController::class, 'store'])->name('user.profile.store');
+    Route::patch('/profile',[AdminController::class, 'update'])->name('profile.update');
 
 }); //End Group Admin Middleware
 

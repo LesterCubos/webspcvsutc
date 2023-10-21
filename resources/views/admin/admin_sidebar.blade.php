@@ -1,5 +1,7 @@
 <!-- partial:partials/_sidebar.html -->
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
+  @if (\Route::current()->getName() == 'admin.profile.edit')
+  @else
   <div class="user-profile">
     <div class="user-image">
       @if (empty(Auth::user()->avatar))
@@ -14,6 +16,7 @@
       </a>
     </div>
   </div>
+  @endif
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link" href="dashboard">

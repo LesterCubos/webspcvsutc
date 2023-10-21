@@ -17,99 +17,38 @@
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 @section('content')
 
+<div class="content-wrapper" style="background-image: linear-gradient(#ffff, #f4c2fe, #f4c2fe, #f4c2fe );">
     <div class="pagetitle">
         <h1>Profile</h1>
-        <nav>
-            <ol class="breadcrumb">
-
-              @if(Auth::user()->role == 'superadmin')
-                @php $dash = "superadmin.dashboard" @endphp
-              @elseif(Auth::user()->role === 'admin')
-                @php $dash = "admin.dashboard" @endphp
-              @elseif(Auth::user()->role === 'student')
-                @php $dash = "student.dashboard" @endphp
-              @endif
-              <li class="breadcrumb-item"><a href="{{ route($dash) }}"><i class="bx bx-home" style="margin-right: 5px"></i>Home</a></li>
-              
-              <li class="breadcrumb-item active">Profile</li>
-            </ol>
+        <!-- Breadcrumb -->
+        <nav class="flex" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            @if(Auth::user()->role == 'superadmin')
+              @php $dash = "superadmin.dashboard" @endphp
+            @elseif(Auth::user()->role === 'admin')
+              @php $dash = "admin.dashboard" @endphp
+            @elseif(Auth::user()->role === 'student')
+              @php $dash = "student.dashboard" @endphp
+            @endif
+            <li class="inline-flex items-center">
+              <a href="{{ route($dash) }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                <svg class="w-3 h-3 mr-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                </svg>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <div class="flex items-center">
+                <svg class="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <a href="#" class="ml-1 text-sm font-bold text-purple-900 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Profile</a>
+              </div>
+            </li>
+          </ol>
         </nav>
     </div>
-
-    {{-- <section class="section profile">
-        <div class="row">
-            <div class="col-xl-4">
-            <div class="card">
-                <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-                <img src="{{ asset('img/profile.jpeg') }}" alt="Profile" class="rounded-circle">
-                <div style="font-family: var(--font-secondary); font-size: 20px; font-weight: bold; margin-top: 10px">{{ Auth::user()->name }}</div>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-xl-8">
-
-      <div class="card">
-        <div class="card-body pt-3">
-          <!-- Bordered Tabs -->
-          <ul class="nav nav-tabs nav-tabs-bordered">
-
-            <li class="nav-item">
-              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
-            </li>
-
-            <li class="nav-item">
-              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
-            </li>
-
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-delete">Delete Account</button>
-              </li>
-
-          </ul>
-          <div class="tab-content pt-2">
-
-            <div class="tab-pane fade show active profile-edit pt-3" id="profile-edit">
-
-              <!-- Profile Edit Form -->
-              <form>
-
-                @include('profile.partials.update-profile-information-form')
-
-              </form><!-- End Profile Edit Form -->
-
-            </div>
-
-            <div class="tab-pane fade pt-3" id="profile-delete">
-
-              <!-- Delete Form -->
-              <form>
-
-                @include('profile.partials.delete-user-form')
-
-              </form><!-- End Delete Form -->
-
-            </div>
-
-            <div class="tab-pane fade pt-3" id="profile-change-password">
-              <!-- Change Password Form -->
-              <form>
-
-                @include('profile.partials.update-password-form')
-
-              </form><!-- End Change Password Form -->
-
-            </div>
-
-          </div><!-- End Bordered Tabs -->
-
-        </div>
-      </div>
-
-    </div>
-        </div>
-    </section> --}}
 
     <div class="box">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
@@ -168,14 +107,9 @@
                     @include('profile.partials.update-password-form')
                 </div>
             </div>
-
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
-                </div>
-            </div>
         </div>
     </div>
+</div>
 
     @endsection
 

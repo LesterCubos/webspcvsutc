@@ -12,7 +12,7 @@
     </div><!-- End Logo -->
 
 
-    @if (\Route::current()->getName() == 'profile.edit')
+    @if (\Route::current()->getName() == 'superadmin.profile.edit')
       <!-- Settings Dropdown -->
       <nav class="header-nav ms-auto"> 
         <x-dropdown align="right" width="48" class="d-flex align-items-center">
@@ -38,7 +38,7 @@
           </x-slot>
 
           <x-slot name="content">
-              <x-dropdown-link :href="route('profile.edit')">
+              <x-dropdown-link :href="route('superadmin.profile.edit')">
                 <i class="bi bi-gear" style="margin-right: 5px"></i>
                   {{ __('Account Settings') }}
               </x-dropdown-link>
@@ -78,7 +78,7 @@
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
 
               <li>
-                <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.edit') }}">
+                <a class="dropdown-item d-flex align-items-center" href="{{ route('superadmin.profile.edit') }}">
                   <i class="bi bi-gear"></i>
                   <span>Account Settings</span>
                 </a>

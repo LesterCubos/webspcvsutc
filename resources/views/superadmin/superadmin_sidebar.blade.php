@@ -10,7 +10,7 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
-      @if (\Route::current()->getName() == 'profile.edit')
+      @if (\Route::current()->getName() == 'superadmin.profile.edit')
 
       @else
       <span style="color: green">Manage Pages</span>
