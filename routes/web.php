@@ -94,6 +94,11 @@ use App\Http\Controllers\StudentController;
 //Controllers related to Superadmin Student Portal
 use App\Http\Controllers\Superadmin\UserController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+
+// Controllers for Admin
+use App\Http\Controllers\Admin\AcademicYearController;
+
+
 // Start of Route for Website Pages(show)
 //Home
 Route::get('/', [HomeController::class, 'homepage'])->name('pages.homepage');
@@ -275,6 +280,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/profile',[AdminController::class, 'edit'])->name('admin.profile.edit');
     Route::post('/profile', [AdminController::class, 'store'])->name('user.profile.store');
     Route::patch('/profile',[AdminController::class, 'update'])->name('profile.update');
+
+    //Academic Year
+    Route::resource('academic_years', AcademicYearController::class);
 
 }); //End Group Admin Middleware
 

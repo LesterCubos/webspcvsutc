@@ -33,6 +33,7 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('css/sp/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sp/addstyle.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('img/campus_seal.png') }}" />
 

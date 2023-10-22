@@ -19,7 +19,7 @@
   @endif
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="dashboard">
+        <a class="nav-link" href="{{ route('admin.dashboard') }}">
           <i class="icon-box menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
@@ -29,7 +29,7 @@
       </div> --}}
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('academic_years.index') }}">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Academic Year</span>
         </a>
