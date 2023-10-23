@@ -177,9 +177,9 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
     Route::get('/superadmin/dashboard', [SuperadminController::class, 'Dashboard'])->name('superadmin.dashboard');
     // Route::post('/delete-user', [ProfileController::class, 'deleteUser'])->name('delete-user');
     Route::get('/superadmin/profile',[ProfileController::class, 'edit'])->name('superadmin.profile.edit');
-    Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
-    Route::patch('/profile',[ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/superadmin/profile', [ProfileController::class, 'store'])->name('superadmin.user.profile.store');
+    Route::patch('/superadmin/profile',[ProfileController::class, 'update'])->name('superadmin.profile.update');
+    Route::delete('/superadmin/profile', [ProfileController::class, 'destroy'])->name('superadmin.profile.destroy');
     // Route::resource('profile', ProfileController::class);
     
     Route::get('/superadmin/events', function(){
@@ -278,8 +278,8 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard');
     Route::get('/admin/profile',[AdminController::class, 'edit'])->name('admin.profile.edit');
-    Route::post('/profile', [AdminController::class, 'store'])->name('user.profile.store');
-    Route::patch('/profile',[AdminController::class, 'update'])->name('profile.update');
+    Route::post('/admin/profile', [AdminController::class, 'store'])->name('admin.user.profile.store');
+    Route::patch('/admin/profile',[AdminController::class, 'update'])->name('admin.profile.update');
 
     //Academic Year
     Route::resource('academic_years', AcademicYearController::class);

@@ -21,7 +21,6 @@ class ProfileUpdateRequest extends FormRequest
             'middle_name' => ['string', 'max:255'],
             'student_number' => ['string', 'min:1', 'max:9'],
             'email' => ['email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
-            'role' => ['in:superadmin,admin,student'],
             'sex' => ['string', 'max:255'],
             'civil_status' => ['string', 'max:255'],
             'nationality' => ['string', 'max:255'],

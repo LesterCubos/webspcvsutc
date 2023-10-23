@@ -13,6 +13,17 @@
         </ol>
         </nav>
     </div><!-- End Page Title -->
+
+    @if(session('notif.success'))
+        <div class="alert alert-success">
+            {{ session('notif.success') }}
+        </div>
+    @elseif (session('notif.danger'))
+        <div class="alert alert-danger">
+            {{ session('notif.danger') }}
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-xl-9 grid-margin-lg-0 grid-margin stretch-card">
           <div class="card">
@@ -65,23 +76,23 @@
                                         <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                            <h5 class="modal-title" id="ModalLabel">{{ __('Are you sure you want to delete your account?') }}</h5>
+                                            <h5 class="modal-title" id="ModalLabel">{{ __('Are you sure you want to delete this Academic Year?') }}</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                             </div>
-                                            <form method="POST" action="">
+                                            <form method="POST" action="{{ route('academic_years.destroy', $academic_year->id) }}">
                                             @csrf
                                             @method('delete')
 
                                             <div class="modal-body">
                                             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                                                {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+                                                {{ __('Once the Academic Year is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete this Academic Year.') }}
                                             </p>
                                             <br>
                                             <div class="form-group">
                                                 <label for="password">{{ __('Password') }}</label>
-                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" style="border-color:black">
                                                 @error('password')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -91,7 +102,7 @@
                                             </div>
                                             <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-danger">{{ __('Delete Account') }}</button>
+                                            <button type="submit" class="btn btn-danger">{{ __('Delete') }}</button>
                                             </div>
                                             </form>
                                         </div>
@@ -116,7 +127,7 @@
           <div class="card">
             <div class="card-body">
                 <h4 class="card-title mb-3">Academic Year {{ isset($academicyear) ? 'Edit' : 'Add' }}</h4>
-                <form method="post" action="{{ isset($academicyear) ? route('academic_years.update', $academic_year->id) : route('academic_years.store') }}" enctype="multipart/form-data">
+                <form method="post" action="{{ isset($academicyear) ? route('academic_years.update', $academicyear->id) : route('academic_years.store') }}" enctype="multipart/form-data">
                     @csrf
                     {{-- add @method('put') for edit mode --}}
                     @isset($academicyear)

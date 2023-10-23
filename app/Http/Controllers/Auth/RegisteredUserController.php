@@ -111,19 +111,23 @@ class RegisteredUserController extends Controller
     public function destroy (Request $request, User $user) {
 
         // Retrieve the superadmin user from the database
-        $superadmin = User::where('role', 'superadmin')->first();
+        $superadmins = User::where('role', 'superadmin')->get();
 
-        // Check if the password provided by the superadmin user is valid
-        if (Hash::check($request->input('password'), $superadmin->password)) {
-            // Proceed with the deletion of the user
-            $user->delete();
+        foreach ($superadmins as $superadmin) {
+            // Check if the password provided by the superadmin user is valid
+            if (Hash::check($request->input('password'), $superadmin->password)) {
+                // Proceed with the deletion of the user
+                $user->delete();
 
-            // Redirect to the users index page with a success message
-            return redirect()->route('superadmin.sp.manage_user_pages.index')->with('notif.success', 'User deleted successfully.');
-        } else {
-            // Return an error message indicating that the password is incorrect
-            return redirect()->back()->with('notif.danger','The password is incorrect.');
-        }
+                // Redirect to the users index page with a success message
+                return redirect()->route('superadmin.sp.manage_user_pages.index')->with('notif.success', 'User deleted successfully.');
+            } 
+        } 
+        if (! Hash::check($request->input('password'), $superadmin->password)) {
+                // Return an error message indicating that the password is incorrect
+                return redirect()->back()->with('notif.danger','The password is incorrect.');
+            }
+       
 
     }
 

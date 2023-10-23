@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('superadmin.profile.update') }}" class="mt-6 space-y-6">
         @csrf
         @method('patch')
         <div class="grid gap-6 mb-6 md:grid-cols-2">
@@ -61,12 +61,8 @@
                 @endif
             </div>
             <div>
-                <label for="role" class="text-gray-700">Role</label>
-                <select type="text" id="role" name="role" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="superadmin" {{ old('role', $user->role) == 'superadmin' ? 'selected' : '' }}>superadmin</option>
-                      <option value="admin" {{ old('role', $user->role) == 'admin' ? 'selected' : '' }}>admin</option>
-                      <option value="student" {{ old('role', $user->role) == 'student' ? 'selected' : '' }}>student</option>
-                </select>
+                <x-input-label for="role" :value="__('Role')" />
+                <x-text-input id="role" name="role" type="text" class="mt-1 block w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" :value="old('student_role', $user->role)" required autofocus autocomplete="roal" readonly/>
             </div>
             <div>
                 <label for="sex" class="text-gray-700">Sex</label>

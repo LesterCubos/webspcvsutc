@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 // We will use Form Request to validate incoming requests from our store and update method
 use App\Http\Requests\AcademicYear\StoreRequest;
 use App\Http\Requests\AcademicYear\UpdateRequest;
 
 use App\Models\AcademicYear;
+use App\Models\User;
 
 
 class AcademicYearController extends Controller
@@ -93,17 +95,32 @@ class AcademicYearController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): RedirectResponse
+    public function destroy (Request $request,string $id)
     {
-        $academic_year = AcademicYear::findOrFail($id);
+        // Retrieve the superadmin user from the database
+        $admins = User::where('role', 'admin')->get();
 
-        $delete = $academic_year->delete($id);
+        foreach ($admins as $admin){
+            // Check if the password provided by the superadmin user is valid
+            if (Hash::check($request->input('password'), $admin->password)) {
+                // Proceed with the deletion of the user
+                $academic_year = AcademicYear::findOrFail($id);
 
-        if($delete) {
-            session()->flash('notif.success', 'Banner deleted successfully!');
-            return redirect()->route('admin.academic_years.index');
+                $delete = $academic_year->delete($id);
+                // Redirect to the users index page with a success message
+                if($delete) {
+                    session()->flash('notif.success', 'Academic Year deleted successfully!');
+                    return redirect()->route('academic_years.index');
+                }
+                // return redirect()->route('superadmin.sp.manage_user_pages.index')->with('notif.success', 'User deleted successfully.');
+            } 
         }
-
-        return abort(500);
+        
+        if (! Hash::check($request->input('password'), $admin->password)){
+                // Return an error message indicating that the password is incorrect
+                session()->flash('notif.danger','The password is incorrect.');
+                return redirect()->back();
+            }
+        
     }
 }
