@@ -55,6 +55,7 @@
                                     {{ $academic_year->isActive }} 
                                 </td>
                                 <td>
+                                    <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('academic_years.edit', $academic_year->id) }}"><i class="icon-open"></i></a>
                                     <!-- Button trigger modal -->
                                     <button id="icon_delete" type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-user-deletion">
                                         <i class="icon-trash"></i>
@@ -114,17 +115,17 @@
         <div class="col-xl-3 grid-margin-lg-0 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-3">Academic Year</h4>
-                <form method="post" action="{{ isset($academic_year) ? route('academic_years.update', $academic_year->id) : route('academic_years.store') }}" enctype="multipart/form-data">
+                <h4 class="card-title mb-3">Academic Year {{ isset($academicyear) ? 'Edit' : 'Add' }}</h4>
+                <form method="post" action="{{ isset($academicyear) ? route('academic_years.update', $academic_year->id) : route('academic_years.store') }}" enctype="multipart/form-data">
                     @csrf
                     {{-- add @method('put') for edit mode --}}
-                    @isset($academic_year)
+                    @isset($academicyear)
                         @method('put')
                     @endisset
                     <br>
                     <div class="form-group">
                         <label for="name">Academic Name:</label>
-                        <input type="text" class="form-control  @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" placeholder="Input Academic Name">
+                        <input type="text" class="form-control  @error('name') is-invalid @enderror" id="name" name="name" value="{{ $academicyear->name ?? old('name') }}" placeholder="Input Academic Name">
                         @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -133,7 +134,7 @@
                       </div>
                     <div class="form-group">
                         <label for="start_date">Start Date:</label>
-                        <input type="date" name="start_date" id="start_date" class="form-control @error('start_date') is-invalid @enderror" value="{{ old('start_date') }}">
+                        <input type="date" name="start_date" id="start_date" class="form-control @error('start_date') is-invalid @enderror" value="{{ $academicyear->start_date ?? old('start_date') }}">
                         @error('start_date')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -142,7 +143,7 @@
                     </div>
                     <div class="form-group">
                         <label for="end_date">End Date:</label>
-                        <input type="date" name="end_date" id="end_date" class="form-control @error('end_date') is-invalid @enderror" value="{{ old('end_date') }}">
+                        <input type="date" name="end_date" id="end_date" class="form-control @error('end_date') is-invalid @enderror" value="{{ $academicyear->end_date ?? old('end_date') }}">
                         @error('end_date')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

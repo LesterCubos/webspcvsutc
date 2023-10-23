@@ -67,8 +67,8 @@ class AcademicYearController extends Controller
      */
     public function edit(string $id): Response
     {
-        return response()->view('admin.academic_year.form', [
-            'academic_year' => AcademicYear::findOrFail($id),
+        return response()->view('admin.academic_year.index', [
+            'academicyear' => AcademicYear::findOrFail($id), 'academic_years' => AcademicYear::orderBy('updated_at', 'desc')->paginate(5),
         ]);
     }
 
