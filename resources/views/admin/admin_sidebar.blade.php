@@ -36,6 +36,13 @@
       </li>
 
       <li class="nav-item">
+        <a class="nav-link" href="{{ route('courses.index') }}">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Courses</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link" href="">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Grades</span>
