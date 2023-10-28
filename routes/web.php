@@ -97,7 +97,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 
 // Controllers for Admin
 use App\Http\Controllers\Admin\AcademicYearController;
-
+use App\Http\Controllers\Admin\AdminAnnounceController;
 
 // Start of Route for Website Pages(show)
 //Home
@@ -283,6 +283,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     //Academic Year
     Route::resource('academic_years', AcademicYearController::class);
+
+    //Announcement
+    Route::resource('admin_announces', AdminAnnounceController::class);
 
 }); //End Group Admin Middleware
 
