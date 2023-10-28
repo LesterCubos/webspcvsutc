@@ -1,9 +1,12 @@
 <div class="col-xl-9 grid-margin-lg-0 grid-margin stretch-card">
-    <div class="card">
+    <div class="card" style="border-radius: 10px">
       <div class="card-body">
         <div class="row">
             <div class="col-6">
                 <h4 class="card-title">Academic Years</h4>
+                <p class="card-description">
+                    Add and Edit<code>Academic Years</code>
+                </p>
             </div>
             <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
               <div class="input-group-prepend">

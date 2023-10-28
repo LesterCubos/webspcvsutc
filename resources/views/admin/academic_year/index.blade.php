@@ -28,7 +28,7 @@
     <div class="row" style="margin-top: 50px">
         @livewire('academic-year-search')
         <div class="col-xl-3 grid-margin-lg-0 grid-margin stretch-card">
-          <div class="card">
+          <div class="card"  style="border-radius: 10px">
             <div class="card-body">
                 <h4 class="card-title mb-3">Academic Year {{ isset($academicyear) ? 'Edit' : 'Add' }}</h4>
                 <form method="post" action="{{ isset($academicyear) ? route('academic_years.update', $academicyear->id) : route('academic_years.store') }}" enctype="multipart/form-data">

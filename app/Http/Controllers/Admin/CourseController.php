@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+use App\Models\Course;
+
 class CourseController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class CourseController extends Controller
      */
     public function index(): Response
     {
-        return response()->view('admin.course.index');
+        return response()->view('admin.course.index', [
+            'courses' => Course::orderBy('updated_at', 'desc')->paginate(5),
+        ]);
     }
 
     /**
