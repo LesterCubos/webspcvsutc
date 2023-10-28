@@ -2,9 +2,10 @@
 @section('title','Dashboard')
 @section('content')
 
-<div class="content-wrapper" style="background-image: linear-gradient(#ffff, #f4c2fe, #f4c2fe, #f4c2fe );">
+<div class="content-wrapper" style="background-image: url('../img/bg.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+  <img src="{{ asset('img/campus_seal.png') }}" alt="logo" width="150px" style="float: right; padding-top: 0"/>
     <div class="row">
-      <div class="col-sm-12 mb-4 mb-xl-0 text-center">
+      <div class="col-sm-12 mb-4 mb-xl-0 text-center" style="margin-top: 40px">
         <h4 class="font-weight-bold text-dark ">Welcome to CvSU-TC Student Portal</h4>
         {{-- <p class="font-weight-normal mb-2 text-muted">Student Portal</p> --}}
 
@@ -23,7 +24,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-top: 60px">
 
         <div class="row flex-grow">
             <div class="col-xxl-4 col-md-3 grid-margin stretch-card">
