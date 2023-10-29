@@ -15,15 +15,17 @@
         </nav>
     </div><!-- End Page Title -->
 
-    @if(session('notif.success'))
-        <div class="alert alert-success">
-            {{ session('notif.success') }}
-        </div>
-    @elseif (session('notif.danger'))
-        <div class="alert alert-danger">
-            {{ session('notif.danger') }}
-        </div>
-    @endif
+    <div style="margin-top: 50px">
+        @if(session('notif.success'))
+            <div class="alert alert-success">
+                {{ session('notif.success') }}
+            </div>
+        @elseif (session('notif.danger'))
+            <div class="alert alert-danger">
+                {{ session('notif.danger') }}
+            </div>
+        @endif
+    </div>
 
     <div class="row" style="margin-top: 50px">
         @livewire('academic-year-search')

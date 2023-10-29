@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('schedcode');
+            $table->string('schedcode')->unique()->default(0);
             $table->string('program');
             $table->string('course_name');
             $table->string('instructor_name');
             $table->string('instructor_email')->unique();
             $table->integer('units');
             $table->integer('credits');
+            $table->boolean('isActive') ->default(1);
+            $table->string('pincode')->unique()->default(0);
             $table->timestamps();
         });
     }

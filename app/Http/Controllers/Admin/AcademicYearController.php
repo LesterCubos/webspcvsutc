@@ -47,7 +47,7 @@ class AcademicYearController extends Controller
 
         if($create) {
             // add flash for the success notification
-            session()->flash('notif.success', 'Banner created successfully!');
+            session()->flash('notif.success', 'Academic Year created successfully!');
             return redirect()->route('academic_years.index');
         }
 
@@ -85,7 +85,7 @@ class AcademicYearController extends Controller
         $update = $academic_years->update($validated);
 
         if($update) {
-            session()->flash('notif.success', 'Banner updated successfully!');
+            session()->flash('notif.success', 'Academic Year updated successfully!');
             return redirect()->route('academic_years.index');
         }
 
