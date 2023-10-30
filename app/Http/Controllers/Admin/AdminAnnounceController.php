@@ -86,7 +86,7 @@ class AdminAnnounceController extends Controller
             // delete poster
             Storage::disk('public')->delete($admin_announce->poster);
 
-            $filePath = Storage::disk('public')->put('ann_img/admin_announces/posters', request()->file('poster'), 'public');
+            $filePath = Storage::disk('public')->put('adminannounce_img/announces/posters', request()->file('poster'), 'public');
             $validated['poster'] = $filePath;
         }
 
