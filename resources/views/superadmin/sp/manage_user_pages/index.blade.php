@@ -3,7 +3,8 @@
 @section('title','User List')
 @section('content')
 
-<div class="content-wrapper" style="background-image: linear-gradient(#ffff, #f4c2fe, #f4c2fe, #f4c2fe );">
+<div class="content-wrapper" style="background-image: url('/img/bg_admin.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+  <img src="{{ asset('img/campus_seal.png') }}" alt="logo" width="150px" style="float: right; padding-top: 0"/>
   <div class="pagetitle">
     <h1>Manage Users</h1>
     <nav>
@@ -15,7 +16,7 @@
     </ol>
     </nav>
   </div><!-- End Page Title -->
-  
+  <div style="margin-top: 50px">
       @if(session('notif.success'))
         <div class="alert alert-success">
             {{ session('notif.success') }} 
@@ -27,9 +28,10 @@
             {{ session('notif.danger') }} 
         </div>
       @endif
+  </div>
 
   <div class="col-lg-12 grid-margin stretch-card">
-      <div class="card">
+      <div class="card" style="margin-top: 50px">
         <div class="card-body">
           <h1 class="display-4">Select Upload CSV file if multiple users needs to be created. Make sure ff the ff format.</h1>
           <br>

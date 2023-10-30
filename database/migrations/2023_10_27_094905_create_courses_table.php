@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('program');
             $table->string('course_name');
             $table->string('instructor_name');
-            $table->string('instructor_email')->unique();
+            $table->string('instructor_email');
+            $table->string('year_level');
             $table->integer('units');
             $table->integer('credits');
             $table->boolean('isActive') ->default(1);

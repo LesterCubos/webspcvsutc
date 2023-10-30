@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="content-wrapper" style="background-image: url('../img/bg.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+<div class="content-wrapper" style="background-image: url('../img/bg_admin.png'); background-repeat: no-repeat; background-size: 100% 100%;">
     <img src="{{ asset('img/campus_seal.png') }}" alt="logo" width="150px" style="float: right; padding-top: 0"/>
     <div class="pagetitle">
         <h1>Courses</h1>
@@ -66,6 +66,20 @@
                             </span>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="year_level">Year Level:</label>
+                        <select type="text" id="year_level" name="year_level" class="form-control @error('year_level') is-invalid @enderror" value="{{ old('year_level') }}" required>
+                            <option value="First Year" {{ old('year_level') == 'First Year' ? 'selected' : '' }}>First Year</option>
+                            <option value="Second Year" {{ old('year_level') == 'Second Year' ? 'selected' : '' }}>Second Year</option>
+                            <option value="Third Year" {{ old('year_level') == 'Third Year' ? 'selected' : '' }}>Third Year</option>
+                            <option value="Fourth Year" {{ old('year_level') == 'Fourth Year' ? 'selected' : '' }}>Fourth Year</option>
+                        </select>
+                        @error('year_level')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                      </div>
                     <div class="form-group">
                         <label for="units">Units:</label>
                         <input type="number" name="units" id="units" class="form-control @error('units') is-invalid @enderror" value="{{ $course->units ?? old('units') }}" placeholder="Input Units">

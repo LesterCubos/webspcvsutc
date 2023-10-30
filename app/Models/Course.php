@@ -13,6 +13,7 @@ class Course extends Model
         'course_name',
         'instructor_name',
         'instructor_email',
+        'year_level',
         'units',
         'credits',
     ];

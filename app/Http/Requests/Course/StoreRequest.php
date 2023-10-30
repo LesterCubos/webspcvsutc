@@ -26,6 +26,7 @@ class StoreRequest extends FormRequest
             'course_name' => 'required|string|min:3|max:250',
             'instructor_name' => 'required|string|min:3|max:250',
             'instructor_email'=> 'required|string|min:3|max:250',
+            'year_level'=> 'required|string|min:3|max:250',
             'units' => 'required|integer',
             'credits' => 'required|integer',
         ];
