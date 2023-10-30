@@ -43,6 +43,13 @@
       </li>
 
       <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.instructor_page_switch.index') }}">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Instructor Page</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link" href="">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Grades</span>

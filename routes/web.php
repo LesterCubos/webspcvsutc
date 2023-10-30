@@ -100,9 +100,18 @@ use App\Http\Controllers\Admin\AcademicYearController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\AdminAnnounceController;
 
+//Instructor Page
+use App\Http\Controllers\InstructorPageController;
+
 // Start of Route for Website Pages(show)
 //Home
 Route::get('/', [HomeController::class, 'homepage'])->name('pages.homepage');
+
+//Instructor Page
+Route::middleware(['page.status'])->group(function () {
+    Route::get('instructor_page', [InstructorPageController::class, 'index'])->name('instructor_page.index');
+});
+
 //About
 Route::get('about_campus_history', [AboutController::class, 'campus_history'])->name('pages.campus_history');
 Route::get('about_mvg', [AboutController::class, 'mvgs'])->name('pages.mvg');
@@ -286,9 +295,12 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::resource('academic_years', AcademicYearController::class);
     //Course
     Route::resource('courses', CourseController::class);
+    //Instructor Page Switch
+    Route::get('instructorpage_switch',[SwitchController::class, 'instructorpage'])->name('admin.instructor_page_switch.index');
 
     //Announcement
     Route::resource('admin_announces', AdminAnnounceController::class);
+
 
 }); //End Group Admin Middleware
 

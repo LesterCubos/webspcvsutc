@@ -67,4 +67,9 @@ class Kernel extends HttpKernel
         'superadmin' => \App\Http\Middleware\Superadmin::class,
 
     ];
+
+    protected $routeMiddleware = [
+        // ...
+        'page.status' => \App\Http\Middleware\PageStatusMiddleware::class,
+    ];
 }
