@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>CvSU-TC Student Portal</title>
+    <title>@yield('title') - CvSU-TC Student Portal Admin</title>
+
 
     <!-- Fonts -->
     {{-- <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -73,6 +74,7 @@
     <script src="{{ asset('js/sp/template.js') }}"></script>
     <!-- endinject -->
     <!-- plugin js for this page -->
+    <script src="{{ asset('vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('vendor/sp/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('vendor/sp/jquery-bar-rating/jquery.barrating.min.js') }}"></script>
     <!-- End plugin js for this page -->
