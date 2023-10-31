@@ -109,7 +109,8 @@ Route::get('/', [HomeController::class, 'homepage'])->name('pages.homepage');
 
 //Instructor Page
 Route::middleware(['page.status'])->group(function () {
-    Route::get('instructor_page', [InstructorPageController::class, 'index'])->name('instructor_page.index');
+    Route::get('instructor_page_login', [InstructorPageController::class, 'login'])->name('instructor_page.login');
+    Route::post('instructor_page_loginrequest', [InstructorPageController::class, 'loginrequest'])->name('instructor_page.loginrequest');
 });
 
 //About
