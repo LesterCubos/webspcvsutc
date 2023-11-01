@@ -19,11 +19,9 @@
   <div class="card" style="margin-top: 50px; border-radius: 10px">
       <div class="card-body">
           <h4 class="card-title">Announcement Table</h4>
-          <button type="button" class="btn btn-primary btn-icon-text">
-            <a href="{{ route('admin_announces.create') }}" style="color:white">
+            <a href="{{ route('admin_announces.create') }}" class="btn btn-primary btn-icon-text">
               <i class="mdi mdi-plus-circle btn-icon-prepend"></i>
               Add Announcement</a>
-          </button>
           <div class="table-responsive pt-3">
           <table class="table table-bordered">
               <thead>
@@ -36,9 +34,6 @@
                   </th>
                   <th>
                   Content
-                  </th>
-                  <th>
-                  Poster
                   </th>
                   <th>
                   Created At
@@ -70,22 +65,20 @@
                           <td>{{ $admin_announce->created_at }}</td>
                           <td>{{ $admin_announce->updated_at }}</td>
                           <td>
-                            @if ($admin_announce->isActive == 1)
-                                Show
-                            @else
-                                Hidden    
+                            @if($admin_announce->isActive == 1)
+                            <label class="badge badge-success">Active</label>
+                            @elseif($admin_announce->isActive == 0)
+                                <label class="badge badge-danger">Inactive</label>
                             @endif
                           </td>
                           <td>
-                              {{ $admin_announce->created_at }}
-                          </td>
-                          <td>
-                            <form method="post" action="{{ route('admin_announces.destroy', $admin_announce->id) }}" class="d-grid gap-2">      
-                              <a class="btn" id="icon_edit" href="{{ route('admin_announces.edit', $admin_announce->id) }}"><i class="ri-edit-box-fill"></i></a>
+                            <form method="post" action="{{ route('admin_announces.destroy', $admin_announce->id) }}">      
                               @csrf
                               @method('DELETE')
-      
-                              <button id="icon_delete" type="submit" class="btn"><i class="ri-delete-bin-5-fill"></i></button>
+                              <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('admin_announces.edit', $admin_announce->id) }}"><i class="icon-open"></i></a>
+                              <button id="icon_delete" type="submit" class="btn btn-danger">
+                                <i class="icon-trash"></i>
+                              </button>
                             </form>
                           </td>
                       </tr>

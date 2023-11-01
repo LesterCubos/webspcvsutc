@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('admin_announces', function (Blueprint $table) {
+            $table->id();
             $table->string('title');
             $table->text('content');
             $table->boolean('isActive') ->default(1);
