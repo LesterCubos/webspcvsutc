@@ -8,6 +8,20 @@
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="icon-menu"></span>
         </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item d-none d-lg-block">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="background-color: #202130; border-color: #202130; font-size: 18px; color: white; font-weight: bold">
+                  <span class="mdi mdi-calendar-clock" style="font-size: 18px; color: #ec37fc; margin-right: 5px"></span>
+                  @foreach ($acadyears as $acadyear)
+                    {{ $acadyear->name }}
+                  @endforeach
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item dropdown d-flex mr-4 ">
             <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">

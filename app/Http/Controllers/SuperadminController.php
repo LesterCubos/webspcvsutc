@@ -9,6 +9,7 @@ use App\Models\News;
 use App\Models\Announcement;
 use App\Models\UniversitySeal;
 use Latfur\Event\Models\Event;
+use App\Models\AcademicYear;
 use App\Models\Superadmin;
 use App\Models\User;
 use CyrildeWit\EloquentViewable\Support\Period;
@@ -140,7 +141,8 @@ class SuperadminController extends Controller
     }
 
     public function SPDashboard(){
-        return view('superadmin.sp.sp_superadmin_dashboard');
+        $acadyears = AcademicYear::where('isActive', '1')->get();
+        return view('superadmin.sp.sp_superadmin_dashboard', compact('acadyears'));
     }
     public function Login(Request $request){
         // dd($request->all());

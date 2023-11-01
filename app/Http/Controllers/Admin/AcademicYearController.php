@@ -23,7 +23,7 @@ class AcademicYearController extends Controller
     public function index(): Response
     {
         return response()->view('admin.academic_year.index', [
-            'academic_years' => AcademicYear::orderBy('updated_at', 'desc')->paginate(5),
+            'academic_years' => AcademicYear::orderBy('updated_at', 'desc')->paginate(5), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
         ]);
     }
 
@@ -70,7 +70,7 @@ class AcademicYearController extends Controller
     public function edit(string $id): Response
     {
         return response()->view('admin.academic_year.index', [
-            'academicyear' => AcademicYear::findOrFail($id), 'academic_years' => AcademicYear::orderBy('updated_at', 'desc')->paginate(5),
+            'academicyear' => AcademicYear::findOrFail($id), 'academic_years' => AcademicYear::orderBy('updated_at', 'desc')->paginate(5), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
         ]);
     }
 

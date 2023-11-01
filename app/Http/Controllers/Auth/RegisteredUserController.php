@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\AcademicYear;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -105,7 +106,7 @@ class RegisteredUserController extends Controller
 
     public function userView(User $user): View {
 
-        return view('superadmin.sp.manage_user_pages.show', ['user' => $user]);
+        return view('superadmin.sp.manage_user_pages.show', ['user' => $user, 'acadyears'=> AcademicYear::where('isActive', '1')->get()]);
     }
 
     public function destroy (Request $request, User $user) {

@@ -11,18 +11,22 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
+use App\Models\AcademicYear;
 
 class AdminController extends Controller
 {
     public function Dashboard(){
-        return view('admin.admin_dashboard');
+        $acadyears = AcademicYear::where('isActive', '1')->get();
+        return view('admin.admin_dashboard',compact('acadyears'));
     }
 
     public function edit(Request $request): View
     {
+        $acadyears = AcademicYear::where('isActive', '1')->get();
+       
         return view('admin.profile.edit', [
             'user' => $request->user(),
-        ]);
+        ],compact('acadyears'));
     }
 
     /**

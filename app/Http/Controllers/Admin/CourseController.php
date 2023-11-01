@@ -12,6 +12,7 @@ use App\Http\Requests\Course\StoreRequest;
 use App\Http\Requests\Course\UpdateRequest;
 
 use App\Models\Course;
+use App\Models\AcademicYear;
 use App\Models\User;
 
 class CourseController extends Controller
@@ -22,7 +23,7 @@ class CourseController extends Controller
     public function index(): Response
     {
         return response()->view('admin.course.index', [
-            'courses' => Course::orderBy('updated_at', 'desc')->paginate(5),
+            'courses' => Course::orderBy('updated_at', 'desc')->paginate(5), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
         ]);
     }
 
@@ -31,7 +32,9 @@ class CourseController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('admin.course.form');
+        return response()->view('admin.course.form', [
+            'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+        ]);
     }
 
     /**
@@ -75,7 +78,7 @@ class CourseController extends Controller
     public function edit(string $id): Response
     {
         return response()->view('admin.course.form', [
-            'course' => Course::findOrFail($id),
+            'course' => Course::findOrFail($id), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
         ]);
     }
 

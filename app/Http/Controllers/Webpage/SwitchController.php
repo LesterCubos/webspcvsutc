@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Webpage;
 use App\Http\Controllers\Controller;
 use App\Models\SwitchSection;
 use App\Models\InstructorPageSwitch;
+use App\Models\AcademicYear;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class SwitchController extends Controller
     public function instructorpage()
     {
         return view('admin.instructor_page_switch.index',[
-                    'switchs' => InstructorPageSwitch::all()
+                    'switchs' => InstructorPageSwitch::all(), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
                 ]);
     
     }
