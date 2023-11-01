@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('admin_announces', function (Blueprint $table) {
             $table->string('title');
             $table->text('content');
-            $table->text('poster');
             $table->boolean('isActive') ->default(1);
             $table->timestamps();
         });

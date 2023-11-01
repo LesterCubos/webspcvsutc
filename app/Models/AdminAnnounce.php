@@ -12,7 +12,6 @@ class AdminAnnounce extends Model
     protected $fillable = [
         'title',
         'content',
-        'poster',
     ];
 
 }

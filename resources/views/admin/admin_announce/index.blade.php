@@ -66,9 +66,7 @@
                           <td>
                               {!! Str::limit($admin_announce->content,'250','...') !!}
                           </td>
-                          <td>
-                              {{ $admin_announce->poster }}
-                          </td>
+                          
                           <td>{{ $admin_announce->created_at }}</td>
                           <td>{{ $admin_announce->updated_at }}</td>
                           <td>
@@ -83,7 +81,7 @@
                           </td>
                           <td>
                             <form method="post" action="{{ route('admin_announces.destroy', $admin_announce->id) }}" class="d-grid gap-2">      
-                              <a class="btn" id="icon_edit" href="{{ route('admin_announce.edit', $admin_announce->id) }}"><i class="ri-edit-box-fill"></i></a>
+                              <a class="btn" id="icon_edit" href="{{ route('admin_announces.edit', $admin_announce->id) }}"><i class="ri-edit-box-fill"></i></a>
                               @csrf
                               @method('DELETE')
       

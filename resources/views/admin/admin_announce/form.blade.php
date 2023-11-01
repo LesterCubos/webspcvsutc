@@ -61,28 +61,6 @@
                   </span>
                   @enderror
                 </div>
-                <div class="form-group">
-                    <label for="poster">Image</label>
-                    <input type="file" id="poster" name="poster" class="file-upload-default">
-                    <div class="input-group col-xs-12">
-                      <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                      <span class="input-group-append">
-                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                      </span>
-                    </div>
-                </div>
-                <br>
-                <div class="shrink-0 my-2">
-                    <img style="width:600px" id="poster_preview" class="h-64 w-128 object-cover rounded-md" src="{{ isset($admin_announce) ? Storage::url($admin_announce->poster) : '' }}" alt="poster preview" />
-                </div>
-                {{-- <div class="form-group">
-                    <label for="poster" class="form-label">Image</label>
-                    <br>
-                    <input type="file" id="poster" name="poster" class="btn rounded-pill block w-full text-sm text-slate-500"/>
-                    <div class="shrink-0 my-2">
-                        <img style="width:600px" id="poster_preview" class="h-64 w-128 object-cover rounded-md" src="{{ isset($admin_announce) ? Storage::url($admin_announce->poster) : '' }}" alt="poster preview" />
-                    </div>
-                </div> --}}
                 
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <a href="{{ route('admin_announces.index')}}" class="btn btn-light">Cancel</a>
@@ -93,16 +71,5 @@
         </div>
     </div>
 </div>
-
-<script>
-    // create onchange event listener for featured_poster input
-    document.getElementById('poster').onchange = function(evt) {
-        const [file] = this.files
-        if (file) {
-            // if there is an poster, create a preview in featured_poster_preview
-            document.getElementById('poster_preview').src = URL.createObjectURL(file)
-        }
-    }
-</script>
 
 @endsection

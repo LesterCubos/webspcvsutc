@@ -36,12 +36,6 @@ class AdminAnnounceController extends Controller
     {
         $validated = $request->validated();
 
-        if ($request->hasFile('poster')) {
-             // put poster in the public storage
-            $filePath = Storage::disk('public')->put('adminannounce_img/announces/posters', request()->file('poster'));
-            $validated['poster'] = $filePath;
-        }
-
         // insert only requests that already validated in the StoreRequest
         $create = AdminAnnounce::create($validated);
 
@@ -82,14 +76,6 @@ class AdminAnnounceController extends Controller
         $admin_announce = AdminAnnounce::findOrFail($id);
         $validated = $request->validated();
 
-        if ($request->hasFile('poster')) {
-            // delete poster
-            Storage::disk('public')->delete($admin_announce->poster);
-
-            $filePath = Storage::disk('public')->put('adminannounce_img/announces/posters', request()->file('poster'), 'public');
-            $validated['poster'] = $filePath;
-        }
-
         $update = $admin_announce->update($validated);
 
         if($update) {
@@ -106,8 +92,6 @@ class AdminAnnounceController extends Controller
     public function destroy(string $id): RedirectResponse
     {
         $admin_announce = AdminAnnounce::findOrFail($id);
-
-        Storage::disk('public')->delete($admin_announce->poster);
 
         $delete = $admin_announce->delete($id);
 
