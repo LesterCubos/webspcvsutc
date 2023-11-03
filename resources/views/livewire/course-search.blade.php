@@ -14,7 +14,7 @@
               </span>
             </div>
             <input type="text" class="form-control" placeholder="Search Course Name..." wire:model.lazy="searchCourse">
-          </div>
+        </div>
         <div class="table-responsive pt-3">
             <table class="table table-bordered">
                 <thead>

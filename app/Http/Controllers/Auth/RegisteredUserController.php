@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
             'first_name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
             'middle_name' => ['required', 'string', 'max:255'],
-            'student_number' => ['required', 'string', 'min:1', 'max:9'],
+            'student_number' => ['required', 'string', 'min:1', 'max:11'],
             'sex' => ['required', 'string', 'max:255'],
             'civil_status' => ['required', 'string', 'max:255'],
             'nationality' => ['required', 'string', 'max:255'],

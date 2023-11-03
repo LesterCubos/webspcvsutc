@@ -44,8 +44,6 @@ class CourseController extends Controller
     {
         $validated = $request->validated();
 
-        $courses = Course::orderBy('created_at', 'desc')->get();
-
         // insert only requests that already validated in the StoreRequest
         $create = Course::create($validated);
         $create->generateSpecialCode();

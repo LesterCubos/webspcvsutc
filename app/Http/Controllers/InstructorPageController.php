@@ -3,22 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Models\Course;
+use App\Models\Grade;
+use App\Models\AcademicYear;
 
 class InstructorPageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('instructor_page.login');
-    }
+        $grades = Grade::all();
 
-    public function login()
-    {
-        return view('instructor_page.login');
-    }
+        $acadyears = AcademicYear::where('isActive', '1')->get();
 
-    public function loginrequest(Request $request)
-    {
+        Session::put('schedcode', $request->input('schedcode'));
+
         $courses = Course::where('schedcode', $request->input('schedcode'))->get();
         
 
@@ -29,12 +28,27 @@ class InstructorPageController extends Controller
         
         foreach ($courses as $course) {
             if ($request->input('pincode') == $course->pincode) {
-                return view('instructor_page.index');
+                $request->session()->flash('success', 'Superadmin Login Successfully');
+                return view('instructor_page.index', compact('acadyears','courses', 'grades'));
             } 
         }
         
         session()->flash('notif.danger','The PINCODE is incorrect.');
         return redirect()->back();
+    }
+
+    public function login()
+    {
+        return view('instructor_page.login');
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/instructor_page_login')->with('error','Logout Successfully');
         
     }
 }

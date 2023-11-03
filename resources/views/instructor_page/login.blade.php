@@ -28,17 +28,21 @@
                 <div class="brand-logo d-flex justify-content-center">
                   <img src="{{ asset('img/campus_seal.png') }}" alt="logo" width="10px">
                 </div>
-                <h4>Hello! Instructor</h4>
-                <h6 class="font-weight-light">Login to continue.</h6>
-                <form class="pt-3" method="POST" action="{{ route('instructor_page.loginrequest') }}">
+                <div class="d-flex flex-column align-items-center">
+                  <h4 class="font-weight-bold">Welcome to CvSU-TC Portal</h4>
+                  <h6 class="font-weight-light">
+                    <?php  date_default_timezone_set('Asia/Manila');
+                    echo "Today is " . date("l, m-d-Y. h:i a");?></h6>
+                </div>
+                <form class="pt-3" method="POST" action="{{ route('instructor_page.index') }}">
                     @csrf
-                    @if (session('notif.danger'))
-                        <div class="alert alert-danger">
-                            {{ session('notif.danger') }}
-                        </div>
+                    @if (Session::has('error'))
+                      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>{{session::get('error')}}</strong>
+                      </div>
                     @endif
                   <div class="form-group">
-                    <input type="number" class="form-control form-control-lg @error('schedcode') is-invalid @enderror" id="schedcode" name="schedcode" placeholder="SchedCode" required>
+                    <input type="number" class="form-control form-control-lg @error('schedcode') is-invalid @enderror" id="schedcode" name="schedcode" placeholder="SchedCode" style="border-color: #ec37fc" required>
                     @error('schedcode')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -46,7 +50,7 @@
                     @enderror
                   </div>
                   <div class="form-group">
-                    <input type="password" id="pincode" class="form-control form-control-lg @error('pincode') is-invalid @enderror" name="pincode" placeholder="Pincode" required>
+                    <input type="password" id="pincode" class="form-control form-control-lg @error('pincode') is-invalid @enderror" name="pincode" placeholder="Pincode" style="border-color: #ec37fc" required>
                     @error('pincode')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -58,7 +62,7 @@
                     <label for="">Show Password<i class="input-helper"></i></label>
                   </div>
                   <div class="mt-3">
-                    <button class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" type="submit">LOGIN</button>
+                    <button class="btn btn-block btn-primary btn-lg font-weight-bold auth-form-btn" type="submit">LOGIN</button>
                   </div>
                 </form>
               </div>

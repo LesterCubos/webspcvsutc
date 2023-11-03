@@ -98,6 +98,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 // Controllers for Admin
 use App\Http\Controllers\Admin\AcademicYearController;
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\GradeController;
 use App\Http\Controllers\Admin\AdminAnnounceController;
 
 //Instructor Page
@@ -110,7 +111,9 @@ Route::get('/', [HomeController::class, 'homepage'])->name('pages.homepage');
 //Instructor Page
 Route::middleware(['page.status'])->group(function () {
     Route::get('instructor_page_login', [InstructorPageController::class, 'login'])->name('instructor_page.login');
-    Route::post('instructor_page_loginrequest', [InstructorPageController::class, 'loginrequest'])->name('instructor_page.loginrequest');
+    Route::post('instructor_page_index', [InstructorPageController::class, 'index'])->name('instructor_page.index');
+    Route::post('instructor_page_logout', [InstructorPageController::class, 'logout'])->name('instructor_page.logout');
+    Route::resource('grades',GradeController::class);
 });
 
 //About
