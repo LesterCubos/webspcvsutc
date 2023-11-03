@@ -7,8 +7,6 @@
     <div class="row">
       <div class="col-sm-12 mb-4 mb-xl-0 text-center" style="margin-top: 40px">
         <h4 class="font-weight-bold text-dark ">Welcome to CvSU-TC Student Portal</h4>
-        {{-- <p class="font-weight-normal mb-2 text-muted">Student Portal</p> --}}
-
             @if (session('status'))
                 <p class="alert alert-success" role="alert">
                     {{ session('status') }}

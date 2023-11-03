@@ -74,15 +74,16 @@
             <div class="card">
               <div class="card-body">
                   <h4 class="card-title">Latest Announcement Post</h4>
+                  <br>
                   <div class="row">
+                      
                       <div class="col-sm-12">
-                          {{-- dito ilalagay announcment --}}
                           @php ($a = 0)
                           @foreach($admin_announces as $admin_announce)
-                            <div class="activity-item d-flex">
+                            
                               @if ($admin_announce->created_at->format('m') == $month)
                                 @php ($a++)
-                                <div class="activite-label">
+                                <div class="card text-start font-weight-bold text-primary h5 border-0">
                                   @if ($announcediff[$admin_announce->id][0] < 60)
                                     {{ $announcediff[$admin_announce->id][0] }} sec ago
                                   @elseif ($announcediff[$admin_announce->id][1] < 60)   
@@ -93,43 +94,24 @@
                                     {{ $announcediff[$admin_announce->id][3] }} day ago
                                   @endif
                                 </div>
-                                <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                                {{-- <div class="activity-content">
-                                  {{ $admin_announce->title }}
-                                  <p>{!! Str::limit($admin_announce->content,'250','...') !!}</p>
-                                </div> --}}
                                 <div class="card text-center">
-                                  <div class="card-header">
+                                  <div class="card-header font-weight-bold">
                                     {{ $admin_announce->created_at }}
                                   </div>
                                   <div class="card-body">
-                                    <h5 class="card-title">{{ $admin_announce->title }}
+                                    <h5 class="h4">{{ $admin_announce->title }}
                                     </h5>
-                                    <p class="card-text">{{ $admin_announce->content }}</p>
+                                    <p class="lead">{!! Str::limit($admin_announce->content,'250','...') !!}</p>
                                   </div>
                                 </div>
-
+                                <br>
                               @endif
-                            </div><!-- End activity item-->
                           @endforeach
                           @if (empty($a))
                             <div class="activity-content">
                               No New Data
                             </div>    
                           @endif
-                          {{-- real --}}
-                          {{-- @foreach ($admin_announces as $admin_announce)
-                          <div class="card text-center">
-                            <div class="card-header">
-                              {{ $admin_announce->created_at }}
-                            </div>
-                            <div class="card-body">
-                              <h5 class="card-title">{{ $admin_announce->title }}
-                              </h5>
-                              <p class="card-text">{{ $admin_announce->content }}</p>
-                            </div>
-                          </div>
-                          @endforeach --}}
                       </div>
                   </div>
                 </div>
