@@ -3,19 +3,30 @@ The website will empower the Tanza Campus to have extensive and exclusive manage
 The development of a student portal will enable the students to view their academic records such as grades, course subjects, registration forms, and request for documents. It also includes links to the e-learning management system and other online services exclusive for Cavite State University-Tanza Campus. The student’s existing CvSU account will be used as their login credentials in the portal. The instructors can directly upload grades that will help campus registrar in distributing grades physically. Students can view their final grade in each course subject uploaded by their course subject instructors. Because of this design, the system ensures that developers will not be able to manipulate any grades uploaded in the portal for the instructor role and campus registrar user role can only upload grades. Therefore, this portal will help the Office of the Campus Registrar to keep up with the growing numbers of students in the dissemination of academic information.
 
 
-**Requirements Documentation
-**	The purpose of the study is to increase the dissemination of information among the students and community of CvSU Tanza. To address limitations on the CvSU Tanza Facebook page, the researchers will develop a website where information such as the organization's structure, history, mandate, and contact details, as well as announcements of upcoming events, news, achievements, job hiring and calendars of activities, can be accessed in one comprehensive and organized platform. The website of the CvSU Tanza Campus will consist of five modules namely:
+Requirements Documentation
+
+The purpose of the study is to increase the dissemination of information among the students and community of CvSU Tanza. To address limitations on the CvSU Tanza Facebook page, the researchers will develop a website where information such as the organization's structure, history, mandate, and contact details, as well as announcements of upcoming events, news, achievements, job hiring and calendars of activities, can be accessed in one comprehensive and organized platform. The website of the CvSU Tanza Campus will consist of five modules namely:
+
 Authentication module: Authentication Module: This module is responsible for verifying the identity of users attempting to access both the admin panel of the website and the student portal. It facilitates the login and logout procedures, ensuring that only authorized users can access the respective resources. This authentication process commonly employs a email and password for verification, while also supporting other authentication methods like single sign-on and multi-factor authentication.
 Content management module: This module manages the creation, editing, and publishing of content on the website. It would be responsible for allowing authorized users to create and edit pages, images, and other multimedia content, and for publishing that content to the website.  
+
 Event calendar module: This module manages the display of upcoming events on the website. It would be responsible for allowing authorized user to create and edit events, and for displaying them on the website in a calendar format.
+
 News module: This module manages the display of news articles on the website. It would be responsible for allowing authorized user to create and edit news articles, and for publishing them to the website.
+
 Search module: This module allows users to search the website for specific content. It would be responsible for indexing the website's content and providing search results based on user queries.
 Apart from that, to address issues faced by students and the registrar's office such as difficulties in requesting documents, a lack of an accessible system for viewing student academic records, and difficulties in distributing academic information to a large number of students at once, a sub-university website called the student portal will be also develop. The student portal will consist of six modules including:
+
 Announcement module: The announcement module is designed to enable authorized users to enable to easily create, edit, and publish text-based announcements, images, videos, and links.    
+
 Student information module: This module manages the storage and retrieval of student records such as personal information, academic history, and grades. It would be responsible for displaying student information to authorized users. This module would also include information such as contact details, emergency contact, and other relevant student information.
+
 Grades module: This module allows students to view their grades and academic records online. It would be responsible for displaying grades for each student, as well as providing an overall GWA and other academic metrics.
+
 Virtual registration forms module: This module provides students with the ability to view and download registration forms electronically.
+
 Download forms module: The download forms module in a student web portal system is a crucial component that allows students to access and download various forms related to their academic or administrative requirements. This module provides a central platform for storing and sharing forms such as pre-registration forms, course registration forms, program change forms, leave of absence forms, withdrawal forms, and many more.
+
 Request documents module: This module allows students to request for documents such as transcripts, certifications, and clearances from the registrar's office. It would also be responsible for tracking the status of document requests and for sending notifications to students when documents are ready for pickup or delivery.
 
 
