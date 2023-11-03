@@ -11,13 +11,45 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
+use App\Models\AdminAnnounce;
 use App\Models\AcademicYear;
+use Carbon\Carbon;
+
 
 class AdminController extends Controller
 {
     public function Dashboard(){
         $acadyears = AcademicYear::where('isActive', '1')->get();
-        return view('admin.admin_dashboard',compact('acadyears'));
+        //Today
+        $today = Carbon::today();
+        $date = Carbon::now();
+
+        //Month
+        $month = Carbon::now()->month;
+
+        // Year
+        $yeardate = Carbon::now()->format('Y');
+        $currentTime = Carbon::createFromFormat("Y-m-d H:i:s", date($date));
+
+        $admin_announce = AdminAnnounce::orderBy('created_at', 'desc')->get();
+        $announcediff = array();
+        
+        foreach($admin_announce as $admin_announce){
+            
+            $anchorTimeann[$admin_announce->id] = Carbon::createFromFormat("Y-m-d H:i:s",$admin_announce->created_at);
+            $secondDiff = $anchorTimeann[$admin_announce->id]->diffInSeconds($currentTime);
+            $minuteDiff = $anchorTimeann[$admin_announce->id]->diffInMinutes($currentTime);
+            $hourDiff = $anchorTimeann[$admin_announce->id]->diffInHours($currentTime);
+            $dayDiff = $anchorTimeann[$admin_announce->id]->diffInDays($currentTime);
+            $announcediff[$admin_announce->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
+
+        }
+
+        $admin_announces = AdminAnnounce::all();
+
+        return view('admin.admin_dashboard',compact('acadyears', 'admin_announces', 'currentTime','today','date','month', 'yeardate','announcediff',
+        'anchorTimeann'
+        ));
     }
 
     public function edit(Request $request): View
@@ -27,41 +59,6 @@ class AdminController extends Controller
         return view('admin.profile.edit', [
             'user' => $request->user(),
         ],compact('acadyears'));
-    }
-
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
-    {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
-
-        $request->user()->save();
-
-        return Redirect::route('admin.profile.edit')->with('status', 'profile-updated');
-    }
-
-    public function checkPassword($attribute, $value, $parameters, $validator)
-    {
-        return Hash::check($value, Auth::user()->password);
-    }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'avatar' => 'required|image',
-        ]);
-  
-        $avatarName = time().'.'.$request->avatar->getClientOriginalExtension();
-        $request->avatar->move(public_path('avatars'), $avatarName);
-  
-        Auth()->user()->update(['avatar'=>$avatarName]);
-  
-        return back()->with('success', 'Avatar updated successfully.');
     }
 
 }

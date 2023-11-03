@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-
+@section('title', 'Dashboard')
 @section('content')
 
 <div class="content-wrapper" style="background-image: url('../img/bg_admin.png'); background-repeat: no-repeat; background-size: 100% 100%;">
@@ -73,21 +73,65 @@
         <div class="col-xl-8 d-flex grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                  <h4 class="card-title">Website Audience Metrics</h4>
-                  <div class="row">
-                    <div class="col-lg-5">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit amet cumque cupiditate</p>
-                    </div>
-                    <div class="col-lg-7">
-                      <div class="chart-legends d-lg-block d-none" id="chart-legends"></div>
-                    </div>
-                  </div>
+                  <h4 class="card-title">Latest Announcement Post</h4>
                   <div class="row">
                       <div class="col-sm-12">
-                          <canvas id="web-audience-metrics-satacked" class="mt-3"></canvas>
+                          {{-- dito ilalagay announcment --}}
+                          @php ($a = 0)
+                          @foreach($admin_announces as $admin_announce)
+                            <div class="activity-item d-flex">
+                              @if ($admin_announce->created_at->format('m') == $month)
+                                @php ($a++)
+                                <div class="activite-label">
+                                  @if ($announcediff[$admin_announce->id][0] < 60)
+                                    {{ $announcediff[$admin_announce->id][0] }} sec ago
+                                  @elseif ($announcediff[$admin_announce->id][1] < 60)   
+                                    {{ $announcediff[$admin_announce->id][1] }} min ago
+                                  @elseif ($announcediff[$admin_announce->id][2] < 24)   
+                                    {{ $announcediff[$admin_announce->id][2] }} hr ago
+                                  @elseif ($announcediff[$admin_announce->id][3] <= 31)   
+                                    {{ $announcediff[$admin_announce->id][3] }} day ago
+                                  @endif
+                                </div>
+                                <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                                {{-- <div class="activity-content">
+                                  {{ $admin_announce->title }}
+                                  <p>{!! Str::limit($admin_announce->content,'250','...') !!}</p>
+                                </div> --}}
+                                <div class="card text-center">
+                                  <div class="card-header">
+                                    {{ $admin_announce->created_at }}
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">{{ $admin_announce->title }}
+                                    </h5>
+                                    <p class="card-text">{{ $admin_announce->content }}</p>
+                                  </div>
+                                </div>
+
+                              @endif
+                            </div><!-- End activity item-->
+                          @endforeach
+                          @if (empty($a))
+                            <div class="activity-content">
+                              No New Data
+                            </div>    
+                          @endif
+                          {{-- real --}}
+                          {{-- @foreach ($admin_announces as $admin_announce)
+                          <div class="card text-center">
+                            <div class="card-header">
+                              {{ $admin_announce->created_at }}
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">{{ $admin_announce->title }}
+                              </h5>
+                              <p class="card-text">{{ $admin_announce->content }}</p>
+                            </div>
+                          </div>
+                          @endforeach --}}
                       </div>
                   </div>
-
                 </div>
               </div>
         </div>
