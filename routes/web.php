@@ -114,6 +114,7 @@ Route::middleware(['page.status'])->group(function () {
     Route::post('instructor_page_index', [InstructorPageController::class, 'index'])->name('instructor_page.index');
     Route::post('instructor_page_logout', [InstructorPageController::class, 'logout'])->name('instructor_page.logout');
     Route::resource('grades',GradeController::class);
+    Route::post('Gradeimport', [CSVHandlerController::class, 'Gradeimport'])->name('Gradeimport');
 });
 
 //About
@@ -299,6 +300,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::resource('academic_years', AcademicYearController::class);
     //Course
     Route::resource('courses', CourseController::class);
+    Route::get('Coursesexport', [CSVHandlerController::class, 'Coursesexport'])->name('Coursesexport');
     //Instructor Page Switch
     Route::get('instructorpage_switch',[SwitchController::class, 'instructorpage'])->name('admin.instructor_page_switch.index');
 

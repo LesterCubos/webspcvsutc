@@ -155,7 +155,7 @@ class GradeController extends Controller
 
         if($delete) {
             session()->flash('notif.success', 'Grade has been deleted successfully!');
-            return redirect()->route('instructor_page.index');
+            return redirect()->route('grades.index');
         }
 
         return abort(500);

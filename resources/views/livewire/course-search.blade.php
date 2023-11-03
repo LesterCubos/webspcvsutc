@@ -7,6 +7,7 @@
         <a class="btn btn-primary btn-icon-text" href="{{ route('courses.create') }}">
             <i class="mdi mdi-plus-circle btn-icon-prepend"></i>Add Course
         </a>
+        <a class="btn btn-warning" href="{{ route('Coursesexport') }}">Generate Pincode</a>
         <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
             <div class="input-group-prepend">
               <span class="input-group-text" id="search" style="background-color:  #ec37fc; color: #fff">

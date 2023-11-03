@@ -121,6 +121,7 @@
                                     <br>
                                     <div class="flex text-center" style="padding-top: 10px">
                                         <button class="btn btn-success ">{{ __('Save') }}</button>
+                                        <a href="{{ route('grades.index') }}" class="btn btn-warning">Cancel</a>
                                     </div>
                                 </form>
                                 
