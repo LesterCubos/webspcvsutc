@@ -1,8 +1,9 @@
 @extends('student.student_master')
-
+@section('title', 'Dashboard')
 @section('content')
 
-<div class="content-wrapper" style="background-image: linear-gradient(#ffff, #00922C, #00922C, #00922C );">
+<div class="content-wrapper" style="background-image: url('../img/bg.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+  <img src="{{ asset('img/campus_seal.png') }}" alt="logo" width="150px" style="float: right; padding-top: 0"/>
     <div class="row">
       <div class="col-sm-12 mb-4 mb-xl-0 text-center">
         <h4 class="font-weight-bold text-dark ">Welcome to CvSU-TC Student Portal</h4>
@@ -23,7 +24,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-top: 60px">
 
         <div class="row flex-grow">
             <div class="col-xxl-4 col-md-3 grid-margin stretch-card">
@@ -72,21 +73,19 @@
         <div class="col-xl-8 d-flex grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                  <h4 class="card-title">Website Audience Metrics</h4>
-                  <div class="row">
-                    <div class="col-lg-5">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit amet cumque cupiditate</p>
+                  <h4 class="card-title">Announcement</h4>
+                  @foreach($admin_announces as $admin_announce)
+                  <div class="card text-start">
+                    <div class="card-header font-weight-bold">
+                      Date: {{ $admin_announce->created_at }}
                     </div>
-                    <div class="col-lg-7">
-                      <div class="chart-legends d-lg-block d-none" id="chart-legends"></div>
+                    <div class="card-body text-center">
+                      <h5 class="h4">{{ $admin_announce->title }}
+                      </h5>
+                      <p class="lead text-center">{!! Str::limit($admin_announce->content,'250','...') !!}</p>
                     </div>
                   </div>
-                  <div class="row">
-                      <div class="col-sm-12">
-                          <canvas id="web-audience-metrics-satacked" class="mt-3"></canvas>
-                      </div>
-                  </div>
-
+                  @endforeach
                 </div>
               </div>
         </div>

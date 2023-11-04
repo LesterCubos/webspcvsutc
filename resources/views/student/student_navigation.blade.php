@@ -1,13 +1,10 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" style="background-color: #38d838">
-      <div class="card" style="border-radius: 28px; width: 50px; height: 45px">
-          <a class="navbar-brand brand-logo" href=""><img src="{{ asset('img/sp/images/campus_seal-removebg-preview.png') }}" alt="logo"/></a>
-          <a class="navbar-brand brand-logo-mini" href=""><img src="{{ asset('img/sp/images/campus_seal-removebg-preview.png') }}" alt="logo"/></a>
-  
-      </div>
-    </div>
+  <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" style="background-color: #963FC1">
+    <a class="navbar-brand brand-logo" href="{{ route('admin.dashboard') }}"><img src="{{ asset('img/StudentPortal_admin.png') }}" alt="logo" style="height: 50px; width: 170px"/></a>
+    <a class="navbar-brand brand-logo-mini" href="{{ route('admin.dashboard') }}"><img src="{{ asset('img/campus_seal.png') }}" alt="logo"/></a>
+  </div>
     
-    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-image: linear-gradient( #BE1EC8,#ffff );">
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-color: #202130; color: #37b246">
       <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
         <span class="icon-menu" style="color: #009200"></span>
       </button>
@@ -29,9 +26,9 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
             
-            <a class="dropdown-item preview-item" href="{{ route('profile.edit') }}">
+            {{-- <a class="dropdown-item preview-item" href="{{ route('profile.edit') }}">
                 <i class="icon-head"></i> Profile
-            </a>
+            </a> --}}
              
              <form method="POST" action="{{ route('logout') }}">
               @csrf

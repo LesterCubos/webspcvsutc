@@ -1,5 +1,5 @@
 <!-- partial:partials/_sidebar.html -->
-<nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #38d838">
+<nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #963FC1">
     <div class="user-profile">
       {{-- <div class="user-image">
         <img src="{{asset('img/sp/images/faces/superadminpic.png')}}">
