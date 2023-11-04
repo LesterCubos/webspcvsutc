@@ -91,7 +91,7 @@
                                   @elseif ($announcediff[$admin_announce->id][2] < 24)   
                                     {{ $announcediff[$admin_announce->id][2] }} hr ago
                                   @elseif ($announcediff[$admin_announce->id][3] <= 31)   
-                                    {{ $announcediff[$admin_announce->id][3] }} day ago
+                                    {{ $announcediff[$admin_announce->id][3] }} day/s ago
                                   @endif
                                 </div>
                                 <div class="card text-center">
