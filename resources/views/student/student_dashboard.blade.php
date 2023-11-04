@@ -2,7 +2,8 @@
 
 @section('content')
 
-<div class="content-wrapper" style="background-image: linear-gradient(#ffff, #00922C, #00922C, #00922C );">
+<div class="content-wrapper" style="background-image: url('../img/bg.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+  <img src="{{ asset('img/campus_seal.png') }}" alt="logo" width="150px" style="float: right; padding-top: 0"/>
     <div class="row">
       <div class="col-sm-12 mb-4 mb-xl-0 text-center">
         <h4 class="font-weight-bold text-dark ">Welcome to CvSU-TC Student Portal</h4>
