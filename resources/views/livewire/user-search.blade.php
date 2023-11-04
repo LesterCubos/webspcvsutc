@@ -58,13 +58,13 @@
                         </button>
                       @else
                         <!-- Button trigger modal -->
-                        <button id="icon_delete" type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-user-deletion">
+                        <button id="icon_delete{{$user->id}}" type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-user-deletion{{$user->id}}">
                           <i class="icon-trash"></i>
                         </button>
                       @endif
 
                       <!-- Modal -->
-                      <div class="modal fade" id="confirm-user-deletion" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="confirm-user-deletion{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">

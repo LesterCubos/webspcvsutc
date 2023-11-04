@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('units');
             $table->integer('credits');
             $table->boolean('isActive') ->default(1);
-            $table->string('pincode')->unique()->default(0);
+            $table->string('pincode')->default(0);
             $table->timestamps();
         });
     }

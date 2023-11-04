@@ -109,7 +109,8 @@ class RegisteredUserController extends Controller
         return view('superadmin.sp.manage_user_pages.show', ['user' => $user, 'acadyears'=> AcademicYear::where('isActive', '1')->get()]);
     }
 
-    public function destroy (Request $request, User $user) {
+    public function destroy (Request $request, User $user) 
+    {
 
         // Retrieve the superadmin user from the database
         $superadmins = User::where('role', 'superadmin')->get();
@@ -124,10 +125,10 @@ class RegisteredUserController extends Controller
                 return redirect()->route('superadmin.sp.manage_user_pages.index')->with('notif.success', 'User deleted successfully.');
             } 
         } 
-        if (! Hash::check($request->input('password'), $superadmin->password)) {
-                // Return an error message indicating that the password is incorrect
-                return redirect()->back()->with('notif.danger','The password is incorrect.');
-            }
+        
+        // Return an error message indicating that the password is incorrect
+        return redirect()->back()->with('notif.danger','The password is incorrect.');
+    
        
 
     }

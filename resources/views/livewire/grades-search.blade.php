@@ -13,17 +13,12 @@
       </a>
       <form action="{{ route('Gradeimport') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @if (session('success'))
-          <div class="alert alert-success" role="alert">
-            {{ session('success') }}
-          </div>
-        @endif
         <div class="row mb-3" style="margin-top: 15px">
           <div class="col-md-3">
             <input type="file" class="form-control file-upload-info" name="file">
           </div>
         </div>
-        <button class="btn btn-info">Import User Data</button>
+        <button class="btn btn-info" type="submit">Import User Data</button>
       </form>
       <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
           <div class="input-group-prepend">
@@ -83,7 +78,7 @@
                   </td>
                 </tr>
                 @php ($a++)
-              @elseif ($a == 0)
+              @elseif ($instructor_name != $grade->instructor_name && $course_name != $grade->course_name && $a == 0)
                 <tr>
                   <td colspan="5" style="text-align: center; font-size: 24px">
                       <div class="py-5" style="">No Data Found...</div>

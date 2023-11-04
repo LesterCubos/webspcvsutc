@@ -92,15 +92,12 @@ class AcademicYearController extends Controller
         return abort(500);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy (Request $request,string $id)
+    public function destroy(Request $request, string $id)
     {
         // Retrieve the superadmin user from the database
         $admins = User::where('role', 'admin')->get();
 
-        foreach ($admins as $admin){
+        foreach ($admins as $admin) {
             // Check if the password provided by the superadmin user is valid
             if (Hash::check($request->input('password'), $admin->password)) {
                 // Proceed with the deletion of the user
@@ -108,19 +105,14 @@ class AcademicYearController extends Controller
 
                 $delete = $academic_year->delete($id);
                 // Redirect to the users index page with a success message
-                if($delete) {
+                if ($delete) {
                     session()->flash('notif.success', 'Academic Year deleted successfully!');
                     return redirect()->route('academic_years.index');
                 }
-                // return redirect()->route('superadmin.sp.manage_user_pages.index')->with('notif.success', 'User deleted successfully.');
-            } 
-        }
-        
-        if (! Hash::check($request->input('password'), $admin->password)){
-                // Return an error message indicating that the password is incorrect
-                session()->flash('notif.danger','The password is incorrect.');
-                return redirect()->back();
             }
-        
+        }
+        // Return an error message indicating that the password is incorrect
+        session()->flash('notif.danger', 'The password is incorrect.');
+        return redirect()->back();
     }
 }

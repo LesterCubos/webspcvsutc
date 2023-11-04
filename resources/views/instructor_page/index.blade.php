@@ -67,12 +67,12 @@
                       </ol>
                       </nav>
                     </div><!-- End Page Title -->
-                    {{-- @if (session('success'))
-                      <div class="alert alert-success alert-dismissible" role="alert" style="margin-top: 50px;">
+                    @if (session('success'))
+                      <div class="alert alert-success" role="alert" style="margin-top: 50px;">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <strong>{{ session('success') }}</strong>
                       </div>
-                    @endif --}}
+                    @endif
                     <div class="col-lg-12 grid-margin stretch-card">
                       @livewire('grades-search')
                     </div>

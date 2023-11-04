@@ -47,7 +47,7 @@ class CourseController extends Controller
         // insert only requests that already validated in the StoreRequest
         $create = Course::create($validated);
         $create->generateSpecialCode();
-        $create->generatePinCode();
+        // $create->generatePinCode();
         $create->save();
 
         if($create) {
@@ -106,7 +106,7 @@ class CourseController extends Controller
         // Retrieve the superadmin user from the database
         $admins = User::where('role', 'admin')->get();
 
-        foreach ($admins as $admin){
+        foreach ($admins as $admin) {
             // Check if the password provided by the superadmin user is valid
             if (Hash::check($request->input('password'), $admin->password)) {
                 // Proceed with the deletion of the user
@@ -114,19 +114,14 @@ class CourseController extends Controller
 
                 $delete = $course->delete($id);
                 // Redirect to the users index page with a success message
-                if($delete) {
-                    session()->flash('notif.success', 'Course deleted successfully!');
+                if ($delete) {
+                    session()->flash('notif.success', 'Courses deleted successfully!');
                     return redirect()->route('courses.index');
                 }
-                // return redirect()->route('superadmin.sp.manage_user_pages.index')->with('notif.success', 'User deleted successfully.');
-            } 
-        }
-        
-        if (! Hash::check($request->input('password'), $admin->password)){
-                // Return an error message indicating that the password is incorrect
-                session()->flash('notif.danger','The password is incorrect.');
-                return redirect()->back();
             }
-        
+        }
+        // Return an error message indicating that the password is incorrect
+        session()->flash('notif.danger', 'The password is incorrect.');
+        return redirect()->back();
     }
 }

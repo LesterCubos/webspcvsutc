@@ -44,6 +44,12 @@ class InstructorPageController extends Controller
 
     public function logout(Request $request)
     {
+        $schedcode = Session::get('schedcode');
+        $courses = Course::where('schedcode', $schedcode)->get();
+        foreach ($courses as $course) {
+            $course->generatePinCode();
+            $course->save();
+        }
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
