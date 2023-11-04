@@ -36,10 +36,14 @@
                 </div>
                 <form class="pt-3" method="POST" action="{{ route('instructor_page.index') }}">
                     @csrf
-                    @if (Session::has('error'))
-                      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>{{session::get('error')}}</strong>
-                      </div>
+                    @if(session('notif.success'))
+                        <div class="alert alert-success">
+                            {{ session('notif.success') }}
+                        </div>
+                    @elseif (session('notif.danger'))
+                        <div class="alert alert-danger">
+                            {{ session('notif.danger') }}
+                        </div>
                     @endif
                   <div class="form-group">
                     <input type="number" class="form-control form-control-lg @error('schedcode') is-invalid @enderror" id="schedcode" name="schedcode" placeholder="SchedCode" style="border-color: #ec37fc" required>

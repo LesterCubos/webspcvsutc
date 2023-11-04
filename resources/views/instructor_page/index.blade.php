@@ -67,15 +67,33 @@
                       </ol>
                       </nav>
                     </div><!-- End Page Title -->
-                    @if (session('success'))
-                      <div class="alert alert-success" role="alert" style="margin-top: 50px;">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <strong>{{ session('success') }}</strong>
-                      </div>
-                    @endif
-                    <div class="col-lg-12 grid-margin stretch-card">
-                      @livewire('grades-search')
+                    <div style="margin-top: 50px">
+                      @if(session('notif.success'))
+                        <div class="alert alert-success">
+                            {{ session('notif.success') }} 
+                        </div>
+                      @endif
                     </div>
+                    <div class="col-lg-12 grid-margin stretch-card">
+                      <div class="card" style="margin-top: 50px:">
+                        <div class="card-body" style="border-radius: 10px">
+                          <h1 class="display-4">Select Upload CSV file if multiple <strong style="color: #ec37fc; font-weight: bold">GRADES</strong> needs to be created. Make sure ff the ff format.</h1>
+                          <br>
+                
+                          <form action="{{ route('Gradeimport') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row mb-3" style="margin-top: 15px">
+                              <div class="col-md-3">
+                                <input type="file" class="form-control file-upload-info" name="file">
+                              </div>
+                            </div>
+                            <button class="btn btn-info" type="submit">Import User Data</button>
+                          </form>
+                
+                        </div>
+                      </div>
+                    </div>
+                    @livewire('grades-search')
                 </div> 
                 <footer class="footer" style="background-color: #3c4252">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">

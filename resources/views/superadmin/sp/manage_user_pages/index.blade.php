@@ -33,7 +33,7 @@
   <div class="col-lg-12 grid-margin stretch-card">
       <div class="card" style="margin-top: 50px">
         <div class="card-body">
-          <h1 class="display-4">Select Upload CSV file if multiple users needs to be created. Make sure ff the ff format.</h1>
+          <h1 class="display-4">Select Upload CSV file if multiple <strong style="color: #ec37fc; font-weight: bold">USERS</strong> needs to be created. Make sure ff the ff format.</h1>
           <br>
 
           <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">

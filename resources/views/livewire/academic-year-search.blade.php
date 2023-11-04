@@ -111,6 +111,9 @@
                   @endforelse
               </tbody>
             </table>
+            <div class="d-flex justify-content-center" style="margin-top: 20px">
+                {!! $academic_years->links() !!}
+            </div>
           </div>
       </div>
     </div>

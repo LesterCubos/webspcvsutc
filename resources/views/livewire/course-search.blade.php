@@ -122,6 +122,10 @@
                     @endforelse
                 </tbody>
             </table>
+            {{-- Pagination --}}
+            <div class="d-flex justify-content-center" style="margin-top: 20px">
+                {!! $courses->links() !!}
+            </div>
         </div>
     </div>
 </div>

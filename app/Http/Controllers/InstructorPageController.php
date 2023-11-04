@@ -4,18 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Http\RedirectResponse;
 use App\Models\Course;
 use App\Models\Grade;
 use App\Models\AcademicYear;
 
 class InstructorPageController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): RedirectResponse
     {
-        $grades = Grade::all();
-
-        $acadyears = AcademicYear::where('isActive', '1')->get();
-
         Session::put('schedcode', $request->input('schedcode'));
 
         $courses = Course::where('schedcode', $request->input('schedcode'))->get();
@@ -28,8 +25,8 @@ class InstructorPageController extends Controller
         
         foreach ($courses as $course) {
             if ($request->input('pincode') == $course->pincode) {
-                $request->session()->flash('success', 'Superadmin Login Successfully');
-                return view('instructor_page.index', compact('acadyears','courses', 'grades'));
+                session()->flash('notif.success', 'Login Successfully!');
+                return redirect()->route('grades.index');
             } 
         }
         
