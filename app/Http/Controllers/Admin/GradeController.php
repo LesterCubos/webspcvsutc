@@ -24,12 +24,12 @@ class GradeController extends Controller
      */
     public function index(): Response
     {
-        $routeName = \Route::current()->getName();
-        $viewName = ($routeName == 'grades') ? 'admin.grade.index' : 'instructor_page.index';
+        // $routeName = \Route::current()->getName();
+        // $viewName = ($routeName == 'admin_grades.index') ? 'admin.grades.index' : 'instructor_page.index';
 
         $schedcode = Session::get('schedcode');
 
-        return response()->view($viewName, [
+        return response()->view('instructor_page.index', [
             'grades' => Grade::orderBy('updated_at', 'desc')->paginate(5), 
             'acadyears'=> AcademicYear::where('isActive', '1')->get(),
             'courses' => Course::where('schedcode', $schedcode)->get(),
@@ -114,38 +114,6 @@ class GradeController extends Controller
 
         return abort(500);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    // public function destroy (Request $request,string $id)
-    // {
-    //     // Retrieve the superadmin user from the database
-    //     $admins = User::where('role', 'admin')->get();
-
-    //     foreach ($admins as $admin){
-    //         // Check if the password provided by the superadmin user is valid
-    //         if (Hash::check($request->input('password'), $admin->password)) {
-    //             // Proceed with the deletion of the user
-    //             $grade = Grade::findOrFail($id);
-
-    //             $delete = $grade->delete($id);
-    //             // Redirect to the users index page with a success message
-    //             if($delete) {
-    //                 session()->flash('notif.success', 'grade deleted successfully!');
-    //                 return redirect()->route('grades.index');
-    //             }
-    //             // return redirect()->route('superadmin.sp.manage_user_pages.index')->with('notif.success', 'User deleted successfully.');
-    //         } 
-    //     }
-        
-    //     if (! Hash::check($request->input('password'), $admin->password)){
-    //             // Return an error message indicating that the password is incorrect
-    //             session()->flash('notif.danger','The password is incorrect.');
-    //             return redirect()->back();
-    //         }
-        
-    // }
     
     public function destroy(string $id): RedirectResponse
     {

@@ -99,6 +99,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\AcademicYearController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\GradeController;
+use App\Http\Controllers\Admin\AdminGradeController;
 use App\Http\Controllers\Admin\AdminAnnounceController;
 
 //Instructor Page
@@ -303,7 +304,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('Coursesexport', [CSVHandlerController::class, 'Coursesexport'])->name('Coursesexport');
     //Instructor Page Switch
     Route::get('instructorpage_switch',[SwitchController::class, 'instructorpage'])->name('admin.instructor_page_switch.index');
-
+    //Grades
+    Route::resource('admin_grades',AdminGradeController::class);
     //Announcement
     Route::resource('admin_announces', AdminAnnounceController::class);
 

@@ -14,7 +14,7 @@
                 <i class="icon-search"></i>
               </span>
             </div>
-            <input type="text" class="form-control" placeholder="Search Course Name..." wire:model.lazy="searchCourse">
+            <input type="text" class="form-control" placeholder="Search Course Subject..." wire:model.lazy="searchCourse">
         </div>
         <div class="table-responsive pt-3">
             <table class="table table-bordered">
@@ -27,7 +27,7 @@
                     Program
                     </th>
                     <th>
-                    Course Name
+                    Course Subject
                     </th>
                     <th>
                     Instructor Name
@@ -90,7 +90,7 @@
 
                                         <div class="modal-body">
                                         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                                            {{ __('Once the Academic Year is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete this Academic Year.') }}
+                                            {{ __('Once the Course is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete this Academic Year.') }}
                                         </p>
                                         <br>
                                         <div class="form-group">
