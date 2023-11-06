@@ -57,7 +57,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('student_informations.index') }}">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Student Information</span>
         </a>

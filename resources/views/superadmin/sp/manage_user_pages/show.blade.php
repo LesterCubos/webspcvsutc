@@ -3,7 +3,7 @@
 @section('title','View User')
 @section('content')
 
-<div class="content-wrapper" style="background-image: linear-gradient(#ffff, #f4c2fe, #f4c2fe, #f4c2fe );">
+<div class="content-wrapper" style="background-image: url('/img/bg_admin.png'); background-repeat: no-repeat; background-size: 100% 100%;">
   <div class="pagename">
     <nav>
     <ol class="breadcrumb">
@@ -182,7 +182,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
     
 </div>
 @endsection

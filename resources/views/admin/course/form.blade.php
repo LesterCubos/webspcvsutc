@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-@section('title','Manage Announcement')
+@section('title','Manage Courses')
 
 @section('content')
 
@@ -70,10 +70,18 @@
                     <div class="form-group">
                         <label for="year_level">Year Level:</label>
                         <select type="text" id="year_level" name="year_level" class="form-control @error('year_level') is-invalid @enderror" value="{{ old('year_level') }}" required>
-                            <option value="First Year" {{ old('year_level') == 'First Year' ? 'selected' : '' }}>First Year</option>
-                            <option value="Second Year" {{ old('year_level') == 'Second Year' ? 'selected' : '' }}>Second Year</option>
-                            <option value="Third Year" {{ old('year_level') == 'Third Year' ? 'selected' : '' }}>Third Year</option>
-                            <option value="Fourth Year" {{ old('year_level') == 'Fourth Year' ? 'selected' : '' }}>Fourth Year</option>
+                            @if (\Route::current()->getName() == 'courses.create')
+                                <option value="First Year" {{ old('year_level') == 'First Year' ? 'selected' : '' }}>First Year</option>
+                                <option value="Second Year" {{ old('year_level') == 'Second Year' ? 'selected' : '' }}>Second Year</option>
+                                <option value="Third Year" {{ old('year_level') == 'Third Year' ? 'selected' : '' }}>Third Year</option>
+                                <option value="Fourth Year" {{ old('year_level') == 'Fourth Year' ? 'selected' : '' }}>Fourth Year</option>
+                            @endif
+                            @isset($course)
+                                <option value="First Year" {{ $course->year_level == 'First Year' ? 'selected' : '' }}>First Year</option>
+                                <option value="Second Year" {{ $course->year_level == 'Second Year' ? 'selected' : '' }}>Second Year</option>
+                                <option value="Third Year" {{ $course->year_level == 'Third Year' ? 'selected' : '' }}>Third Year</option>
+                                <option value="Fourth Year" {{ $course->year_level == 'Fourth Year' ? 'selected' : '' }}>Fourth Year</option>
+                            @endisset
                         </select>
                         @error('year_level')
                         <span class="invalid-feedback" role="alert">

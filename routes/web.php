@@ -101,6 +101,7 @@ use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\GradeController;
 use App\Http\Controllers\Admin\AdminGradeController;
 use App\Http\Controllers\Admin\AdminAnnounceController;
+use App\Http\Controllers\Admin\StudentInformationController;
 
 //Instructor Page
 use App\Http\Controllers\InstructorPageController;
@@ -294,8 +295,8 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
 Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard');
     Route::get('/admin/profile',[AdminController::class, 'edit'])->name('admin.profile.edit');
-    Route::post('/admin/profile', [AdminController::class, 'store'])->name('admin.user.profile.store');
-    Route::patch('/admin/profile',[AdminController::class, 'update'])->name('admin.profile.update');
+    Route::post('/admin/profile', [ProfileController::class, 'store'])->name('admin.user.profile.store');
+    Route::patch('/admin/profile',[ProfileController::class, 'update'])->name('admin.profile.update');
 
     //Academic Year
     Route::resource('academic_years', AcademicYearController::class);
@@ -306,6 +307,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('instructorpage_switch',[SwitchController::class, 'instructorpage'])->name('admin.instructor_page_switch.index');
     //Grades
     Route::resource('admin_grades',AdminGradeController::class);
+    //Student Information
+    Route::resource('student_informations', StudentInformationController::class);
     //Announcement
     Route::resource('admin_announces', AdminAnnounceController::class);
 

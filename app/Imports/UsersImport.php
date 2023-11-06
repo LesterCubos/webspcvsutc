@@ -16,6 +16,8 @@ class UsersImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
+        $temporaryPassword = 'temporaryPassword123.';
+
         return new User([
             'first_name' => $row['first_name'],
             'surname' => $row['surname'],
@@ -43,7 +45,7 @@ class UsersImport implements ToModel, WithHeadingRow
             'guardian_occupation' => $row['guardian_occupation'],
             'guardian_address' => $row['guardian_address'],
             'email' => $row['email'], 
-            'password' => \Hash::make($row['password']),
+            'password' => \Hash::make($temporaryPassword),
         ]);
     }
 }

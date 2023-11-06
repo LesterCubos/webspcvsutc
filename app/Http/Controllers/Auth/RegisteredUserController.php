@@ -32,6 +32,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $temporaryPassword = 'temporaryPassword123.';
 
         $request->validate([
             'first_name' => ['required', 'string', 'max:255'],
@@ -60,7 +61,7 @@ class RegisteredUserController extends Controller
             'guardian_occupation' => ['required', 'string', 'max:255'],
             'guardian_address' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            // 'password' => ['required', 'confirmed', Rules\Password::defaults()],
             // 'status' => ['required', 'in:active,inactive'],
             'role' => ['required', 'in:superadmin,admin,student'],
         ]);
@@ -92,10 +93,12 @@ class RegisteredUserController extends Controller
             'guardian_occupation' => $request->guardian_occupation,
             'guardian_address' => $request->guardian_address,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => Hash::make($temporaryPassword),
+            // 'password' => Hash::make($request->password),
             // 'status' => $request->status,
             'role' => $request->role,
         ]);
+
 
         // event(new Registered($user));
 

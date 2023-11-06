@@ -38,7 +38,10 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('superadmin.profile.edit')->with('status', 'profile-updated');
+        $routeName = \Route::current()->getName();
+        $viewName = ($routeName == 'admin.profile.update') ? 'admin.profile.edit' : 'superadmin.profile.edit';
+
+        return Redirect::route($viewName)->with('status', 'profile-updated');
     }
 
     public function checkPassword($attribute, $value, $parameters, $validator)

@@ -36,7 +36,7 @@
                 
                 <div class="form-group">
                   <label for="first_name">First Name</label>
-                  <input type="text" class="form-control  @error('first_name') is-invalid @enderror" id="first_name" name="first_name" value="{{ old('first_name') }}" placeholder="Input First Name">
+                  <input type="text" class="form-control  @error('first_name') is-invalid @enderror" id="first_name" name="first_name" value="{{ old('first_name') }}" placeholder="Input First Name"required>
                   @error('first_name')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -46,7 +46,7 @@
 
                 <div class="form-group">
                   <label for="surname">Last Name</label>
-                  <input type="text" class="form-control  @error('surname') is-invalid @enderror" id="surname" name="surname" value="{{ old('surname') }}" placeholder="Input Surname">
+                  <input type="text" class="form-control  @error('surname') is-invalid @enderror" id="surname" name="surname" value="{{ old('surname') }}" placeholder="Input Surname" required>
                   @error('surname')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -56,7 +56,7 @@
 
                 <div class="form-group">
                   <label for="middle_name">Middle Name</label>
-                  <input type="text" class="form-control  @error('middle_name') is-invalid @enderror" id="middle_name" name="middle_name" value="{{ old('middle_name') }}" placeholder="Input Middle Name">
+                  <input type="text" class="form-control  @error('middle_name') is-invalid @enderror" id="middle_name" name="middle_name" value="{{ old('middle_name') }}" placeholder="Input Middle Name" required>
                   @error('middle_name')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -66,7 +66,7 @@
 
                 <div class="form-group">
                   <label for="student_number">Student Number</label>
-                  <input type="number" class="form-control  @error('student_number') is-invalid @enderror" id="student_number" name="student_number" value="{{ old('student_number') }}" placeholder="Input Student Number">
+                  <input type="number" class="form-control  @error('student_number') is-invalid @enderror" id="student_number" name="student_number" value="{{ old('student_number') }}" placeholder="Input Student Number" required>
                   @error('student_number')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -104,7 +104,7 @@
 
                 <div class="form-group">
                   <label for="nationality">Nationality</label>
-                  <input type="text" class="form-control  @error('nationality') is-invalid @enderror" id="nationality" name="nationality" value="{{ old('nationality') }}" placeholder="Input Nationality">
+                  <input type="text" class="form-control  @error('nationality') is-invalid @enderror" id="nationality" name="nationality" value="{{ old('nationality') }}" placeholder="Input Nationality" required>
                   @error('nationality')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -114,7 +114,7 @@
 
                 <div class="form-group">
                   <label for="religion">Religion</label>
-                  <input type="text" class="form-control  @error('religion') is-invalid @enderror" id="religion" name="religion" value="{{ old('religion') }}" placeholder="Input Religion">
+                  <input type="text" class="form-control  @error('religion') is-invalid @enderror" id="religion" name="religion" value="{{ old('religion') }}" placeholder="Input Religion" required>
                   @error('religion')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -124,7 +124,7 @@
 
                 <div class="form-group">
                   <label for="age">Age</label>
-                  <input type="number" class="form-control  @error('age') is-invalid @enderror" id="age" name="age" value="{{ old('age') }}" placeholder="Input Age">
+                  <input type="number" class="form-control  @error('age') is-invalid @enderror" id="age" name="age" value="{{ old('age') }}" placeholder="Input Age" required>
                   @error('age')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -134,7 +134,7 @@
 
                 <div class="form-group">
                   <label for="birthday">Birthday</label>
-                  <input type="date" name="birthday" id="birthday" class="form-control @error('birthday') is-invalid @enderror" value="{{ old('birthday') }}">
+                  <input type="date" name="birthday" id="birthday" class="form-control @error('birthday') is-invalid @enderror" value="{{ old('birthday') }}" required>
                   @error('birthday')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -144,7 +144,7 @@
 
                 <div class="form-group">
                   <label for="birth_place">Birth Place</label>
-                  <input type="text" class="form-control  @error('birth_place') is-invalid @enderror" id="birth_place" name="birth_place" value="{{ old('birth_place') }}" placeholder="Input Birth Place">
+                  <input type="text" class="form-control  @error('birth_place') is-invalid @enderror" id="birth_place" name="birth_place" value="{{ old('birth_place') }}" placeholder="Input Birth Place" required>
                   @error('birth_place')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -154,7 +154,7 @@
 
                 <div class="form-group">
                   <label for="contact_number">Contact Number</label>
-                  <input type="number" class="form-control  @error('contact_number') is-invalid @enderror" id="contact_number" name="contact_number" value="{{ old('contact_number') }}" placeholder="Input Contact Number">
+                  <input type="number" class="form-control  @error('contact_number') is-invalid @enderror" id="contact_number" name="contact_number" value="{{ old('contact_number') }}" placeholder="Input Contact Number" required>
                   @error('contact_number')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -164,7 +164,7 @@
 
                 <div class="form-group">
                   <label for="address">Address</label>
-                  <input type="text" class="form-control  @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}" placeholder="Input Adress">
+                  <input type="text" class="form-control  @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}" placeholder="Input Adress" required>
                   @error('address')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -174,7 +174,7 @@
 
                 <div class="form-group">
                   <label for="postal_code">Postal Code</label>
-                  <input type="number" class="form-control  @error('postal_code') is-invalid @enderror" id="postal_code" name="postal_code" value="{{ old('postal_code') }}" placeholder="Input Postal Code">
+                  <input type="number" class="form-control  @error('postal_code') is-invalid @enderror" id="postal_code" name="postal_code" value="{{ old('postal_code') }}" placeholder="Input Postal Code" required>
                   @error('postal_code')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -184,7 +184,7 @@
 
                 <div class="form-group">
                   <label for="elementary_school">Elemantary School</label>
-                  <input type="text" class="form-control  @error('elementary_school') is-invalid @enderror" id="elementary_school" name="elementary_school" value="{{ old('elementary_school') }}" placeholder="Input Elemantary School">
+                  <input type="text" class="form-control  @error('elementary_school') is-invalid @enderror" id="elementary_school" name="elementary_school" value="{{ old('elementary_school') }}" placeholder="Input Elemantary School" required>
                   @error('elementary_school')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -194,7 +194,7 @@
 
                 <div class="form-group">
                   <label for="juniorhigh_school">Junior High School</label>
-                  <input type="text" class="form-control  @error('juniorhigh_school') is-invalid @enderror" id="juniorhigh_school" name="juniorhigh_school" value="{{ old('juniorhigh_school') }}" placeholder="Input Junior High School">
+                  <input type="text" class="form-control  @error('juniorhigh_school') is-invalid @enderror" id="juniorhigh_school" name="juniorhigh_school" value="{{ old('juniorhigh_school') }}" placeholder="Input Junior High School" required>
                   @error('juniorhigh_school')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -204,7 +204,7 @@
 
                 <div class="form-group">
                   <label for="seniorhigh_school">Senior High School</label>
-                  <input type="text" class="form-control  @error('seniorhigh_school') is-invalid @enderror" id="seniorhigh_school" name="seniorhigh_school" value="{{ old('seniorhigh_school') }}" placeholder="Input Senior High School">
+                  <input type="text" class="form-control  @error('seniorhigh_school') is-invalid @enderror" id="seniorhigh_school" name="seniorhigh_school" value="{{ old('seniorhigh_school') }}" placeholder="Input Senior High School" required>
                   @error('seniorhigh_school')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -282,7 +282,7 @@
 
                 <div class="form-group">
                   <label for="guardian_name">Guardian Name</label>
-                  <input type="text" class="form-control  @error('guardian_name') is-invalid @enderror" id="guardian_name" name="guardian_name" value="{{ old('guardian_name') }}" placeholder="Input Guardian Name">
+                  <input type="text" class="form-control  @error('guardian_name') is-invalid @enderror" id="guardian_name" name="guardian_name" value="{{ old('guardian_name') }}" placeholder="Input Guardian Name" required>
                   @error('guardian_name')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -292,7 +292,7 @@
 
                 <div class="form-group">
                   <label for="guardian_number">Guardian Number</label>
-                  <input type="number" class="form-control  @error('guardian_number') is-invalid @enderror" id="guardian_number" name="guardian_number" value="{{ old('guardian_number') }}" placeholder="Input Guardian Contact Number">
+                  <input type="number" class="form-control  @error('guardian_number') is-invalid @enderror" id="guardian_number" name="guardian_number" value="{{ old('guardian_number') }}" placeholder="Input Guardian Contact Number" required>
                   @error('guardian_number')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -302,7 +302,7 @@
 
                 <div class="form-group">
                   <label for="guardian_occupation">Guardian Occupation</label>
-                  <input type="text" class="form-control  @error('guardian_occupation') is-invalid @enderror" id="guardian_occupation" name="guardian_occupation" value="{{ old('guardian_occupation') }}" placeholder="Input Guardian Occupation">
+                  <input type="text" class="form-control  @error('guardian_occupation') is-invalid @enderror" id="guardian_occupation" name="guardian_occupation" value="{{ old('guardian_occupation') }}" placeholder="Input Guardian Occupation" required>
                   @error('guardian_occupation')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -312,7 +312,7 @@
 
                 <div class="form-group">
                   <label for="guardian_address">Guardian Address</label>
-                  <input type="text" class="form-control  @error('guardian_address') is-invalid @enderror" id="guardian_address" name="guardian_address" value="{{ old('guardian_address') }}" placeholder="Input Guardian Address">
+                  <input type="text" class="form-control  @error('guardian_address') is-invalid @enderror" id="guardian_address" name="guardian_address" value="{{ old('guardian_address') }}" placeholder="Input Guardian Address" required>
                   @error('guardian_address')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -322,7 +322,7 @@
 
                 <div class="form-group">
                   <label for="email">Email address</label>
-                  <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" placeholder="Email">
+                  <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" placeholder="Email" required>
                   @error('email')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -344,7 +344,7 @@
                   @enderror
                 </div>
                 
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
                   <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Password">
                   @error('password')
@@ -361,7 +361,7 @@
                       <strong>{{ $message }}</strong>
                   </span>
                   @enderror
-                </div>
+                </div> --}}
                 
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <a href="{{ route('superadmin.sp.manage_user_pages.index')}}" class="btn btn-light">Cancel</a>
