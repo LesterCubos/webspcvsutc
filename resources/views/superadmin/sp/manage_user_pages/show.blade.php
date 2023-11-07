@@ -4,6 +4,7 @@
 @section('content')
 
 <div class="content-wrapper" style="background-image: url('/img/bg_admin.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+  <img src="{{ asset('img/campus_seal.png') }}" alt="logo" width="150px" style="float: right; padding-top: 0"/>
   <div class="pagename">
     <nav>
     <ol class="breadcrumb">
@@ -14,19 +15,9 @@
     </nav>
   </div><!-- End Page name -->
 
-
-    <div class="col-lg-12 grid-margin stretch-card">
-            <div class="card">
-            <div class="card-body">
-                    <br>
-                    <h4>{{ 'View User' }}</h4>
-            </div>
-            </div>
-    </div>
-
-    <div class="row">
+    <div class="row" style="margin-top: 110px">
         <div class="col-md-6 grid-margin stretch-card">
-          <div class="card">
+          <div class="card" style="border-radius: 10px">
             <div class="card-body">
               <h4 class="card-title">Status</h4>
               <p class="card-description">
@@ -97,7 +88,7 @@
         </div>
 
         <div class="col-md-6 grid-margin stretch-card">
-          <div class="card">
+          <div class="card" style="border-radius: 10px">
             <div class="card-body">
               <h4 class="card-title">Educational Background</h4>
               <p class="card-description">

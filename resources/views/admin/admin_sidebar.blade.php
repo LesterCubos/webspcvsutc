@@ -64,7 +64,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('downloadable_forms.index') }}">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Downloadable Forms</span>
         </a>

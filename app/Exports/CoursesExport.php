@@ -4,8 +4,9 @@ namespace App\Exports;
 
 use App\Models\Course;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class CoursesExport implements FromCollection
+class CoursesExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -20,4 +21,14 @@ class CoursesExport implements FromCollection
 
         return Course::select('schedcode', 'course_name', 'instructor_name', 'pincode')->where('isActive', '1')->get();
     }
+
+    public function headings(): array
+{
+    return [
+        'SCHEDCODE', 
+        'COURSE NAME', 
+        'INSTRUCTOR NAME', 
+        'PINCODE',
+    ];
+}
 }

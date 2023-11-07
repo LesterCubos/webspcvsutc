@@ -40,7 +40,6 @@
               </tr>
             </thead>
             <tbody>
-              @php($a = 0)
               @forelse ($grades as $grade)
                 <tr>
                   <td>
