@@ -18,14 +18,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card" style="margin-top: 50px; border-radius: 10px">
             <div class="card-body">
-                <h4 class="card-title">Downloadable Form</h4>
-                <p class="card-description">
-                  <code>Upload File</code> 
-                </p>
-              <a class="btn btn-primary btn-icon-text" href="{{ route('downloadable_forms.create') }}">
-                <i class="mdi mdi-plus-circle btn-icon-prepend"></i>Add Files
-              </a>
-                @livewire('file-upload')
+              @livewire('file-upload')
             </div>
         </div>
     </div>

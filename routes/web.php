@@ -103,6 +103,7 @@ use App\Http\Controllers\Admin\AdminGradeController;
 use App\Http\Controllers\Admin\AdminAnnounceController;
 use App\Http\Controllers\Admin\StudentInformationController;
 use App\Http\Controllers\Admin\FileController;
+use App\Http\Controllers\Admin\FilesController;
 
 //Instructor Page
 use App\Http\Controllers\InstructorPageController;
@@ -312,6 +313,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::resource('student_informations', StudentInformationController::class);
     //Downloadable Forms
     Route::resource('downloadable_forms', FileController::class);
+    Route::get('files{file}', [FilesController::class, 'files']);
     //Announcement
     Route::resource('admin_announces', AdminAnnounceController::class);
 

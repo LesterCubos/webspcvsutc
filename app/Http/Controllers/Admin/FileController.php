@@ -27,7 +27,7 @@ class FileController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('admin.downloadable_forms.index', [
+        return response()->view('admin.downloadable_forms.form', [
             'acadyears'=> AcademicYear::where('isActive', '1')->get(),
         ]);
     }
