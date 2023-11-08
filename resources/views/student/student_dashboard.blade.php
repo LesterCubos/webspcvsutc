@@ -75,6 +75,7 @@
               <div class="card-body">
                   <h4 class="card-title">Announcement</h4>
                   @foreach($admin_announces as $admin_announce)
+                  @if ($admin_announce->isActive == 1)
                   <div class="card text-start">
                     <div class="card-header font-weight-bold">
                       Date: {{ $admin_announce->created_at }}
@@ -85,6 +86,7 @@
                       <p class="lead text-center">{!! Str::limit($admin_announce->content,'250','...') !!}</p>
                     </div>
                   </div>
+                  @endif
                   @endforeach
                 </div>
               </div>
