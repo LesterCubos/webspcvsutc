@@ -8,10 +8,10 @@
         <li class="breadcrumb-item active">Dashboard</li>
       </ol>
     </nav>
-    @if (Session::has('error'))
+    @if (Session::has('success'))
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <i class="bi bi-exclamation-triangle me-1" style="margin-right: 5px"></i>
-          <strong>{{session::get('error')}}</strong>
+        <i class="bi bi-check-circle-fill me-1" style="margin-right: 5px"></i>
+          <strong style="font-weight: bolder">{{session::get('success')}}</strong> {{ __('You are logged in as Superadmin!!') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     @endif

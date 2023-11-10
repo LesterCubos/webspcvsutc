@@ -1,5 +1,10 @@
 <div class="col-lg-12 grid-margin stretch-card">
-    <div class="card" style="border-radius: 10px">
+  @if(session('notif.success') || session('notif.danger'))
+    <div class="card">
+  @else
+    <div class="card" style="margin-top: 50px; border-radius: 10px">
+  @endif
+    {{-- <div class="card" style="border-radius: 10px"> --}}
       <div class="card-body">
         <h4 class="card-title">Student Informations Table</h4>
         <p class="card-description">

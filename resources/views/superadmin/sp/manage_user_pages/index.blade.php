@@ -16,7 +16,7 @@
     </ol>
     </nav>
   </div><!-- End Page Title -->
-  <div style="margin-top: 50px">
+  <div style="margin-top: 50px; margin-bottom: 20px">
       @if(session('notif.success'))
         <div class="alert alert-success">
             {{ session('notif.success') }} 
@@ -31,7 +31,11 @@
   </div>
 
   <div class="col-lg-12 grid-margin stretch-card">
+    @if(session('notif.success') || session('notif.danger'))
+      <div class="card">
+    @else
       <div class="card" style="margin-top: 50px">
+    @endif
         <div class="card-body">
           <h1 class="display-4">Select Upload CSV file if multiple <strong style="color: #ec37fc; font-weight: bold">USERS</strong> needs to be created. Make sure ff the ff format.</h1>
           <br>

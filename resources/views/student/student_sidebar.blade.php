@@ -1,16 +1,19 @@
 <!-- partial:partials/_sidebar.html -->
 <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #963FC1">
-    <div class="user-profile">
-      {{-- <div class="user-image">
-        <img src="{{asset('img/sp/images/faces/superadminpic.png')}}">
-      </div> --}}
-      <div class="user-name">
-        <a>
-            {{-- {{ Auth::guard('superadmin')->user()->name }} --}}
-        </a>
-      </div>
-      
+  <div class="user-profile">
+    <div class="user-image">
+      @if (empty(Auth::user()->avatar))
+        <img src="{{ asset('img/default.png') }}" alt="Profile Photo">
+      @else
+        <img src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo">
+      @endif
     </div>
+    <div class="user-name">
+      <a>
+        {{ Auth::user()->first_name }}
+      </a>
+    </div>
+  </div>
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link" href="">

@@ -1,4 +1,8 @@
-<div class="card" style="margin-top: 50px; border-radius: 10px">
+@if(session('notif.success') || session('notif.danger'))
+  <div class="card">
+@else
+  <div class="card" style="margin-top: 50px; border-radius: 10px">
+@endif
     <div class="card-body">
         <h4 class="card-title">Courses Table</h4>
         {{-- <p class="card-description">

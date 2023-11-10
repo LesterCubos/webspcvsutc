@@ -13,26 +13,34 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}" class="abreadlink">
               <i class="mdi mdi-home-outline"></i> Dashboard</a></li>
-            @if ($routeName == 'downloadable_forms.index')
-                <li class="breadcrumb-item active" style="font-weight: 700">Downloadable Forms</li>
-            @else
-                <li class="breadcrumb-item">Downloadable Forms</li>
-                <li class="breadcrumb-item active" style="font-weight: 700">Add File</li>
-            @endif
+            <li class="breadcrumb-item active" style="font-weight: 700">Downloadable Forms</li>
         </ol>
         </nav>
     </div><!-- End Page Title -->
-    <div style="margin-top: 50px">
+    <div style="margin-top: 50px; margin-bottom: 20px">
+        @if(session('notif.success'))
+            <div class="alert alert-success">
+                {{ session('notif.success') }}
+            </div>
+        @elseif (session('notif.danger'))
+            <div class="alert alert-danger">
+                {{ session('notif.danger') }}
+            </div>
+        @endif
     </div>
     <div class="col-lg-12 grid-margin stretch-card">
+        @if(session('notif.success') || session('notif.danger'))
+            <div class="card">
+        @else
         <div class="card" style="margin-top: 50px; border-radius: 10px">
+        @endif
             <div class="card-body">
                 <h4 class="card-title">Downloadable Form</h4>
                 <p class="card-description">
                 <code>Upload File</code> 
                 </p>
                 <a class="btn btn-primary btn-icon-text" href="{{ route('downloadable_forms.create') }}">
-                    <i class="mdi mdi-plus-circle btn-icon-prepend"></i>Add Files
+                    <i class="mdi mdi-plus-circle btn-icon-prepend"></i>Add PDF Files
                 </a>
                 <div class="table-responsive pt-3">
                     <table class="table table-bordered">

@@ -7,16 +7,6 @@
     <div class="row">
       <div class="col-sm-12 mb-4 mb-xl-0 text-center" style="margin-top: 40px">
         <h4 class="font-weight-bold text-dark ">Welcome to CvSU-TC Student Portal</h4>
-        {{-- <p class="font-weight-normal mb-2 text-muted">Student Portal</p> --}}
-
-            {{-- @if (session('status'))
-                <p class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </p>
-            @endif
-            {{ __('You are logged in as Super Admin!') }} --}}
-
-
         <h4 style="color: purple">
             <?php  date_default_timezone_set('Asia/Manila');
               echo "Today is " . date("l, m-d-Y. h:i a");?>
@@ -24,8 +14,21 @@
       </div>
     </div>
 
-    <div class="row" style="margin-top: 60px">
+    @if (session('success'))
+      <div class="alert alert-success fade in alert-dismissible show" role="alert" style="margin-top: 50px; margin-bottom: 20px">
+        {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">x</span>
+        </button> --}}
+        <i class="icon-circle-check" style="margin-right: 5px"></i>    
+        <strong style="font-weight: bolder">{{ session('success') }}</strong> {{ __('You are logged in as Admin!!') }}
+      </div>
+    @endif
 
+    @if(session('success'))
+      <div class="row">
+    @else
+      <div class="row" style="margin-top: 60px">
+    @endif
         <div class="row flex-grow">
             <div class="col-xxl-4 col-md-3 grid-margin stretch-card">
                 <div class="card" style="border-radius: 15px">

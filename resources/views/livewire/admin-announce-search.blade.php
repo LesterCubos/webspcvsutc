@@ -1,4 +1,8 @@
-<div class="card" style="margin-top: 50px; border-radius: 10px">
+@if(session('notif.success') || session('notif.danger'))
+  <div class="card">
+@else
+  <div class="card" style="margin-top: 50px; border-radius: 10px">
+@endif
     <div class="card-body">
         <h4 class="card-title">Announcement Table</h4>
           <a href="{{ route('admin_announces.create') }}" class="btn btn-primary btn-icon-text">

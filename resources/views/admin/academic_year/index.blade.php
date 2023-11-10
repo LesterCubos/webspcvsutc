@@ -15,7 +15,7 @@
         </nav>
     </div><!-- End Page Title -->
 
-    <div style="margin-top: 50px">
+    <div style="margin-top: 50px; margin-bottom: 20px">
         @if(session('notif.success'))
             <div class="alert alert-success">
                 {{ session('notif.success') }}
@@ -27,7 +27,11 @@
         @endif
     </div>
 
-    <div class="row" style="margin-top: 50px">
+    @if(session('notif.success') || session('notif.danger'))
+      <div class="row">
+    @else
+        <div class="row" style="margin-top: 50px">
+    @endif
         @livewire('academic-year-search')
         <div class="col-xl-3 grid-margin-lg-0 grid-margin stretch-card">
           <div class="card"  style="border-radius: 10px">

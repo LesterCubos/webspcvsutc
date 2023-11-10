@@ -67,8 +67,17 @@ class FileController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): RedirectResponse
     {
-        //
+        $file = File::findOrFail($id);
+
+        $delete = $file->delete($id);
+
+        if($delete) {
+            session()->flash('notif.success', 'File has been deleted successfully!');
+            return redirect()->route('downloadable_forms.index');
+        }
+
+        return abort(500);
     }
 }
