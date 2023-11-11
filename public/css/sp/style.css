@@ -13424,20 +13424,25 @@ input[type="button"].btn-block {
   display: flex;
 }
 
+.breadcrumb-item a {
+  color: #000;
+  font-weight: bold;
+}
+
 .breadcrumb-item + .breadcrumb-item {
   padding-left: 0.5rem;
 }
 
 .breadcrumb .breadcrumb-item:hover a {
   text-decoration: none;
-  color: #ec37fc;
+  color: #800080;
   font-weight: 700;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
   padding-right: 0.5rem;
-  color: #6c757d;
+  color: #000;
   content: "/";
 }
 
@@ -13450,6 +13455,7 @@ input[type="button"].btn-block {
 }
 /* changed */
 .breadcrumb-item.active {
+  font-size: 14px;
   color: purple;
 }
 

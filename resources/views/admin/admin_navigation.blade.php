@@ -35,7 +35,7 @@
             @csrf
 
             <a class="dropdown-item preview-item" href="{{ route('logout') }}" onclick="event.preventDefault();this.closest('form').submit();">
-              <i class="icon-inbox" style="color: #37b246"></i> Logout
+              <i class="bx bx-log-out-circle" style="color: #37b246"></i> Logout
             </a>
           </form>
         </div>

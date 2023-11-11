@@ -30,7 +30,7 @@
           @elseif(Auth::user()->role === 'student')
             @php $dash = "student.dashboard" @endphp
           @endif
-          <li class="breadcrumb-item"><a href="{{ route($dash) }}" class="abreadlink"><i class="mdi mdi-home-outline" style="margin-right: 5px"></i>Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ route($dash) }}" class="abreadlink"><i class="bi bi-house-fill" style="margin-right: 5px"></i>Home</a></li>
           
           <li class="breadcrumb-item active" style="font-weight: 700">Profile</li>
         </ol>

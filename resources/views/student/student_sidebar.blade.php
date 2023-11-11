@@ -16,7 +16,7 @@
   </div>
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('student.dashboard') }}">
           <i class="icon-box menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
@@ -25,7 +25,7 @@
         <h5 style="color: purple"><strong>Manage</strong></h5>
       </div> --}}
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('student.student_information') }}">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Student Information</span>
         </a>

@@ -7,7 +7,7 @@
   <div class="pagename">
     <nav>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('superadmin.sp.dashboard') }}" class="abreadlink"><i class="fa fa-home"></i> Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('superadmin.sp.dashboard') }}" class="abreadlink"><i class="bi bi-house-fill"></i> Dashboard</a></li>
         <li class="breadcrumb-item">Manage User</li>
         <li class="breadcrumb-item active">Add New User</li>
     </ol>

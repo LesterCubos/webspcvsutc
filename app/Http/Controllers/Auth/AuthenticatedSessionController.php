@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Session;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -35,6 +36,7 @@ class AuthenticatedSessionController extends Controller
         } elseif ($request->user()->role === 'admin'){
             $url = '/admin/dashboard';
         } elseif ($request->user()->role === 'student'){
+            Session::put('email', $request->user()->email);
             $url = '/student/dashboard';
         }
         // orig 

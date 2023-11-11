@@ -8,7 +8,7 @@
   <div class="pagename">
     <nav>
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('superadmin.sp.dashboard') }}" class="abreadlink"><i class="fa fa-home"></i> Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('superadmin.sp.dashboard') }}" class="abreadlink"><i class="bi bi-house-fill"></i> Dashboard</a></li>
         <li class="breadcrumb-item">Manage User</li>
         <li class="breadcrumb-item active">View User</li>
     </ol>
@@ -41,6 +41,10 @@
                 <div class="form-group">
                     <label for="surname">Surname</label>
                     <input type="text" class="form-control" id="surname" placeholder="{{ $user->surname }}" readonly="readonly">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" id="email" placeholder="{{ $user->email }}" readonly="readonly">
                 </div>
                 <div class="form-group">
                     <label for="age">Age</label>
@@ -96,35 +100,44 @@
               </p>
               <form class="forms-sample">
                 <div class="form-group row">
-                  <label for="student_number" class="col-sm-3 col-form-label">Student Number</label>
+                  <label for="role" class="col-sm-3 col-form-label">Role</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="student_number" placeholder="{{ $user->student_number }}" readonly="readonly">
+                    <input type="text" class="form-control" id="role" placeholder="{{ $user->role }}" readonly="readonly">
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label for="program" class="col-sm-3 col-form-label">Program</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="program" placeholder="{{ $user->program }}" readonly="readonly">
+                @if ($user->role == 'student')
+                  <div class="form-group row">
+                    <label for="student_number" class="col-sm-3 col-form-label">Student Number</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="student_number" placeholder="{{ $user->student_number }}" readonly="readonly">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label for="undergraduate_year" class="col-sm-3 col-form-label">Year</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="undergraduate_year" placeholder="{{ $user->undergraduate_year }}" readonly="readonly">
+                  <div class="form-group row">
+                    <label for="program" class="col-sm-3 col-form-label">Program</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="program" placeholder="{{ $user->program }}" readonly="readonly">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label for="student_classification" class="col-sm-3 col-form-label">Student Classification</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="student_classification" placeholder="{{ $user->student_classification }}" readonly="readonly">
+                  <div class="form-group row">
+                    <label for="undergraduate_year" class="col-sm-3 col-form-label">Year</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="undergraduate_year" placeholder="{{ $user->undergraduate_year }}" readonly="readonly">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group row">
-                  <label for="registration_status" class="col-sm-3 col-form-label">Registration Status</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="registration_status" placeholder="{{ $user->registration_status }}" readonly="readonly">
+                  <div class="form-group row">
+                    <label for="student_classification" class="col-sm-3 col-form-label">Student Classification</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="student_classification" placeholder="{{ $user->student_classification }}" readonly="readonly">
+                    </div>
                   </div>
-                </div>
+                  <div class="form-group row">
+                    <label for="registration_status" class="col-sm-3 col-form-label">Registration Status</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="registration_status" placeholder="{{ $user->registration_status }}" readonly="readonly">
+                    </div>
+                  </div>
+                @else
+                @endif
                 <div class="form-group row">
                   <label for="elementary_school" class="col-sm-3 col-form-label">Elememtary School</label>
                   <div class="col-sm-9">
@@ -168,7 +181,11 @@
                     <input type="text" class="form-control" id="guardian_address" placeholder="{{ $user->address }}" readonly="readonly">
                   </div>
                 </div>
-                <a href="{{ route('superadmin.sp.manage_user_pages.index')}}" class="btn btn-dark btn-lg btn-block" style="margin-top: 350px;">Back</a>
+                @if ($user->role == 'student')
+                <a href="{{ route('superadmin.sp.manage_user_pages.index')}}" class="btn btn-dark btn-lg btn-block" style="margin-top: 350px">Back</a>
+                @else
+                  <a href="{{ route('superadmin.sp.manage_user_pages.index')}}" class="btn btn-dark btn-lg btn-block" style="margin-top: 770px">Back</a>
+                @endif
               </form>
             </div>
           </div>

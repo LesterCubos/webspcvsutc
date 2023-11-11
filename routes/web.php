@@ -322,6 +322,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 Route::middleware(['auth','role:student'])->group(function(){
     Route::get('/student/dashboard', [StudentController::class, 'Dashboard'])->name('student.dashboard');
+    Route::get('/student/student_information', [StudentController::class, 'student_information'])->name('student.student_information');
     
 
 }); //End Group Student Middleware
