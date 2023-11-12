@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('program')->default(0);
             $table->string('course_name')->default(0);
             $table->string('instructor_name')->default(0);
+            $table->string('academic_year')->default(0);
             $table->string('year_level');
             $table->timestamps();
         });

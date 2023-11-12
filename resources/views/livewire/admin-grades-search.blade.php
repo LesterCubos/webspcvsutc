@@ -37,7 +37,10 @@
                     Remarks
                   </th>
                   <th>
-                    Year Level
+                    Academic Year
+                  </th>
+                  <th>
+                    Semester
                   </th>
                   <th>
                     Action
@@ -64,7 +67,10 @@
                       {{ $grade->remarks }}
                     </td>
                     <td>
-                      {{ $grade->year_level }}
+                      {{ $grade->academic_year }}
+                    </td>
+                    <td>
+                      {{ $grade->semester }}
                     </td>
                     <td>
                         <!-- Button trigger modal -->

@@ -14,6 +14,7 @@ use App\Http\Requests\Grade\UpdateRequest;
 
 use App\Models\Grade;
 use App\Models\AcademicYear;
+use App\Models\Semester;
 use App\Models\Course;
 use App\Models\User;
 
@@ -57,6 +58,7 @@ class GradeController extends Controller
         $schedcode = Session::get('schedcode');
 
         $courses = Course::where('schedcode', $schedcode)->get();
+        $sems = Semester::where('isActive', '1')->get();
 
         // insert only requests that already validated in the StoreRequest
         $create = Grade::create($validated);
@@ -64,8 +66,11 @@ class GradeController extends Controller
             $create->program = $course->program;
             $create->course_name = $course->course_name;
             $create->instructor_name = $course->instructor_name;
-            $create->save();
         }
+        foreach ($sems as $sem) {
+            $create->academic_year = $sem->academic_year ." ". $sem->semester_name;
+        }
+        $create->save();
 
         if($create) {
 

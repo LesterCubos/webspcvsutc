@@ -31,6 +31,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         $url = '';
+        if ($request->user()->isActive == 1) {
         if($request->user()->role === 'superadmin'){
             $url = '/superadmin/dashboard';
         } elseif ($request->user()->role === 'admin'){
@@ -38,6 +39,15 @@ class AuthenticatedSessionController extends Controller
         } elseif ($request->user()->role === 'student'){
             Session::put('email', $request->user()->email);
             $url = '/student/dashboard';
+        }
+        } else {
+            $url = '/student_login';
+            Auth::guard('web')->logout();
+
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
+            return redirect()->intended($url)->with('error','Account Session Expired!!'); 
         }
         // orig 
         // return redirect()->intended(RouteServiceProvider::HOME)->with('error','Login Successfully');

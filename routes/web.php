@@ -97,6 +97,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 
 // Controllers for Admin
 use App\Http\Controllers\Admin\AcademicYearController;
+use App\Http\Controllers\Admin\SemesterController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\GradeController;
 use App\Http\Controllers\Admin\AdminGradeController;
@@ -302,6 +303,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     //Academic Year
     Route::resource('academic_years', AcademicYearController::class);
+    //Semester
+    Route::resource('semesters', SemesterController::class);
     //Course
     Route::resource('courses', CourseController::class);
     Route::get('Coursesexport', [CSVHandlerController::class, 'Coursesexport'])->name('Coursesexport');
@@ -322,8 +325,14 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 Route::middleware(['auth','role:student'])->group(function(){
     Route::get('/student/dashboard', [StudentController::class, 'Dashboard'])->name('student.dashboard');
+    Route::post('/student/profile', [ProfileController::class, 'store'])->name('student.user.profile.store');
+    //Student Information
     Route::get('/student/student_information', [StudentController::class, 'student_information'])->name('student.student_information');
-    
+    //Student Grade
+    Route::get('/student/student_grade', [StudentController::class, 'student_grade'])->name('student.student_grade');
+    //Downloadable Forms
+    Route::get('/student/downloadable_forms', [StudentController::class, 'downloadable_forms'])->name('student.downloadable_forms');
+    Route::get('/student/files{file}', [FilesController::class, 'student_files']);
 
 }); //End Group Student Middleware
 

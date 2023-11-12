@@ -4,11 +4,11 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\Grade;
+use App\Models\Semester;
 
-class AdminGradesSearch extends Component
+class SemesterSearch extends Component
 {
-    public $searchAdminGrade='';
+    public $searchSemester='';
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
@@ -19,8 +19,8 @@ class AdminGradesSearch extends Component
     }
     public function render()
     {
-        return view('livewire.admin-grades-search',[
-            'grades' => Grade::where('student_number','like', "%{$this->searchAdminGrade}%")->orderBy('updated_at','desc')->paginate(10),
+        return view('livewire.semester-search', [
+            'semesters' => Semester::where('semester_name','like', "%{$this->searchSemester}%")->orderBy('updated_at','desc')->paginate(5),
         ]);
     }
 }

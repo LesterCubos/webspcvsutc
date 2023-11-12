@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Session;
 use App\Models\user;
 use App\Models\AdminAnnounce;
 use App\Models\AcademicYear;
+use App\Models\Grade;
+use App\Models\File;
 
 class StudentController extends Controller
 {
@@ -20,4 +22,15 @@ class StudentController extends Controller
         return view ('student.student_information.index',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'users' => User::where('email', $email)->get(),]);
     }
 
+    public function student_grade(){
+        $email = Session::get('email');
+        $users = User::where('email', $email)->get();
+        foreach ($users as $user) {
+            $student_number = $user->student_number;
+        }
+        return view ('student.student_grade.index',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'grades' => Grade::where('student_number', $student_number)->get()]);
+    }
+    public function downloadable_forms(){
+        return view ('student.downloadable_forms.index',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'files' => File::orderby('updated_at','desc')->get()]);
+    }
 }

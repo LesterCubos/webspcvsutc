@@ -12,4 +12,8 @@ class FilesController extends Controller
     {
         return view('admin.downloadable_forms.file', ['file' => $file]);
     }
+    public function student_files(File $file)
+    {
+        return view('student.downloadable_forms.file', ['file' => $file]);
+    }
 }

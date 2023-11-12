@@ -14,8 +14,52 @@
             </ol>
             </nav>
         </div><!-- End Page Title -->
-    
-        <div class="row" style="margin-top: 110px">
+
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card" style="margin-top: 110px">
+                <div class="card-body">
+                    <form method="POST" action="{{ route('student.user.profile.store') }}" enctype="multipart/form-data">
+                        @csrf
+            
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+            
+                        <div class="row mb-3">
+                            <label for="avatar" class="col-md-4 col-form-label text-md-end" style="font-size: 20px; font-weight: bolder">{{ __('Avatar') }}</label>
+                            <div class="col-md-6">
+                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar">
+            
+                                @if (empty(Auth::user()->avatar))
+                                    <img height="90" src="{{ asset('img/default.png') }}" alt="Profile Photo" style="width:80px;margin-top: 10px;">
+                                @else
+                                  <img src="/avatars/{{ Auth::user()->avatar }}" style="width:80px;margin-top: 10px;">
+                                @endif
+                                
+            
+                                @error('avatar')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+            
+                        <div class="row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Upload Profile') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+       
+        <div class="row">
             @foreach ( $users as $user)
                 <div class="col-md-6 grid-margin stretch-card">
                     <div class="card" style="border-radius: 10px">

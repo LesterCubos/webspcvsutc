@@ -8,10 +8,13 @@
         <img src="/avatars/{{ Auth::user()->avatar }}" alt="Profile Photo">
       @endif
     </div>
-    <div class="user-name">
+    <div class="user-name" style="font-size: 18px">
       <a>
         {{ Auth::user()->first_name }}
       </a>
+    </div>
+    <div class="user-designation">
+      {{ Auth::user()->student_number }}
     </div>
   </div>
     <ul class="nav">
@@ -32,7 +35,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('student.student_grade') }}">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Grades</span>
         </a>
@@ -46,7 +49,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('student.downloadable_forms') }}">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Downloadable Forms</span>
         </a>
