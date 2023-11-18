@@ -12,8 +12,11 @@
     </div>
     <div class="user-name">
       <a>
-        {{ Auth::user()->first_name }}
+        {{ Auth::user()->firstName }}
       </a>
+    </div>
+    <div class="user-designation">
+      {{ Auth::user()->role }}
     </div>
   </div>
   @endif

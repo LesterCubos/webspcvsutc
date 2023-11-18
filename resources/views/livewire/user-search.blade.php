@@ -13,10 +13,9 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th>ID</th>
                 <th>AVATAR</th>
                 <th>FIRST NAME</th>
-                <th>SURNAME</th>
+                <th>LAST NAME</th>
                 <th>EMAIL</th>
                 <th>ROLE</th>
                 <th>STATUS</th>
@@ -27,7 +26,6 @@
             <tbody>
               @forelse ($users as $user)
                 <tr>
-                  <td>{{ $user->id}}</td>
                   <td class="py-1">
                     @if (empty($user->avatar))
                       <img src="{{ asset('img/default.png') }}" alt="Profile Photo">
@@ -35,8 +33,8 @@
                       <img src="/avatars/{{ $user->avatar }}" alt="Profile Photo">
                     @endif
                   </td>
-                  <td>{{ $user->first_name}}</td>
-                  <td>{{ $user->surname }}</td>
+                  <td>{{ $user->firstName}}</td>
+                  <td>{{ $user->lastName }}</td>
                   <td>{{ $user->email}}</td>
                   <td>{{ $user->role}}</td>
                   <td>

@@ -94,6 +94,8 @@ use App\Http\Controllers\StudentController;
 //Controllers related to Superadmin Student Portal
 use App\Http\Controllers\Superadmin\UserController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Superadmin\StudentAccountController;
+use App\Http\Controllers\Superadmin\SyncEnrollStudentInformation;
 
 // Controllers for Admin
 use App\Http\Controllers\Admin\AcademicYearController;
@@ -218,6 +220,9 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
     Route::get('/superadmin/sp/users/userView{user}', [RegisteredUserController::class, 'userView'])->name('superadmin.sp.manage_user_pages.show');
     
     Route::resource('user',RegisteredUserController::class);
+    Route::resource('student_accounts',StudentAccountController::class);
+
+    Route::get('/sync-data', [SyncEnrollStudentInformation::class,'syncData'])->name('sync-data');
     // Route::get('/user', [RegisteredUserController::class, 'delete'])->name('user.delete');
     // CSV Handler
     // Route::get('importExportView', [CSVHandlerController::class, 'importExportView']);

@@ -10,11 +10,11 @@
     </div>
     <div class="user-name" style="font-size: 18px">
       <a>
-        {{ Auth::user()->first_name }}
+        {{ Auth::user()->firstName }}
       </a>
     </div>
     <div class="user-designation">
-      {{ Auth::user()->student_number }}
+      {{ Auth::user()->studentNumber }}
     </div>
   </div>
     <ul class="nav">

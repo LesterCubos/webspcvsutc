@@ -61,7 +61,12 @@
           </form>
 
           <br>
-          <a href="{{ route('superadmin.sp.manage_user_pages.form')}}" class="btn btn-success btn-rounded btn-fw">Add New User</a>
+          
+          <form action="{{ route('sync-data') }}" method="GET">
+            @csrf
+            <a href="{{ route('superadmin.sp.manage_user_pages.form')}}" class="btn btn-success btn-rounded btn-fw">Add New User</a>
+            <button type="submit" class="btn btn-primary btn-rounded btn-fw">Sync Data</button>
+        </form>
         </div>
       </div>
   </div>

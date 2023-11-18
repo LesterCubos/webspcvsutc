@@ -16,7 +16,11 @@
   </div><!-- End Page name -->
 
     <div class="row" style="margin-top: 110px">
+      @if ($user->role == 'superadmin' || $user->role == 'admin')
+        <div class="col-lg-12 grid-margin stretch-card">
+      @else
         <div class="col-md-6 grid-margin stretch-card">
+      @endif
           <div class="card" style="border-radius: 10px">
             <div class="card-body">
               <h4 class="card-title">Status</h4>
@@ -31,165 +35,126 @@
               </p>
               <form class="forms-sample">
                 <div class="form-group">
-                  <label for="first_name">First Name</label>
-                  <input type="text" class="form-control" id="first_name" placeholder="{{ $user->first_name }}" readonly="readonly">
+                  <label for="firstName">First Name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="{{ $user->firstName }}" readonly="readonly">
                 </div>
                 <div class="form-group">
-                    <label for="middle_name">Middle Name</label>
-                    <input type="text" class="form-control" id="middle_name" placeholder="{{ $user->middle_name }}" readonly="readonly">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" class="form-control" id="middleName" placeholder="{{ $user->middleName }}" readonly="readonly">
                 </div>
                 <div class="form-group">
-                    <label for="surname">Surname</label>
-                    <input type="text" class="form-control" id="surname" placeholder="{{ $user->surname }}" readonly="readonly">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="{{ $user->lastName }}" readonly="readonly">
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="text" class="form-control" id="email" placeholder="{{ $user->email }}" readonly="readonly">
                 </div>
                 <div class="form-group">
-                    <label for="age">Age</label>
-                    <input type="text" class="form-control" id="age" placeholder="{{ $user->age }}" readonly="readonly">
+                    <label for="dateOfBirth">Birthday</label>
+                    <input type="text" class="form-control" id="dateOfBirth" placeholder="{{ $user->dateOfBirth }}" readonly="readonly">
                 </div>
                 <div class="form-group">
-                    <label for="birthday">Birthday</label>
-                    <input type="text" class="form-control" id="birthday" placeholder="{{ $user->birthday }}" readonly="readonly">
+                    <label for="gender">Gender</label>
+                    <input type="text" class="form-control" id="gender" placeholder="{{ $user->gender }}" readonly="readonly">
                 </div>
                 <div class="form-group">
-                    <label for="birth_place">Place of Birth</label>
-                    <input type="text" class="form-control" id="birth_place" placeholder="{{ $user->birth_place }}" readonly="readonly">
+                    <label for="status">Civil Status</label>
+                    <input type="text" class="form-control" id="status" placeholder="{{ $user->status }}" readonly="readonly">
                 </div>
                 <div class="form-group">
-                    <label for="sex">Sex</label>
-                    <input type="text" class="form-control" id="sex" placeholder="{{ $user->sex }}" readonly="readonly">
-                </div>
-                <div class="form-group">
-                    <label for="civil_status">Civil Status</label>
-                    <input type="text" class="form-control" id="civil_status" placeholder="{{ $user->civil_status }}" readonly="readonly">
-                </div>
-                <div class="form-group">
-                    <label for="nationality">Nationality</label>
-                    <input type="text" class="form-control" id="nationality" placeholder="{{ $user->nationality }}" readonly="readonly">
+                    <label for="citizenship">Citizenship</label>
+                    <input type="text" class="form-control" id="citizenship" placeholder="{{ $user->citizenship }}" readonly="readonly">
                 </div>
                 <div class="form-group">
                     <label for="religion">Religion</label>
                     <input type="text" class="form-control" id="religion" placeholder="{{ $user->religion }}" readonly="readonly">
                 </div>
                 <div class="form-group">
-                    <label for="contact_number">Contact No.</label>
-                    <input type="text" class="form-control" id="contact_number" placeholder="{{ $user->contact_number }}" readonly="readonly">
-                </div>
+                  <label for="mobilePhone">Contact Number</label>
+                  <input type="text" class="form-control" id="mobilePhone" placeholder="{{ $user->mobilePhone }}" readonly="readonly">
+              </div>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="{{ $user->address }}" readonly="readonly">
+                    <input type="text" class="form-control" id="address" placeholder="@if($user) {{ $user->street }} {{ $user->barangay }} {{ $user->municipality }}, {{ $user->province }}@endif" readonly="readonly">
                 </div>
+                @if ($user->role == 'superadmin' || $user->role == 'admin')
                 <div class="form-group">
-                    <label for="postal_code">Postal Code</label>
-                    <input type="text" class="form-control" id="postal_code" placeholder="{{ $user->postal_code }}" readonly="readonly">
+                  <label for="role">Role</label>
+                  <input type="text" class="form-control" id="address" placeholder="{{ $user->role }}" readonly="readonly">
                 </div>
+                <a href="{{ route('superadmin.sp.manage_user_pages.index')}}" class="btn btn-dark btn-lg btn-block" style="margin-top: 50px">Back</a>
+                @endif
               </form>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 grid-margin stretch-card">
-          <div class="card" style="border-radius: 10px">
-            <div class="card-body">
-              <h4 class="card-title">Educational Background</h4>
-              <p class="card-description">
-                {{-- Horizontal form layout --}}
-              </p>
-              <form class="forms-sample">
-                <div class="form-group row">
-                  <label for="role" class="col-sm-3 col-form-label">Role</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="role" placeholder="{{ $user->role }}" readonly="readonly">
-                  </div>
-                </div>
-                @if ($user->role == 'student')
+        
+        @if ($user->role == 'student')
+          <div class="col-md-6 grid-margin stretch-card">
+            <div class="card" style="border-radius: 10px">
+              <div class="card-body">
+                <h4 class="card-title">Educational Background</h4>
+                <p class="card-description">
+                  {{-- Horizontal form layout --}}
+                </p>
+                <form class="forms-sample">
                   <div class="form-group row">
-                    <label for="student_number" class="col-sm-3 col-form-label">Student Number</label>
+                    <label for="role" class="col-sm-3 col-form-label">Role</label>
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="student_number" placeholder="{{ $user->student_number }}" readonly="readonly">
+                      <input type="text" class="form-control" id="role" placeholder="{{ $user->role }}" readonly="readonly">
                     </div>
                   </div>
-                  <div class="form-group row">
-                    <label for="program" class="col-sm-3 col-form-label">Program</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="program" placeholder="{{ $user->program }}" readonly="readonly">
+                    <div class="form-group row">
+                      <label for="studentNumber" class="col-sm-3 col-form-label">Student Number</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="studentNumber" placeholder="{{ $user->studentNumber }}" readonly="readonly">
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="undergraduate_year" class="col-sm-3 col-form-label">Year</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="undergraduate_year" placeholder="{{ $user->undergraduate_year }}" readonly="readonly">
+                    <div class="form-group row">
+                      <label for="course" class="col-sm-3 col-form-label">course</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="course" placeholder="{{ $user->course }}" readonly="readonly">
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="student_classification" class="col-sm-3 col-form-label">Student Classification</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="student_classification" placeholder="{{ $user->student_classification }}" readonly="readonly">
+                    <div class="form-group row">
+                      <label for="yearAdmitted" class="col-sm-3 col-form-label">Year Admitted</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="yearAdmitted" placeholder="{{ $user->yearAdmitted }}" readonly="readonly">
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="registration_status" class="col-sm-3 col-form-label">Registration Status</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="registration_status" placeholder="{{ $user->registration_status }}" readonly="readonly">
+                    <div class="form-group row">
+                      <label for="semesterAdmitted" class="col-sm-3 col-form-label">Semester Admitted</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="semesterAdmitted" placeholder="{{ $user->semesterAdmitted }}" readonly="readonly">
+                      </div>
                     </div>
-                  </div>
-                @else
-                @endif
-                <div class="form-group row">
-                  <label for="elementary_school" class="col-sm-3 col-form-label">Elememtary School</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="elementary_school" placeholder="{{ $user->elementary_school }}" readonly="readonly">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="juniorhigh_school" class="col-sm-3 col-form-label">Junior High School</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="juniorhigh_school" placeholder="{{ $user->juniorhigh_school }}" readonly="readonly">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="seniorhigh_school" class="col-sm-3 col-form-label">Senior High School</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="seniorhigh_school" placeholder="{{ $user->seniorhigh_school }}" readonly="readonly">
-                  </div>
-                </div>
-                <h4 class="card-title">Guardian Information</h4>
-                <div class="form-group row">
-                  <label for="guardian_name" class="col-sm-3 col-form-label">Guardian Name</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="guardian_name" placeholder="{{ $user->guardian_name }}" readonly="readonly">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="guardian_number" class="col-sm-3 col-form-label">Guardian Number</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="guardian_number" placeholder="{{ $user->guardian_number }}" readonly="readonly">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="guardian_occupation" class="col-sm-3 col-form-label">Guardian Occupation</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="guardian_occupation" placeholder="{{ $user->guardian_occupation }}" readonly="readonly">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="guardian_address" class="col-sm-3 col-form-label">Guardian Address</label>
-                  <div class="col-sm-9">
-                    <input type="text" class="form-control" id="guardian_address" placeholder="{{ $user->address }}" readonly="readonly">
-                  </div>
-                </div>
-                @if ($user->role == 'student')
-                <a href="{{ route('superadmin.sp.manage_user_pages.index')}}" class="btn btn-dark btn-lg btn-block" style="margin-top: 350px">Back</a>
-                @else
-                  <a href="{{ route('superadmin.sp.manage_user_pages.index')}}" class="btn btn-dark btn-lg btn-block" style="margin-top: 770px">Back</a>
-                @endif
-              </form>
+                    <div class="form-group row">
+                      <label for="highschool" class="col-sm-3 col-form-label">High School</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="highschool" placeholder="{{ $user->highschool }}" readonly="readonly">
+                      </div>
+                    </div>
+                    <h4 class="card-title">Guardian Information</h4>
+                    <div class="form-group row">
+                      <label for="guardian" class="col-sm-3 col-form-label">Guardian Name</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="guardian" placeholder="{{ $user->guardian }}" readonly="readonly">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="mobilePhone" class="col-sm-3 col-form-label">Guardian Number</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="mobilePhone" placeholder="{{ $user->mobilePhone }}" readonly="readonly">
+                      </div>
+                    </div>
+                  <a href="{{ route('superadmin.sp.manage_user_pages.index')}}" class="btn btn-dark btn-lg btn-block" style="margin-top: 370px">Back</a>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
+        @endif
     </div>
     
 </div>

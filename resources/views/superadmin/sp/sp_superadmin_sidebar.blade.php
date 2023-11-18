@@ -10,8 +10,11 @@
       </div>
       <div class="user-name">
         <a>
-          {{ Auth::user()->first_name }}
+          {{ Auth::user()->firstName }}
         </a>
+      </div>
+      <div class="user-designation">
+        {{ Auth::user()->role }}
       </div>
     </div>
     <ul class="nav">
@@ -27,6 +30,12 @@
           <span class="menu-title">Manage Users</span>
         </a>
       </li>
+      {{-- <li class="nav-item">
+        <a class="nav-link" href="{{ route('student_accounts.index')}}">
+          <i class="icon-head menu-icon"></i>
+          <span class="menu-title">Student Accounts</span>
+        </a>
+      </li> --}}
 
       <li class="nav-item" style="margin-top: 100px">
         <a class="nav-link" href="{{ route('superadmin.dashboard') }}" style="background-color: #37b246">

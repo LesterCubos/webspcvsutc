@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index(): Response
     {
         return response()->view('superadmin.sp.manage_user_pages.index', [
-            'users' => User::orderBy('updated_at', 'desc')->get(), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
+            'users' => User::orderBy('updated_at', 'desc')->get(), 'acadyears'=> AcademicYear::where('isActive', '1')->get(),
         ]);
     }
 
