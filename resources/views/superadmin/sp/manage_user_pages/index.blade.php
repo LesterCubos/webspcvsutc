@@ -37,10 +37,10 @@
       <div class="card" style="margin-top: 50px">
     @endif
         <div class="card-body">
-          <h1 class="display-4">Select Upload CSV file if multiple <strong style="color: #ec37fc; font-weight: bold">USERS</strong> needs to be created. Make sure ff the ff format.</h1>
+          <h1 class="display-4">Add and Sync <strong style="color: #ec37fc; font-weight: bold">USERS</strong> needs to be created.</h1>
           <br>
 
-          <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+          {{-- <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             @if (session('success'))
@@ -54,11 +54,8 @@
                 <input type="file" class="form-control file-upload-info" name="file">
               </div>
             </div>
-            {{-- <input type="file" name="file" class="form-control col-lg-3">
-            <br> --}}
             <button class="btn btn-info">Import User Data</button>
-            <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
-          </form>
+          </form> --}}
 
           <br>
           
@@ -66,6 +63,7 @@
             @csrf
             <a href="{{ route('superadmin.sp.manage_user_pages.form')}}" class="btn btn-success btn-rounded btn-fw">Add New User</a>
             <button type="submit" class="btn btn-primary btn-rounded btn-fw">Sync Data</button>
+            <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
         </form>
         </div>
       </div>

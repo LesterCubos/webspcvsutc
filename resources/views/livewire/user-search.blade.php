@@ -28,7 +28,11 @@
                 <tr>
                   <td class="py-1">
                     @if (empty($user->avatar))
+                     @if ($user->gender == 'Male')
                       <img src="{{ asset('img/default.png') }}" alt="Profile Photo">
+                      @elseif ($user->gender == 'Female')
+                      <img src="{{ asset('img/woman.png') }}" alt="Profile Photo">
+                     @endif
                     @else
                       <img src="/avatars/{{ $user->avatar }}" alt="Profile Photo">
                     @endif

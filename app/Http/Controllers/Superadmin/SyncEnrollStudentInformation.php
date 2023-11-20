@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Superadmin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
 
@@ -13,6 +14,7 @@ class SyncEnrollStudentInformation extends Controller
     public function syncData()
     {
         $users = User::all();
+        $temporaryPassword = 'temporaryPassword123.';
 
         $students = DB::connection('mysql2')->table('enrollstudentinformation')->get();
 
@@ -49,7 +51,7 @@ class SyncEnrollStudentInformation extends Controller
             $studentAccount->lastupdate = $student->lastupdate;
             $studentAccount->highschool = $student->highschool;
             $studentAccount->curriculumid = $student->curriculumid;
-            $studentAccount->password = 'temporaryPassword123.';
+            $studentAccount->password = Hash::make($temporaryPassword);
             $studentAccount->save();
         }
 

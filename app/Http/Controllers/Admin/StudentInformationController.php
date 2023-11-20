@@ -7,8 +7,11 @@ use App\Http\Requests\StudentInformation\UpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
+
 use App\Models\AcademicYear;
 use App\Models\User;
+use App\Models\EnrollStudentInformation;
 
 class StudentInformationController extends Controller
 {
@@ -39,12 +42,16 @@ class StudentInformationController extends Controller
     {
         $users = User::findOrFail($id);
 
+        $students = EnrollStudentInformation::where('studentNumber', $users->studentNumber)->first();
+
         $validated = $request->validated();
 
         $update = $users->update($validated);
 
+        $students->update($validated);
+
         if($update) {
-            session()->flash('notif.success|User updated successfully!');
+            session()->flash('notif.success', 'User updated successfully!');
             return redirect()->route('student_informations.index');
         }
 

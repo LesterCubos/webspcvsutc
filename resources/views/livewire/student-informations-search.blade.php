@@ -34,16 +34,20 @@
             <tbody>
               @forelse ($users as $user)
                 <tr>
-                  <td>{{ $user->student_number}}</td>
+                  <td>{{ $user->studentNumber}}</td>
                   <td class="py-1">
                     @if (empty($user->avatar))
-                      <img src="{{ asset('img/default.png') }}" alt="Profile Photo">
+                      @if ($user->gender == 'Male')
+                        <img src="{{ asset('img/default.png') }}" alt="Profile Photo">
+                      @elseif ($user->gender == 'Female')
+                        <img src="{{ asset('img/woman.png') }}" alt="Profile Photo">
+                      @endif
                     @else
                       <img src="/avatars/{{ $user->avatar }}" alt="Profile Photo">
                     @endif
                   </td>
-                  <td>{{ $user->first_name}}</td>
-                  <td>{{ $user->surname }}</td>
+                  <td>{{ $user->firstName}}</td>
+                  <td>{{ $user->lastName }}</td>
                   <td>{{ $user->email}}</td>
                   <td>
                     @if($user->isActive == 1)

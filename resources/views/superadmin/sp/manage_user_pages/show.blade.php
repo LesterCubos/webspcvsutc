@@ -70,10 +70,12 @@
                     <label for="religion">Religion</label>
                     <input type="text" class="form-control" id="religion" placeholder="{{ $user->religion }}" readonly="readonly">
                 </div>
+                @if ($user->role == 'superadmin' || $user->role == 'admin')
                 <div class="form-group">
                   <label for="mobilePhone">Contact Number</label>
                   <input type="text" class="form-control" id="mobilePhone" placeholder="{{ $user->mobilePhone }}" readonly="readonly">
-              </div>
+                </div>
+                @endif
                 <div class="form-group">
                     <label for="address">Address</label>
                     <input type="text" class="form-control" id="address" placeholder="@if($user) {{ $user->street }} {{ $user->barangay }} {{ $user->municipality }}, {{ $user->province }}@endif" readonly="readonly">
@@ -113,7 +115,7 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="course" class="col-sm-3 col-form-label">course</label>
+                      <label for="course" class="col-sm-3 col-form-label">Course</label>
                       <div class="col-sm-9">
                         <input type="text" class="form-control" id="course" placeholder="{{ $user->course }}" readonly="readonly">
                       </div>

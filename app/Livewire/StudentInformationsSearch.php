@@ -20,8 +20,9 @@ class StudentInformationsSearch extends Component
     public function render()
     {
         return view('livewire.student-informations-search',[
-            'users' => User::where('student_number','like', "%{$this->searchStudent}%")
+            'users' => User::where('studentNumber','like', "%{$this->searchStudent}%")
             ->where('role', 'student')
+            ->where('isActive', '1')
             ->orderBy('updated_at','desc')->paginate(10),
         ]);
     }

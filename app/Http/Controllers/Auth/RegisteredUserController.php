@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\EnrollStudentInformation;
 
 class RegisteredUserController extends Controller
 {
@@ -95,8 +98,21 @@ class RegisteredUserController extends Controller
         foreach ($superadmins as $superadmin) {
             // Check if the password provided by the superadmin user is valid
             if (Hash::check($request->input('password'), $superadmin->password)) {
+
+                // Connect to the second database
+                DB::purge('mysql2');
+                DB::reconnect('mysql2');
+
+                // Retrieve the student data associated with the user
+                $student = DB::connection('mysql2')->table('enrollstudentinformation')->where('studentNumber', $user->studentNumber)->first();
+                
                 // Proceed with the deletion of the user
                 $user->delete();
+
+                // Check if the student data exists and delete it
+                if ($student) {
+                    DB::connection('mysql2')->table('enrollstudentinformation')->where('studentNumber', $user->studentNumber)->delete();
+                }
 
                 // Redirect to the users index page with a success message
                 return redirect()->route('superadmin.sp.manage_user_pages.index')->with('notif.success', 'User deleted successfully.');
