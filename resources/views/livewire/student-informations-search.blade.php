@@ -16,7 +16,7 @@
                 <i class="icon-search"></i>
               </span>
             </div>
-            <input type="text" class="form-control" placeholder="Search User Name..." wire:model.lazy="searchStudent">
+            <input type="text" class="form-control" placeholder="Search Student Number..." wire:model.lazy="searchStudent">
         </div>
         <div class="table-responsive">
           <table class="table table-hover">

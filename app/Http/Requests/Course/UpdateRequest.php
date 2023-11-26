@@ -26,9 +26,8 @@ class UpdateRequest extends FormRequest
             'course_name' => 'nullable|string|min:3|max:250',
             'instructor_name' => 'nullable|string|min:3|max:250',
             'instructor_email'=> 'nullable|string|min:3|max:250',
-            'year_level'=> 'nullable|string|min:3|max:250',
+            'section'=> 'nullable|string|min:3|max:250',
             'units' => 'nullable|integer',
-            'credits' => 'nullable|integer',
         ];
     }
 }

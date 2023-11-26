@@ -18,9 +18,8 @@ return new class extends Migration
             $table->string('course_name');
             $table->string('instructor_name');
             $table->string('instructor_email');
-            $table->string('year_level');
+            $table->string('section');
             $table->integer('units');
-            $table->integer('credits');
             $table->boolean('isActive') ->default(1);
             $table->string('pincode')->default(0);
             $table->timestamps();

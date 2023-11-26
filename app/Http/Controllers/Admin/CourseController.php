@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 // We will use Form Request to validate incoming requests from our store and update method
 use App\Http\Requests\Course\StoreRequest;
 use App\Http\Requests\Course\UpdateRequest;
@@ -15,6 +16,7 @@ use App\Models\Course;
 use App\Models\AcademicYear;
 use App\Models\User;
 use App\Models\Legend;
+use App\Models\EnrollCourse;
 
 class CourseController extends Controller
 {
@@ -36,7 +38,7 @@ class CourseController extends Controller
     public function create(): Response
     {
         return response()->view('admin.course.form', [
-            'acadyears'=> AcademicYear::where('isActive', '1')->get(), 'legends' => Legend::all()
+            'acadyears'=> AcademicYear::where('isActive', '1')->get(), 'legends' => Legend::all(), 'programs' => EnrollCourse::all()
         ]);
     }
 
@@ -46,6 +48,9 @@ class CourseController extends Controller
     public function store(StoreRequest $request): RedirectResponse
     {
         $validated = $request->validated();
+
+        Session::put('course_program', $request->input('program'));
+        Session::put('course_section', $request->input('section'));
 
         // insert only requests that already validated in the StoreRequest
         $create = Course::create($validated);
@@ -78,6 +83,8 @@ class CourseController extends Controller
      */
     public function edit(string $id): Response
     {
+        Session::put('course_id', $id);
+        Session::put('sub_id', $id);
         return response()->view('admin.course.form', [
             'course' => Course::findOrFail($id), 'acadyears'=> AcademicYear::where('isActive', '1')->get(),
             'legends' => Legend::all(),

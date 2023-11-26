@@ -1,3 +1,4 @@
+<div class="col-lg-12 grid-margin stretch-card">
 @if(session('notif.success') || session('notif.danger'))
   <div class="card">
 @else
@@ -31,6 +32,9 @@
                     Program
                     </th>
                     <th>
+                        Section
+                    </th>
+                    <th>
                     Course Subject
                     </th>
                     <th>
@@ -57,6 +61,9 @@
                                 {{ $course->program }}
                             </td>
                             <td>
+                                {{ $course->section }}
+                            </td>
+                            <td>
                                 {{ $course->course_name }}
                             </td>
                             <td>
@@ -73,9 +80,9 @@
                                 @endif
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('courses.edit', $course->id) }}"><i class="icon-open"></i></a>
+                                <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('courses.edit', $course->id) }}" style="margin-bottom: 5px"><i class="icon-open"></i></a>
                                 <!-- Button trigger modal -->
-                                <button id="icon_delete{{ $course->id }}" type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-user-deletion{{ $course->id }}">
+                                <button id="icon_delete{{ $course->id }}" type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-user-deletion{{ $course->id }}" style="margin-bottom: 5px">
                                     <i class="icon-trash"></i>
                                 </button>
                                 <!-- Modal -->
@@ -119,7 +126,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" style="text-align: center; font-size: 24px">
+                            <td colspan="8" style="text-align: center; font-size: 24px">
                                 <div class="py-5" style="">No Data Found...</div>
                             </td>  
                         </tr> 
@@ -132,4 +139,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

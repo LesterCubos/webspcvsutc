@@ -1,3 +1,4 @@
+<div class="col-lg-12 grid-margin stretch-card">
 @if(session('notif.success') || session('notif.danger'))
   <div class="card">
 @else
@@ -92,5 +93,6 @@
         </div>
         </div>
     </div>
+</div>
 </div>
 

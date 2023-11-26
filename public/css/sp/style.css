@@ -155,7 +155,9 @@
 /*-------------------------------------------------------------------*/
 .search-form input[type=text] {
   border: 1px solid #ec37fc;
+  letter-spacing: 1px;
 }
+
 
 
 @-moz-keyframes bounce {
@@ -13222,6 +13224,17 @@ input[type="button"].btn-block {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
+}
+.card-body input[type=text]{
+  letter-spacing: 1px;
+}
+
+.card-body input[type=number]{
+  letter-spacing: 1px;
+}
+
+.card-body input[type=date]{
+  letter-spacing: 1px;
 }
 
 .card-title {

@@ -33,16 +33,17 @@
                     <br>
                     <div class="form-group">
                         <label for="program">Program:</label>
-                        <input type="text" class="form-control  @error('program') is-invalid @enderror" id="program" name="program" value="{{ $course->program ?? old('program') }}" placeholder="Input Program Name">
+                        @livewire('search-course')
                         @error('program')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
                     </div>
+                    
                     <div class="form-group">
                         <label for="course_name">Course Name:</label>
-                        <input type="text" name="course_name" id="course_name" class="form-control @error('course_name') is-invalid @enderror" value="{{ $course->course_name ?? old('course_name') }}" placeholder="Input Course Name">
+                        @livewire('search-subject')
                         @error('course_name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -68,22 +69,9 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="year_level">Year Level:</label>
-                        <select type="text" id="year_level" name="year_level" class="form-control @error('year_level') is-invalid @enderror" value="{{ old('year_level') }}" required>
-                            @if (\Route::current()->getName() == 'courses.create')
-                                <option value="First Year" {{ old('year_level') == 'First Year' ? 'selected' : '' }}>First Year</option>
-                                <option value="Second Year" {{ old('year_level') == 'Second Year' ? 'selected' : '' }}>Second Year</option>
-                                <option value="Third Year" {{ old('year_level') == 'Third Year' ? 'selected' : '' }}>Third Year</option>
-                                <option value="Fourth Year" {{ old('year_level') == 'Fourth Year' ? 'selected' : '' }}>Fourth Year</option>
-                            @endif
-                            @isset($course)
-                                <option value="First Year" {{ $course->year_level == 'First Year' ? 'selected' : '' }}>First Year</option>
-                                <option value="Second Year" {{ $course->year_level == 'Second Year' ? 'selected' : '' }}>Second Year</option>
-                                <option value="Third Year" {{ $course->year_level == 'Third Year' ? 'selected' : '' }}>Third Year</option>
-                                <option value="Fourth Year" {{ $course->year_level == 'Fourth Year' ? 'selected' : '' }}>Fourth Year</option>
-                            @endisset
-                        </select>
-                        @error('year_level')
+                        <label for="section">Section:</label>
+                        <input type="text" name="section" id="section" class="form-control @error('section') is-invalid @enderror" value="{{ $course->section ?? old('section') }}" placeholder="Input Section">
+                        @error('section')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -93,15 +81,6 @@
                         <label for="units">Units:</label>
                         <input type="number" name="units" id="units" class="form-control @error('units') is-invalid @enderror" value="{{ $course->units ?? old('units') }}" placeholder="Input Units">
                         @error('units')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="credits">Credits:</label>
-                        <input type="number" name="credits" id="credits" class="form-control @error('credits') is-invalid @enderror" value="{{ $course->credits ?? old('credits') }}" placeholder="Input Credits">
-                        @error('credits')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
