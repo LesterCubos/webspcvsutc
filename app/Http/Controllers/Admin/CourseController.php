@@ -14,6 +14,7 @@ use App\Http\Requests\Course\UpdateRequest;
 use App\Models\Course;
 use App\Models\AcademicYear;
 use App\Models\User;
+use App\Models\Legend;
 
 class CourseController extends Controller
 {
@@ -23,7 +24,9 @@ class CourseController extends Controller
     public function index(): Response
     {
         return response()->view('admin.course.index', [
-            'courses' => Course::orderBy('updated_at', 'desc')->paginate(5), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
+            'courses' => Course::orderBy('updated_at', 'desc')->paginate(5), 
+            'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+            'legends' => Legend::all(),
         ]);
     }
 
@@ -33,7 +36,7 @@ class CourseController extends Controller
     public function create(): Response
     {
         return response()->view('admin.course.form', [
-            'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+            'acadyears'=> AcademicYear::where('isActive', '1')->get(), 'legends' => Legend::all()
         ]);
     }
 
@@ -76,7 +79,8 @@ class CourseController extends Controller
     public function edit(string $id): Response
     {
         return response()->view('admin.course.form', [
-            'course' => Course::findOrFail($id), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
+            'course' => Course::findOrFail($id), 'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+            'legends' => Legend::all(),
         ]);
     }
 

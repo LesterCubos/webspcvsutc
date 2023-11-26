@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 
 use App\Models\AcademicYear;
 use App\Models\File;
+use App\Models\Legend;
 
 class FileController extends Controller
 {
@@ -18,7 +19,8 @@ class FileController extends Controller
     public function index(): Response
     {
         return response()->view('admin.downloadable_forms.index', [
-            'files' => File::orderBy('updated_at', 'desc')->paginate(5), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
+            'files' => File::orderBy('updated_at', 'desc')->paginate(5), 'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+            'legends' => Legend::all()
         ]);
     }
 
@@ -29,6 +31,7 @@ class FileController extends Controller
     {
         return response()->view('admin.downloadable_forms.form', [
             'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+            'legends' => Legend::all()
         ]);
     }
 

@@ -86,8 +86,8 @@
                       </div>
                   </div>
 
-                </div>
               </div>
+            </div>
         </div>
 
         <div class="col-xl-4 grid-margin stretch-card">

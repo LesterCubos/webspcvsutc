@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Grade;
 use App\Models\AcademicYear;
+use App\Models\Legend;
 
 class AdminGradeController extends Controller
 {
@@ -21,6 +22,7 @@ class AdminGradeController extends Controller
         return response()->view('admin.grades.index', [
             'grades' => Grade::orderBy('updated_at', 'desc')->paginate(5), 
             'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+            'legends' => Legend::all(),
         ]);
     }
 

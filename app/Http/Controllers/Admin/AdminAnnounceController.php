@@ -8,6 +8,7 @@ use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use App\Models\AdminAnnounce;
 use App\Models\AcademicYear;
+use App\Models\Legend;
 use App\Http\Requests\AdminAnnounce\StoreRequest;
 use App\Http\Requests\AdminAnnounce\UpdateRequest;
 use Illuminate\Support\Facades\Storage;
@@ -18,7 +19,8 @@ class AdminAnnounceController extends Controller
     {
 
         return response()->view('admin.admin_announce.index', [
-            'admin_announces' => AdminAnnounce::orderBy('updated_at', 'desc')->paginate(5), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
+            'admin_announces' => AdminAnnounce::orderBy('updated_at', 'desc')->paginate(5), 'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+            'legends' => Legend::all()
         ]);
     }
 
@@ -29,6 +31,7 @@ class AdminAnnounceController extends Controller
     {
         return response()->view('admin.admin_announce.form', [
             'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+            'legends' => Legend::all()
         ]);
     }
 
@@ -67,7 +70,7 @@ class AdminAnnounceController extends Controller
     public function edit(string $id): Response
     {
         return response()->view('admin.admin_announce.form', [
-            'admin_announce' => AdminAnnounce::findOrFail($id), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
+            'admin_announce' => AdminAnnounce::findOrFail($id), 'acadyears'=> AcademicYear::where('isActive', '1')->get(), 'legends' => Legend::all()
         ]);
     }
 

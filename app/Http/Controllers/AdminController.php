@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 use App\Models\AdminAnnounce;
 use App\Models\AcademicYear;
+use App\Models\Legend;
 use Carbon\Carbon;
 
 
 class AdminController extends Controller
 {
     public function Dashboard(){
+        $legends = Legend::all();
         $acadyears = AcademicYear::where('isActive', '1')->get();
         //Today
         $today = Carbon::today();
@@ -47,7 +49,7 @@ class AdminController extends Controller
 
         $admin_announces = AdminAnnounce::all();
 
-        return view('admin.admin_dashboard',compact('acadyears', 'admin_announces', 'currentTime','today','date','month', 'yeardate','announcediff',
+        return view('admin.admin_dashboard',compact('legends', 'acadyears', 'admin_announces', 'currentTime','today','date','month', 'yeardate','announcediff',
         'anchorTimeann'
         ));
     }
@@ -55,10 +57,12 @@ class AdminController extends Controller
     public function edit(Request $request): View
     {
         $acadyears = AcademicYear::where('isActive', '1')->get();
+        $legends = Legend::all();
+        
        
         return view('admin.profile.edit', [
             'user' => $request->user(),
-        ],compact('acadyears'));
+        ],compact('acadyears', 'legends'));
     }
 
 }

@@ -9,6 +9,7 @@ use App\Models\AcademicYear;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Models\Legend;
 
 
 class SwitchController extends Controller
@@ -24,7 +25,8 @@ class SwitchController extends Controller
     public function instructorpage()
     {
         return view('admin.instructor_page_switch.index',[
-                    'switchs' => InstructorPageSwitch::all(), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
+                    'switchs' => InstructorPageSwitch::all(), 'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+                    'legends' => Legend::all()
                 ]);
     
     }

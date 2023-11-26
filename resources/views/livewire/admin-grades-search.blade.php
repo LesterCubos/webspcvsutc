@@ -118,7 +118,7 @@
                   </tr>  
                 @empty
                   <tr>
-                    <td colspan="7" style="text-align: center; font-size: 24px">
+                    <td colspan="8" style="text-align: center; font-size: 24px">
                         <div class="py-5" style="">No Data Found...</div>
                     </td>  
                   </tr> 

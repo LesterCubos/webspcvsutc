@@ -12,6 +12,7 @@ use Latfur\Event\Models\Event;
 use App\Models\AcademicYear;
 use App\Models\Superadmin;
 use App\Models\User;
+use App\Models\Legend;
 use CyrildeWit\EloquentViewable\Support\Period;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -142,7 +143,8 @@ class SuperadminController extends Controller
 
     public function SPDashboard(){
         $acadyears = AcademicYear::where('isActive', '1')->get();
-        return view('superadmin.sp.sp_superadmin_dashboard', compact('acadyears'));
+        $legends = Legend::all();
+        return view('superadmin.sp.sp_superadmin_dashboard', compact('acadyears', 'legends'));
     }
     public function Login(Request $request){
         // dd($request->all());

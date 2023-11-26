@@ -13,6 +13,7 @@ use App\Http\Requests\AcademicYear\UpdateRequest;
 
 use App\Models\AcademicYear;
 use App\Models\User;
+use App\Models\Legend;
 
 
 class AcademicYearController extends Controller
@@ -23,7 +24,9 @@ class AcademicYearController extends Controller
     public function index(): Response
     {
         return response()->view('admin.academic_year.index', [
-            'academic_years' => AcademicYear::orderBy('updated_at', 'desc')->paginate(5), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
+            'academic_years' => AcademicYear::orderBy('updated_at', 'desc')->paginate(5),
+            'acadyears' => AcademicYear::where('isActive', '1')->get(),
+            'legends' => Legend::all(),
         ]);
     }
 

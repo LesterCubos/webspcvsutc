@@ -2,7 +2,7 @@
 @section('title', 'Dashboard')
 @section('content')
 
-<div class="content-wrapper" style="background-image: url('../img/bg_admin.png'); background-repeat: no-repeat; background-size: 100% 100%;">
+<div class="content-wrapper" style="background-image: url('/img/bg.png'); background-repeat: no-repeat; background-size: 100% 100%;">
   <img src="{{ asset('img/campus_seal.png') }}" alt="logo" width="150px" style="float: right; padding-top: 0"/>
     <div class="row">
       <div class="col-sm-12 mb-4 mb-xl-0 text-center" style="margin-top: 40px">
