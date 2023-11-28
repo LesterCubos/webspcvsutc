@@ -122,6 +122,7 @@ Route::middleware(['page.status'])->group(function () {
     Route::post('instructor_page_logout', [InstructorPageController::class, 'logout'])->name('instructor_page.logout');
     Route::resource('grades',GradeController::class);
     Route::post('Gradeimport', [CSVHandlerController::class, 'Gradeimport'])->name('Gradeimport');
+    Route::get('Tempdownload', [CSVHandlerController::class, 'Tempdownload'])->name('Tempdownload');
 });
 
 //About

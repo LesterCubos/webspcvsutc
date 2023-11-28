@@ -29,12 +29,6 @@
                   Grade
                 </th>
                 <th>
-                  Remarks
-                </th>
-                <th>
-                  Year Level
-                </th>
-                <th>
                   Action
                 </th>
               </tr>
@@ -47,12 +41,6 @@
                   </td>
                   <td>
                     {{ $grade->grade }}
-                  </td>
-                  <td>
-                    {{ $grade->remarks }}
-                  </td>
-                  <td>
-                    {{ $grade->year_level }}
                   </td>
                   <td>
                     <form method="post" action="{{ route('grades.destroy', $grade->id) }}">      

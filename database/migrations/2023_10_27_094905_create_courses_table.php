@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('instructor_email');
             $table->string('section');
             $table->integer('units');
-            $table->boolean('isActive') ->default(1);
+            $table->string('sem')->default(0);
+            $table->string('acadyear')->default(0);
+            $table->boolean('isActive')->default(1);
             $table->string('pincode')->default(0);
             $table->timestamps();
         });

@@ -23,11 +23,20 @@ class Course extends Model
         $currentYear = date('Y');
         $course_program = Session::get('course_program');
         $course_section = Session::get('course_section');
+        $course_year = Session::get('course_year');
+        $course_sem = Session::get('course_sem');
+        
+        // $lastGeneratedCode = self::where('acadyear', $course_year)
+        // ->where('sem', $course_sem)
+        // ->where('program',  $course_program)
+        // ->where('section', $course_section)
+        // ->orderBy('schedcode', 'desc')
+        // ->first();
+
         $lastGeneratedCode = self::orderBy('schedcode', 'desc')->first();
 
-        // If there are no existing sections, initialize the new schedule code to the current year followed by zero-padded incremented number
         if (!$lastGeneratedCode) {
-            $newScheduleCode = $currentYear . '0000';
+            $newScheduleCode = $currentYear . '0001';
         } else {
             $lastGeneratedCodeParts = explode($currentYear, $lastGeneratedCode->schedcode);
             $incrementedNumber = intval($lastGeneratedCodeParts[0]) + 1;

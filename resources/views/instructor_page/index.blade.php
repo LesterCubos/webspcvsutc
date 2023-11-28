@@ -31,8 +31,8 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" style="background-color: #202130; border-color: #202130; font-size: 18px; color: white; font-weight: bold">
                         <span class="mdi mdi-calendar-clock" style="font-size: 18px; color: #ec37fc; margin-right: 5px"></span>
-                        @foreach ($acadyears as $acadyear)
-                          {{ $acadyear->name }}
+                        @foreach ($legends as $legend)
+                          {{ $legend->schoolyear }}
                         @endforeach
                       </span>
                     </div>
@@ -88,6 +88,7 @@
                               </div>
                             </div>
                             <button class="btn btn-info" type="submit">Import User Data</button>
+                            <a class="btn btn-warning" href="{{ route('Tempdownload') }}">CSV Template</a>
                           </form>
                 
                         </div>

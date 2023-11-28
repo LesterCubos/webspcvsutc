@@ -17,6 +17,8 @@ use App\Models\AcademicYear;
 use App\Models\Semester;
 use App\Models\Course;
 use App\Models\User;
+use App\Models\Legend;
+use App\Models\EnrollGradeChoices;
 
 class GradeController extends Controller
 {
@@ -34,6 +36,7 @@ class GradeController extends Controller
             'grades' => Grade::orderBy('updated_at', 'desc')->paginate(5), 
             'acadyears'=> AcademicYear::where('isActive', '1')->get(),
             'courses' => Course::where('schedcode', $schedcode)->get(),
+            'legends' => Legend::all()
         ]);
     }
 
@@ -44,7 +47,7 @@ class GradeController extends Controller
     {
         
         return response()->view('instructor_page.form', [
-            'acadyears'=> AcademicYear::where('isActive', '1')->get(),
+            'acadyears'=> AcademicYear::where('isActive', '1')->get(), 'legends' => Legend::all(), 'gchoices' => EnrollGradeChoices::all()
         ]);
     }
 
@@ -98,7 +101,7 @@ class GradeController extends Controller
     public function edit(string $id): Response
     {
         return response()->view('instructor_page.form', [
-            'grade' => Grade::findOrFail($id), 'acadyears'=> AcademicYear::where('isActive', '1')->get()
+            'grade' => Grade::findOrFail($id), 'acadyears'=> AcademicYear::where('isActive', '1')->get(), 'legends' => Legend::all(), 'gchoices' => EnrollGradeChoices::all()
         ]);
     }
 

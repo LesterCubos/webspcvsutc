@@ -35,8 +35,7 @@ class GradesImport implements ToModel, WithHeadingRow
         return new Grade([
             'student_number' => $row['student_number'],
             'grade' => $grade,
-            'remarks' => $row['remarks'],
-            'year_level' => $row['year_level'],
+            // 'remarks' => $row['remarks'],
             'program'=> $program,
             'course_name'=> $course_name,
             'instructor_name'=> $instructor_name,

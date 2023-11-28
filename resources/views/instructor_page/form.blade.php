@@ -31,8 +31,8 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" style="background-color: #202130; border-color: #202130; font-size: 18px; color: white; font-weight: bold">
                         <span class="mdi mdi-calendar-clock" style="font-size: 18px; color: #ec37fc; margin-right: 5px"></span>
-                        @foreach ($acadyears as $acadyear)
-                          {{ $acadyear->name }}
+                        @foreach ($legends as $legend)
+                          {{ $legend->schoolyear }}
                         @endforeach
                       </span>
                     </div>
@@ -88,43 +88,17 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="grade">Grade:</label>
-                                        <input type="number" step="0.01" class="form-control  @error('grade') is-invalid @enderror" id="grade" name="grade" value="{{ $grade->grade ?? old('grade') }}" placeholder="Input Grade">
+                                        <select class="form-control @error('grade') is-invalid @enderror" id="grade" name="grade" value="{{ $grade->grade ?? old('grade') }}" required>
+                                          <option value="{{ $grade->grade ?? old('grade') }}" disabled selected>{{ $grade->grade ?? old('grade') }}</option>
+                                          @foreach ($gchoices as $gchoice)
+                                            <option value="{{ $gchoice->choiceGrade }}" {{ old('grade') == $gchoice->choiceGrade ? 'selected' : '' }}>{{ $gchoice->choiceGrade }}</option>
+                                          @endforeach 
+                                        </select>
                                         @error('grade')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                         @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="remarks">Remarks:</label>
-                                        <input type="text" name="remarks" id="remarks" class="form-control @error('remarks') is-invalid @enderror" value="{{ $grade->remarks ?? old('remarks') }}" placeholder="Input Remarks">
-                                        @error('remarks')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="year_level">Year Level:</label>
-                                      <select type="text" id="year_level" name="year_level" class="form-control @error('year_level') is-invalid @enderror" required>
-                                        @if (\Route::current()->getName() == 'grades.create')
-                                        <option value="First Year" {{ old('year_level') == 'First Year' ? 'selected' : '' }}>First Year</option>
-                                        <option value="Second Year" {{ old('year_level') == 'Second Year' ? 'selected' : '' }}>Second Year</option>
-                                        <option value="Third Year" {{ old('year_level') == 'Third Year' ? 'selected' : '' }}>Third Year</option>
-                                        <option value="Fourth Year" {{ old('year_level') == 'Fourth Year' ? 'selected' : '' }}>Fourth Year</option>
-                                        @endif
-                                        @isset($grade)
-                                          <option value="First Year" {{ $grade->year_level == 'First Year' ? 'selected' : '' }}>First Year</option>
-                                          <option value="Second Year" {{ $grade->year_level == 'Second Year' ? 'selected' : '' }}>Second Year</option>
-                                          <option value="Third Year" {{ $grade->year_level == 'Third Year' ? 'selected' : '' }}>Third Year</option>
-                                          <option value="Fourth Year" {{ $grade->year_level == 'Fourth Year' ? 'selected' : '' }}>Fourth Year</option>
-                                        @endisset
-                                      </select>
-                                      @error('year_level')
-                                      <span class="invalid-feedback" role="alert">
-                                          <strong>{{ $message }}</strong>
-                                      </span>
-                                      @enderror
                                     </div>
                                     <br>
                                     <div class="flex text-center" style="padding-top: 10px">

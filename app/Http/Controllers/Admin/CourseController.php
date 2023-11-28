@@ -52,10 +52,18 @@ class CourseController extends Controller
         Session::put('course_program', $request->input('program'));
         Session::put('course_section', $request->input('section'));
 
+        $legends = Legend::all();
+
         // insert only requests that already validated in the StoreRequest
         $create = Course::create($validated);
         $create->generateSpecialCode();
         // $create->generatePinCode();
+        foreach ($legends as $legend) {
+            Session::put('course_year', $legend->schoolyear);
+            Session::put('course_sem', $legend->semester);
+            $create->acadyear = $legend->schoolyear;
+            $create->sem = $legend->semester;
+        }
         $create->save();
 
         if($create) {

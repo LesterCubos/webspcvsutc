@@ -76,7 +76,7 @@
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                      </div>
+                    </div>
                     <div class="form-group">
                         <label for="units">Units:</label>
                         <input type="number" name="units" id="units" class="form-control @error('units') is-invalid @enderror" value="{{ $course->units ?? old('units') }}" placeholder="Input Units">
@@ -86,7 +86,16 @@
                             </span>
                         @enderror
                     </div>
-                    
+                    @isset($course)
+                        <div class="form-group">
+                            <label for="sem">Semester:</label>
+                            <input type="text" name="sem" id="sem" class="form-control" value="{{ $course->sem }}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="acadyear">Academic Year:</label>
+                            <input type="text" name="acadyear" id="acadyear" class="form-control" value="{{ $course->acadyear }}" readonly>
+                        </div>
+                    @endisset
                     <br>
     
                     <div class="flex text-center" style="padding-top: 10px">

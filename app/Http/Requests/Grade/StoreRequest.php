@@ -24,11 +24,10 @@ class StoreRequest extends FormRequest
         return [
             'student_number' => 'required|string|min:1|max:11',
             'grade' => 'required|string|min:1|max:5',
-            'remarks'=> 'required|string|min:3|max:250',
+            // 'remarks'=> 'required|string|min:3|max:250',
             // 'program' => 'required|string|min:3|max:250',
             // 'course_name' => 'required|string|min:3|max:250',
             // 'instructor_name' => 'required|string|min:3|max:250',
-            'year_level'=> 'required|string|min:3|max:250',
         ];
     }
 }

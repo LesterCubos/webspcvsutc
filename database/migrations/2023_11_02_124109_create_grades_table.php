@@ -15,12 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('student_number');
             $table->string('grade');
-            $table->string('remarks');
+            $table->string('remarks')->default(0);
             $table->string('program')->default(0);
             $table->string('course_name')->default(0);
             $table->string('instructor_name')->default(0);
             $table->string('academic_year')->default(0);
-            $table->string('year_level');
             $table->timestamps();
         });
     }

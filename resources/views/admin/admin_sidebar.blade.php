@@ -94,12 +94,12 @@
         </a>
       </li>
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Virtual Regform</span>
         </a>
-      </li>
+      </li> --}}
 
     </ul>
   </nav>
