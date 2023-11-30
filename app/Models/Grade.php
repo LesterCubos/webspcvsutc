@@ -14,5 +14,6 @@ class Grade extends Model
         'program',
         'course_name',
         'instructor_name',
+        'academic_year',
     ];
 }

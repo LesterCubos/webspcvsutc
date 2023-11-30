@@ -7,7 +7,7 @@
     <div class="card-body">
         <h4 class="card-title">Announcement Table</h4>
           <a href="{{ route('admin_announces.create') }}" class="btn btn-primary btn-icon-text">
-            <i class="mdi mdi-plus-circle btn-icon-prepend"></i>
+            <i class="bx bxs-message-add btn-icon-prepend" style="font-size: 1.225rem;"></i>
             Add Announcement
           </a>
           <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
@@ -71,7 +71,7 @@
                           <form method="post" action="{{ route('admin_announces.destroy', $admin_announce->id) }}">      
                             @csrf
                             @method('DELETE')
-                            <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('admin_announces.edit', $admin_announce->id) }}"><i class="icon-open"></i></a>
+                            <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('admin_announces.edit', $admin_announce->id) }}"><i class="bi bi-pencil-square"></i></a>
                             <button id="icon_delete" type="submit" class="btn btn-danger">
                               <i class="icon-trash"></i>
                             </button>

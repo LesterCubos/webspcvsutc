@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="{{ asset('css/sp/addstyle.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('img/campus_seal.png') }}" />
+    <!-- Icons -->
+    <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/remixicon/remixicon.css')}}" rel="stylesheet">
 
   </head>
   
@@ -87,8 +91,8 @@
                                 <input type="file" class="form-control file-upload-info" name="file">
                               </div>
                             </div>
-                            <button class="btn btn-info" type="submit">Import User Data</button>
-                            <a class="btn btn-warning" href="{{ route('Tempdownload') }}">CSV Template</a>
+                            <button class="btn btn-info btn-icon-text" type="submit"><i class="bi bi-award-fill btn-icon-prepend" style="font-size: 1.225rem;"></i>Import Grades Data</button>
+                            <a class="btn btn-warning btn-ion-text" href="{{ route('Tempdownload') }}"><i class="bx bxs-file btn-icon-prepend" style="font-size: 1.225rem;"></i> CSV Template</a>
                           </form>
                 
                         </div>

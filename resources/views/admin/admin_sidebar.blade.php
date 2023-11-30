@@ -23,7 +23,7 @@
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.dashboard') }}">
-          <i class="icon-box menu-icon"></i>
+          <i class="bi bi-columns-gap menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
@@ -33,7 +33,7 @@
 
       <li class="nav-item">
         <a class="nav-link" href="{{ route('academic_years.index') }}">
-          <i class="icon-head menu-icon"></i>
+          <i class="bi bi-calendar2-event menu-icon"></i>
           <span class="menu-title">Academic Years</span>
         </a>
       </li>
@@ -47,7 +47,7 @@
 
       <li class="nav-item">
         <a class="nav-link" href="{{ route('courses.index') }}">
-          <i class="icon-head menu-icon"></i>
+          <i class="bi bi-journal-bookmark-fill menu-icon"></i>
           <span class="menu-title">Courses</span>
         </a>
       </li>
@@ -61,35 +61,35 @@
 
       <li class="nav-item">
         <a class="nav-link" href="{{ route('admin_grades.index') }}">
-          <i class="icon-head menu-icon"></i>
+          <i class="bi bi-award menu-icon"></i>
           <span class="menu-title">Grades</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="{{ route('student_informations.index') }}">
-          <i class="icon-head menu-icon"></i>
+          <i class="bi bi-person-lines-fill menu-icon"></i>
           <span class="menu-title">Student Information</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="{{ route('downloadable_forms.index') }}">
-          <i class="icon-head menu-icon"></i>
+          <i class="bi bi-file-earmark-post menu-icon"></i>
           <span class="menu-title">Downloadable Forms</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
-          <i class="icon-head menu-icon"></i>
+        <a class="nav-link" href="{{ route('requestdocs.index') }}">
+          <i class="bi bi-folder2 menu-icon"></i>
           <span class="menu-title">Requested Documents</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="{{ route('admin_announces.index') }}">
-          <i class="icon-head menu-icon"></i>
+          <i class="bi bi-newspaper menu-icon"></i>
           <span class="menu-title">Announcements</span>
         </a>
       </li>

@@ -8,7 +8,7 @@
           </p>
         @endforeach
         <a class="btn btn-primary btn-icon-text" href="{{ route('grades.create') }}">
-          <i class="mdi mdi-plus-circle btn-icon-prepend"></i>Add Grades
+          <i class="bi bi-award-fill btn-icon-prepend" style="font-size: 1.225rem;"></i>Add Grades
         </a>
         <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
             <div class="input-group-prepend">
@@ -46,7 +46,7 @@
                     <form method="post" action="{{ route('grades.destroy', $grade->id) }}">      
                         @csrf
                         @method('DELETE')
-                        <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('grades.edit', $grade->id) }}"><i class="icon-open"></i></a>
+                        <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('grades.edit', $grade->id) }}"><i class="bi bi-pencil-square"></i></a>
                         <button id="icon_delete" type="submit" class="btn btn-danger">
                           <i class="icon-trash"></i>
                         </button>

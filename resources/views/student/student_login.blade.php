@@ -45,7 +45,7 @@
                           <div class="input-group">
                             <div class="input-group-prepend bg-transparent">
                               <span class="input-group-text bg-transparent border-right-0">
-                                <i class="mdi mdi-account-outline text-primary"></i>
+                                <i class="mdi mdi-account-outline text-primary" style="font-size: 20px"></i>
                               </span>
                             </div>
                             <input type="email" class="form-control form-control-lg border-left-0  @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" placeholder="Your Email" required autocomplete="email" autofocus>
@@ -62,7 +62,7 @@
                           <div class="input-group">
                             <div class="input-group-prepend bg-transparent">
                               <span class="input-group-text bg-transparent border-right-0">
-                                <i class="mdi mdi-lock-outline text-primary"></i>
+                                <i class="mdi mdi-lock-outline text-primary"  style="font-size: 20px"></i>
                               </span>
                             </div>
                             <input style="width: 10px" id="myInput" type="password" class="form-control form-control-lg border-left-0 @error('password') is-invalid @enderror" name="password" placeholder="Your Password" required autocomplete="current-password">

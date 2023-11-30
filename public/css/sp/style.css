@@ -11003,9 +11003,11 @@ fieldset:disabled .ajax-upload-dragdrop a.ajax-file-upload,
 }
 
 .btn-primary:hover {
-  color: #fff;
-  background-color: #e811fb;
+  background-color: #fff;
+  color: #e811fb;
   border-color: #e705fb;
+  border-width: 1px;
+  font-weight: bolder;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -11077,9 +11079,11 @@ fieldset:disabled .ajax-upload-dragdrop a.ajax-file-upload,
 }
 
 .btn-success:hover {
-  color: #fff;
-  background-color: #43a617;
+  background-color: #fff;
+  color: #43a617;
   border-color: #3f9b16;
+  border-width: 1px;
+  font-weight: bolder;
 }
 
 .btn-success:focus, .btn-success.focus {
@@ -11114,9 +11118,11 @@ fieldset:disabled .ajax-upload-dragdrop a.ajax-file-upload,
 }
 
 .btn-info:hover {
-  color: #fff;
-  background-color: #1180fb;
+  background-color: #fff;
+  color: #1180fb;
   border-color: #0579fb;
+  border-width: 1px;
+  font-weight: bolder;
 }
 
 .btn-info:focus, .btn-info.focus {
@@ -11145,15 +11151,17 @@ fieldset:disabled .ajax-upload-dragdrop a.ajax-file-upload,
 }
 
 .btn-warning {
-  color: #212529;
+  color: #fff;
   background-color: #fcb41d;
   border-color: #fcb41d;
 }
 
 .btn-warning:hover {
-  color: #212529;
-  background-color: #f0a303;
+  background-color: #fff;
+  color: #f0a303;
   border-color: #e39b03;
+  border-width: 1px;
+  font-weight: bolder;
 }
 
 .btn-warning:focus, .btn-warning.focus {
@@ -11188,9 +11196,11 @@ fieldset:disabled .ajax-upload-dragdrop a.ajax-file-upload,
 }
 
 .btn-danger:hover {
-  color: #fff;
-  background-color: #f02003;
+  background-color: #fff;
+  color: #f02003;
   border-color: #e31e03;
+  border-width: 1px;
+  font-weight: bolder;
 }
 
 .btn-danger:focus, .btn-danger.focus {
@@ -11262,9 +11272,11 @@ fieldset:disabled .ajax-upload-dragdrop a.ajax-file-upload,
 }
 
 .btn-dark:hover {
-  color: #fff;
-  background-color: #000711;
+  background-color: #fff;
+  color: #000711;
   border-color: #000204;
+  border-width: 1px;
+  font-weight: bolder;
 }
 
 .btn-dark:focus, .btn-dark.focus {
@@ -21864,7 +21876,7 @@ dl li {
 }
 
 .sidebar .nav .nav-item .nav-link i.menu-icon {
-  font-size: 1.125rem;
+  font-size: 1.325rem;
   line-height: 1;
   margin-right: 1.125rem;
   color: #fff;

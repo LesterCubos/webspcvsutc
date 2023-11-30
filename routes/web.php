@@ -107,6 +107,8 @@ use App\Http\Controllers\Admin\AdminAnnounceController;
 use App\Http\Controllers\Admin\StudentInformationController;
 use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\Admin\FilesController;
+use App\Http\Controllers\Admin\RequestDocController;
+use App\Http\Controllers\Admin\ReqOptionController;
 
 //Instructor Page
 use App\Http\Controllers\InstructorPageController;
@@ -325,6 +327,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('files{file}', [FilesController::class, 'files']);
     //Announcement
     Route::resource('admin_announces', AdminAnnounceController::class);
+    //Request Documents
+    Route::resource('requestdocs', RequestDocController::class);
+    RoUte::resource('reqoptions', ReqOptionController::class);
 
 
 }); //End Group Admin Middleware

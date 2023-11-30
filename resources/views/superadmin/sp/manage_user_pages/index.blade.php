@@ -18,7 +18,7 @@
   </div><!-- End Page Title -->
   <div style="margin-top: 50px; margin-bottom: 20px">
       @if(session('notif.success'))
-        <div class="alert alert-success">
+        <div class="alert alert-warning">
             {{ session('notif.success') }} 
         </div>
       @endif
@@ -61,9 +61,9 @@
           
           <form action="{{ route('sync-data') }}" method="GET">
             @csrf
-            <a href="{{ route('superadmin.sp.manage_user_pages.form')}}" class="btn btn-success btn-rounded btn-fw">Add New User</a>
-            <button type="submit" class="btn btn-primary btn-rounded btn-fw">Sync Data</button>
-            <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
+            <a href="{{ route('superadmin.sp.manage_user_pages.form')}}" class="btn btn-success btn-icon-text"><i class="bi bi-person-plus-fill btn-icon-prepend" style="font-size: 1.225rem;"></i>Add New User</a>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-cloud-check-fill" style="font-size: 1.225rem; margin-right: 5px"></i>Sync Data</button>
+            <a class="btn btn-warning btn-icon-text" href="{{ route('export') }}"><i class="bi bi-file-earmark-arrow-down-fill btn-icon-prepend" style="font-size: 1.225rem; margin-right: 5px"></i>Export User Data</a>
         </form>
         </div>
       </div>

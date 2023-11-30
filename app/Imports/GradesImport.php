@@ -8,6 +8,7 @@ use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 use App\Models\Course;
+use App\Models\Legend;
 
 class GradesImport implements ToModel, WithHeadingRow
 {
@@ -20,10 +21,16 @@ class GradesImport implements ToModel, WithHeadingRow
     {
         $schedcode = Session::get('schedcode');
         $courses = Course::where('schedcode', $schedcode)->get();
+        $legends = Legend::all();
+
         foreach ($courses as $course) {
             $program = $course->program;
             $course_name = $course->course_name;
             $instructor_name = $course->instructor_name;
+        }
+
+        foreach ($legends as $legend) {
+            $academic_year = $legend->schoolyear ." (". $legend->semester .")";
         }
 
         if (is_int($row['grade'])) {
@@ -39,6 +46,7 @@ class GradesImport implements ToModel, WithHeadingRow
             'program'=> $program,
             'course_name'=> $course_name,
             'instructor_name'=> $instructor_name,
+            'academic_year' => $academic_year,
         ]);
     }
 }

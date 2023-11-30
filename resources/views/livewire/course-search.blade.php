@@ -10,9 +10,9 @@
          Add and Edit<code>Courses</code>
         </p> --}}
         <a class="btn btn-primary btn-icon-text" href="{{ route('courses.create') }}">
-            <i class="mdi mdi-plus-circle btn-icon-prepend"></i>Add Course
+            <i class="bx bxs-book-add btn-icon-prepend" style="font-size: 1.225rem;"></i>Add Course
         </a>
-        <a class="btn btn-warning" href="{{ route('Coursesexport') }}">Generate Pincode</a>
+        <a class="btn btn-warning btn-icon-text" href="{{ route('Coursesexport') }}"><i class="bx bxs-lock-open-alt btn-icon-prepend" style="font-size: 1.225rem;"></i>Generate Pincode</a>
         <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
             <div class="input-group-prepend">
               <span class="input-group-text" id="search" style="background-color:  #ec37fc; color: #fff">
@@ -32,7 +32,7 @@
                     Program
                     </th>
                     <th>
-                        Section
+                    Section
                     </th>
                     <th>
                     Course Subject
@@ -80,7 +80,7 @@
                                 @endif
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('courses.edit', $course->id) }}" style="margin-bottom: 5px"><i class="icon-open"></i></a>
+                                <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('courses.edit', $course->id) }}" style="margin-bottom: 5px"><i class="bi bi-pencil-square"></i></a>
                                 <!-- Button trigger modal -->
                                 <button id="icon_delete{{ $course->id }}" type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-user-deletion{{ $course->id }}" style="margin-bottom: 5px">
                                     <i class="icon-trash"></i>

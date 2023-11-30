@@ -51,7 +51,7 @@
                   <td>{{$user->created_at}}</td>
                   <td> 
                     
-                      <a href="/superadmin/sp/users/userView{{$user->id}}" class="btn btn-primary btn-rounded btn-fw"><i class="icon-eye"></i></a> 
+                      <a href="/superadmin/sp/users/userView{{$user->id}}" class="btn btn-primary btn-rounded btn-fw"><i class="bi bi-pencil-square"></i></a> 
   
 
                       @if ($user->role == "superadmin")

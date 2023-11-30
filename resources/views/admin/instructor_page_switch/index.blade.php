@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-
+@section('title','Manage Instructor Page')
 @section('content')
 
 <div class="content-wrapper" style="background-image: url('/img/bg.png'); background-repeat: no-repeat; background-size: 100% 100%;">

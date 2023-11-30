@@ -34,9 +34,6 @@
                     Instructor Name
                   </th>
                   <th>
-                    Remarks
-                  </th>
-                  <th>
                     Academic Year
                   </th>
                   <th>
@@ -64,13 +61,7 @@
                         {{ $grade->instructor_name }}
                     </td>
                     <td>
-                      {{ $grade->remarks }}
-                    </td>
-                    <td>
                       {{ $grade->academic_year }}
-                    </td>
-                    <td>
-                      {{ $grade->semester }}
                     </td>
                     <td>
                         <!-- Button trigger modal -->

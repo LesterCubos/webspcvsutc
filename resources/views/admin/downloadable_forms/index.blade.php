@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-
+@section('title','List of All Downloadable Forms')
 @section('content')
 
 <div class="content-wrapper" style="background-image: url('/img/bg.png'); background-repeat: no-repeat; background-size: 100% 100%;">
@@ -40,7 +40,7 @@
                 <code>Upload File</code> 
                 </p>
                 <a class="btn btn-primary btn-icon-text" href="{{ route('downloadable_forms.create') }}">
-                    <i class="mdi mdi-plus-circle btn-icon-prepend"></i>Add PDF Files
+                    <i class="bi bi-file-earmark-pdf-fill btn-icon-prepend" style="font-size: 1.225rem;"></i>Add PDF Files
                 </a>
                 <div class="table-responsive pt-3">
                     <table class="table table-bordered">

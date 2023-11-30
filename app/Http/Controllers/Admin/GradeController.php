@@ -62,6 +62,7 @@ class GradeController extends Controller
 
         $courses = Course::where('schedcode', $schedcode)->get();
         $sems = Semester::where('isActive', '1')->get();
+        $legends = Legend::all();
 
         // insert only requests that already validated in the StoreRequest
         $create = Grade::create($validated);
@@ -70,8 +71,11 @@ class GradeController extends Controller
             $create->course_name = $course->course_name;
             $create->instructor_name = $course->instructor_name;
         }
-        foreach ($sems as $sem) {
-            $create->academic_year = $sem->academic_year ." ". $sem->semester_name;
+        // foreach ($sems as $sem) {
+        //     $create->academic_year = $sem->academic_year ." ". $sem->semester_name;
+        // }
+        foreach ($legends as $legend) {
+            $create->academic_year = $legend->schoolyear ." (". $legend->semester .")";
         }
         $create->save();
 
