@@ -27,7 +27,7 @@
         <li class="dropdown"><a class="{{ Request::is('about_campus_history', 'about_mvg','about_uni_seal','about_uni_officials','about_campus_officials','about_contact_info') ? 'active' : '' }}" href="#">About</a>
           <ul>
             <li><a href="about_campus_history">Campus History</a></li>
-            <li><a href="about_mvg">Vision, Mission, and Goals</a></li>
+            <li><a href="about_mvg">Vision, Mission, and Quality Policy</a></li>
             <li><a href="about_uni_seal">Campus Seals</a></li>
             <li><a href="about_uni_officials">University Officials</a></li>
             <li><a href="about_campus_officials">Campus Officials</a></li>
@@ -36,13 +36,14 @@
         </li>
         <li class="dropdown"><a class="{{ Request::is('admission_requirements_procedure','admission_programs_offered','admission_result') ? 'active' : '' }}" href="#">Admission</a>
           <ul>
-            <li><a href="admission_requirements_procedure">Admission Requirements and Procedure</a></li>
-            <li><a href="admission_programs_offered">Program Offerings</a></li>
-            <li><a href="admission_result">Admission Result</a></li>
+            <li><a href="admission_programs_offered">Undergraduate Programs</a></li>
+            <li><a href="admission_requirements_procedure">Admission Procedure</a></li>
+            <li><a href="admission_result">Contact Information</a></li>
           </ul>
         </li>
         <li class="dropdown"><a class="{{ Request::is('admin_office_registrar','admin_clinic','admin_cashier','admin_osas','admin_dit','admin_ted','admin_das','admin_dom','admin_hr','admin_mis','admin_qaac','admin_research','admin_library') ? 'active' : '' }}" href="#">Administration</a>
           <ul>
+            <li><a href="admin_departments">Departments</a></li>
             <li><a href="admin_office_registrar">Office of the Campus Registrar</a></li>
             <li><a href="admin_clinic">Clinic</a></li>
             <li><a href="admin_cashier">Cashier</a></li>
@@ -50,27 +51,29 @@
             {{-- <li><a href="admin_qaac">QAAC</a></li> --}}
             <li><a href="admin_research">Research Extension</a></li>
             <li><a href="admin_library">Library</a></li>
-            <li><a href="admin_departments">Departments</a></li>
+            <li><a href="services_studentorgs">Student Organizations</a>
+            </li>
 
           </ul>
         </li>
         
-        <li class="dropdown"><a class="{{ Request::is('services_csg','services_acadorgs','services_nonacadorgs','services_newsandupdates','newsandupdates_news*','services_announcements','announcements*','services_campuscalendar','services_jobvacancies','jobvacancies*') ? 'active' : '' }}" href="#">Services</a>
+        {{-- <li class="dropdown"><a class="{{ Request::is('services_csg','services_acadorgs','services_nonacadorgs','services_newsandupdates','newsandupdates_news*','services_announcements','announcements*','services_campuscalendar','services_jobvacancies','jobvacancies*') ? 'active' : '' }}" href="#">Services</a>
           <ul>
-            <li><a href="services_studentorgs">Student Affairs</a>
+            <li><a href="services_studentorgs">Student Organizations</a>
             </li>
             <li><a href="services_newsandupdates">News Updates</a></li>
             <li><a href="services_announcements">Announcements</a></li>
             <li><a href="services_campuscalendar">Campus Calendar</a></li>
             <li><a href="services_jobvacancies">Job Vacancies</a></li>
           </ul>
-        </li>
-        <li class="dropdown"><a href="#">Portal</a>
-          <ul>
+        </li> --}}
+        <li class="dropdown"><a href="student_login">Student Portal</a>
+          {{-- <ul>
             <li><a href="student_login">Student Portal</a></li>
-          </ul>
+          </ul> --}}
         </li>
-
+        <li class="dropdown"><a href="services_jobvacancies">Careers</a>
+        </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
