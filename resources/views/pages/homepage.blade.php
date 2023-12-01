@@ -152,12 +152,61 @@
 
             <!-- End Featured Services Section -->
             
+            <!-- ======= Counts Section ======= -->
+            <section id="counts" class="counts section-bg">
+                <div class="container" data-aos="fade-up">
+
+                    {{-- <div class="website-counter"></div> --}}
+                    {{-- <div class="website-counter">{{ $totalViews }}</div> --}}
+
+                <div class="row">
+                    @foreach($counts as $count)
+                        @if ($loop->iteration == 1 )
+                            <div class="col-lg-3 col-md-6">
+                                <div class="count-box">
+                                    <i class="bi bi-person"></i>
+                                    <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
+                                    <p>{{ $count->category }}</p>
+                                </div>
+                            </div>
+                        @elseif ($loop->iteration == 2 )
+                            <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                                <div class="count-box">
+                                    <i class="bi bi-journal-richtext"></i>
+                                    <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
+                                    <p>{{ $count->category }}</p>
+                                </div>
+                            </div>
+                        @elseif ($loop->iteration == 3 )
+                            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                                <div class="count-box">
+                                    <i class="bi bi-headset"></i>
+                                    <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
+                                    <p>{{ $count->category }}</p>
+                                </div>
+                            </div>
+                        @elseif ($loop->iteration == 4 )
+                            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                                <div class="count-box">
+                                    <i class="bi bi-stickies"></i>
+                                    <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
+                                    <p>{{ $count->category }}</p>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+
+                </div>
+            </section>
+            <!-- End Counts Section -->
+
              <!-- ======= Announcements Section ======= -->
             @foreach ($switchs as $switch)
                 @if ($switch->isActive == 1)
-                    <section id="announcements" class="announcements section-bg">
+                    <section id="announcements" class="announcements ">
                 @else
-                    <section id="announcements" class="announcements">
+                    <section id="announcements" class="announcements section-bg">
                 @endif 
             @endforeach
                 <div class="section-title">
@@ -198,9 +247,9 @@
             <!-- ======= News and updates Section ======= -->
             @foreach ($switchs as $switch)
                 @if ($switch->isActive == 1)
-                    <section id="newsandupdates" class="newsandupdates ">
-                @else
                     <section id="newsandupdates" class="newsandupdates section-bg">
+                @else
+                    <section id="newsandupdates" class="newsandupdates ">
                 @endif 
             @endforeach
                 <div class="section-title">
@@ -287,9 +336,9 @@
             <!-- ======= Events Section ======= -->
             @foreach ($switchs as $switch)
                 @if ($switch->isActive == 1)
-                    <section id="events" class="events section-bg">
+                    <section id="events" class="events ">
                 @else
-                    <section id="events" class="events">
+                    <section id="events" class="events section-bg">
                 @endif 
             @endforeach
 
@@ -336,7 +385,7 @@
             <!-- End Events Section -->
 
             <!-- ======= Discover Section ======= -->
-            <section id="discover" class="discover">
+            <section id="discover" class="discover section-bg">
                 <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
@@ -369,54 +418,7 @@
             </section>
             <!-- End Discover Section -->
 
-            <!-- ======= Counts Section ======= -->
-            <section id="counts" class="counts">
-                <div class="container" data-aos="fade-up">
-
-                    {{-- <div class="website-counter"></div> --}}
-                    {{-- <div class="website-counter">{{ $totalViews }}</div> --}}
-
-                <div class="row">
-                    @foreach($counts as $count)
-                        @if ($loop->iteration == 1 )
-                            <div class="col-lg-3 col-md-6">
-                                <div class="count-box">
-                                    <i class="bi bi-person"></i>
-                                    <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
-                                    <p>{{ $count->category }}</p>
-                                </div>
-                            </div>
-                        @elseif ($loop->iteration == 2 )
-                            <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-                                <div class="count-box">
-                                    <i class="bi bi-journal-richtext"></i>
-                                    <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
-                                    <p>{{ $count->category }}</p>
-                                </div>
-                            </div>
-                        @elseif ($loop->iteration == 3 )
-                            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                                <div class="count-box">
-                                    <i class="bi bi-headset"></i>
-                                    <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
-                                    <p>{{ $count->category }}</p>
-                                </div>
-                            </div>
-                        @elseif ($loop->iteration == 4 )
-                            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                                <div class="count-box">
-                                    <i class="bi bi-stickies"></i>
-                                    <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
-                                    <p>{{ $count->category }}</p>
-                                </div>
-                            </div>
-                        @endif
-                    @endforeach
-                </div>
-
-                </div>
-            </section>
-            <!-- End Counts Section -->
+            
 
             <!-- ======= Program Section ======= -->
             {{-- <section id="programs" class="programs section-bg">
@@ -457,7 +459,7 @@
 
 
             <!-- ======= Admission Section ======= -->
-            @foreach ($switchs as $switch)
+            {{-- @foreach ($switchs as $switch)
                 @if ($switch->isActive == 1)
                     <section id="admissions" class="admissions">
                         <div class="container" data-aos="zoom-in" style="background: linear-gradient(rgba(37, 50, 72, 0.9), rgba(25, 40, 66, 0.9)), url('../img/admission.jpg') center center">
@@ -487,7 +489,7 @@
                         </div>
                     </section><!-- End Admission Section -->       
                 @endif
-            @endforeach
+            @endforeach --}}
 
         @include('incshow.footer')
 
