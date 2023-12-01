@@ -56,7 +56,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('request_docs.index') }}">
           <i class="icon-head menu-icon"></i>
           <span class="menu-title">Request Document</span>
         </a>

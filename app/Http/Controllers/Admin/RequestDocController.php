@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\RequestDoc\StoreRequest;
 use App\Http\Requests\RequestDoc\UpdateRequest;
 use App\Models\Legend;
@@ -18,10 +19,12 @@ class RequestDocController extends Controller
     
     public function index(): Response
     {
+        $routeName = \Route::current()->getName();
+        $viewName = ($routeName == 'requestdocs.index') ? 'admin.requestdoc.index' : 'student.request_docs.index';
 
-        return response()->view('admin.requestdoc.index', [
+        return response()->view($viewName, [
             'requestdocs' => RequestDoc::orderBy('updated_at', 'desc')->paginate(10),
-            'legends' => Legend::all()
+            'legends' => Legend::all(), 'routeName' => $routeName
         ]);
     }
 
@@ -30,7 +33,7 @@ class RequestDocController extends Controller
      */
     public function create(): Response
     {
-        return response()->view('admin.requestdoc.form', [ 'legends' => Legend::all(),
+        return response()->view('student.request_docs.form', [ 'legends' => Legend::all(),
         ]);
     }
 
@@ -40,14 +43,32 @@ class RequestDocController extends Controller
     public function store(StoreRequest $request): RedirectResponse
     {
         $validated = $request->validated();
+        $email = Session::get('email');
+        $users = User::where('email', $email)->get();
+        $legends = Legend::all();
+        $docs = Session::get('docs');
 
         // insert only requests that already validated in the StoreRequest
         $create = RequestDoc::create($validated);
+        $create->generateTransNo();
+        $create->req = $docs;
+        foreach ($legends as $legend) {
+            $create->aYear = $legend->schoolyear;
+            $create->sem = $legend->semester;
+        }
+        foreach ($users as $user) {
+            $create->studentName = $user->firstName." ".$user->middleName[0].". ".$user->lastName;
+            $create->studentNo = $user->studentNumber;
+            $create->prog = $user->course;
+        }
+        $create->save();
 
         if($create) {
             // add flash for the success notification
             session()->flash('notif.success', 'Request has been posted successfully!');
-            return redirect()->route('requestdocs.index');
+            $routeName = \Route::current()->getName();
+            $viewName = ($routeName == 'requestdocs.index') ? 'requestdocs.index' : 'request_docs.index';
+            return redirect()->route($viewName);
         }
 
         return abort(500);
@@ -68,8 +89,10 @@ class RequestDocController extends Controller
      */
     public function edit(string $id): Response
     {
+        $requestdocs = RequestDoc::findOrFail($id);
+
         return response()->view('admin.requestdoc.form', [
-            'requestdoc' => RequestDoc::findOrFail($id), 'legends' => Legend::all()
+            'requestdoc' => RequestDoc::findOrFail($id), 'legends' => Legend::all(), 'docs' => explode("\n- ", $requestdocs->req)
         ]);
     }
 
@@ -94,41 +117,18 @@ class RequestDocController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    // public function destroy(string $id): RedirectResponse
-    // {
-    //     $requestdoc = RequestDoc::findOrFail($id);
-
-    //     $delete = $requestdoc->delete($id);
-
-    //     if($delete) {
-    //         session()->flash('notif.success', 'Request has been deleted successfully!');
-    //         return redirect()->route('requestdocs.index');
-    //     }
-
-    //     return abort(500);
-    // }
-
-    public function destroy(Request $request, string $id)
+    public function destroy(string $id): RedirectResponse
     {
-        // Retrieve the superadmin user from the database
-        $admins = User::where('role', 'admin')->get();
+        $requestdoc = RequestDoc::findOrFail($id);
 
-        foreach ($admins as $admin) {
-            // Check if the password provided by the superadmin user is valid
-            if (Hash::check($request->input('password'), $admin->password)) {
-                // Proceed with the deletion of the user
-                $requestdoc = RequestDoc::findOrFail($id);
+        $delete = $requestdoc->delete($id);
 
-                $delete = $requestdoc->delete($id);
-                // Redirect to the users index page with a success message
-                if ($delete) {
-                    session()->flash('notif.success', 'Request has been deleted successfully!');
-                    return redirect()->route('semesters.index');
-                }
-            }
+        if($delete) {
+            session()->flash('notif.success', 'Request has been deleted successfully!');
+            return redirect()->route('request_docs.index');
         }
-        // Return an error message indicating that the password is incorrect
-        session()->flash('notif.danger', 'The password is incorrect.');
-        return redirect()->back();
+
+        return abort(500);
     }
+
 }

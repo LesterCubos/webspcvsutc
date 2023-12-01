@@ -11,7 +11,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,8 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'purpose' => 'nullable|string|min:3|max:6000',
+            'totalPrice' => 'nullable|string|min:1|max:10',
         ];
     }
 }

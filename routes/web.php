@@ -344,6 +344,8 @@ Route::middleware(['auth','role:student'])->group(function(){
     //Downloadable Forms
     Route::get('/student/downloadable_forms', [StudentController::class, 'downloadable_forms'])->name('student.downloadable_forms');
     Route::get('/student/files{file}', [FilesController::class, 'student_files']);
+    //Request Documents
+    Route::resource('request_docs', RequestDocController::class);
 
 }); //End Group Student Middleware
 

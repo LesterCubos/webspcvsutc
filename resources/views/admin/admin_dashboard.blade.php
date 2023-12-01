@@ -16,10 +16,10 @@
 
     @if (session('success'))
       <div class="alert alert-success fade in alert-dismissible show" role="alert" style="margin-top: 50px; margin-bottom: 20px">
-        {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">x</span>
-        </button> --}}
-        <i class="icon-circle-check" style="margin-right: 5px"></i>    
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" style="font-size:20px;">x</span>
+        </button>
+        <i class="bi bi-check-circle-fill" style="margin-right: 5px; font-size: 18px"></i>    
         <strong style="font-weight: bolder">{{ session('success') }}</strong> {{ __('You are logged in as Admin!!') }}
       </div>
     @endif

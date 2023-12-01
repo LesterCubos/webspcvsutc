@@ -18,14 +18,22 @@
   </div><!-- End Page Title -->
   <div style="margin-top: 50px; margin-bottom: 20px">
       @if(session('notif.success'))
-        <div class="alert alert-warning">
-            {{ session('notif.success') }} 
+        <div class="alert alert-success fade in alert-dismissible show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" style="font-size:20px">×</span>
+          </button> 
+          <i class="bi bi-check-circle-fill" style="margin-right: 5px; font-size: 18px"></i>   
+          <strong>{{ session('notif.success') }}</strong>
         </div>
       @endif
 
       @if(session('notif.danger'))
-        <div class="alert alert-danger">
-            {{ session('notif.danger') }} 
+        <div class="alert alert-danger fade in alert-dismissible show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" style="font-size:20px">×</span>
+          </button>
+          <i class="bi bi-exclamation-circle-fill" style="margin-right: 5px; font-size: 18px"></i>   
+          <strong>{{ session('notif.danger') }}</strong>
         </div>
       @endif
   </div>
