@@ -144,48 +144,16 @@
                             </div>
                             </div>
                         @endforeach
+
                     </div>
 
                 </div>
             </section>
 
             <!-- End Featured Services Section -->
-
-            <!-- ======= Discover Section ======= -->
-            <section id="discover" class="discover section-bg">
-                <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h3>Discover <span>Tanza Campus</span></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
-                </div>
-
-                <div class="row">
-                    @foreach($discover_tanza_infos as $discover_tanza_info)
-                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                            <img class="img-fluid" src="{{ asset('storage/' . $discover_tanza_info->image) }}" alt="{{ $discover_tanza_info->headline }}">
-                            <a href="https://youtu.be/A2fOWAo9jME?si=2-IuGQBKogvQ3nqh" class="glightbox play-btn"></a>
-                        </div>
-                        <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                            <h3>{{ $discover_tanza_info->headline }}</h3>
-                            <p class="fst-italic">
-                                {{ $discover_tanza_info->subheadline }}
-                            </p>
-                            <p>
-                                {!! Str::limit($discover_tanza_info->content,'500','...') !!}
-                            </p>
-                            <a href="about_campus_history"><button>Read More</button></a>
-
-                        </div>
-                    @endforeach
-                </div>
-
-                </div>
-            </section>
-            <!-- End Discover Section -->
-
+            
             <!-- ======= Counts Section ======= -->
-            <section id="counts" class="counts">
+            <section id="counts" class="counts section-bg">
                 <div class="container" data-aos="fade-up">
 
                     {{-- <div class="website-counter"></div> --}}
@@ -233,122 +201,59 @@
             </section>
             <!-- End Counts Section -->
 
-            <!-- ======= Program Section ======= -->
-            <section id="programs" class="programs section-bg">
-                <div class="container" data-aos="fade-up">
-
+             <!-- ======= Announcements Section ======= -->
+            @foreach ($switchs as $switch)
+                @if ($switch->isActive == 1)
+                    <section id="announcements" class="announcements ">
+                @else
+                    <section id="announcements" class="announcements section-bg">
+                @endif 
+            @endforeach
                 <div class="section-title">
-                    <h3>Our <span>Programs</span></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
+                    <h3>Latest <span>Announcements</span></h3>
                 </div>
 
-                <div class="row gy-5">
-                    @foreach($programs as $program)
-                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-
-                        <div class="programs-item">
-                        <div class="img">
-                        <img src="{{ asset('storage/' . $program->program_image) }}" class="img-fluid" alt="">
+                <div class="container">
+                    <div class="announcements-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-wrapper">
+                            @foreach($announcements as $announcement)
+                                @if ($announcement->isActive == 1)
+                                    <div class="swiper-slide">
+                                        <div class="row announcements-item">
+                                        <div class="col-lg-6">
+                                            <img src="{{ asset('storage/' . $announcement->poster) }}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="col-lg-6 pt-4 pt-lg-0 content">
+                                            <h3> {{ $announcement->title }}</h3>
+                                            <p class="fst-italic">
+                                                {!! Str::limit($announcement->content,'500','...') !!}
+                                            </p>
+                                            <div>
+                                                <a href="announcements{{$announcement->id}}"><button>Read More</button></a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div><!-- End Announcement item -->
+                                @endif
+                            @endforeach
                         </div>
-                        <div class="details position-relative">
-                        <div class="icon">
-                            <i class="bi bi-stickies"></i>
-                        </div>
-                        <a href="#" class="stretched-link">
-                            <h3>{{ $program->title }}</h3>
-                        </a>
-                        <p>{{ $program->content }}</p>
-                        </div>
-                    </div>
-
-                    </div><!-- End Program Item -->
-                    @endforeach
-                    {{-- <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="programs-item">
-                        <div class="img">
-                        <img src="assets/img/programs-2.jpg" class="img-fluid" alt="">
-                        </div>
-                        <div class="details position-relative">
-                        <div class="icon">
-                            <i class="bi bi-eye"></i>
-                        </div>
-                        <a href="#" class="stretched-link">
-                            <h3>Lyssa</h3>
-                        </a>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo rerum voluptatibus perferendis perspiciatis corporis dolore reprehenderit, alias minus unde animi at ipsum quas ea beatae soluta quisquam. Consequuntur, nemo neque.</p>
-                        </div>
-                    </div>
-                    </div><!-- End Program  Item --> --}}
-
-                    {{-- <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="programs-item">
-                        <div class="img">
-                        <img src="assets/img/programs-3.jpg" class="img-fluid" alt="">
-                        </div>
-                        <div class="details position-relative">
-                        <div class="icon">
-                            <i class="bi bi-car-front"></i>
-                        </div>
-                        <a href="#" class="stretched-link">
-                            <h3>Jerome</h3>
-                        </a>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea enim consequuntur voluptatem quidem architecto aperiam amet obcaecati! Soluta esse odio error? Libero illo sequi suscipit fugit laborum voluptate ipsa tenetur.</p>
-                        </div>
-                    </div>
-                    </div><!-- End Program  Item --> --}}
-
-                </div>
+                        <div class="swiper-pagination"></div>
+                      </div>
 
                 </div>
             </section>
-            <!-- End Program  Section -->
+            <!-- End Announcements Section -->
 
-
-            <!-- ======= Admission Section ======= -->
-            @foreach ($switchs as $switch)
-                @if ($switch->isActive == 1)
-                    <section id="admissions" class="admissions">
-                        <div class="container" data-aos="zoom-in" style="background: linear-gradient(rgba(37, 50, 72, 0.9), rgba(25, 40, 66, 0.9)), url('../img/admission.jpg') center center">
-
-                            <div class="section-title">
-                                <h3><span>Admissions</span> On Going</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
-                            </div>
-
-                            <div class="row">
-                                @foreach($admissions as $admission)
-                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                                        <div class="icon-box">
-                                            <div class="icon">
-                                                <i class='bx bxs-edit'></i>
-                                            </div>
-                                            <h4>{{ $admission->title }}</h4>
-                                            <p>{!! $admission->descrip !!}</p>
-                                            <div class="btn-wrap">
-                                                <a href="#" class="btn-apply">Apply Now <i class="bi bi-arrow-right-circle"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-
-                            </div>
-
-                        </div>
-                    </section><!-- End Admission Section -->       
-                @endif
-            @endforeach
-                
             <!-- ======= News and updates Section ======= -->
             @foreach ($switchs as $switch)
                 @if ($switch->isActive == 1)
                     <section id="newsandupdates" class="newsandupdates section-bg">
                 @else
-                    <section id="newsandupdates" class="newsandupdates">
+                    <section id="newsandupdates" class="newsandupdates ">
                 @endif 
             @endforeach
                 <div class="section-title">
                     <h3><span>News</span> Updates</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
                 </div>
 
                 <div class="container-fluid" data-aos="fade-up">
@@ -428,56 +333,12 @@
             </section>
             <!-- End News and Updates Section -->
 
-            <!-- ======= Announcements Section ======= -->
-            @foreach ($switchs as $switch)
-                @if ($switch->isActive == 1)
-                    <section id="announcements" class="announcements">
-                @else
-                    <section id="announcements" class="announcements section-bg">
-                @endif 
-            @endforeach
-                <div class="section-title">
-                    <h3>Latest <span>Announcements</span></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quo laudantium iure itaque nihil inventore laborum</p>
-                </div>
-
-                <div class="container">
-                    <div class="announcements-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                        <div class="swiper-wrapper">
-                            @foreach($announcements as $announcement)
-                                @if ($announcement->isActive == 1)
-                                    <div class="swiper-slide">
-                                        <div class="row announcements-item">
-                                        <div class="col-lg-6">
-                                            <img src="{{ asset('storage/' . $announcement->poster) }}" class="img-fluid" alt="">
-                                        </div>
-                                        <div class="col-lg-6 pt-4 pt-lg-0 content">
-                                            <h3> {{ $announcement->title }}</h3>
-                                            <p class="fst-italic">
-                                                {!! Str::limit($announcement->content,'500','...') !!}
-                                            </p>
-                                            <div>
-                                                <a href="announcements{{$announcement->id}}"><button>Read More</button></a>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div><!-- End Announcement item -->
-                                @endif
-                            @endforeach
-                        </div>
-                        <div class="swiper-pagination"></div>
-                      </div>
-
-                </div>
-            </section>
-            <!-- End Announcements Section -->
-
             <!-- ======= Events Section ======= -->
             @foreach ($switchs as $switch)
                 @if ($switch->isActive == 1)
-                    <section id="events" class="events section-bg">
+                    <section id="events" class="events ">
                 @else
-                    <section id="events" class="events">
+                    <section id="events" class="events section-bg">
                 @endif 
             @endforeach
 
@@ -522,6 +383,113 @@
                 </div>
             </section>
             <!-- End Events Section -->
+
+            <!-- ======= Discover Section ======= -->
+            <section id="discover" class="discover section-bg">
+                <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h3>Discover <span>Tanza Campus</span></h3>
+                </div>
+
+                <div class="row">
+                    @foreach($discover_tanza_infos as $discover_tanza_info)
+                        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                            <img class="img-fluid" src="{{ asset('storage/' . $discover_tanza_info->image) }}" alt="{{ $discover_tanza_info->headline }}">
+                            
+                    
+                            {{-- <a  href="https://www.facebook.com/100057269566848/videos/990860887940023" class="glightbox play-btn"></a> --}}
+                        </div>
+                        <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                            <h3>{{ $discover_tanza_info->headline }}</h3>
+                            <p class="fst-italic">
+                                {{ $discover_tanza_info->subheadline }}
+                            </p>
+                            <p>
+                                {!! Str::limit($discover_tanza_info->content,'500','...') !!}
+                            </p>
+                            <a href="about_campus_history"><button>Read More</button></a>
+
+                        </div>
+                    @endforeach
+                </div>
+
+                </div>
+            </section>
+            <!-- End Discover Section -->
+
+            
+
+            <!-- ======= Program Section ======= -->
+            {{-- <section id="programs" class="programs section-bg">
+                <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h3>Our <span>Programs</span></h3>
+                </div>
+
+                <div class="row gy-5">
+                    @foreach($programs as $program)
+                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+
+                        <div class="programs-item">
+                        <div class="img">
+                        <img src="{{ asset('storage/' . $program->program_image) }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="details position-relative">
+                        <div class="icon">
+                            <i class="bi bi-stickies"></i>
+                        </div>
+                        <a href="#" class="stretched-link">
+                            <h3>{{ $program->title }}</h3>
+                        </a>
+                        <p>{{ $program->content }}</p>
+                        </div>
+                    </div>
+
+                    </div><!-- End Program Item -->
+                    @endforeach
+                    
+
+                </div>
+
+                </div>
+            </section> --}}
+            <!-- End Program  Section -->
+
+
+            <!-- ======= Admission Section ======= -->
+            {{-- @foreach ($switchs as $switch)
+                @if ($switch->isActive == 1)
+                    <section id="admissions" class="admissions">
+                        <div class="container" data-aos="zoom-in" style="background: linear-gradient(rgba(37, 50, 72, 0.9), rgba(25, 40, 66, 0.9)), url('../img/admission.jpg') center center">
+
+                            <div class="section-title">
+                                <h3><span>Admissions</span> On Going</h3>
+                            </div>
+
+                            <div class="row">
+                                @foreach($admissions as $admission)
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                        <div class="icon-box">
+                                            <div class="icon">
+                                                <i class='bx bxs-edit'></i>
+                                            </div>
+                                            <h4>{{ $admission->title }}</h4>
+                                            <p>{!! $admission->descrip !!}</p>
+                                            <div class="btn-wrap">
+                                                <a href="#" class="btn-apply">Apply Now <i class="bi bi-arrow-right-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+
+                            </div>
+
+                        </div>
+                    </section><!-- End Admission Section -->       
+                @endif
+            @endforeach --}}
 
         @include('incshow.footer')
 
