@@ -10,7 +10,7 @@
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
           <li>Admission</li>
-          <li>Admission Result</li>
+          <li>Contact Information</li>
         </ol>
       </div>
     </nav>
@@ -21,7 +21,6 @@
       @foreach ($admission_results as $admission_result)
       <div class="section-title">
         <h3><span>{{ $admission_result->title }}</span></h3>
-        <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
       </div>
 
       <div class="imfo">

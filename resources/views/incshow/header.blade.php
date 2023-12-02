@@ -37,7 +37,8 @@
         <li class="dropdown"><a class="{{ Request::is('admission_requirements_procedure','admission_programs_offered','admission_result') ? 'active' : '' }}" href="#">Admission</a>
           <ul>
             <li><a href="admission_programs_offered">Undergraduate Programs</a></li>
-            <li><a href="admission_requirements_procedure">Admission Procedure</a></li>
+            <li><a href="https://apps.cvsu.edu.ph/admission/sign-in/?mibextid=WaXdOe&fbclid=IwAR32WGvGfzwSEg_ueJDQCzqj2fAfqW9FDELSWcIkWi74DnJ_9enCZ9ql0mk">Admission Procedure</a></li>
+            {{-- <li><a href="admission_requirements_procedure">Admission Procedure</a></li> --}}
             <li><a href="admission_result">Contact Information</a></li>
           </ul>
         </li>
