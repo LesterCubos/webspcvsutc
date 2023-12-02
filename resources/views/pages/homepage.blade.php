@@ -202,13 +202,9 @@
             <!-- End Counts Section -->
 
              <!-- ======= Announcements Section ======= -->
-            @foreach ($switchs as $switch)
-                @if ($switch->isActive == 1)
-                    <section id="announcements" class="announcements ">
-                @else
-                    <section id="announcements" class="announcements section-bg">
-                @endif 
-            @endforeach
+            
+                <section id="announcements" class="announcements ">
+                
                 <div class="section-title">
                     <h3>Latest <span>Announcements</span></h3>
                 </div>
@@ -245,13 +241,9 @@
             <!-- End Announcements Section -->
 
             <!-- ======= News and updates Section ======= -->
-            @foreach ($switchs as $switch)
-                @if ($switch->isActive == 1)
-                    <section id="newsandupdates" class="newsandupdates section-bg">
-                @else
-                    <section id="newsandupdates" class="newsandupdates ">
-                @endif 
-            @endforeach
+            
+                <section id="newsandupdates" class="newsandupdates section-bg">
+                
                 <div class="section-title">
                     <h3><span>News</span> Updates</h3>
                 </div>
@@ -334,13 +326,9 @@
             <!-- End News and Updates Section -->
 
             <!-- ======= Events Section ======= -->
-            @foreach ($switchs as $switch)
-                @if ($switch->isActive == 1)
-                    <section id="events" class="events ">
-                @else
-                    <section id="events" class="events section-bg">
-                @endif 
-            @endforeach
+            
+                <section id="events" class="events ">
+               
 
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
 

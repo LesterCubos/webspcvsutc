@@ -44,10 +44,10 @@
         <li class="dropdown"><a class="{{ Request::is('admin_office_registrar','admin_clinic','admin_cashier','admin_osas','admin_dit','admin_ted','admin_das','admin_dom','admin_hr','admin_mis','admin_qaac','admin_research','admin_library') ? 'active' : '' }}" href="#">Administration</a>
           <ul>
             <li><a href="admin_departments">Departments</a></li>
+            <li><a href="admin_osas">Office of the Student Affairs Services</a></li>
             <li><a href="admin_office_registrar">Office of the Campus Registrar</a></li>
             <li><a href="admin_clinic">Clinic</a></li>
             <li><a href="admin_cashier">Cashier</a></li>
-            <li><a href="admin_osas">Office of the Student Affairs Services</a></li>
             {{-- <li><a href="admin_qaac">QAAC</a></li> --}}
             <li><a href="admin_research">Research Extension</a></li>
             <li><a href="admin_library">Library</a></li>

@@ -10,7 +10,7 @@
             <img width="50%" height="70%" src="{{ asset('img/republic.png')}}" alt="">
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
+          <div class="col-lg-2 col-md-6 footer-contact">
             <h3>CvSU<span> TANZA</span></h3>
             <p>
               Pabahay, Bagtas <br>
@@ -27,7 +27,7 @@
           </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-2 col-md-6 footer-links">
             <h4>Other Links</h4>
             <ul>
               @foreach ($others as $other)
@@ -36,7 +36,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-2 col-md-6 footer-links">
             <h4>Quick Links</h4>
             <ul>
               @foreach ($quicks as $quick)
@@ -45,6 +45,19 @@
             </ul>
           </div>
 
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <div class="row row-cols-2 row-cols-lg-8 g-2 g-lg-4">
+              <img src="{{ asset('img/transparency-seal.png')}}" alt="">
+              <img src="{{ asset('img/Citizen-Charter.png')}}" alt="">
+            </div>
+            <br>
+            <div class="row row-cols-2 row-cols-lg-8 g-2 g-lg-4">
+              <img  src="{{ asset('img/foi_logo.png')}}" alt="">
+              <img  src="{{ asset('img/Bagong-Pilipinas.png')}}" alt="">
+            </div>
+           
+
+          </div>
           {{-- <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione inventore hic possimus quia, dicta dolor magni amet ducimus ipsa provident quae sequi porro officia doloribus enim. Et eum eius inventore?</p>
