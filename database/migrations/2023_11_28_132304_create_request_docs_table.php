@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('request_docs', function (Blueprint $table) {
             $table->id();
-            $table->string('transNo')->unique();
-            $table->date('dateReq');
-            $table->string('aYear');
-            $table->string('sem');
-            $table->string('prog');
-            $table->string('studentName');
-            $table->string('studentNo');
-            $table->string('req');
-            $table->text('purpose');
-            $table->string('totalPrice');
+            $table->string('transNo')->unique()->default(0);
+            $table->string('aYear')->nullable();
+            $table->string('sem')->nullable();
+            $table->string('prog')->nullable();
+            $table->string('studentName')->nullable();
+            $table->string('studentNo')->nullable();
+            $table->string('req')->nullable();
+            $table->string('status')->default('Pending');
+            $table->text('purpose')->nullable();
+            $table->string('totalPrice')->nullable();
             $table->timestamps();
         });
     }

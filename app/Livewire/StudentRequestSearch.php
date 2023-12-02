@@ -3,14 +3,14 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\RequestDoc;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
-use App\Models\Grade;
 
-class StudentGradeSearch extends Component
+class StudentRequestSearch extends Component
 {
-    public $searchStudentGrade='';
+    public $searchStudentRequest='';
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
@@ -26,11 +26,10 @@ class StudentGradeSearch extends Component
         foreach ($users as $user) {
             $student_number = $user->studentNumber;
         }
-        return view('livewire.student-grade-search',[
-            'grades' => Grade::where('academic_year','like', "%{$this->searchStudentGrade}%")
-            ->where('student_number',$student_number)
-            ->orderBy('updated_at','desc')
-            ->paginate(5),
+        return view('livewire.student-request-search',[
+            'requestdocs' => RequestDoc::where('transNo','like', "%{$this->searchStudentRequest}%")
+            ->where('studentNo', $student_number)
+            ->orderBy('updated_at','desc')->paginate(10),
         ]);
     }
 }
