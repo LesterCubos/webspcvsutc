@@ -70,12 +70,13 @@
                               {{ $requestdoc->totalPrice }}
                             </td>
                             <td>
-                              {{ $requestdoc->status}}
-                              {{-- @if($requestdoc->isActive == 1)
-                              <label class="badge badge-success">Active</label>
-                              @elseif($requestdoc->isActive == 0)
-                                  <label class="badge badge-danger">Inactive</label>
-                              @endif --}}
+                              @if($requestdoc->status == 'Pending')
+                                <label class="badge badge-info">Pending</label>
+                              @elseif($requestdoc->status ==  'Processing')
+                                <label class="badge badge-warning">Processing</label>
+                              @elseif($requestdoc->status ==  'Completed')
+                                <label class="badge badge-success">Completed</label>
+                              @endif
                             </td>
                             <td>
                               <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('requestdocs.edit', $requestdoc->id) }}"><i class="bi bi-pencil-square"></i></a>

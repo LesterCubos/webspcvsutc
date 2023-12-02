@@ -61,12 +61,13 @@
                                 {!! Str::limit($requestdoc->purpose,'250','...') !!}
                             </td>
                             <td>
-                              {{ $requestdoc->status}}
-                              {{-- @if($requestdoc->isActive == 1)
-                              <label class="badge badge-success">Active</label>
-                              @elseif($requestdoc->isActive == 0)
-                                  <label class="badge badge-danger">Inactive</label>
-                              @endif --}}
+                              @if($requestdoc->status == 'Pending')
+                                <label class="badge badge-info">Pending</label>
+                              @elseif($requestdoc->status ==  'Processing')
+                                <label class="badge badge-warning">Processing</label>
+                              @elseif($requestdoc->status ==  'Completed')
+                                <label class="badge badge-success">Completed</label>
+                              @endif
                             </td>
                             <td>
                                 {{ $requestdoc->totalPrice }}
@@ -76,9 +77,15 @@
                                 @csrf
                                 @method('DELETE')
                                 {{-- <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('request_docs.edit', $requestdoc->id) }}"><i class="bi bi-pencil-square"></i></a> --}}
-                                <button id="icon_delete" type="submit" class="btn btn-danger">
-                                  <i class="icon-trash"></i>
-                                </button>
+                                @if($requestdoc->status == 'Pending')
+                                  <button id="icon_delete" type="submit" class="btn btn-danger">
+                                    <i class="icon-trash"></i>
+                                  </button>
+                                @elseif($requestdoc->status ==  'Processing' || $requestdoc->status ==  'Completed')
+                                  <button id="icon_delete" type="submit" class="btn btn-danger" disabled>
+                                    <i class="icon-trash"></i>
+                                  </button>
+                                @endif
                               </form>
                             </td>
                         </tr>

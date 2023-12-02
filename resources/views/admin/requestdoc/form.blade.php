@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Student Name</label>
+                            <label class="col-sm-3 col-form-label" style="font-size: 14px; color: #000; font-weight: bolder">STUDENT NAME</label>
                             <div class="col-sm-9">
                                 <input type="text" name="studentName" id="studentName" class="form-control @error('studentName') is-invalid @enderror" value="{{ $requestdoc->studentName }}" readonly>
                             </div>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Student Number</label>
+                            <label class="col-sm-3 col-form-label" style="font-size: 14px; color: #000; font-weight: bolder">STUDENT NUMBER</label>
                             <div class="col-sm-9">
                                 <input type="text" name="studentNo" id="studentNo" class="form-control @error('studentNo') is-invalid @enderror" value="{{ $requestdoc->studentNo }}" readonly>
                             </div>
@@ -47,7 +47,7 @@
                     <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Course</label>
+                            <label class="col-sm-3 col-form-label" style="font-size: 14px; color: #000; font-weight: bolder">COURSE</label>
                             <div class="col-sm-9">
                                 <input type="text" name="prog" id="prog" class="form-control @error('prog') is-invalid @enderror" value="{{ $requestdoc->prog ?? old('prog') }}" readonly>
                             </div>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Academic Year</label>
+                            <label class="col-sm-3 col-form-label" style="font-size: 14px; color: #000; font-weight: bolder">ACADEMIC YEAR</label>
                             <div class="col-sm-9">
                                 <input type="text" name="acadyear" id="aYear" class="form-control" value="{{ $requestdoc->aYear }}" readonly>
                             </div>
@@ -65,14 +65,14 @@
                     <div class="row">
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Semester</label>
+                            <label class="col-sm-3 col-form-label" style="font-size: 14px; color: #000; font-weight: bolder">SEMESTER</label>
                             <div class="col-sm-9">
                                 <input type="text" name="sem" id="sem" class="form-control" value="{{ $requestdoc->sem }}" readonly>
                             </div>
                           </div>
                         </div>
                         <div class="col-md-6">
-                            <label>Requested Documents:</label>
+                            <label style="font-size: 14px; color: #000; font-weight: bolder">REQUESTED DOCUMENTS</label>
                             <div class="form-group">
                                 @foreach ($docs as $doc)
                                     <div class="form-check" style="margin-left: 50px">
@@ -89,7 +89,7 @@
                         @livewire('request-status')
                       </div>
                       <div class="form-group">
-                        <label for="purpose">Purpose</label>
+                        <label for="purpose" style="font-size: 14px; color: #000; font-weight: bolder">PURPOSE</label>
                         <textarea  name="purpose" id="purpose" class="form-control @error('purpose') is-invalid @enderror" value="{{ $requestdoc->purpose }}" rows="4" readonly>{!! $requestdoc->purpose !!}</textarea>
                     </div>
                     

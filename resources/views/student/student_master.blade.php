@@ -41,6 +41,7 @@
     <link href="{{ asset('vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/remixicon/remixicon.css')}}" rel="stylesheet">
 
+    @livewireStyles
 
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
@@ -83,5 +84,9 @@
     <!-- Custom js for this page-->
     <script src="{{ asset('js/sp/dashboard.js') }}"></script>
     <!-- End custom js for this page-->
+
+    @livewireScripts
+    <script src="{{ asset('js/app.js') }}"></script>
+    
 </body>
 </html>

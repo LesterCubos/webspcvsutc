@@ -90,6 +90,7 @@ class RequestDocController extends Controller
     public function edit(string $id): Response
     {
         $requestdocs = RequestDoc::findOrFail($id);
+        Session::put('transNo', $requestdocs->transNo);
 
         return response()->view('admin.requestdoc.form', [
             'requestdoc' => RequestDoc::findOrFail($id), 'legends' => Legend::all(), 'docs' => explode("\n- ", $requestdocs->req)
