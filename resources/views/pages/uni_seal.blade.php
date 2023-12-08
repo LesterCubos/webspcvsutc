@@ -22,7 +22,6 @@
 
       <div class="section-title">
         <h3>Campus <span>Seal</span></h3>
-        <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
       </div>
 
       @foreach ($uni_seals as $uni_seal)
