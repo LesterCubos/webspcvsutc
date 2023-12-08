@@ -6,12 +6,12 @@
 @endif
     <div class="card-body">
         <h4 class="card-title">Courses Table</h4>
-        {{-- <p class="card-description">
-         Add and Edit<code>Courses</code>
-        </p> --}}
-        <a class="btn btn-primary btn-icon-text" href="{{ route('courses.create') }}">
+        <p class="card-description">
+          Edit<code>Subject Courses</code>
+        </p>
+        {{-- <a class="btn btn-primary btn-icon-text" href="{{ route('courses.create') }}">
             <i class="bx bxs-book-add btn-icon-prepend" style="font-size: 1.225rem;"></i>Add Course
-        </a>
+        </a> --}}
         <a class="btn btn-warning btn-icon-text" href="{{ route('Coursesexport') }}"><i class="bx bxs-lock-open-alt btn-icon-prepend" style="font-size: 1.225rem;"></i>Generate Pincode</a>
         <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
             <div class="input-group-prepend">
@@ -26,25 +26,16 @@
                 <thead>
                 <tr>
                     <th>
-                    Schedule Code
-                    </th>
-                    <th>
-                    Program
+                    SchedCode
                     </th>
                     <th>
                     Section
                     </th>
                     <th>
-                    Course Subject
+                    Course Code
                     </th>
                     <th>
                     Instructor Name
-                    </th>
-                    <th>
-                    Instructor Email
-                    </th>
-                    <th>
-                    Status
                     </th>
                     <th>
                     Action
@@ -58,9 +49,6 @@
                                 {{ $course->schedcode }}
                             </td>
                             <td>
-                                {{ $course->program }}
-                            </td>
-                            <td>
                                 {{ $course->section }}
                             </td>
                             <td>
@@ -68,16 +56,6 @@
                             </td>
                             <td>
                                 {{ $course->instructor_name }}
-                            </td>
-                            <td>
-                                {{ $course->instructor_email }}
-                            </td>
-                            <td>
-                                @if($course->isActive == 1)
-                                <label class="badge badge-success">Active</label>
-                                @elseif($course->isActive == 0)
-                                    <label class="badge badge-danger">Inactive</label>
-                                @endif
                             </td>
                             <td>
                                 <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('courses.edit', $course->id) }}" style="margin-bottom: 5px"><i class="bi bi-pencil-square"></i></a>
@@ -126,7 +104,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" style="text-align: center; font-size: 24px">
+                            <td colspan="5" style="text-align: center; font-size: 24px">
                                 <div class="py-5" style="">No Data Found...</div>
                             </td>  
                         </tr> 

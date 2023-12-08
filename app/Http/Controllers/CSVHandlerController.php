@@ -9,6 +9,7 @@ use App\Imports\GradesImport;
 use App\Exports\CoursesExport;
 use App\Exports\TemplateExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\DB;
 
 class CSVHandlerController extends Controller
 {
@@ -25,14 +26,22 @@ class CSVHandlerController extends Controller
     public function import() 
     {
         Excel::import(new UsersImport,request()->file('file'));
-             
+        session()->flash('notif.success', 'Users created successfully!');     
         return back();
     }
 
     public function Gradeimport() 
     {
-        Excel::import(new GradesImport,request()->file('file'));
-             
+        try {
+            DB::transaction(function () {
+                Excel::import(new GradesImport,request()->file('file'));
+            });   
+            session()->flash('notif.success', 'Grades created successfully!');
+        } catch (\Exception $e) {
+            session()->flash('notif.error', $e->getMessage());
+            return back();
+        }
+          
         return back();
     }
 

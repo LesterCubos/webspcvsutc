@@ -24,13 +24,13 @@
                     {{-- add @method('put') for edit mode --}}
                     @isset($course)
                         @method('put')
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="status">Status:</label>
                             @livewire('toggle-status', ['model' => $course, 'field' => 'isActive'], key($course->id))
-                        </div> 
+                        </div>  --}}
                     @endisset
                     <br>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="program">Program:</label>
                         @livewire('search-course')
                         @error('program')
@@ -38,10 +38,10 @@
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                    </div>
+                    </div> --}}
                     
                     <div class="form-group">
-                        <label for="course_name">Course Name:</label>
+                        <label for="course_name">Course Code:</label>
                         @livewire('search-subject')
                         @error('course_name')
                             <span class="invalid-feedback" role="alert">
@@ -53,15 +53,6 @@
                         <label for="instructor_name">Instructor Name:</label>
                         <input type="text" name="instructor_name" id="instructor_name" class="form-control @error('instructor_name') is-invalid @enderror" value="{{ $course->instructor_name ?? old('instructor_name') }}" placeholder="Input Instructor Name">
                         @error('instructor_name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="instructor_email">Instructor Email:</label>
-                        <input type="text" name="instructor_email" id="instructor_email" class="form-control @error('instructor_email') is-invalid @enderror" value="{{ $course->instructor_email ?? old('instructor_email') }}" placeholder="Input Instructor Email">
-                        @error('instructor_email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

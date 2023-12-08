@@ -43,7 +43,7 @@
                 @if(!empty($records))
                     @foreach($records as $record)
 
-                         <li wire:click="fetchsubjectDetail({{ $record->id }})">{{ $record->subjectTitle}}</li>
+                         <li wire:click="fetchsubjectDetail({{ $record->id }})">{{ $record->subjectcode}}</li>
 
                     @endforeach
                 @endif

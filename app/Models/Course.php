@@ -34,12 +34,16 @@ class Course extends Model
         // ->first();
 
         $lastGeneratedCode = self::orderBy('schedcode', 'desc')->first();
-
-        if (!$lastGeneratedCode) {
-            $newScheduleCode = $currentYear . '0001';
-        } else {
+        Session::put('last', $lastGeneratedCode);
+        if ($lastGeneratedCode === null || $lastGeneratedCode->schedcode === '0') {
             $lastGeneratedCodeParts = explode($currentYear, $lastGeneratedCode->schedcode);
             $incrementedNumber = intval($lastGeneratedCodeParts[0]) + 1;
+            $paddedIncrementedNumber = str_pad($incrementedNumber, 4, '0', STR_PAD_LEFT);
+            $newScheduleCode = $currentYear . $paddedIncrementedNumber;
+
+        } else {
+            $lastGeneratedCodeParts = explode($currentYear, $lastGeneratedCode->schedcode);
+            $incrementedNumber = intval($lastGeneratedCodeParts[1]) + 1;
             $paddedIncrementedNumber = str_pad($incrementedNumber, 4, '0', STR_PAD_LEFT);
             $newScheduleCode = $currentYear . $paddedIncrementedNumber;
 
@@ -51,6 +55,7 @@ class Course extends Model
             }
         }
 
+        Session::put('code', $newScheduleCode);
         $this->attributes['schedcode'] = $newScheduleCode;
     }
     public function generatePinCode()
