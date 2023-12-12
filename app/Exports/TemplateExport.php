@@ -9,12 +9,12 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-class TemplateExport implements FromQuery, WithHeadings
+class TemplateExport implements WithHeadings
 {
-    public function query()
-    {
-        return Grade::query();
-    }
+    // public function query()
+    // {
+    //     return Grade::query();
+    // }
 
     public function headings(): array
     {

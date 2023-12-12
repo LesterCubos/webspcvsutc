@@ -36,7 +36,7 @@
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
               <div class="max-w-xl">
                 <div class="card-body">
-                  <form method="POST" action="{{ route('admin.user.profile.store') }}" enctype="multipart/form-data">
+                  <form method="POST" action="{{ route('student.user.profile.store') }}" enctype="multipart/form-data">
                       @csrf
 
                       @if (session('success'))
@@ -76,11 +76,6 @@
               </div>
 
               </div>
-            </div>
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-full">
-                    @include('admin.profile.partials.update-profile-information-form')
-                </div>
             </div>
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">

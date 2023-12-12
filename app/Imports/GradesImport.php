@@ -73,7 +73,8 @@ class GradesImport implements ToModel, WithHeadingRow, WithEvents
         }
 
         $legend = Legend::first();
-        $academic_year = $legend->schoolyear ." (". $legend->semester .")";
+        $academic_year = $legend->schoolyear;
+        $semester = $legend->semester;
 
         if (is_int($row['grade'])) {
             $grade = number_format($row['grade'], 2, '.', '');
@@ -88,6 +89,7 @@ class GradesImport implements ToModel, WithHeadingRow, WithEvents
             'course_name'=> $course_name,
             'instructor_name'=> $instructor_name,
             'academic_year' => $academic_year,
+            'semester' => $semester,
         ]);
     }
 }

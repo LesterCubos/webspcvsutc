@@ -109,6 +109,7 @@ use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\Admin\FilesController;
 use App\Http\Controllers\Admin\RequestDocController;
 use App\Http\Controllers\Admin\ReqOptionController;
+use App\Http\Controllers\Admin\ChangeInfoReqController;
 
 //Instructor Page
 use App\Http\Controllers\InstructorPageController;
@@ -322,6 +323,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::resource('admin_grades',AdminGradeController::class);
     //Student Information
     Route::resource('student_informations', StudentInformationController::class);
+    Route::resource('adchangeinforeqs', ChangeInfoReqController::class);
     //Downloadable Forms
     Route::resource('downloadable_forms', FileController::class);
     Route::get('files{file}', [FilesController::class, 'files']);
@@ -336,9 +338,11 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 Route::middleware(['auth','role:student'])->group(function(){
     Route::get('/student/dashboard', [StudentController::class, 'Dashboard'])->name('student.dashboard');
+    Route::get('/student/profile',[StudentController::class, 'edit'])->name('student.profile.edit');
     Route::post('/student/profile', [ProfileController::class, 'store'])->name('student.user.profile.store');
     //Student Information
     Route::get('/student/student_information', [StudentController::class, 'student_information'])->name('student.student_information');
+    Route::resource('changeinforeqs', ChangeInfoReqController::class);
     //Student Grade
     Route::get('/student/student_grade', [StudentController::class, 'student_grade'])->name('student.student_grade');
     //Downloadable Forms
