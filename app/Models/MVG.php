@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MVG extends Model
 {
     protected $fillable = [
-        'title1',
-        'title2',
+        'title',
         'content',
     ];
 }

@@ -19,31 +19,33 @@
   <!-- ======= MVG Section ======= -->
   <section id="mvg" class="mvg">
     <div class="container">
-
+      <div class="section-title">
+        <h3>MISSION, VISION, <span>GOALS, & QUALITY POLICY</span></h3>
+      </div>
         @foreach ($mvgs as $mvg)
             @if ($loop->iteration == 1 )
                 <div class="mvg-content" data-aos="zoom-in" data-aos-delay="100">
-                    <h3>{{ $mvg->title1 }}<span> {{ $mvg->title2 }}</span></h3>
+                    <h3 class="span">{{ $mvg->title }}</h3>
                     <p>{!!$mvg->content !!}</p>
                 </div>
             @elseif ($loop->iteration == 2)
                 <div class="mvg-content" data-aos="zoom-in" data-aos-delay="200">
-                    <h3>{{ $mvg->title1 }}<span> {{ $mvg->title2 }}</span></h3>
+                    <h3 class="span">{{ $mvg->title }}</h3>
                     <p>{!!$mvg->content !!}</p>
                 </div>
             @elseif ($loop->iteration == 3)
                 <div class="mvg-content" data-aos="zoom-in" data-aos-delay="300">
-                    <h3>{{ $mvg->title1 }}<span> {{ $mvg->title2 }}</span></h3>
+                    <h3 class="span">{{ $mvg->title }}</h3>
                     <p>{!!$mvg->content !!}</p>
                 </div>
             @elseif ($loop->iteration == 4)
                 <div class="mvg-content" data-aos="zoom-in" data-aos-delay="400">
-                    <h3>{{ $mvg->title1 }}<span> {{ $mvg->title2 }}</span></h3>
+                    <h3 class="span">{{ $mvg->title }}</h3>
                     <p>{!!$mvg->content !!}</p>
                 </div>
             @else
                 <div class="mvg-content" data-aos="zoom-in" data-aos-delay="500">
-                    <h3>{{ $mvg->title1 }}<span> {{ $mvg->title2 }}</span></h3>
+                    <h3 class="span">{{ $mvg->title }}</h3>
                     <p>{!!$mvg->content !!}</p>
                 </div>
             @endif

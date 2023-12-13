@@ -30,14 +30,10 @@
                 @endisset
                 <br>
                 <div>
-                    <label for="title1" class="form-label">Title Left:</label>
-                    <input type="text" class="form-control" id="title" name="title1" value="{{ $mvg->title1 ?? old('title1') }}" required autofocus>
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{ $mvg->title ?? old('title') }}" required autofocus>
                 </div>
-                <br>
-                <div>
-                    <label for="title2" class="form-label">Title Right:</label>
-                    <input type="text" class="form-control" id="title2" name="title2" value="{{ $mvg->title2 ?? old('title2') }}" required autofocus>
-                </div>
+                
                 <br>
                 <div>
                     <label for="content" class="form-label">Content:</label>

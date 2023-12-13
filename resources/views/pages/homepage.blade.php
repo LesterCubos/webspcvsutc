@@ -46,8 +46,8 @@
                             <img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('storage/' . $carousel_item->featured_image) }}" alt="{{ $carousel_item->title }}">
                             <div class="container">
                                 <div class="carousel-caption text-start">
-                                    <h1 class="animate__animated animate__fadeInDown">{{ $carousel_item->title }}</h1>
-                                    <p class="animate__animated animate__fadeInUp"> {{ $carousel_item->content }}</p>
+                                    {{-- <h1 class="animate__animated animate__fadeInDown">{{ $carousel_item->title }}</h1>
+                                    <p class="animate__animated animate__fadeInUp"> {{ $carousel_item->content }}</p> --}}
                                     {{-- <div class="d-flex justify-content-center justify-content-lg-start">
                                         <p><a class="btn btn-lg btn-light btn-get-started animate__animated animate__fadeInUp scrollto" href="#">Sign up today</a></p>
                                         <p><a href="#" class="glightbox btn-watch-video animate__animated animate__fadeInUp"><i class="bi bi-play-circle"></i><span>Watch Video</span></a></p>
@@ -63,8 +63,8 @@
                             <img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('storage/' . $carousel_item->featured_image) }}" alt="{{ $carousel_item->title }}">
                             <div class="container">
                             <div class="carousel-caption">
-                                <h1 class="animate__animated animate__fadeInDown">{{ $carousel_item->title }}</h1>
-                                <p class="animate__animated animate__fadeInUp">{{ $carousel_item->content }}</p>
+                                {{-- <h1 class="animate__animated animate__fadeInDown">{{ $carousel_item->title }}</h1>
+                                <p class="animate__animated animate__fadeInUp">{{ $carousel_item->content }}</p> --}}
                                 {{-- <p><a class="btn btn-lg btn-light btn-get-started animate__animated animate__fadeInUp scrollto" href="#">Learn more</a></p> --}}
                             </div>
                             </div>
