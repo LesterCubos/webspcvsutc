@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\View\View;
 use App\Models\user;
 use App\Models\AdminAnnounce;
 use App\Models\AcademicYear;
@@ -25,13 +26,23 @@ class StudentController extends Controller
 
     public function student_grade(){
         $email = Session::get('email');
-        $users = User::where('email', $email)->get();
-        foreach ($users as $user) {
-            $student_number = $user->student_number;
-        }
-        return view ('student.student_grade.index',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'grades' => Grade::where('student_number', $student_number)->get(), 'legends' => Legend::all()]);
+        $user = User::where('email', $email)->first();
+        $studentNum = $user->student_number;
+        
+        return view ('student.student_grade.index',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'grades' => Grade::where('student_number', $studentNum)->get(), 'legends' => Legend::all(), 'no' => $studentNum]);
     }
     public function downloadable_forms(){
         return view ('student.downloadable_forms.index',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'files' => File::orderby('updated_at','desc')->get(), 'legends' => Legend::all()]);
+    }
+
+    public function edit(Request $request): View
+    {
+        $acadyears = AcademicYear::where('isActive', '1')->get();
+        $legends = Legend::all();
+        
+       
+        return view('student.profile.edit', [
+            'user' => $request->user(),
+        ],compact('acadyears', 'legends'));
     }
 }

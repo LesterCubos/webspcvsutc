@@ -14,10 +14,8 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('schedcode')->unique()->default(0);
-            $table->string('program');
             $table->string('course_name');
             $table->string('instructor_name');
-            $table->string('instructor_email');
             $table->string('section');
             $table->integer('units');
             $table->string('sem')->default(0);

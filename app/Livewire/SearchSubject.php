@@ -19,9 +19,9 @@ class SearchSubject extends Component
 
             if(!empty($this->subjectSearch)){
    
-                $this->records = EnrollSubject::orderby('subjectTitle','asc')
+                $this->records = EnrollSubject::orderby('subjectcode','asc')
                           ->select('*')
-                          ->where('subjectTitle','like','%'.$this->subjectSearch.'%')
+                          ->where('subjectcode','like','%'.$this->subjectSearch.'%')
                           ->limit(10)
                           ->get();
    
@@ -38,7 +38,7 @@ class SearchSubject extends Component
                     ->where('id',$id)
                     ->first();
 
-        $this->subjectSearch = $record->subjectTitle;
+        $this->subjectSearch = $record->subjectcode;
         $this->subjectDetails = $record;
         $this->showdiv = false;
     }

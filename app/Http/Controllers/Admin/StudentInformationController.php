@@ -13,6 +13,7 @@ use App\Models\AcademicYear;
 use App\Models\User;
 use App\Models\EnrollStudentInformation;
 use App\Models\Legend;
+use App\Models\ChangeInfoReq;
 
 class StudentInformationController extends Controller
 {
@@ -21,9 +22,11 @@ class StudentInformationController extends Controller
      */
     public function index(): Response
     {
+        
         return response()->view('admin.student_informations.index', [ 
             'users' => User::where('role','student')->orderBy('updated_at','desc')->paginate(5), 'acadyears'=> AcademicYear::where('isActive','1')->get(),
-            'legends' => Legend::all()
+            'legends' => Legend::all(),
+            'pendingChange' => ChangeInfoReq::where('status', 'Pending')->count()
         ]);
     }
 

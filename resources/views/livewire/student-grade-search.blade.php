@@ -5,75 +5,55 @@
             <p class="card-description" style="font-size: 16px">
             View your <code>Grades</code>
             </p>
-        <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="search" style="background-color:  #ec37fc; color: #fff">
-                <i class="icon-search"></i>
-                </span>
-            </div>
-            <input type="text" class="form-control" placeholder="Search Academic Year..." wire:model.lazy="searchStudentGrade">
-        </div>
-        <div class="table-responsive pt-3">
-            <table class="table table-bordered">
-            <thead>
-                <tr>
-                <th>
-                    Student Number
-                </th>
-                <th>
-                    Grade
-                </th>
-                <th>
-                    Course Subject
-                </th>
-                <th>
-                    Instructor Name
-                </th>
-                <th>
-                    Remarks
-                </th>
-                <th>
-                    Academic Year
-                </th>
-                </tr>
-            </thead>
-            <tbody>
-                @php($a = 0)
-                @forelse ($grades as $grade)
-                <tr>
-                    <td>
-                    {{ $grade->student_number }}
-                    </td>
-                    <td>
-                    {{ $grade->grade }}
-                    </td>
-                    <td>
-                        {{ $grade->course_name }}
-                    </td>
-                    <td>
-                        {{ $grade->instructor_name }}
-                    </td>
-                    <td>
-                    {{ $grade->remarks }}
-                    </td>
-                    <td>
-                    {{ $grade->academic_year }}
-                    </td>
-                </tr>  
-                @empty
-                <tr>
-                    <td colspan="7" style="text-align: center; font-size: 24px">
-                        <div class="py-5" style="">No Data Found...</div>
-                    </td>  
-                </tr> 
-                @endforelse
-            </tbody>
-            </table>
-            {{-- Pagination --}}
-            <div class="d-flex justify-content-center" style="margin-top: 20px">
-            {!! $grades->links() !!}
-            </div>
-        </div>
+
+            @php
+                $academic_year_semesters = [];
+            @endphp
+
+            @forelse ($grades as $grade)
+                @php
+                $key = $grade->academic_year . '_' . $grade->semester;
+                if (!isset($academic_year_semesters[$key])) {
+                    $academic_year_semesters[$key] = [];
+                }
+                array_push($academic_year_semesters[$key], $grade);
+                @endphp
+            @empty
+            @endforelse
+
+            @foreach ($academic_year_semesters as $key => $grades)
+                @php
+                list($academic_year, $semester) = explode('_', $key);
+                @endphp
+                <div class="dropdown" style="margin-top: 20px;">
+                    <button type="button" class="btn btn-primary col-lg-12" data-toggle="dropdown" style="text-align: left; font-weight: bolder; letter-spacing: 1px;">
+                        {{ $academic_year }} || {{ $semester }}
+                    </button>
+                    <div class="dropdown-menu col-lg-12" >
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th>SUBJECT NAME</th>
+                                <th>GRADE</th>
+                                <th>INSTRUCTOR</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($grades as $grade)
+                                    @if ($grade->academic_year == $academic_year && $grade->semester == $semester)
+                                        <tr>
+                                            <td>{{ $grade->course_name }}</td>
+                                            <td>{{ $grade->grade }}</td>
+                                            <td>{{ $grade->instructor_name }}</td>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endforeach
+
         </div>
     </div>
 </div>

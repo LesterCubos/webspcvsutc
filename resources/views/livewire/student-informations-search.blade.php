@@ -10,6 +10,9 @@
         <p class="card-description">
          Edit<code>Student Informations</code>
         </p>
+        <a class="btn btn-primary btn-icon-text" href="{{ route('adchangeinforeqs.index') }}">
+          <span class="badge bg-dark badge-number" style="font-size: 18px">{{ $pendingChange }}</span> <i class="bi bi-chat-left-text btn-icon-prepend" style="font-size: 1.225rem;"></i>Manage Request Change
+        </a>
         <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
             <div class="input-group-prepend">
               <span class="input-group-text" id="search" style="background-color:  #ec37fc; color: #fff">

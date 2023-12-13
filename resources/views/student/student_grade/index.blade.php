@@ -16,6 +16,7 @@
     </div><!-- End Page Title -->
 
     @livewire('student-grade-search')
+
 </div>
 
 @endsection

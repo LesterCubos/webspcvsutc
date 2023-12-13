@@ -34,9 +34,9 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
             
-            {{-- <a class="dropdown-item preview-item" href="{{ route('profile.edit') }}">
-                <i class="icon-head"></i> Profile
-            </a> --}}
+            <a class="dropdown-item preview-item" href="{{ route('student.profile.edit') }}">
+                <i class="icon-head" style="color: #37b246"></i> Account Settings
+            </a>
              
              <form method="POST" action="{{ route('logout') }}">
               @csrf

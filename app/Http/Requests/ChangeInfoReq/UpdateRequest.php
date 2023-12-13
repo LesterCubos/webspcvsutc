@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Course;
+namespace App\Http\Requests\ChangeInfoReq;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,10 +22,9 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'course_name' => 'nullable|string|min:3|max:250',
-            'instructor_name' => 'nullable|string|min:3|max:250',
-            'section'=> 'nullable|string|min:3|max:250',
-            'units' => 'nullable|integer',
+            'studentNum' => 'nullable|string|min:3|max:250',
+            'studentName' => 'nullable|string|min:3|max:250',
+            'request' => 'nullable|string|min:3|max:6000',
         ];
     }
 }

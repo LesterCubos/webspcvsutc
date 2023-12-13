@@ -68,12 +68,12 @@
             <li><a href="services_jobvacancies">Job Vacancies</a></li>
           </ul>
         </li> --}}
-        <li><a href="student_login">Student Portal</a>
+        <li class=""><a href="student_login">Student Portal</a>
           {{-- <ul>
             <li><a href="student_login">Student Portal</a></li>
           </ul> --}}
         </li>
-        <li><a href="services_jobvacancies">Careers</a>
+        <li class="dropdown"><a href="services_jobvacancies">Careers</a>
         </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>

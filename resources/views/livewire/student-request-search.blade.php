@@ -8,7 +8,7 @@
             <h4 class="card-title">Request Docements Table</h4>
               <a href="{{ route('request_docs.create') }}" class="btn btn-primary btn-icon-text">
                 <i class="bx bxs-message-add btn-icon-prepend" style="font-size: 1.225rem;"></i>
-                Add Request Option
+                Add Request Docs
               </a>
               <div class="input-group col-6 search-form" style="margin-bottom: 20px; float:right">
                 <div class="input-group-prepend">

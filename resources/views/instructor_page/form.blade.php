@@ -83,7 +83,7 @@
                                     <br>
                                     <div class="form-group">
                                         <label for="student_number">Student Number:</label>
-                                        <input type="number" class="form-control  @error('student_number') is-invalid @enderror" id="student_number" name="student_number" value="{{ $grade->student_number ?? old('student_number') }}" placeholder="Input Student Number">
+                                        <input type="number" class="form-control  @error('student_number') is-invalid @enderror" id="student_number" name="student_number" value="{{ $grade->student_number ?? old('student_number') }}" placeholder="Input Student Number" readonly>
                                         @error('student_number')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
