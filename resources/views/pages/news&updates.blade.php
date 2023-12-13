@@ -25,7 +25,6 @@
 
     <div class="section-title">
       <h3><span>News</span> Updates</h3>
-      <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
     </div>
 
     @foreach($news as $new)

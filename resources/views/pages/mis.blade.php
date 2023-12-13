@@ -22,7 +22,6 @@
         @foreach ( $mis as $mi)
         <div class="section-title">
             <h3>{{ $mi->title }}</h3>
-            <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
           </div>
 
           <div class="imfo">
