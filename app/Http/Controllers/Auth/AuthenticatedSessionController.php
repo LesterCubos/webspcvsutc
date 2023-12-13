@@ -37,7 +37,7 @@ class AuthenticatedSessionController extends Controller
         } elseif ($request->user()->role === 'admin'){
             $url = '/admin/dashboard';
         } elseif ($request->user()->role === 'student'){
-            Session::put('email', $request->user()->email);
+            Session::put('studentNumber', $request->input('studentNumber'));
             $url = '/student/dashboard';
         }
         } else {

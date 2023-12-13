@@ -21,8 +21,8 @@ class StudentRequestSearch extends Component
     }
     public function render()
     {
-        $email = Session::get('email');
-        $users = User::where('email', $email)->get();
+        $studentNumber = Session::get('studentNumber');
+        $users = User::where('studentNumber', $studentNumber)->get();
         foreach ($users as $user) {
             $student_number = $user->studentNumber;
         }

@@ -41,16 +41,16 @@
                         @endif
                         
                         <div class="form-group">
-                          <label for="exampleInputEmail">Email</label>
+                          <label for="exampleInputstudentNumber">Student Number</label>
                           <div class="input-group">
                             <div class="input-group-prepend bg-transparent">
                               <span class="input-group-text bg-transparent border-right-0">
                                 <i class="mdi mdi-account-outline text-primary" style="font-size: 20px"></i>
                               </span>
                             </div>
-                            <input type="email" class="form-control form-control-lg border-left-0  @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" placeholder="Your Email" required autocomplete="email" autofocus>
+                            <input type="number" class="form-control form-control-lg border-left-0  @error('studentNumber') is-invalid @enderror" id="studentNumber" name="studentNumber" value="{{ old('studentNumber') }}" placeholder="Student Number" required autocomplete="studentNumber" autofocus>
 
-                            @error('email')
+                            @error('studentNumber')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -65,7 +65,7 @@
                                 <i class="mdi mdi-lock-outline text-primary"  style="font-size: 20px"></i>
                               </span>
                             </div>
-                            <input style="width: 10px" id="myInput" type="password" class="form-control form-control-lg border-left-0 @error('password') is-invalid @enderror" name="password" placeholder="Your Password" required autocomplete="current-password">
+                            <input style="width: 10px" id="myInput" type="password" class="form-control form-control-lg border-left-0 @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="current-password">
 
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">

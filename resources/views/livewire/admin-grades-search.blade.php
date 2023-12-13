@@ -64,6 +64,9 @@
                       {{ $grade->academic_year }}
                     </td>
                     <td>
+                      {{ $grade->semester }}
+                    </td>
+                    <td>
                         <!-- Button trigger modal -->
                         <button id="icon_delete{{ $grade->id }}" type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-user-deletion{{ $grade->id }}">
                             <i class="icon-trash"></i>

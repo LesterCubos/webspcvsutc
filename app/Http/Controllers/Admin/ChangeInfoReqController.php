@@ -33,9 +33,9 @@ class ChangeInfoReqController extends Controller
      */
     public function create(): Response
     {
-        $email = Session::get('email');
+        $studentNumber = Session::get('studentNumber');
         return response()->view('student.student_information.form', [
-            'legends' => Legend::all(), 'users' => User::where('email', $email)->get(),
+            'legends' => Legend::all(), 'users' => User::where('studentNumber', $studentNumber)->get(),
         ]);
     }
 

@@ -43,8 +43,8 @@ class RequestDocController extends Controller
     public function store(StoreRequest $request): RedirectResponse
     {
         $validated = $request->validated();
-        $email = Session::get('email');
-        $users = User::where('email', $email)->get();
+        $studentNumber = Session::get('studentNumber');
+        $users = User::where('studentNumber', $studentNumber)->get();
         $legends = Legend::all();
         $docs = Session::get('docs');
 

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
-use App\Models\user;
+use App\Models\User;
 use App\Models\AdminAnnounce;
 use App\Models\AcademicYear;
 use App\Models\Grade;
@@ -14,19 +16,20 @@ use App\Models\File;
 
 class StudentController extends Controller
 {
+    
     public function Dashboard(){
         $admin_announces = AdminAnnounce::all();
         return view ('student.student_dashboard',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'legends' => Legend::all()],compact('admin_announces'));
     }
 
     public function student_information(){
-        $email = Session::get('email');
-        return view ('student.student_information.index',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'users' => User::where('email', $email)->get(), 'legends' => Legend::all()]);
+        $studentNumber = Session::get('studentNumber');
+        return view ('student.student_information.index',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'users' => User::where('studentNumber', $studentNumber)->get(), 'legends' => Legend::all()]);
     }
 
     public function student_grade(){
-        $email = Session::get('email');
-        $user = User::where('email', $email)->first();
+        $studentNumber = Session::get('studentNumber');
+        $user = User::where('studentNumber', $studentNumber)->first();
         $studentNum = $user->student_number;
         
         return view ('student.student_grade.index',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'grades' => Grade::where('student_number', $studentNum)->get(), 'legends' => Legend::all(), 'no' => $studentNum]);

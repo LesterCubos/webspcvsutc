@@ -34,6 +34,17 @@
           </div>
         @endif
     </div>
+    @if(session('notif.success') || session('notif.danger'))
+      <a href="{{ route('student_informations.index') }}" class="btn btn-info btn-icon-text" style="margin-bottom: 20px">
+        <i class="icon-arrow-left btn-icon-prepend"></i>
+        Go Back
+      </a>
+    @else
+      <a href="{{ route('student_informations.index') }}" class="btn btn-info btn-icon-text" style="margin-bottom: 20px">
+        <i class="icon-arrow-left btn-icon-prepend"></i>
+        Go Back
+      </a>
+    @endif
     @livewire('change-info-req-search')
 </div>
 
