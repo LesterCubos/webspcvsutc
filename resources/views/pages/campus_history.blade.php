@@ -27,9 +27,6 @@
     @foreach ($campus_history as $campushistory)
       <div class="polaroid">
         <img src="{{ asset('storage/' . $campushistory->image) }}" alt="{{ $campushistory->title }}" style="width:100%">
-        <div class="name">
-          <p>Cavite State University Tanza Campus</p>
-        </div>
       </div>
       <div class="ps-0 ps-lg-6">
         <h3>{{ $campushistory->title }}</h3>

@@ -60,9 +60,10 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
         $url = '';
-        if($request->user()->role === 'superadmin'){
+        if($request->user()->role === 'admin' || $request->user()->role === 'superadmin'){
             $url = '/login';
-        } elseif ($request->user()->role === 'admin' || $request->user()->role === 'student'){
+        } 
+        elseif ( $request->user()->role === 'student'){
             $url = '/student_login';
         } 
         Auth::guard('web')->logout();

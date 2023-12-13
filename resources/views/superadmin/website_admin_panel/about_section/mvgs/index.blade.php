@@ -32,8 +32,7 @@
         <thead class="table-display text-center">
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Title Left</th>
-            <th scope="col">Title Right</th>
+            <th scope="col">Title</th>
             <th scope="col">Content</th>
             <th scope="col">Created At</th>
             <th scope="col">Updated At</th>
@@ -46,8 +45,7 @@
             @forelse ($mvgs as $mvg)
             <tr>
                 <th scope="row">{{ $mvg->id }}</th>
-                <td>{{ $mvg->title1 }}</td>
-                <td>{{ $mvg->title2 }}</td>
+                <td>{{ $mvg->title }}</td>
                 <td style="width:500px">{!!$mvg->content !!}</td>
                 <td>{{ $mvg->created_at }}</td>
                 <td>{{ $mvg->updated_at }}</td>
