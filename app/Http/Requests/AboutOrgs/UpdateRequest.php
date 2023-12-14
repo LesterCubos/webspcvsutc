@@ -26,6 +26,7 @@ class UpdateRequest extends FormRequest
             'desc' => 'nullable|string|min:3|max:6000',
             'type' => 'nullable|string|min:3|max:250',
             'org_members' => 'nullable|string|min:3|max:6000',
+            'org_logo' => 'nullable|image|max:1024|mimes:jpg,jpeg,png',
         ];
     }
 }

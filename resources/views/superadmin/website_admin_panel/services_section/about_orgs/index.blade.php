@@ -30,6 +30,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Organization Name</th>
+            <th scope="col">Organization Logo</th>
             <th scope="col">Organization Description</th>
             <th scope="col">Type</th>
             <th scope="col">Organization Positions and Members</th>
@@ -44,9 +45,10 @@
             <tr>
                 <th scope="row">{{ $about_org->id }}</th>
                 <td>{{ $about_org->org_name }}</td>
+                <td><img style="width:250px" src="{{ Storage::url($about_org->org_logo) }}" alt="{{ $about_org->org_name }}" srcset=""></td>
                 <td>{!! Str::limit($about_org->desc,'250','...')!!}</td>
                 <td>{{ $about_org->type }}</td>
-                <td>{!! $about_org->org_members !!}</td>
+                <td>{!! Str::limit($about_org->org_members,'250','...')!!}</td>
                 <td>{{ $about_org->created_at }}</td>
                 <td>{{ $about_org->updated_at }}</td>
                 <td>

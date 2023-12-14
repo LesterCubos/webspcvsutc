@@ -12,5 +12,6 @@ class AboutOrgs extends Model
         'desc',
         'type',
         'org_members',
+        'org_logo',
     ];
 }

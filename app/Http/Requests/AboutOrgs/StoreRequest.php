@@ -27,6 +27,7 @@ class StoreRequest extends FormRequest
             'desc' => 'required|string|min:3|max:6000',
             'type' => 'required|string|min:3|max:250',
             'org_members' => 'required|string|min:3|max:6000',
+            'org_logo' => 'required|image|max:1024|mimes:jpg,jpeg,png',
         ];
     }
 }

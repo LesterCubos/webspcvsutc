@@ -16,7 +16,7 @@
     </nav>
   </div><!-- End Breadcrumbs -->
 
-<!-- ======= CSG Section ======= -->
+<!-- ======= Student Org Section ======= -->
 <section id="csg" class="csg">
     <div class="container" data-aos="fade-up">
 
@@ -27,6 +27,7 @@
             <p>{{ $about_org->type }}</p>
           </div>
           <div class="info">
+            <img class="text-center" src="{{ asset('storage/' . $about_org->org_logo) }}" style="width:250px" alt="{{ $about_org->org_logo }}">
             <p>{!! $about_org->desc !!}</p>
           </div>
 
@@ -42,6 +43,7 @@
               <p>{{ $about_org->type }}</p>
             </div>
             <div class="info">
+              <img src="{{ asset('storage/' . $about_org->org_logo) }}" alt="{{ $about_org->org_logo }}">
               <p>{!! $about_org->desc !!}</p>
             </div>
 
@@ -56,6 +58,7 @@
             <p>{{ $about_org->type }}</p>
           </div>
           <div class="info">
+            <img class="text-center" src="{{ asset('storage/' . $about_org->org_logo) }}" style="width:250px" alt="{{ $about_org->org_logo }}">
             <p>{!! $about_org->desc !!}</p>
           </div>
           <div class="org_members">

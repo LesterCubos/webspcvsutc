@@ -65,6 +65,13 @@
   padding-bottom: 30px;
 }
 
+.csg .info img{
+  display: block; 
+  width:300px;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
 .csg .org_members h3 {
   font-family: var(--font-primary);
   font-weight: bold;

@@ -30,10 +30,23 @@
                 @endisset
                 <br>
                 <div>
-                    <label for="org_name" class="form-label">Name:</label>
+                    <label for="org_name" class="form-label">Organization Name:</label>
                     <input type="text" class="form-control" id="org_name" name="org_name" value="{{ $about_org->org_name ?? old('org_name') }}" required autofocus>
                 </div>
                 <br>
+
+                <div>
+                    <label for="org_logo" class="form-label">Organization Logo:</label>
+                    <br>
+                    <label class="block mt-2">
+                        <input type="file" id="org_logo" name="org_logo" class="btn rounded-pill block w-full text-sm text-slate-500"/>
+                    </label>
+                    <div class="shrink-0 my-2">
+                        <img style="width:600px" id="org_logo_preview" class="h-64 w-128 object-cover rounded-md" src="{{ isset($about_org) ? Storage::url($about_org->org_logo) : '' }}" alt="org_logo preview" />
+                    </div>
+                </div>
+                <br>
+
                 <div>
                     <label for="desc" class="form-label">Description:</label>
                     <textarea style="height: 150px" id="desc" name="desc" class="form-control tinymce-editor">{{ $about_org->desc ?? old('desc') }}</textarea>
@@ -62,5 +75,14 @@
         </div>
     </div>
 </section>
-
+<script>
+    // create onchange event listener for featured_org_logo input
+    document.getElementById('org_logo').onchange = function(evt) {
+        const [file] = this.files
+        if (file) {
+            // if there is an org_logo, create a preview in featured_org_logo_preview
+            document.getElementById('org_logo_preview').src = URL.createObjectURL(file)
+        }
+    }
+</script>
 @endsection
