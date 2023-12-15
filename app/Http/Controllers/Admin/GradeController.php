@@ -82,7 +82,7 @@ class GradeController extends Controller
         if($create) {
 
             // add flash for the success notification
-            session()->flash('notif.success', 'grade created successfully!');
+            session()->flash('notif.success', 'Grade created successfully!');
             return redirect()->route('grades.index');
         }
 

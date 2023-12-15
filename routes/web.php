@@ -222,6 +222,7 @@ Route::middleware(['auth','role:superadmin'])->group(function(){
     Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('/superadmin/sp/users/userView{user}', [RegisteredUserController::class, 'userView'])->name('superadmin.sp.manage_user_pages.show');
+    Route::get('/user-reset-password/{id}', [UserController::class, 'resetPassword'])->name('user-reset-password');
     
     Route::resource('user',RegisteredUserController::class);
     Route::resource('student_accounts',StudentAccountController::class);

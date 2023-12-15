@@ -15,13 +15,39 @@
     </nav>
   </div><!-- End Page name -->
 
-    <div class="row" style="margin-top: 110px">
+  <div style="margin-top: 50px; margin-bottom: 20px">
+      @if(session('notif.success'))
+        <div class="alert alert-success fade in alert-dismissible show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" style="font-size:20px">×</span>
+          </button> 
+          <i class="bi bi-check-circle-fill" style="margin-right: 5px; font-size: 18px"></i>   
+          <strong>{{ session('notif.success') }}</strong>
+        </div>
+      @endif
+
+      @if(session('notif.danger'))
+        <div class="alert alert-danger fade in alert-dismissible show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" style="font-size:20px">×</span>
+          </button>
+          <i class="bi bi-exclamation-circle-fill" style="margin-right: 5px; font-size: 18px"></i>   
+          <strong>{{ session('notif.danger') }}</strong>
+        </div>
+      @endif
+  </div>
+
+  @if(session('notif.success') || session('notif.danger'))
+    <div class="row">
+  @else
+   <div class="row" style="margin-top: 110px">
+  @endif
       @if ($user->role == 'superadmin' || $user->role == 'admin')
         <div class="col-lg-12 grid-margin stretch-card">
       @else
         <div class="col-md-6 grid-margin stretch-card">
       @endif
-          <div class="card" style="border-radius: 10px">
+        <div class="card" style="border-radius: 10px">
             <div class="card-body">
               <h4 class="card-title">Status</h4>
               <p class="card-description">
@@ -151,7 +177,9 @@
                         <input type="text" class="form-control" id="mobilePhone" placeholder="{{ $user->mobilePhone }}" readonly="readonly">
                       </div>
                     </div>
-                  <a href="{{ route('superadmin.sp.manage_user_pages.index')}}" class="btn btn-dark btn-lg btn-block" style="margin-top: 370px">Back</a>
+
+                  <a href="/user-reset-password/{{$user->id}}" class="btn btn-primary btn-lg btn-block" style="margin-top: 360px">Reset Password</a>
+                  <a href="{{ route('superadmin.sp.manage_user_pages.index')}}" class="btn btn-dark btn-lg btn-block" style="margin-top: 10px">Back</a>
                 </form>
               </div>
             </div>

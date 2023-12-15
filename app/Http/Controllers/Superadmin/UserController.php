@@ -9,6 +9,7 @@ use App\Models\AcademicYear;
 use App\Models\Legend;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     // public function __construct(){
@@ -28,4 +29,20 @@ class UserController extends Controller
         $legends = Legend::all();
         return view('superadmin.sp.manage_user_pages.form', compact('acadyears', 'legends'));
     }   
+
+    public function resetPassword($id) {
+        $user = User::findOrFail($id);
+        if ($user) {
+            $password = $user->generateRandomPassword();
+            $hashedPassword = Hash::make($password);
+            $user->password = $hashedPassword;
+            $user->save();
+
+            session()->flash('notif.success', 'Password reset successfully. New password is: ' . $password);
+            return redirect()->route('superadmin.sp.manage_user_pages.show', ['user' => $id]);
+        } else {
+            session()->flash('notif.danger', 'User not found. ');
+            return redirect()->route('superadmin.sp.manage_user_pages.show', ['user' => $id]);
+        }
+    }
 }
