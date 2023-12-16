@@ -14,7 +14,6 @@ class SyncEnrollStudentInformation extends Controller
     public function syncData()
     {
         $users = User::all();
-        $temporaryPassword = 'temporaryPassword123.';
 
         $students = DB::connection('mysql2')->table('enrollstudentinformation')->get();
 
@@ -26,6 +25,7 @@ class SyncEnrollStudentInformation extends Controller
 
         foreach ($studentsToImport as $student) {
             $studentAccount = new User();
+            $temporaryPassword =  $studentAccount->generateRandomPassword();
             $studentAccount->studentNumber = $student->studentNumber;
             $studentAccount->firstName = $student->firstName;
             $studentAccount->lastName = $student->lastName;
@@ -52,6 +52,7 @@ class SyncEnrollStudentInformation extends Controller
             $studentAccount->highschool = $student->highschool;
             $studentAccount->curriculumid = $student->curriculumid;
             $studentAccount->password = Hash::make($temporaryPassword);
+            $studentAccount->tempPassword = $temporaryPassword;
             $studentAccount->save();
         }
 

@@ -36,7 +36,8 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $temporaryPassword = 'temporaryPassword123.';
+        $userModel = new User();
+        $temporaryPassword = $userModel->generateRandomPassword();
 
         $request->validate([
             'firstName' => ['required', 'string', 'max:255'],
@@ -74,6 +75,7 @@ class RegisteredUserController extends Controller
             'mobilePhone' => $request->mobilePhone,
             'email' => $request->email,
             'password' => Hash::make($temporaryPassword),
+            'tempPassword' => $temporaryPassword,
             'role' => $request->role,
         ]);
 

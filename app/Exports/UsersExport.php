@@ -13,44 +13,17 @@ class UsersExport implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        return User::all();
+        return User::select('studentNumber', 'firstName', 'lastName', 'middleName', 'tempPassword')->where('tempPassword' , '!=', '0')->get();
     }
 
     public function headings(): array
 {
     return [
-            'ID',
             'STUDENT NUMBER',
             'FIRST NAME',
             'LAST NAME',
             'MIDDLE NAME',
-            'SUFFIX',
-            'STREET',
-            'BARANGAY',
-            'MUNICIPALITY',
-            'PROVINCE',
-            'BIRTHDAY',
-            'GENDER',
-            'RELIGION',
-            'CITIZENSHIP',
-            'CIVIL STATUS',
-            'GUARDIAN NAME',
-            'GUARDIAN NUMBER',
-            'EMAIL', 
-            'YEAR ADMITTED', 
-            'SEMESTER ADMITTED',
-            'PROGRAM',
-            'CARD NUMBER', 
-            'STUDENT INCREMENT',
-            'LAST UPDATE',
-            'HIGH SCHOOL',
-            'CURRICULUM ID',
-            'PASSWORD',
-            'AVATAR',
-            'ROLE',
-            'ACTIVE STATUS',
-            'CREATED AT',
-            'UPDATED AT',
+            'TEMPPASSWORD',
             
     ];
 }
