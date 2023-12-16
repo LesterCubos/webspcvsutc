@@ -48,4 +48,9 @@ class StudentController extends Controller
             'user' => $request->user(),
         ],compact('acadyears', 'legends'));
     }
+
+    public function virtual_regform(){
+        
+        return view ('student.virtual_regform.index',['legends' => Legend::all()]);
+    }
 }

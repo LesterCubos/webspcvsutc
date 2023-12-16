@@ -56,7 +56,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('student.virtual_regform') }}">
           <i class="bi bi-file-earmark-post-fill menu-icon"></i>
           <span class="menu-title">Virtual RegForm</span>
         </a>

@@ -346,6 +346,8 @@ Route::middleware(['auth','role:student'])->group(function(){
     Route::resource('changeinforeqs', ChangeInfoReqController::class);
     //Student Grade
     Route::get('/student/student_grade', [StudentController::class, 'student_grade'])->name('student.student_grade');
+    //Virtual RegForm
+    Route::get('/student/virtual_regform', [StudentController::class, 'virtual_regform'])->name('student.virtual_regform');
     //Downloadable Forms
     Route::get('/student/downloadable_forms', [StudentController::class, 'downloadable_forms'])->name('student.downloadable_forms');
     Route::get('/student/files{file}', [FilesController::class, 'student_files']);
