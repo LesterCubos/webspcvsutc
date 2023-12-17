@@ -24,32 +24,42 @@
             </div>
             <div class="col-lg-12">
                 <div class="row" style="margin-top: 20px; color: green; font-weight: bolder; display: flex; justify-content: space-between;">
-                    <div class="col">
-                        <p>Student Number:</p>
+                    <div class="col" style="display: flex;">
+                        @foreach ($users as $user)
+                            <p>Student Number: <p style="color: #000; margin-left: 5px">{{ $user->studentNumber }}</p></p>
+                        @endforeach
                     </div>
-                    <div class="col">
-                        <p>Semester:</p>
+                    <div class="col" style="display: flex;">
+                        @foreach ($legends as $legend)
+                            <p>Semester: <p style="color: #000; margin-left: 5px">{{ $legend->semester }}</p></p>
+                        @endforeach
                     </div>
-                    <div class="col">
-                        <p>School Year:</p>
+                    <div class="col" style="display: flex;">
+                        @foreach ($legends as $legend)
+                            <p>School Year: <p style="color: #000; margin-left: 5px">{{ $legend->schoolyear }}</p></p>
+                        @endforeach
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px; color: green; font-weight: bolder; display: flex; justify-content: space-between;">
-                    <div class="col">
-                        <p>Student Name:</p>
+                    <div class="col" style="display: flex;">
+                        @foreach ($users as $user)
+                            <p>Student Name: <p style="color: #000; margin-left: 5px">{{ $user->firstName }} {{ strtoupper($user->middleName[0]) }}. {{ $user->lastName }}</p></p>
+                        @endforeach
                     </div>
-                    <div class="col">
+                    <div class="col" style="display: flex;">
                         <p>Date:</p>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px; color: green; font-weight: bolder; display: flex; justify-content: space-between;">
-                    <div class="col">
-                        <p>Course:</p>
+                    <div class="col" style="display: flex;">
+                        @foreach ($users as $user)
+                            <p>Course: <p style="color: #000; margin-left: 5px">{{ $user->course }}</p></p>
+                        @endforeach
                     </div>
-                    <div class="col">
+                    <div class="col" style="display: flex;">
                         <p>Year:</p>
                     </div>
-                    <div class="col">
+                    <div class="col" style="display: flex;">
                         <p>Section:</p>
                     </div>
                 </div>
@@ -75,13 +85,19 @@
                 </div>
                 <div class="row" style="height: 300px; border: 2px solid purple; text-align: center; border-top: none">
                     <div class="col-sm" style=" border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        
+                        @foreach ($schedcodes as $schedcode)
+                            <p style="color: #000">{{ $schedcode->course_name }}</p>
+                        @endforeach
                     </div>
                     <div class="col-sm-4" style=" border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        
+                        @foreach ($subjects as $sub)
+                            <p style="color: #000">{{ $sub->subjectTitle }}</p>
+                        @endforeach
                     </div>
                     <div class="col-sm" style=" border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        
+                        @foreach ($schedcodes as $schedcode)
+                            <p style="color: #000">{{ $schedcode->units }}</p>
+                        @endforeach
                     </div>
                     <div class="col-sm" style=" border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
                         

@@ -18,6 +18,7 @@ use App\Models\Course;
 use App\Models\Legend;
 use App\Models\EnrollSchedule;
 use App\Models\EnrollSubjectEnroll;
+use App\Models\EnrollSubject;
 
 class GradesImport implements ToModel, WithHeadingRow, WithEvents
 {
@@ -58,6 +59,10 @@ class GradesImport implements ToModel, WithHeadingRow, WithEvents
         $countstu = count($stusubs);
         $course_name = $course->course_name;
         $instructor_name = $course->instructor_name;
+        $units = $course->units;
+        $subTitle = EnrollSubject::where('subjectcode', $course_name)->first();
+        $subjTitle = $subTitle->subjectTitle;
+        
 
         if (EnrollSubjectEnroll::where('schedcode', $schedcode)->where('studentnumber', $row['student_number'])->exists()) {
                     
@@ -78,18 +83,34 @@ class GradesImport implements ToModel, WithHeadingRow, WithEvents
 
         if (is_int($row['grade'])) {
             $grade = number_format($row['grade'], 2, '.', '');
+            if ($grade <= 3.00) {
+                $credits = $units;
+            } else {
+                $credits = 0;
+            }
+            
         } else {
             $grade =  $row['grade'];
+            if ($grade <= 3.00) {
+                $credits = $units;
+            } else {
+                $credits = 0;
+            }
         }
+
+        
 
         return new Grade([
             'student_number' => $row['student_number'],
             'grade' => $grade,
             // 'remarks' => $row['remarks'],
             'course_name'=> $course_name,
+            'course_title' => $subjTitle,
             'instructor_name'=> $instructor_name,
             'academic_year' => $academic_year,
             'semester' => $semester,
+            'units' => $units,
+            'credits' => $credits,
         ]);
     }
 }

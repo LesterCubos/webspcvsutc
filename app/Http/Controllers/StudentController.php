@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EnrollSchedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\RedirectResponse;
@@ -13,6 +14,9 @@ use App\Models\AcademicYear;
 use App\Models\Grade;
 use App\Models\Legend;
 use App\Models\File;
+use App\Models\EnrollSubjectEnroll;
+use App\Models\EnrollSubject;
+use App\Models\Course;
 
 class StudentController extends Controller
 {
@@ -49,8 +53,24 @@ class StudentController extends Controller
         ],compact('acadyears', 'legends'));
     }
 
-    public function virtual_regform(){
-        
-        return view ('student.virtual_regform.index',['legends' => Legend::all()]);
+    public function virtual_regform()
+    {
+        $studentNumber = Session::get('studentNumber');
+        $subjenrolled = EnrollSubjectEnroll::where('studentnumber', $studentNumber)->get();
+        $schedcodes = [];
+        foreach ($subjenrolled as $subjenroll){
+            $temp_schedcodes = Course::where('schedcode', $subjenroll->schedcode)->get();
+            foreach ($temp_schedcodes as $temp_schedcode){
+                array_push($schedcodes, $temp_schedcode);
+            }
+        }
+        $subjects = [];
+        foreach ($schedcodes as $schedcode){
+            $temp_subjects = EnrollSubject::where('subjectcode', $schedcode->course_name)->get();
+            foreach ($temp_subjects as $temp_subject){
+                array_push($subjects, $temp_subject);
+            }
+        }
+        return view ('student.virtual_regform.index',['users' => User::where('studentNumber', $studentNumber)->get(), 'legends' => Legend::all()], compact('schedcodes', 'subjects'));
     }
 }

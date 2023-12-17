@@ -33,8 +33,11 @@
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
-                                <th>SUBJECT NAME</th>
+                                <th>SUBJECT CODE</th>
+                                <th>SUBJECT TITLE</th>
                                 <th>GRADE</th>
+                                <th>UNITS</th>
+                                <th>CREDITS</th>
                                 <th>INSTRUCTOR</th>
                             </tr>
                             </thead>
@@ -43,7 +46,10 @@
                                     @if ($grade->academic_year == $academic_year && $grade->semester == $semester)
                                         <tr>
                                             <td>{{ $grade->course_name }}</td>
+                                            <td>{{ $grade->course_title }}</td>
                                             <td>{{ $grade->grade }}</td>
+                                            <td>{{ $grade->units }}</td>
+                                            <td>{{ $grade->credits }}</td>
                                             <td>{{ $grade->instructor_name }}</td>
                                         </tr>
                                     @endif

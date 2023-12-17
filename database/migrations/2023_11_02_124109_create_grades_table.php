@@ -17,9 +17,12 @@ return new class extends Migration
             $table->string('grade');
             // $table->string('remarks')->default(0);
             $table->string('course_name')->default(0);
+            $table->string('course_title')->default(0);
             $table->string('instructor_name')->default(0);
             $table->string('academic_year')->default(0);
             $table->string('semester')->default(0);
+            $table->string('units')->default(0);
+            $table->string('credits')->default(0);
             $table->timestamps();
         });
     }

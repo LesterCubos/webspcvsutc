@@ -11,10 +11,12 @@ class Grade extends Model
         'student_number',
         'grade',
         'remarks',
-        'program',
         'course_name',
+        'course_title',
         'instructor_name',
         'academic_year',
         'semester',
+        'units',
+        'credits',
     ];
 }
