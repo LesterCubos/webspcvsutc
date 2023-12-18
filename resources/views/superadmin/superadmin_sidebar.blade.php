@@ -147,11 +147,11 @@
               <i class="bi bi-circle"></i><span>Clinic</span>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a class="{{ (request()->is('cashiers*')) ? 'active' : '' }}" href="{{ route('cashiers.index') }}">
               <i class="bi bi-circle"></i><span>Cashier</span>
             </a>
-          </li>
+          </li> --}}
           <li>
             <a class="{{ (request()->is('osass*')) ? 'active' : '' }}" href="{{ route('osass.index') }}">
               <i class="bi bi-circle"></i><span>Office of the Student Affairs Services</span>
