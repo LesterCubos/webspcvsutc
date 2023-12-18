@@ -50,7 +50,7 @@
             <li><a href="admin_clinic">Clinic</a></li>
             {{-- <li><a href="admin_cashier">Cashier</a></li> --}}
             {{-- <li><a href="admin_qaac">QAAC</a></li> --}}
-            <li><a href="admin_research">Research Extension</a></li>
+            <li><a href="admin_research">Research & Extension</a></li>
             <li><a href="admin_library">Library</a></li>
             <li><a href="services_studentorgs">Student Organizations</a>
             </li>
