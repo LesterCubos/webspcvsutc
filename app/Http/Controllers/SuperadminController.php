@@ -144,7 +144,11 @@ class SuperadminController extends Controller
     public function SPDashboard(){
         $acadyears = AcademicYear::where('isActive', '1')->get();
         $legends = Legend::all();
-        return view('superadmin.sp.sp_superadmin_dashboard', compact('acadyears', 'legends'));
+        $totalusers  = DB::table('users')->count();
+        $studentusers  = User::where('role','student')->count();
+        $adminusers  = User::where('role','admin')->count();
+        $superadminusers  = User::where('role','superadmin')->count();
+        return view('superadmin.sp.sp_superadmin_dashboard', compact('acadyears', 'legends', 'totalusers','studentusers','adminusers','superadminusers'));
     }
     public function Login(Request $request){
         // dd($request->all());

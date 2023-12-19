@@ -36,15 +36,19 @@ class AdminController extends Controller
         $admin_announce = AdminAnnounce::orderBy('created_at', 'desc')->get();
         $announcediff = array();
         
-        foreach($admin_announce as $admin_announce){
-            
-            $anchorTimeann[$admin_announce->id] = Carbon::createFromFormat("Y-m-d H:i:s",$admin_announce->created_at);
-            $secondDiff = $anchorTimeann[$admin_announce->id]->diffInSeconds($currentTime);
-            $minuteDiff = $anchorTimeann[$admin_announce->id]->diffInMinutes($currentTime);
-            $hourDiff = $anchorTimeann[$admin_announce->id]->diffInHours($currentTime);
-            $dayDiff = $anchorTimeann[$admin_announce->id]->diffInDays($currentTime);
-            $announcediff[$admin_announce->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
+        if ($admin_announce->isEmpty()) {
+            $anchorTimeann = 0;
+        } else {
+            foreach($admin_announce as $admin_announce){
+                
+                $anchorTimeann[$admin_announce->id] = Carbon::createFromFormat("Y-m-d H:i:s",$admin_announce->created_at);
+                $secondDiff = $anchorTimeann[$admin_announce->id]->diffInSeconds($currentTime);
+                $minuteDiff = $anchorTimeann[$admin_announce->id]->diffInMinutes($currentTime);
+                $hourDiff = $anchorTimeann[$admin_announce->id]->diffInHours($currentTime);
+                $dayDiff = $anchorTimeann[$admin_announce->id]->diffInDays($currentTime);
+                $announcediff[$admin_announce->id] = array($secondDiff, $minuteDiff, $hourDiff, $dayDiff);
 
+            }
         }
 
         $admin_announces = AdminAnnounce::all();
