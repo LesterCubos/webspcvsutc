@@ -60,7 +60,7 @@
                     @endif
                   </td>
                   <td> 
-                    <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('student_informations.edit', $user->id) }}"><i class="bi bi-pencil-square"></i></a>
+                    <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('student_informations.show', $user->id) }}"><i class="bi bi-eye-fill"></i></a>
                   </td>
                 </tr>
                 @empty

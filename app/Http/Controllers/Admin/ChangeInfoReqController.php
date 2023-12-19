@@ -51,7 +51,7 @@ class ChangeInfoReqController extends Controller
 
         if($create) {
             // add flash for the success notification
-            session()->flash('notif.success', 'Change student information request send successfully!');
+            session()->flash('notif.success', 'Go to the Office of the Campus Registrar to proceed with this request for clarification!!');
             return redirect()->route('student.student_information');
         }
 
@@ -77,7 +77,8 @@ class ChangeInfoReqController extends Controller
         Session::put('idNo', $changeinforeqs->id);
 
         return response()->view('admin.student_informations.changeform', [
-            'changeinforeq' => ChangeInfoReq::findOrFail($id), 'ChangeInfoReqs' => ChangeInfoReq::orderBy('updated_at', 'desc')->paginate(5), 'legends' => Legend::all()
+            'changeinforeq' => ChangeInfoReq::findOrFail($id), 'ChangeInfoReqs' => ChangeInfoReq::orderBy('updated_at', 'desc')->paginate(5), 'legends' => Legend::all(),
+            'users' => User::where('studentNumber', $changeinforeqs->studentNum)->get()
         ]);
     }
 

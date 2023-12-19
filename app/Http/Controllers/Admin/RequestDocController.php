@@ -65,7 +65,7 @@ class RequestDocController extends Controller
 
         if($create) {
             // add flash for the success notification
-            session()->flash('notif.success', 'Request has been posted successfully!');
+            session()->flash('notif.success', 'To proceed your requested document, please PAY first the total amount at the Office Campus Registrar');
             $routeName = \Route::current()->getName();
             $viewName = ($routeName == 'requestdocs.index') ? 'requestdocs.index' : 'request_docs.index';
             return redirect()->route($viewName);

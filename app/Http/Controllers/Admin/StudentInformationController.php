@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StudentInformation\UpdateRequest;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
@@ -46,6 +47,13 @@ class StudentInformationController extends Controller
     public function update(UpdateRequest $request, string $id): RedirectResponse
     {
         $users = User::findOrFail($id);
+        $idNo = Session::get('idNo');
+
+        $changeinforeqs = ChangeInfoReq::where('id', $idNo)->get();
+        foreach($changeinforeqs as $changeinforeq) {
+            $changeinforeq->status = 'Completed';
+            $changeinforeq->save();
+        }
 
         $students = EnrollStudentInformation::where('studentNumber', $users->studentNumber)->first();
 
@@ -56,11 +64,18 @@ class StudentInformationController extends Controller
         $students->update($validated);
 
         if($update) {
-            session()->flash('notif.success', 'User updated successfully!');
-            return redirect()->route('student_informations.index');
+            session()->flash('notif.success', 'Change student information request updated successfully!');
+            return redirect()->route('adchangeinforeqs.index');
         }
 
         return abort(500);
+    }
+
+    public function show(string $id): Response
+    {
+        return response()->view('admin.student_informations.show', [
+            'user' => User::findOrFail($id), 'legends' => Legend::all()
+        ]);
     }
 
 }

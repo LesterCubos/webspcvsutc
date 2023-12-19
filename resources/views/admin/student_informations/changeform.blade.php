@@ -55,7 +55,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @livewire('change-info-req-status')
+                                    {{-- @livewire('change-info-req-status') --}}
                                     <div class="form-group">
                                         <label for="request">Request</label>
                                         <textarea class="form-control @error('request') is-invalid @enderror" id="request" name="request" value="{{ $changeinforeq->request }}" rows="10" readonly>{{ $changeinforeq->request }}</textarea>
@@ -69,8 +69,11 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-end justify-content-end">
-                            <button type="submit" class="btn btn-primary" style="margin-right: 10px">{{ __('Save') }}</button>
-                            <a href="{{ route('adchangeinforeqs.index') }}" class="btn btn-warning">Cancel</a>
+                            {{-- <button type="submit" class="btn btn-primary" style="margin-right: 10px">{{ __('Edit') }}</button> --}}
+                            @foreach ($users as $user)
+                                <a class="btn btn-primary" href="{{ route('student_informations.edit', $user->id) }}"><i class="bi bi-pencil-square btn-icon-prepend"></i> Edit</a>
+                            @endforeach
+                            <a href="{{ route('adchangeinforeqs.index') }}" class="btn btn-warning" style="margin-left: 10px"><i class="bi bi-arrow-left btn-icon-prepend"></i> Back</a>
                         </div>
                 </form>
                 
