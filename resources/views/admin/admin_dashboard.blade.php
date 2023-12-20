@@ -36,7 +36,7 @@
                 <div class="card" style="border-radius: 15px">
                   <div class="card-body">
                       <h4 class="card-title">Total Students</h4>
-                      <h4 class="text-dark font-weight-bold mb-2">43,981</h4>
+                      <h4 class="text-dark font-weight-bold mb-2">{{$studentusers}}</h4>
                   </div>
                 </div>
             </div>
@@ -44,7 +44,9 @@
                 <div class="card" style="border-radius: 15px">
                   <div class="card-body">
                       <h4 class="card-title">Total Student Information Request</h4>
-                      <h4 class="text-dark font-weight-bold mb-2">55,543</h4>
+                      <h4 class="text-dark font-weight-bold mb-2">Total : {{$totalStuChanReq}}</h4>
+                      <h4 class="text-dark font-weight-bold mb-2">Pending - {{$pendingStuChanReq}}</h4>
+                      <h4 class="text-dark font-weight-bold mb-2">Completed - {{$completedStuChanReq}}</h4>
                   </div>
                 </div>
            </div>
@@ -52,8 +54,11 @@
            <div class="col-xxl-4 col-md-3 grid-margin stretch-card">
             <div class="card" style="border-radius: 15px">
               <div class="card-body">
-                  <h4 class="card-title">Total Instructor</h4>
-                  <h4 class="text-dark font-weight-bold mb-2">43,981</h4>
+                  <h4 class="card-title">Total Requested Document</h4>
+                  <h4 class="text-dark font-weight-bold mb-2">Total: {{$totalRequestDoc}}</h4>
+                  <h4 class="text-dark font-weight-bold mb-2">Pending - {{$pendingReqDoc}}</h4>
+                  <h4 class="text-dark font-weight-bold mb-2">Processing - {{$processingReqDoc}}</h4>
+                  <h4 class="text-dark font-weight-bold mb-2">Completed - {{$completedReqDoc}}</h4>
               </div>
             </div>
            </div>
@@ -61,8 +66,8 @@
            <div class="col-xxl-4 col-md-3 grid-margin stretch-card">
             <div class="card" style="border-radius: 15px">
               <div class="card-body">
-                  <h4 class="card-title">Total Admin</h4>
-                  <h4 class="text-dark font-weight-bold mb-2">43,981</h4>
+                  <h4 class="card-title">Total Announcement</h4>
+                  <h4 class="text-dark font-weight-bold mb-2">{{$totalAnnounce}}</h4>
               </div>
             </div>
            </div>
@@ -100,9 +105,9 @@
                                     {{ $admin_announce->created_at }}
                                   </div>
                                   <div class="card-body">
-                                    <h5 class="h4">{{ $admin_announce->title }}
+                                    <h5 class="h4" style="color: green">{{ $admin_announce->title }}
                                     </h5>
-                                    <p class="lead">{!! Str::limit($admin_announce->content,'250','...') !!}</p>
+                                    <p class="lead" style="color: black">{!! Str::limit($admin_announce->content,'250','...') !!}</p>
                                   </div>
                                 </div>
                                 <br>

@@ -23,6 +23,7 @@ class StudentController extends Controller
     
     public function Dashboard(){
         $admin_announces = AdminAnnounce::all();
+        
         return view ('student.student_dashboard',['acadyears'=> AcademicYear::where('isActive', '1')->get(), 'legends' => Legend::all()],compact('admin_announces'));
     }
 

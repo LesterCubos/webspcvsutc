@@ -11,11 +11,13 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
+use App\Models\ChangeInfoReq;
+use App\Models\RequestDoc;
 use App\Models\AdminAnnounce;
 use App\Models\AcademicYear;
 use App\Models\Legend;
 use Carbon\Carbon;
-
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -53,7 +55,22 @@ class AdminController extends Controller
 
         $admin_announces = AdminAnnounce::all();
 
-        return view('admin.admin_dashboard',compact('legends', 'acadyears', 'admin_announces', 'currentTime','today','date','month', 'yeardate','announcediff',
+
+        //Count
+        $studentusers  = User::where('role','student')->count();
+        $totalStuChanReq  = DB::table('change_info_reqs')->count();
+        $pendingStuChanReq = ChangeInfoReq::where('status','pending')->count();
+        $completedStuChanReq = ChangeInfoReq::where('status','completed')->count();
+        $totalRequestDoc = DB::table('request_docs')->count();
+        $pendingReqDoc = RequestDoc::where('status','pending')->count();
+        $processingReqDoc = RequestDoc::where('status','processing')->count();
+        $completedReqDoc = RequestDoc::where('status','completed')->count();
+
+        $totalAnnounce = DB::table('admin_announces')->count();
+        return view('admin.admin_dashboard',compact( 'totalAnnounce',
+        'studentusers','totalStuChanReq','pendingStuChanReq','completedStuChanReq',
+        'totalRequestDoc','pendingReqDoc','processingReqDoc','completedReqDoc',
+        'legends', 'acadyears', 'admin_announces', 'currentTime','today','date','month', 'yeardate','announcediff',
         'anchorTimeann'
         ));
     }
