@@ -7,7 +7,7 @@
     {{-- <div class="card" style="border-radius: 10px"> --}}
       <div class="card-body">
         <h4 class="card-title">Student Informations Table</h4>
-        <p class="card-description">
+        <p class="card-description" style="font-size: 16px; color: green">
          Edit<code>Student Informations</code>
         </p>
         <a class="btn btn-primary btn-icon-text" href="{{ route('adchangeinforeqs.index') }}">
