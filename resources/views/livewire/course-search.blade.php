@@ -6,8 +6,18 @@
 @endif
     <div class="card-body">
         <h4 class="card-title">Courses Table</h4>
-        <p class="card-description">
-          Edit<code>Subject Courses</code>
+        <p class="card-description" style="font-size: 16px; color: green">
+            This table show list of all Courses.
+        </p>
+        <p class="card-description" style="font-size: 16px;color: green">
+            Edit<code>Course Subjects</code> to change the INSTRUCTOR/PROFESSIONAL and class section.
+        </p>
+        <p class="card-description" style="font-size: 16px; color: green">
+            Delete<code>Course Subjects</code> to remove the schedcode.
+        </p>
+        <p class="card-description" style="font-size: 16px; color: green">
+        <code>Generate Pincode</code> will generate and download a excel file containing the list of all pincode based on the SCHEDCODE. 
+        This PINCODE, together with the SCHEDCODE, will be used as a credential to access and upload grades for instructors.
         </p>
         {{-- <a class="btn btn-primary btn-icon-text" href="{{ route('courses.create') }}">
             <i class="bx bxs-book-add btn-icon-prepend" style="font-size: 1.225rem;"></i>Add Course

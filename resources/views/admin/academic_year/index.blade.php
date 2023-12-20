@@ -39,8 +39,8 @@
         <div class="card" style="margin-top: 50px; border-radius: 10px">
             <div class="card-body">
                 <h4 class="card-title" style="font-size: 20px">Academic Year</h4>
-                <p class="card-description" style="font-size: 16px">
-                    <code>View</code> Academic Year
+                <p class="card-description" style="font-size: 16px; color:green">
+                  This table shows the active Academic Year
                 </p>
               <div class="table-responsive pt-3">
                 <table class="table table-bordered">

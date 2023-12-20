@@ -19,8 +19,12 @@
         <div class="card" style="margin-top: 50px; border-radius: 10px">
           <div class="card-body">
             <h4 class="card-title">Instructor Page Switch</h4>
-            <p class="card-description">
-              Edit the status of <code>Instructor Page</code>
+            <p class="card-description" style="font-size: 16px; color: green">
+              Edit the show/hide status of <code>Instructor Page</code>. Click the toggle switch to show the instructor login page. 
+              Then, click the toggle switch AGAIN to hide the instructor login page.
+            </p>
+            <p class="card-description" style="font-size: 16px; color: green">
+              Go to this link to access the instructor login page: <code>'http://127.0.0.1:8000/instructor_page_login' </code> add this extension <code>'/instructor_page_login'</code> in the end of CvSU Tanza website link.
             </p>
             <div class="table-responsive">
               <table class="table table-striped">
