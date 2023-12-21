@@ -117,10 +117,16 @@ class GradeController extends Controller
         $grades = Grade::findOrFail($id);
         $validated = $request->validated();
 
+        if ($request->input('completion')<= 3.00) {
+            $grades->credits = $grades->units;
+        } else {
+            $grades->credits = 0;
+        }
+        
         $update = $grades->update($validated);
 
         if($update) {
-            session()->flash('notif.success', 'grade updated successfully!');
+            session()->flash('notif.success', 'Grade updated successfully!');
             return redirect()->route('grades.index');
         }
 

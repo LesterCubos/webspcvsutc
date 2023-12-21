@@ -103,6 +103,7 @@ class GradesImport implements ToModel, WithHeadingRow, WithEvents
         return new Grade([
             'student_number' => $row['student_number'],
             'grade' => $grade,
+            'completion' => '-',
             // 'remarks' => $row['remarks'],
             'course_name'=> $course_name,
             'course_title' => $subjTitle,

@@ -92,18 +92,35 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="grade">Grade:</label>
-                                        <select class="form-control @error('grade') is-invalid @enderror" id="grade" name="grade" value="{{ $grade->grade ?? old('grade') }}" required>
-                                          <option value="{{ $grade->grade ?? old('grade') }}" disabled selected>{{ $grade->grade ?? old('grade') }}</option>
-                                          @foreach ($gchoices as $gchoice)
-                                            <option value="{{ $gchoice->choiceGrade }}" {{ old('grade') == $gchoice->choiceGrade ? 'selected' : '' }}>{{ $gchoice->choiceGrade }}</option>
-                                          @endforeach 
-                                        </select>
-                                        @error('grade')
+                                        @if ($grade->grade == "INC")
+                                          <input type="text" class="form-control @error('grade') is-invalid @enderror" id="grade" name="grade" value="{{ $grade->grade ?? old('grade') }}" readonly>
+                                        @else 
+                                          <select class="form-control @error('grade') is-invalid @enderror" id="grade" name="grade" value="{{ $grade->grade ?? old('grade') }}" required>
+                                            <option value="{{ $grade->grade ?? old('grade') }}" disabled selected>{{ $grade->grade ?? old('grade') }}</option>
+                                            @foreach ($gchoices as $gchoice)
+                                              <option value="{{ $gchoice->choiceGrade }}" {{ old('grade') == $gchoice->choiceGrade ? 'selected' : '' }}>
+                                                {{ $gchoice->choiceGrade }}
+                                              </option>
+                                            @endforeach 
+                                          </select>
+                                          @error('grade')
+                                          <span class="invalid-feedback" role="alert">
+                                              <strong>{{ $message }}</strong>
+                                          </span>
+                                          @enderror
+                                        @endif
+                                    </div>
+                                    @if ($grade->grade == "INC")
+                                      <div class="form-group">
+                                        <label for="completion">Completion:</label>
+                                        <input type="number" class="form-control  @error('completion') is-invalid @enderror" id="completion" name="completion" value="{{ $grade->completion ?? old('completion') }}" placeholder="Input Completion" step="0.01">
+                                        @error('completion')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                         @enderror
-                                    </div>
+                                      </div>
+                                    @endif
                                     <br>
                                     <div class="flex text-center" style="padding-top: 10px">
                                         <button class="btn btn-success ">{{ __('Save') }}</button>

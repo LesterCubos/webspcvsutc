@@ -63,73 +63,69 @@
                         <p>Section:</p>
                     </div>
                 </div>
-                <div class="row" style="margin-top: 20px; color: green; font-weight: bolder; border: 2px solid purple; text-align: center">
-                    <div class="col-sm" style=" border: 2px solid purple; padding: 5px;">
-                        Course Code
-                    </div>
-                    <div class="col-sm-4" style=" border: 2px solid purple; padding: 5px;">
-                        Course Description
-                    </div>
-                    <div class="col-sm" style=" border: 2px solid purple; text-align: center; padding: 5px;">
-                        Units
-                    </div>
-                    <div class="col-sm" style=" border: 2px solid purple; text-align: center; padding: 5px;">
-                        Day
-                    </div>
-                    <div class="col-sm-3" style=" border: 2px solid purple; text-align: center; padding: 5px;">
-                        Time
-                    </div>
-                    <div class="col-sm" style=" border: 2px solid purple; text-align: center; padding: 5px;">
-                        Room
-                    </div>
-                </div>
-                <div class="row" style="height: 300px; border: 2px solid purple; text-align: center; border-top: none">
-                    <div class="col-sm" style=" border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        @foreach ($schedcodes as $schedcode)
-                            <p style="color: #000">{{ $schedcode->course_name }}</p>
-                        @endforeach
-                    </div>
-                    <div class="col-sm-4" style=" border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        @foreach ($subjects as $sub)
-                            <p style="color: #000">{{ $sub->subjectTitle }}</p>
-                        @endforeach
-                    </div>
-                    <div class="col-sm" style=" border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        @foreach ($schedcodes as $schedcode)
-                            <p style="color: #000">{{ $schedcode->units }}</p>
-                        @endforeach
-                    </div>
-                    <div class="col-sm" style=" border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        
-                    </div>
-                    <div class="col-sm-3" style=" border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        
-                    </div>
-                    <div class="col-sm" style=" border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        
-                    </div>
-                </div>
-                <div class="row" style="border: 2px solid purple; text-align: center; border-top: none; color: green; ; font-weight: bolder; border-bottom: none">
-                    <div class="col-sm" style="border: 2px solid purple; text-align: center; padding: 5px; border-top: none; border-bottom: 4px solid purple">
-                        LABORATORY FEES
-                    </div>
-                    <div class="col-sm-4" style="border: 2px solid purple; text-align: center; padding: 5px; border-top: none;  border-bottom: 4px solid purple">
-                        ASSESSMENT
-                    </div>
-                    <div class="col-sm" style="border: 2px solid purple; text-align: center; padding: 5px; border-top: none; border-bottom: none">
-                        
-                    </div>
-                </div>
-                <div class="row" style="height: 300px; border: 2px solid purple; text-align: center; border-top: none; color: green; ; font-weight: bolder;">
-                    <div class="col-sm" style="border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        
-                    </div>
-                    <div class="col-sm-4" style="border: 2px solid purple; text-align: center; padding: 5px; border-top: none">
-                        
-                    </div>
-                    <div class="col-sm" style="border: 2px solid purple; text-align: center; padding: 5px; border-top: none;">
-                        
-                    </div>
+                <div class="table-responsive pt-3">
+                    <table class="table table-bordered" style="text-align: center; margin-top: 20px; color: green; border: 4px solid purple;">
+                      <thead>
+                        <tr>
+                            <th style="border-right: 4px solid purple; border-bottom: 4px solid purple; font-weight: bolder;">Course Code</th> 
+                            <th style="border-right: 4px solid purple; border-bottom: 4px solid purple; font-weight: bolder;">Course Description</th> 
+                            <th style="border-right: 4px solid purple; border-bottom: 4px solid purple; font-weight: bolder;">Units</th> 
+                            <th style="border-right: 4px solid purple; border-bottom: 4px solid purple; font-weight: bolder;">Day</th> 
+                            <th style="border-right: 4px solid purple; border-bottom: 4px solid purple; font-weight: bolder;">Time</th> 
+                            <th style="border-bottom: 4px solid purple; font-weight: bolder;">Room</th> 
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr style="height: 300px;">
+                          <td style="border-right: 4px solid purple; vertical-align: top;">
+                            @foreach ($schedcodes as $schedcode)
+                                <p style="color: #000">{{ $schedcode->course_name }}</p>
+                            @endforeach
+                          </td>
+                          <td style="border-right: 4px solid purple; vertical-align: top;">
+                            @foreach ($subjects as $sub)
+                                <p style="color: #000">{{ $sub->subjectTitle }}</p>
+                            @endforeach
+                          </td>
+                          <td style="border-right: 4px solid purple; vertical-align: top;">
+                            @foreach ($schedcodes as $schedcode)
+                                <p style="color: #000">{{ $schedcode->units }}</p>
+                            @endforeach
+                          </td>
+                          <td style="border-right: 4px solid purple; vertical-align: top;">
+                            $ 123.21
+                          </td>
+                          <td style="border-right: 4px solid purple; vertical-align: top">
+                            April 05, 2015
+                          </td>
+                          <td style=" vertical-align: top;">
+                            April 05, 2015
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-bordered" style="text-align: center; color: green; border: 4px solid purple; border-top: none">
+                      <thead>
+                        <tr>
+                            <th style="border-right: 4px solid purple; border-bottom: 4px solid purple; font-weight: bolder;">LABORATORY FEES</th> 
+                            <th style="border-right: 4px solid purple; border-bottom: 4px solid purple; font-weight: bolder;">ASSESSMENT</th>
+                            <th style="border-bottom: none;"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr style="height: 300px;">
+                          <td style="border-right: 4px solid purple; vertical-align: top">
+                            
+                          </td>
+                          <td style="border-right: 4px solid purple; vertical-align: top">
+                            
+                          </td>
+                          <td style="border-right: 4px solid purple; vertical-align: top; width: 300px; border-top: none">
+                            
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                 </div>
             </div>
 

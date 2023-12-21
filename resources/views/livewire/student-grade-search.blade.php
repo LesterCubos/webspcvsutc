@@ -36,6 +36,7 @@
                                 <th>SUBJECT CODE</th>
                                 <th>SUBJECT TITLE</th>
                                 <th>GRADE</th>
+                                <th>COMPLETION</th>
                                 <th>UNITS</th>
                                 <th>CREDITS</th>
                                 <th>INSTRUCTOR</th>
@@ -48,6 +49,7 @@
                                             <td>{{ $grade->course_name }}</td>
                                             <td>{{ $grade->course_title }}</td>
                                             <td>{{ $grade->grade }}</td>
+                                            <td>{{ $grade->completion }}</td>
                                             <td>{{ $grade->units }}</td>
                                             <td>{{ $grade->credits }}</td>
                                             <td>{{ $grade->instructor_name }}</td>

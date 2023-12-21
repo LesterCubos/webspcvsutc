@@ -29,6 +29,9 @@
                   Grade
                 </th>
                 <th>
+                  Completion
+                </th>
+                <th>
                   Action
                 </th>
               </tr>
@@ -41,6 +44,9 @@
                   </td>
                   <td>
                     {{ $grade->grade }}
+                  </td>
+                  <td>
+                    {{ $grade->completion }}
                   </td>
                   <td>
                     <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('grades.edit', $grade->id) }}"><i class="bi bi-pencil-square"></i></a>

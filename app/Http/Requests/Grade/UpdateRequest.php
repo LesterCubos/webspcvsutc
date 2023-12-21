@@ -24,6 +24,7 @@ class UpdateRequest extends FormRequest
         return [
             'student_number' => 'nullable|string|min:1|max:11',
             'grade' => 'nullable|string|min:1|max:5',
+            'completion' => 'nullable|string|min:1|max:5',
             // 'remarks'=> 'nullable|string|min:3|max:250',
             // 'program' => 'nullable|string|min:3|max:250',
             // 'course_name' => 'nullable|string|min:3|max:250',

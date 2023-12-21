@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('student_number');
             $table->string('grade');
+            $table->string('completion')->default('-');
             // $table->string('remarks')->default(0);
             $table->string('course_name')->default(0);
             $table->string('course_title')->default(0);

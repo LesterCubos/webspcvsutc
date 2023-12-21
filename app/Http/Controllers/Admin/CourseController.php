@@ -40,6 +40,7 @@ class CourseController extends Controller
                 $create->generateSpecialCode();
                 $create->acadyear = $sched->schoolyear;
                 $create->sem = $sched->semester;
+                $create->generatePinCode();
                 $create->save();
                 if (isset($sched->schedcode)) {
                     $code = Session::get('code');
