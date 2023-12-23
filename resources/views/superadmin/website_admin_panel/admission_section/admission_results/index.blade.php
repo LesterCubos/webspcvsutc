@@ -1,12 +1,12 @@
 @extends('superadmin.superadmin_master')
-@section('title','Admission Result')
+@section('title','Contact Information')
 @section('content')
     <div class="pagetitle">
         <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
             <li class="breadcrumb-item">Admission</li>
-            <li class="breadcrumb-item active">Admission Results Page</li>
+            <li class="breadcrumb-item active">Contact Informations Page</li>
         </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -14,7 +14,7 @@
     <div class="card flex justify-between">
         <div class="card-body">
             <br>
-            <h2>Admission Results</h2>
+            <h2>Contact Informations</h2>
             <a href="{{ route('admission_results.create') }}" class="btn btn-success">Add</a>
         </div>
     </div>

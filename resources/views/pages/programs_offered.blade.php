@@ -1,5 +1,5 @@
 @extends('layouts.show')
-@section('title','Programs offered')
+@section('title','Undergraduate Programs')
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->
@@ -10,7 +10,7 @@
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
           <li>Admission</li>
-          <li>Programs Offered</li>
+          <li>Undergraduate Programs</li>
         </ol>
       </div>
     </nav>
@@ -21,15 +21,17 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-          <h3><span>Program</span> Offering</h3>
+          <h3><span>Undergraduate</span> Programs</h3>
       </div>
 
 
       <div class="col-12 d-flex flex-column justify-content-center">
         @foreach ( $programs_offers as $programs_offer)
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                {{-- <div class="icon"><i class="bi bi-motherboard"></i></div> --}}
+                <div class="icon"><i class="bx bxs-graduation"></i></div>
+                <br>
                 <h4 class="title"><a href="">{{ $programs_offer->title }}</a></h4>
+                <br>
                 <p class="description">{!! $programs_offer->desc !!}</p>
             </div>
         @endforeach

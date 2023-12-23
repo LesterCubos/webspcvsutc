@@ -1,12 +1,12 @@
 @extends('superadmin.superadmin_master')
-@section('title','Manage Program Offer')
+@section('title','Manage Undergraduate Program')
 @section('content')
 <div class="pagetitle">
     <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
         <li class="breadcrumb-item">Admission</li>
-        <li class="breadcrumb-item"><a href="{{ route('programs_offers.index') }}">Programs Offered Section</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('programs_offers.index') }}">Undergraduate Program Section</a></li>
         <li class="breadcrumb-item active">Add Program</li>
     </ol>
     </nav>

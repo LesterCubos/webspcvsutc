@@ -121,12 +121,12 @@
           </li>
           <li>
             <a class="{{ (request()->is('programs_offers*')) ? 'active' : '' }}" href="{{ route('programs_offers.index') }}">
-              <i class="bi bi-circle"></i><span>Program Offerings</span>
+              <i class="bi bi-circle"></i><span>Undergraduate Programs</span>
             </a>
           </li>
           <li>
             <a class="{{ (request()->is('admission_results*')) ? 'active' : '' }}" href="{{ route('admission_results.index') }}">
-              <i class="bi bi-circle"></i><span>Admission Result</span>
+              <i class="bi bi-circle"></i><span>Contact Information</span>
             </a>
           </li>
         </ul>
@@ -137,6 +137,36 @@
           <i class="bi bi-bank2"></i><span>Administration</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content {{ (request()->is('office_registrars*','clinics*','cashiers*','osass*','hrs*','researchs*','libs*','dits*','teds*','dass*','doms*')) ? 'show' : 'collapse' }}" data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="{{ (request()->is('dits*')) ? 'active' : '' }}" href="{{ route('dits.index') }}">
+              <i class="bi bi-circle"></i><span>Department of Information Technology</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="{{ (request()->is('teds*')) ? 'active' : '' }}" href="{{ route('teds.index') }}">
+              <i class="bi bi-circle"></i><span>Teacher Education Department</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="{{ (request()->is('dass*')) ? 'active' : '' }}" href="{{ route('dass.index') }}">
+              <i class="bi bi-circle"></i><span>Department of Arts and Sciences</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="{{ (request()->is('doms*')) ? 'active' : '' }}" href="{{ route('doms.index') }}">
+              <i class="bi bi-circle"></i><span>Department of Management</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="{{ (request()->is('osass*')) ? 'active' : '' }}" href="{{ route('osass.index') }}">
+              <i class="bi bi-circle"></i><span>Office of the Student Affairs Services</span>
+            </a>
+          </li>
+
           <li>
             <a class="{{ (request()->is('office_registrars*')) ? 'active' : '' }}" href="{{ route('office_registrars.index') }}">
               <i class="bi bi-circle"></i><span>Office of the Campus Registrar</span>
@@ -152,17 +182,13 @@
               <i class="bi bi-circle"></i><span>Cashier</span>
             </a>
           </li> --}}
-          <li>
-            <a class="{{ (request()->is('osass*')) ? 'active' : '' }}" href="{{ route('osass.index') }}">
-              <i class="bi bi-circle"></i><span>Office of the Student Affairs Services</span>
-            </a>
-          </li>
+          
 
-          <li>
+          {{-- <li>
             <a class="{{ (request()->is('hrs*')) ? 'active' : '' }}" href="{{ route('hrs.index') }}">
               <i class="bi bi-circle"></i><span>Human Resource</span>
             </a>
-          </li>
+          </li> --}}
 
           {{-- <li>
             <a href="{{ route('mis.index') }}">
@@ -187,29 +213,7 @@
             </a>
           </li>
 
-          <li>
-            <a class="{{ (request()->is('dits*')) ? 'active' : '' }}" href="{{ route('dits.index') }}">
-              <i class="bi bi-circle"></i><span>Department of Information Technology</span>
-            </a>
-          </li>
-
-          <li>
-            <a class="{{ (request()->is('teds*')) ? 'active' : '' }}" href="{{ route('teds.index') }}">
-              <i class="bi bi-circle"></i><span>Teacher Education Department</span>
-            </a>
-          </li>
-
-          <li>
-            <a class="{{ (request()->is('dass*')) ? 'active' : '' }}" href="{{ route('dass.index') }}">
-              <i class="bi bi-circle"></i><span>Department of Arts and Sciences</span>
-            </a>
-          </li>
-
-          <li>
-            <a class="{{ (request()->is('doms*')) ? 'active' : '' }}" href="{{ route('doms.index') }}">
-              <i class="bi bi-circle"></i><span>Department of Management</span>
-            </a>
-          </li>
+          
 
 
         </ul>

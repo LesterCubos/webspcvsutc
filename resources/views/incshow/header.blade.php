@@ -34,15 +34,15 @@
             <li><a href="about_contact_info">Contact Information</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a class="{{ Request::is('admission_requirements_procedure','admission_programs_offered','admission_result') ? 'active' : '' }}" href="#">Admission</a>
+        <li class="dropdown"><a class="{{ Request::is('admission_requirements_procedure','admission_programs_offered','admission_contact') ? 'active' : '' }}" href="#">Admission</a>
           <ul>
             <li><a href="admission_programs_offered">Undergraduate Programs</a></li>
             <li><a href="https://apps.cvsu.edu.ph/admission/sign-in/?mibextid=WaXdOe&fbclid=IwAR32WGvGfzwSEg_ueJDQCzqj2fAfqW9FDELSWcIkWi74DnJ_9enCZ9ql0mk">Admission Procedure</a></li>
             {{-- <li><a href="admission_requirements_procedure">Admission Procedure</a></li> --}}
-            <li><a href="admission_result">Contact Information</a></li>
+            <li><a href="admission_contact">Contact Information</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a class="{{ Request::is('admin_office_registrar','admin_clinic','admin_cashier','admin_osas','admin_dit','admin_ted','admin_das','admin_dom','admin_hr','admin_mis','admin_qaac','admin_research','admin_library') ? 'active' : '' }}" href="#">Administration</a>
+        <li class="dropdown"><a class="{{ Request::is('services_studentorgs','admin_departments','admin_office_registrar','admin_clinic','admin_cashier','admin_osas','admin_dit','admin_ted','admin_das','admin_dom','admin_hr','admin_mis','admin_qaac','admin_research','admin_library') ? 'active' : '' }}" href="#">Administration</a>
           <ul>
             <li><a href="admin_departments">Departments</a></li>
             <li><a href="admin_osas">Office of the Student Affairs Services</a></li>

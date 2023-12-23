@@ -48,6 +48,6 @@ class AdmissionPageController extends Controller
         $totalVisits=views(CarouselItem::class)->count();
 
         $admission_results = AdmissionResult::all();
-        return view('pages.admission_results', compact('admission_results','totalVisits','quicks','others','socialmedias'));
+        return view('pages.admission_contact', compact('admission_results','totalVisits','quicks','others','socialmedias'));
     }
 }

@@ -31,7 +31,8 @@
             <h4>Other Links</h4>
             <ul>
               @foreach ($others as $other)
-              <li><i class="bi bi-chevron-right"></i> <a href="#">{{$other->link}}</a></li>
+               <a href="{{$other->link}}">{{$other->name}}</a>
+               <br>
               @endforeach
             </ul>
           </div>
@@ -40,7 +41,8 @@
             <h4>Quick Links</h4>
             <ul>
               @foreach ($quicks as $quick)
-              <li><i class="bi bi-chevron-right"></i> <a href="#">{{$quick->link}}</a></li>
+              <a href="{{$quick->link}}">{{$quick->name}}</a>
+              <br>
               @endforeach
             </ul>
           </div>

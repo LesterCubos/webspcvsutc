@@ -1,12 +1,12 @@
 @extends('superadmin.superadmin_master')
-@section('title','Manage Admission Result')
+@section('title','Manage Contact Information')
 @section('content')
 <div class="pagetitle">
     <nav>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('superadmin.dashboard') }}"><i class="bx bx-home"></i> Home</a></li>
         <li class="breadcrumb-item">Admission</li>
-        <li class="breadcrumb-item"><a href="{{ route('admission_results.index') }}">Admission Result Page</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admission_results.index') }}">Contact Information Page</a></li>
         <li class="breadcrumb-item active">Add</li>
     </ol>
     </nav>

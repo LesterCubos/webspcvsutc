@@ -4,7 +4,7 @@
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'CvSU Tanza') }}</title>
+        <title>Home - CvSU Tanza Campus</title>
 
         <!-- Icon -->
         <link rel="shortcut icon" type="image/png" href="{{ asset('img/campus_seal.png') }}">
@@ -164,7 +164,7 @@
                         @if ($loop->iteration == 1 )
                             <div class="col-lg-3 col-md-6">
                                 <div class="count-box">
-                                    <i class="bi bi-person"></i>
+                                    <i class="bi bar-chart-line-fill"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
                                     <p>{{ $count->category }}</p>
                                 </div>
@@ -172,7 +172,7 @@
                         @elseif ($loop->iteration == 2 )
                             <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                                 <div class="count-box">
-                                    <i class="bi bi-journal-richtext"></i>
+                                    <i class="bi bar-chart-line"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
                                     <p>{{ $count->category }}</p>
                                 </div>
@@ -180,7 +180,7 @@
                         @elseif ($loop->iteration == 3 )
                             <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                                 <div class="count-box">
-                                    <i class="bi bi-headset"></i>
+                                    <i class="bi bar-chart-line-fillt"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
                                     <p>{{ $count->category }}</p>
                                 </div>
@@ -188,7 +188,7 @@
                         @elseif ($loop->iteration == 4 )
                             <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                                 <div class="count-box">
-                                    <i class="bi bi-stickies"></i>
+                                    <i class="bi bar-chart-line"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
                                     <p>{{ $count->category }}</p>
                                 </div>

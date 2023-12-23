@@ -139,7 +139,7 @@ Route::get('about_contact_info', [AboutController::class, 'contact_infos'])->nam
 //Admission Pages
 Route::get('admission_programs_offered', [AdmissionPageController::class, 'programs_offered'])->name('pages.programs_offered');
 Route::get('admission_requirements_procedure', [AdmissionPageController::class, 'requirements_procedure'])->name('pages.admission_requirements');
-Route::get('admission_result', [AdmissionPageController::class, 'result'])->name('pages.admission_results');
+Route::get('admission_contact', [AdmissionPageController::class, 'result'])->name('pages.admission_contact');
 
 
 //Administration
