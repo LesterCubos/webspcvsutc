@@ -31,6 +31,28 @@
             <i class="bi bi-exclamation-circle-fill" style="margin-right: 5px; font-size: 18px"></i>
             <strong>{{ session('notif.danger') }}</strong>
           </div>
+          @elseif(session('notif.pin'))
+            <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="successModalLabel"><i class="bi bi-exclamation-circle-fill" style="color: red"></i> Notification</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" style="font-size:20px">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <strong style="font-size: 20px">{{ session('notif.pin') }}</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var successModal = new bootstrap.Modal(document.getElementById('successModal'), {});
+                    successModal.show();
+                });
+            </script>
         @endif
     </div>
     @livewire('course-search')

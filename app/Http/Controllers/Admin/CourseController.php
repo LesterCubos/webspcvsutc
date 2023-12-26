@@ -173,15 +173,15 @@ class CourseController extends Controller
             if (Hash::check($request->input('password'), $admin->password)) {
                 // Proceed with the deletion of the user
                 $course = Course::findOrFail($id);
-                $ecourses = EnrollSchedule::where('schedcode', $course->schedcode)->get();
-                foreach ($ecourses as $ecourse) {
-                    $eid = $ecourse->id;
-                }
-                $delete = $course->delete($id);
-                $delete = $ecourse->delete($eid);
+                // $ecourses = EnrollSchedule::where('schedcode', $course->schedcode)->get();
+                // foreach ($ecourses as $ecourse) {
+                //     $eid = $ecourse->id;
+                // }
+                // $delete = $course->delete($id);
+                // $delete = $ecourse->delete($eid);
                 // Redirect to the users index page with a success message
-                if ($delete) {
-                    session()->flash('notif.success', 'Courses deleted successfully!');
+                if ($course) {
+                    session()->flash('notif.pin', 'Course Pincode: '. $course->pincode);
                     return redirect()->route('courses.index');
                 }
             }

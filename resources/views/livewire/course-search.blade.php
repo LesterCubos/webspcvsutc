@@ -29,7 +29,7 @@
                 <i class="icon-search"></i>
               </span>
             </div>
-            <input type="text" class="form-control" placeholder="Search Course Subject..." wire:model.lazy="searchCourse">
+            <input type="text" class="form-control" placeholder="Search Course Code..." wire:model.lazy="searchCourse">
         </div>
         <div class="table-responsive pt-3">
             <table class="table table-bordered">
@@ -71,7 +71,7 @@
                                 <a class="btn btn-primary btn-fw" id="icon_edit" href="{{ route('courses.edit', $course->id) }}" style="margin-bottom: 5px"><i class="bi bi-pencil-square"></i></a>
                                 <!-- Button trigger modal -->
                                 <button id="icon_delete{{ $course->id }}" type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-user-deletion{{ $course->id }}" style="margin-bottom: 5px">
-                                    <i class="icon-trash"></i>
+                                    <i class="icon-unlock"></i>
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="confirm-user-deletion{{ $course->id }}" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -104,7 +104,7 @@
                                         </div>
                                         <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-danger">{{ __('Delete') }}</button>
+                                        <button type="submit" class="btn btn-danger">{{ __('Pincode') }}</button>
                                         </div>
                                         </form>
                                     </div>
