@@ -1,5 +1,5 @@
 @extends('layouts.show')
-@section('title','Job Vacancies')
+@section('title','Careers')
 @section('content')
 
   <!-- ======= Breadcrumbs ======= -->
@@ -10,7 +10,7 @@
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
           <li>Services</li>
-          <li>Job Vacancies</li>
+          <li>Careers</li>
         </ol>
       </div>
     </nav>
@@ -21,7 +21,7 @@
     <div class="container">
 
       <div class="section-title">
-        <h3>Job <span>Vacancies</span></h3>
+        <h3>Looking for a <span>CAREER</span> ?</h3>
       </div>
 
     <!-- Card-->

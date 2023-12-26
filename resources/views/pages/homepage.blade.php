@@ -164,7 +164,7 @@
                         @if ($loop->iteration == 1 )
                             <div class="col-lg-3 col-md-6">
                                 <div class="count-box">
-                                    <i class="bi bar-chart-line-fill"></i>
+                                    <i class="ri-bar-chart-fill"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
                                     <p>{{ $count->category }}</p>
                                 </div>
@@ -172,7 +172,7 @@
                         @elseif ($loop->iteration == 2 )
                             <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                                 <div class="count-box">
-                                    <i class="bi bar-chart-line"></i>
+                                    <i class="ri-bar-chart-2-line"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
                                     <p>{{ $count->category }}</p>
                                 </div>
@@ -180,7 +180,7 @@
                         @elseif ($loop->iteration == 3 )
                             <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                                 <div class="count-box">
-                                    <i class="bi bar-chart-line-fillt"></i>
+                                    <i class="ri-bar-chart-fill"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
                                     <p>{{ $count->category }}</p>
                                 </div>
@@ -188,7 +188,7 @@
                         @elseif ($loop->iteration == 4 )
                             <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                                 <div class="count-box">
-                                    <i class="bi bar-chart-line"></i>
+                                    <i class="ri-bar-chart-2-line"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="{{ $count->value }}" data-purecounter-duration="1" class="purecounter"></span>
                                     <p>{{ $count->category }}</p>
                                 </div>

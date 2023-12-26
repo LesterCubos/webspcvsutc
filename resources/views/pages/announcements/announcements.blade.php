@@ -12,7 +12,10 @@
         <ol>
           <li><a href="/"><i class='bx bxs-home'></i> Home</a></li>
           <li>Services</li>
-          <li>Announcements</li>
+          <li><a href="services_announcements" style="color:dimgray">Announcements</a></li>
+          {{-- services_announcements --}}
+          
+          {{-- 	http://127.0.0.1:8000/services_announcements --}}
           <li>{{ $announce->title }}</li>
         </ol>
       </div>
