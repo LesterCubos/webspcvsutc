@@ -42,13 +42,30 @@ class Course extends Model
             $newScheduleCode = $currentYear . $paddedIncrementedNumber;
 
         } else {
-            $lastGeneratedCodeParts = explode($currentYear, $lastGeneratedCode->schedcode);
-            $incrementedNumber = intval($lastGeneratedCodeParts[1]) + 1;
-            $paddedIncrementedNumber = str_pad($incrementedNumber, 4, '0', STR_PAD_LEFT);
-            $newScheduleCode = $currentYear . $paddedIncrementedNumber;
+            // Get the string value of the variable
+            $codePartsString = strval($lastGeneratedCode->schedcode);
+            // Use regular expressions to extract the 4-digit year value
+            preg_match_all('!\d+!', $codePartsString, $matches);
+            // Get the last matched year value (which should be the 4-digit year)
+            $year = end($matches[0]);
 
-            // Keep incrementing the incremented number until a unique schedcode is generated
-            while (self::where('schedcode', $newScheduleCode)->exists()) {
+            if ($year == $currentYear) {
+
+                $lastGeneratedCodeParts = explode($currentYear, $lastGeneratedCode->schedcode);
+                $incrementedNumber = intval($lastGeneratedCodeParts[1]) + 1;
+                $paddedIncrementedNumber = str_pad($incrementedNumber, 4, '0', STR_PAD_LEFT);
+                $newScheduleCode = $currentYear . $paddedIncrementedNumber;
+
+                // Keep incrementing the incremented number until a unique schedcode is generated
+                while (self::where('schedcode', $newScheduleCode)->exists()) {
+                    $incrementedNumber++;
+                    $paddedIncrementedNumber = str_pad($incrementedNumber, 4, '0', STR_PAD_LEFT);
+                    $newScheduleCode = $currentYear . $paddedIncrementedNumber;
+                }
+            } else {
+                // Extract the last four characters of the string as the incremented number
+                $incrementedNumber = substr($lastGeneratedCode->schedcode, -4);
+                // Increment the incremented number by 1
                 $incrementedNumber++;
                 $paddedIncrementedNumber = str_pad($incrementedNumber, 4, '0', STR_PAD_LEFT);
                 $newScheduleCode = $currentYear . $paddedIncrementedNumber;
