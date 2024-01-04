@@ -37,8 +37,8 @@
         <li class="dropdown"><a class="{{ Request::is('admission_requirements_procedure','admission_programs_offered','admission_contact') ? 'active' : '' }}" href="#">Admission</a>
           <ul>
             <li><a href="admission_programs_offered">Undergraduate Programs</a></li>
-            <li><a href="https://apps.cvsu.edu.ph/admission/sign-in/?mibextid=WaXdOe&fbclid=IwAR32WGvGfzwSEg_ueJDQCzqj2fAfqW9FDELSWcIkWi74DnJ_9enCZ9ql0mk">Admission Procedure</a></li>
-            {{-- <li><a href="admission_requirements_procedure">Admission Procedure</a></li> --}}
+            {{-- <li><a href="https://apps.cvsu.edu.ph/admission/sign-in/?mibextid=WaXdOe&fbclid=IwAR32WGvGfzwSEg_ueJDQCzqj2fAfqW9FDELSWcIkWi74DnJ_9enCZ9ql0mk">Admission Procedure</a></li> --}}
+            <li><a href="admission_requirements_procedure">Admission Procedure</a></li>
             <li><a href="admission_contact">Contact Information</a></li>
           </ul>
         </li>
@@ -73,7 +73,7 @@
             <li><a href="student_login">Student Portal</a></li>
           </ul> --}}
         </li>
-        <li class="dropdown"><a href="services_jobvacancies">Careers</a>
+        <li class=""><a class="{{ Request::is('services_jobvacancies') ? 'active' : '' }}" href="services_jobvacancies">Careers</a>
         </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>

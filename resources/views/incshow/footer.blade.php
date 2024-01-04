@@ -12,14 +12,14 @@
 
           <div class="col-lg-2 col-md-6 footer-contact">
             <h3>CvSU<span> TANZA</span></h3>
+            @foreach ($contact_infos as $contact_info)
             <p>
-              Pabahay, Bagtas <br>
-              Tanza, Cavite<br>
-              Philippines <br><br>
-              <strong>Phone:</strong> 09876543210<br>
-              <strong>Email:</strong> info@example.com<br> 
-              
+              {{ $contact_info->campus_address }}
+              <br>
+              <strong>Phone:</strong> {{ $contact_info->campus_number }}<br>
+              <strong>Email:</strong> {{ $contact_info->campus_email }}<br> 
             </p>
+            @endforeach
             <div class="totalVisits d-flex align-items-center justify-content-center" data-aos="zoom-in" data-aos-delay="300">
               <div class="totalVisits-info">
                   <p><span>Total Visits: </span>{{ $totalVisits }}</p>

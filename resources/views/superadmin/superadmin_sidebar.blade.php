@@ -145,15 +145,15 @@
 
           <li>
             <a class="{{ (request()->is('teds*')) ? 'active' : '' }}" href="{{ route('teds.index') }}">
-              <i class="bi bi-circle"></i><span>Teacher Education Department</span>
+              <i class="bi bi-circle"></i><span>General Education Department</span>
             </a>
           </li>
 
-          <li>
+          {{-- <li>
             <a class="{{ (request()->is('dass*')) ? 'active' : '' }}" href="{{ route('dass.index') }}">
               <i class="bi bi-circle"></i><span>Department of Arts and Sciences</span>
             </a>
-          </li>
+          </li> --}}
 
           <li>
             <a class="{{ (request()->is('doms*')) ? 'active' : '' }}" href="{{ route('doms.index') }}">

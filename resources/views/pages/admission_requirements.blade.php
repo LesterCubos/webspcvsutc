@@ -20,9 +20,11 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h3>Admission<span> Requirements and Procedures</span></h3>
+        {{-- <h3>Admission<span> Requirements and Procedures</span></h3> --}}
+        <h3>Please proceed to this link <a href="https://apps.cvsu.edu.ph/admission/sign-in/?mibextid=WaXdOe&fbclid=IwAR32WGvGfzwSEg_ueJDQCzqj2fAfqW9FDELSWcIkWi74DnJ_9enCZ9ql0mk">CvSU Admission System</a></h3>
       </div>
-
+      
+      <br>
       @foreach ($requirements_procedures as $requirements_procedure)
         <h3 class="title">{{ $requirements_procedure->title }}</span></h3>
         <div class="imfo">

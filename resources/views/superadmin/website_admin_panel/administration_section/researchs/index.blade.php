@@ -3,6 +3,7 @@
 
 
 @extends('superadmin.superadmin_master')
+@section('title','Research and Extension Page')
 @section('content')
     <div class="pagetitle">
         {{-- <h1>Dashboard</h1> --}}
@@ -60,7 +61,7 @@
                 <td>
                     <form method="post" action="{{ route('researchs.destroy', $research->id) }}" class="d-grid gap-2">
 
-                        <a class="btn" id="icon_edit" href="{{ route('researchs.edit', $researchs.edit) }}"><i class="ri-edit-box-fill"></i></a>
+                        <a class="btn" id="icon_edit" href="{{ route('researchs.edit', $research->id) }}"><i class="ri-edit-box-fill"></i></a>
                         @csrf
                         @method('DELETE')
 

@@ -22,24 +22,24 @@
       
         <ul class="nav nav-tabs row  g-2 d-flex">
 
-            <li class="nav-item col-3">
+            <li class="nav-item col-4">
               <a id="link1" class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
                 <h4>Department of Information Technology</h4>
               </a>
             </li><!-- End tab nav item -->
   
-            <li class="nav-item col-3">
+            <li class="nav-item col-4">
               <a id="link2" class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-                <h4>Teacher Education Department</h4>
+                <h4>General Education Department</h4>
               </a><!-- End tab nav item -->
   
-            <li class="nav-item col-3">
+            {{-- <li class="nav-item col-3">
               <a id="link3" class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
                 <h4>Department of Arts and Sciences</h4>
               </a>
-            </li><!-- End tab nav item -->
+            </li><!-- End tab nav item --> --}}
   
-            <li class="nav-item col-3">
+            <li class="nav-item col-4">
               <a id="link4" class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
                 <h4>Department of Management</h4>
               </a>

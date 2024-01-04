@@ -16,6 +16,7 @@ use Latfur\Event\Models\Event;
 
 use App\Models\CarouselItem;
 use App\Models\UniversitySeal;
+use App\Models\ContactInfo;
 
 use Illuminate\Http\Request;
 
@@ -30,8 +31,8 @@ class ServicesController extends Controller
         $totalVisits=views(CarouselItem::class)->count();
 
         $about_orgs = AboutOrgs::all();
-       
-        return view('pages.orgs', compact('about_orgs','totalVisits','quicks','others','socialmedias'));
+        $contact_infos = ContactInfo::all();
+        return view('pages.orgs', compact('contact_infos','about_orgs','totalVisits','quicks','others','socialmedias'));
     }
 
     public function newsandupdates(){
@@ -43,8 +44,8 @@ class ServicesController extends Controller
         $totalVisits=views(CarouselItem::class)->count();
 
         $news = News::all();
-
-        return view('pages.news&updates', compact('news','totalVisits','quicks','others','socialmedias'));
+        $contact_infos = ContactInfo::all();
+        return view('pages.news&updates', compact('contact_infos','news','totalVisits','quicks','others','socialmedias'));
     }
 
     public function announcements(){
@@ -62,8 +63,8 @@ class ServicesController extends Controller
                 $annViews[$announcement->id] = views(Announcement::class::find($announcement->id))->count();
             }
         }
-
-        return view('pages.announcement', compact('announcements','totalVisits','quicks','others','socialmedias','annViews'));
+        $contact_infos = ContactInfo::all();
+        return view('pages.announcement', compact('contact_infos','announcements','totalVisits','quicks','others','socialmedias','annViews'));
     }
 
     public function campuscalendar(){
@@ -89,8 +90,9 @@ class ServicesController extends Controller
         
         $totalVisits=views(CarouselItem::class)->count();
         //put here the 'totalViews', before living
-        
-        return view('event::campuscalendar', compact('totalVisits','totalViews','quicks','others','socialmedias'));
+        $contact_infos = ContactInfo::all();
+
+        return view('event::campuscalendar', compact('contact_infos','totalVisits','totalViews','quicks','others','socialmedias'));
     }
 
     public function jobvacancies(){
@@ -98,11 +100,11 @@ class ServicesController extends Controller
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
-
+        $contact_infos = ContactInfo::all();
         $totalVisits=views(CarouselItem::class)->count();
 
         $job_vacancies = JobVacancies::all();
 
-        return view('pages.job_vacancies', compact('job_vacancies','totalVisits','quicks','others','socialmedias'));
+        return view('pages.job_vacancies', compact('contact_infos','job_vacancies','totalVisits','quicks','others','socialmedias'));
     }
 }

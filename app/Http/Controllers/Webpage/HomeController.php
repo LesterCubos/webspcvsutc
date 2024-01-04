@@ -18,6 +18,7 @@ use Latfur\Event\Models\Event;
 use App\Models\QuickLinks;
 use App\Models\OtherLinks;
 use App\Models\SocialMediaLinks;
+use App\Models\ContactInfo;
 use App\Models\SwitchSection;
 
 
@@ -56,6 +57,7 @@ class HomeController extends Controller
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
+        $contact_infos = ContactInfo::all();
 
         $switchs = SwitchSection::all();
 
@@ -74,6 +76,7 @@ class HomeController extends Controller
                     'quicks',
                     'others',
                     'socialmedias',
+                    'contact_infos',
                     'totalVisits',
                     'switchs'
                     ));
