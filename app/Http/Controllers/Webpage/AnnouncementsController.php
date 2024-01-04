@@ -10,7 +10,7 @@ use App\Models\CarouselItem;
 use App\Models\SocialMediaLinks;
 use App\Models\QuickLinks;
 use App\Models\OtherLinks;
-
+use App\Models\ContactInfo;
 
 class AnnouncementsController extends Controller
 {
@@ -32,8 +32,8 @@ class AnnouncementsController extends Controller
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
-
+        $contact_infos = ContactInfo::all();
         $announcements = Announcement::all();
-        return view('pages.announcements.announcements', compact('announcements','totalViews','totalVisits','quicks','others','socialmedias'), ['announce' => $announce]);
+        return view('pages.announcements.announcements', compact('contact_infos','announcements','totalViews','totalVisits','quicks','others','socialmedias'), ['announce' => $announce]);
         }
 }
