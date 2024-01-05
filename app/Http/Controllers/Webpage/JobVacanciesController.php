@@ -14,6 +14,7 @@ use App\Models\CarouselItem;
 use App\Models\SocialMediaLinks;
 use App\Models\QuickLinks;
 use App\Models\OtherLinks;
+use App\Models\ContactInfo;
 // We will use Form Request to validate incoming requests from our store and update method
 use App\Http\Requests\JobVacancies\StoreRequest;
 use App\Http\Requests\JobVacancies\UpdateRequest;
@@ -136,8 +137,8 @@ class JobVacanciesController extends Controller
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
-
+        $contact_infos = ContactInfo::all();
         $job_vacancies = JobVacancies::all();
-        return view('pages.jobvacancies.jobvacancies', compact('job_vacancies','totalVisits','quicks','others','socialmedias'), ['job' => $job]);
+        return view('pages.jobvacancies.jobvacancies', compact('contact_infos','job_vacancies','totalVisits','quicks','others','socialmedias'), ['job' => $job]);
         }
 }

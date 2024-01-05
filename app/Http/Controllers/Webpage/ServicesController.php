@@ -102,7 +102,7 @@ class ServicesController extends Controller
         $socialmedias = SocialMediaLinks::all();
         $contact_infos = ContactInfo::all();
         $totalVisits=views(CarouselItem::class)->count();
-
+        
         $job_vacancies = JobVacancies::all();
 
         return view('pages.job_vacancies', compact('contact_infos','job_vacancies','totalVisits','quicks','others','socialmedias'));

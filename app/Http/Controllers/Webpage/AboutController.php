@@ -29,11 +29,11 @@ class AboutController extends Controller
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
-
+        $contact_infos = ContactInfo::all();
         $totalVisits=views(CarouselItem::class)->count();
 
         $campus_history = CampusHistory::all();
-        return view('pages.campus_history',compact('campus_history','totalVisits','quicks','others','socialmedias'));
+        return view('pages.campus_history',compact('contact_infos','campus_history','totalVisits','quicks','others','socialmedias'));
     }
 
     public function mvgs(){
@@ -41,11 +41,12 @@ class AboutController extends Controller
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
+        $contact_infos = ContactInfo::all();
 
         $totalVisits=views(CarouselItem::class)->count();
 
         $mvgs = MVG::all();
-        return view('pages.mvg',compact('mvgs','totalVisits','quicks','others','socialmedias'));
+        return view('pages.mvg',compact('contact_infos','mvgs','totalVisits','quicks','others','socialmedias'));
     }
 
     public function uni_seals(){
@@ -53,11 +54,12 @@ class AboutController extends Controller
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
+        $contact_infos = ContactInfo::all();
 
         $totalVisits=views(CarouselItem::class)->count();
 
         $uni_seals = UniversitySeal::all();
-        return view('pages.uni_seal', compact('uni_seals','totalVisits','quicks','others','socialmedias'));
+        return view('pages.uni_seal', compact('contact_infos','uni_seals','totalVisits','quicks','others','socialmedias'));
     }
 
     public function uni_officials(){
@@ -65,11 +67,12 @@ class AboutController extends Controller
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
+        $contact_infos = ContactInfo::all();
 
         $totalVisits=views(CarouselItem::class)->count();
 
         $uni_officials = UniversityOfficial::all();
-        return view('pages.uni_officials', compact('uni_officials','totalVisits','quicks','others','socialmedias'));
+        return view('pages.uni_officials', compact('contact_infos','uni_officials','totalVisits','quicks','others','socialmedias'));
     }
 
     public function campus_officials(){
@@ -77,12 +80,13 @@ class AboutController extends Controller
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
+        $contact_infos = ContactInfo::all();
 
         $totalVisits=views(CarouselItem::class)->count();
 
         $campus_officials = CampusOfficial::all();
         $campus_official_infos= CampusOfficialInfo::all();
-        return view('pages.campus_officials', compact('campus_officials','campus_official_infos','totalVisits','quicks','others','socialmedias'));
+        return view('pages.campus_officials', compact('contact_infos','campus_officials','campus_official_infos','totalVisits','quicks','others','socialmedias'));
     }
 
     public function contact_infos(){
@@ -90,6 +94,7 @@ class AboutController extends Controller
         $quicks = QuickLinks::all();
         $others = OtherLinks::all();
         $socialmedias = SocialMediaLinks::all();
+        $contact_infos = ContactInfo::all();
 
         $totalVisits=views(CarouselItem::class)->count();
 
@@ -102,6 +107,7 @@ class AboutController extends Controller
     $quicks = QuickLinks::all();
     $others = OtherLinks::all();
     $socialmedias = SocialMediaLinks::all();
+    $contact_infos = ContactInfo::all();
 
     $totalVisits=views(CarouselItem::class)->count();
 
