@@ -93,7 +93,7 @@
                     <div class="col-lg-12 grid-margin stretch-card">
                       <div class="card" style="margin-top: 50px:">
                         <div class="card-body" style="border-radius: 10px">
-                          <h1 class="display-4">Select Upload CSV file if multiple <strong style="color: #ec37fc; font-weight: bold">GRADES</strong> needs to be created. Make sure ff the ff format.</h1>
+                          <h1 class="display-4">Select Upload file to upload <strong style="color: #ec37fc; font-weight: bold">GRADES</strong> . Only CSV file format is accepted. Strictly follow the following format like the CSV template provided below.</h1>
                           <br>
                 
                           <form action="{{ route('Gradeimport') }}" method="POST" enctype="multipart/form-data">

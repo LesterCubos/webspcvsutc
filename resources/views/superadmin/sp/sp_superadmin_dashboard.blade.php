@@ -75,34 +75,34 @@
                       <div class="d-flex pb-3 border-bottom justify-content-between">
                         <div class="mr-3"><i class="mdi mdi-signal-cellular-outline icon-md"></i></div>
                         <div class="font-weight-bold mr-sm-4">
-                          <div>Deposit has updated to Paid</div>
-                          <div class="text-muted font-weight-normal mt-1">32 Minutes Ago</div>
+                          <div>Added new user</div>
+                          {{-- <div class="text-muted font-weight-normal mt-1">32 Minutes Ago</div> --}}
                         </div>
-                        <div><h6 class="font-weight-bold text-info ml-sm-2">$325</h6></div>
+                        <div><h6 class="font-weight-bold text-info ml-sm-2">32 Minutes Ago</h6></div>
                       </div>
                       <div class="d-flex pb-3 pt-3 border-bottom justify-content-between">
                         <div class="mr-3"><i class="mdi mdi-signal-cellular-outline icon-md"></i></div>
                         <div class="font-weight-bold mr-sm-4">
-                          <div>Your Withdrawal Proceeded</div>
-                          <div class="text-muted font-weight-normal mt-1">45 Minutes Ago</div>
+                          <div>Sync Users</div>
+                          {{-- <div class="text-muted font-weight-normal mt-1">45 Minutes Ago</div> --}}
                         </div>
-                        <div><h6 class="font-weight-bold text-info ml-sm-2">$4987</h6></div>
+                        <div><h6 class="font-weight-bold text-info ml-sm-2">45 Minutes Ago</h6></div>
                       </div>
                       <div class="d-flex pb-3 pt-3 border-bottom justify-content-between">
                         <div class="mr-3"><i class="mdi mdi-signal-cellular-outline icon-md"></i></div>
                         <div class="font-weight-bold mr-sm-4">
-                          <div>Deposit has updated to Paid                              </div>
-                          <div class="text-muted font-weight-normal mt-1">1 Days Ago</div>
+                          <div>Edit User                              </div>
+                          {{-- <div class="text-muted font-weight-normal mt-1">1 Days Ago</div> --}}
                         </div>
-                        <div><h6 class="font-weight-bold text-info ml-sm-2">$5391</h6></div>
+                        <div><h6 class="font-weight-bold text-info ml-sm-2">1 Days Ago</h6></div>
                       </div>
                       <div class="d-flex pt-3 justify-content-between">
                         <div class="mr-3"><i class="mdi mdi-signal-cellular-outline icon-md"></i></div>
                         <div class="font-weight-bold mr-sm-4">
-                          <div>Deposit has updated to Paid</div>
-                          <div class="text-muted font-weight-normal mt-1">3 weeks Ago</div>
+                          <div>Delete User</div>
+                          {{-- <div class="text-muted font-weight-normal mt-1">3 weeks Ago</div> --}}
                         </div>
-                        <div><h6 class="font-weight-bold text-info ml-sm-2">$264</h6></div>
+                        <div><h6 class="font-weight-bold text-info ml-sm-2">3 weeks Ago</h6></div>
                       </div>
                     </div>
                   </div>

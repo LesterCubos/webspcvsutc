@@ -83,7 +83,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ route('requestdocs.index') }}">
           <i class="bi bi-folder2 menu-icon"></i>
-          <span class="menu-title">Requested Documents</span>
+          <span class="menu-title">Requested Docs</span>
         </a>
       </li>
 
