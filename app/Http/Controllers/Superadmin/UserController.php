@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\AcademicYear;
 use App\Models\Legend;
+use App\models\SuperRecLog;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -37,6 +38,11 @@ class UserController extends Controller
             $hashedPassword = Hash::make($password);
             $user->password = $hashedPassword;
             $user->save();
+
+            $act = new SuperRecLog();
+            $act->actname =  'Reset Password';
+            $act->actinfo = $user->studentNumber;
+            $act->save();
 
             session()->flash('notif.success', 'Password reset successfully. New password is: ' . $password);
             return redirect()->route('superadmin.sp.manage_user_pages.show', ['user' => $id]);

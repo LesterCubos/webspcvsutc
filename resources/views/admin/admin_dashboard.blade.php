@@ -36,7 +36,7 @@
                 <div class="card" style="border-radius: 15px">
                   <div class="card-body">
                       <h4 class="card-title">Total Students</h4>
-                      <h4 class="text-dark font-weight-bold mb-2">{{$studentusers}}</h4>
+                      <h4 class="text-dark font-weight-bold mb-2" style="font-size: 16px">{{$studentusers}}</h4>
                   </div>
                 </div>
             </div>
@@ -44,9 +44,9 @@
                 <div class="card" style="border-radius: 15px">
                   <div class="card-body">
                       <h4 class="card-title">Total Student Information Request</h4>
-                      <h4 class="text-dark font-weight-bold mb-2">Total : {{$totalStuChanReq}}</h4>
-                      <h4 class="text-dark font-weight-bold mb-2">Pending - {{$pendingStuChanReq}}</h4>
-                      <h4 class="text-dark font-weight-bold mb-2">Completed - {{$completedStuChanReq}}</h4>
+                      <h4 class="text-dark font-weight-bold mb-2" style="font-size: 16px">Total : {{$totalStuChanReq}}</h4>
+                      <h4 class="text-dark font-weight-bold mb-2" style="font-size: 16px">Pending - {{$pendingStuChanReq}}</h4>
+                      <h4 class="text-dark font-weight-bold mb-2" style="font-size: 16px">Completed - {{$completedStuChanReq}}</h4>
                   </div>
                 </div>
            </div>
@@ -55,10 +55,10 @@
             <div class="card" style="border-radius: 15px">
               <div class="card-body">
                   <h4 class="card-title">Total Requested Document</h4>
-                  <h4 class="text-dark font-weight-bold mb-2">Total: {{$totalRequestDoc}}</h4>
-                  <h4 class="text-dark font-weight-bold mb-2">Pending - {{$pendingReqDoc}}</h4>
-                  <h4 class="text-dark font-weight-bold mb-2">Processing - {{$processingReqDoc}}</h4>
-                  <h4 class="text-dark font-weight-bold mb-2">Completed - {{$completedReqDoc}}</h4>
+                  <h4 class="text-dark font-weight-bold mb-2" style="font-size: 16px">Total: {{$totalRequestDoc}}</h4>
+                  <h4 class="text-dark font-weight-bold mb-2" style="font-size: 16px">Pending - {{$pendingReqDoc}}</h4>
+                  <h4 class="text-dark font-weight-bold mb-2" style="font-size: 16px">Processing - {{$processingReqDoc}}</h4>
+                  <h4 class="text-dark font-weight-bold mb-2" style="font-size: 16px">Completed - {{$completedReqDoc}}</h4>
               </div>
             </div>
            </div>
@@ -67,7 +67,7 @@
             <div class="card" style="border-radius: 15px">
               <div class="card-body">
                   <h4 class="card-title">Total Announcement</h4>
-                  <h4 class="text-dark font-weight-bold mb-2">{{$totalAnnounce}}</h4>
+                  <h4 class="text-dark font-weight-bold mb-2" style="font-size: 16px">{{$totalAnnounce}}</h4>
               </div>
             </div>
            </div>
@@ -76,7 +76,7 @@
     </div>
     <br>
     <div class="row d-flex">
-        <div class="col-xl-8 d-flex grid-margin stretch-card">
+        <div class="col-lg-12 d-flex grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
                   <h4 class="card-title">Latest Announcement Post</h4>
@@ -123,52 +123,6 @@
                 </div>
               </div>
         </div>
-
-        <div class="col-xl-4 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title mb-3">Recent Activity</h4>
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="text-dark">
-                      <div class="d-flex pb-3 border-bottom justify-content-between">
-                        <div class="mr-3"><i class="mdi mdi-signal-cellular-outline icon-md"></i></div>
-                        <div class="font-weight-bold mr-sm-4">
-                          <div>Upload new document</div>
-                          {{-- <div class="text-muted font-weight-normal mt-1">32 Minutes Ago</div> --}}
-                        </div>
-                        <div><h6 class="font-weight-bold text-info ml-sm-2">32 Minutes Ago</h6></div>
-                      </div>
-                      <div class="d-flex pb-3 pt-3 border-bottom justify-content-between">
-                        <div class="mr-3"><i class="mdi mdi-signal-cellular-outline icon-md"></i></div>
-                        <div class="font-weight-bold mr-sm-4">
-                          <div>Edit Student Information Request</div>
-                          {{-- <div class="text-muted font-weight-normal mt-1">45 Minutes Ago</div> --}}
-                        </div>
-                        <div><h6 class="font-weight-bold text-info ml-sm-2">45 Minutes Ago</h6></div>
-                      </div>
-                      <div class="d-flex pb-3 pt-3 border-bottom justify-content-between">
-                        <div class="mr-3"><i class="mdi mdi-signal-cellular-outline icon-md"></i></div>
-                        <div class="font-weight-bold mr-sm-4">
-                          <div>Generate new pincode                             </div>
-                          {{-- <div class="text-muted font-weight-normal mt-1">1 Days Ago</div> --}}
-                        </div>
-                        <div><h6 class="font-weight-bold text-info ml-sm-2">1 Days Ago</h6></div>
-                      </div>
-                      <div class="d-flex pt-3 justify-content-between">
-                        <div class="mr-3"><i class="mdi mdi-signal-cellular-outline icon-md"></i></div>
-                        <div class="font-weight-bold mr-sm-4">
-                          <div>Posted an Announcement</div>
-                          {{-- <div class="text-muted font-weight-normal mt-1">3 weeks Ago</div> --}}
-                        </div>
-                        <div><h6 class="font-weight-bold text-info ml-sm-2">3 weeks Ago</h6></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
     </div>
 </div>
 @endsection

@@ -10,6 +10,7 @@ use App\Exports\CoursesExport;
 use App\Exports\TemplateExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
+use App\Models\SuperRecLog;
 
 class CSVHandlerController extends Controller
 {
@@ -20,6 +21,10 @@ class CSVHandlerController extends Controller
 
     public function export() 
     {
+        $act = new SuperRecLog();
+        $act->actname =  'Export User';
+        $act->actinfo = 'Export User Details';
+        $act->save();
         return Excel::download(new UsersExport, 'users.xlsx');
     }
 

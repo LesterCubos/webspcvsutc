@@ -13,6 +13,7 @@ use App\Models\AcademicYear;
 use App\Models\Superadmin;
 use App\Models\User;
 use App\Models\Legend;
+use App\Models\SuperRecLog;
 use CyrildeWit\EloquentViewable\Support\Period;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -148,7 +149,8 @@ class SuperadminController extends Controller
         $studentusers  = User::where('role','student')->count();
         $adminusers  = User::where('role','admin')->count();
         $superadminusers  = User::where('role','superadmin')->count();
-        return view('superadmin.sp.sp_superadmin_dashboard', compact('acadyears', 'legends', 'totalusers','studentusers','adminusers','superadminusers'));
+        $recacts = SuperRecLog::latest()->take(5)->get();
+        return view('superadmin.sp.sp_superadmin_dashboard', compact('acadyears', 'legends', 'totalusers','studentusers','adminusers','superadminusers', 'recacts'));
     }
     public function Login(Request $request){
         // dd($request->all());

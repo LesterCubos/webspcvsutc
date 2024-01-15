@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\AcademicYear;
 use App\Models\Legend;
+use App\Models\SuperRecLog;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -78,6 +79,11 @@ class RegisteredUserController extends Controller
             'tempPassword' => $temporaryPassword,
             'role' => $request->role,
         ]);
+
+        $act = new SuperRecLog();
+        $act->actname =  'Add User';
+        $act->actinfo =  $request->role;
+        $act->save();
 
 
         // event(new Registered($user));

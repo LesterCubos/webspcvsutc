@@ -59,12 +59,12 @@ class AdminController extends Controller
         //Count
         $studentusers  = User::where('role','student')->count();
         $totalStuChanReq  = DB::table('change_info_reqs')->count();
-        $pendingStuChanReq = ChangeInfoReq::where('status','pending')->count();
-        $completedStuChanReq = ChangeInfoReq::where('status','completed')->count();
+        $pendingStuChanReq = ChangeInfoReq::where('status','Pending')->count();
+        $completedStuChanReq = ChangeInfoReq::where('status','Completed')->count();
         $totalRequestDoc = DB::table('request_docs')->count();
-        $pendingReqDoc = RequestDoc::where('status','pending')->count();
-        $processingReqDoc = RequestDoc::where('status','processing')->count();
-        $completedReqDoc = RequestDoc::where('status','completed')->count();
+        $pendingReqDoc = RequestDoc::where('status','Pending')->count();
+        $processingReqDoc = RequestDoc::where('status','Processing')->count();
+        $completedReqDoc = RequestDoc::where('status','Completed')->count();
 
         $totalAnnounce = DB::table('admin_announces')->count();
         return view('admin.admin_dashboard',compact( 'totalAnnounce',

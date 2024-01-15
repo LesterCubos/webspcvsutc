@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
+use App\Models\SuperRecLog;
 
 class SyncEnrollStudentInformation extends Controller
 {
@@ -55,6 +56,11 @@ class SyncEnrollStudentInformation extends Controller
             $studentAccount->tempPassword = $temporaryPassword;
             $studentAccount->save();
         }
+
+        $act = new SuperRecLog();
+        $act->actname =  'Sync User';
+        $act->actinfo =  'Sync Student Account';
+        $act->save();
 
         // Return a redirect response to the previous page
         return redirect()->back()->with('notif.success', 'Data transfer completed successfully');
