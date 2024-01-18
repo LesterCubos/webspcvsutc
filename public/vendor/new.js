@@ -156,6 +156,8 @@
     } else {
       // Hide content on small screens
       campusesButton.setAttribute('aria-expanded', 'true');
+      var element = document.querySelector('.btn-group.dropstart.wrapper');
+      element.classList.remove('dropstart');
     }
   }
 

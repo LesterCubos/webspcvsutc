@@ -346,6 +346,7 @@ h6 {
   color: #fff;
   font-size: 16px;
   border-radius: 100%;
+  margin-right: 3px;
 }
 .social-links a:hover {
   background-color: #fff;
@@ -394,34 +395,52 @@ h6 {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
 }
-#header .logo::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  height: 100%;
-  z-index: -1;
-  right: -50px;
-  width: 80%;
-  transform: skew(30deg);
-  background-color: var(--color-secondary);
+
+@media (min-width: 768px) {
+  #header .logo::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    z-index: -1;
+    right: -50px;
+    width: 80%;
+    transform: skew(30deg);
+    background-color: var(--color-secondary);
+  }
+  #header .logo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    z-index: -1;
+    right: 10%;
+    width: 2000px;
+    background-color: var(--color-secondary);
+  }
 }
-#header .logo::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  height: 100%;
-  z-index: -1;
-  right: 10%;
-  width: 2000px;
-  background-color: var(--color-secondary);
+
+@media (max-width: 768px) {
+  #header {
+    background: var(--color-secondary);
+  }
 }
+
 #header .logo img {
   margin-top: 25px;
   max-height: 40px;
 }
 
-#header .btn-group {
-  margin-left: 90px;
+@media (max-width: 768px) {
+  .btn-group {
+    margin: 0 1px 0 0;
+  }
+}
+
+@media (min-width: 768px) {
+  #header .btn-group {
+    margin-left: 90px;
+  }
 }
 
 #header .wrapper .button {
